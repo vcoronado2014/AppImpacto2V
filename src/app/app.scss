@@ -14,3 +14,23 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+.color-fixed {
+    background-color: #F66C62;
+}
+.bg-transparente{
+    background: transparent;
+}
+ion-app.md [padding] .scroll-content {
+    padding: 0;
+}
+.fg-blanco{
+    color: white;
+}
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+    background-color: transparent;
+    background-image: none;
+    color: white;
+}
+.btn-color{
+  background-color: #B71C1C;
+}
