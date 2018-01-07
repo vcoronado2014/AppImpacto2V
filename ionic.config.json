@@ -1,6 +1,6 @@
 {
-  "name": "AppImpacto2V",
-  "app_id": "13ea41fa",
+  "name": "Asambleas",
+  "app_id": "com.asambleas.cl",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}

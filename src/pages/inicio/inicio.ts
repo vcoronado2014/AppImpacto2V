@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams, LoadingController } from 'ionic-angular';
 
 import { LoginPage } from '../login/login';
+import { NovedadesPage } from '../novedades/novedades';
 
 import { AuthService } from '../../app/services/AuthService';
 import { InicioService } from '../../app/services/InicioService';
@@ -19,7 +20,7 @@ import { InicioService } from '../../app/services/InicioService';
   providers: [AuthService, InicioService]
 })
 export class InicioPage {
-  
+
   dataGeneral: any;
   eventos: any;
   proyectos: any;
@@ -29,9 +30,10 @@ export class InicioPage {
   rendiciones: any;
   documentos: any;
   tarjetas: any;
+  solicitudes: any;
 
   constructor(
-    public navCtrl: NavController, 
+    public navCtrl: NavController,
     public navParams: NavParams,
     public loading: LoadingController,
     public acceso: AuthService,
@@ -47,7 +49,9 @@ export class InicioPage {
       this.establecimientos=[];
       this.rendiciones=[];
       this.documentos=[];
-      //para mostrar en la pagina de inicio 
+      this.solicitudes=[];
+
+      //para mostrar en la pagina de inicio
       this.tarjetas = [];
 
     let loader = this.loading.create({
@@ -58,10 +62,11 @@ export class InicioPage {
       //llamadas de negocio
       var instId = sessionStorage.getItem("INST_ID");
       var rolId = sessionStorage.getItem("ROL_ID");
+      var usuId = sessionStorage.getItem("USU_ID");
         this.ini.getInicio(instId, rolId).subscribe(
           data => {
             //acá debemos construir los objetos de persistencia
-             
+
             this.dataGeneral = data.json();
             if (this.dataGeneral){
               if (this.dataGeneral.Eventos){
@@ -143,20 +148,38 @@ export class InicioPage {
               }
 
             }
-      
+
+            this.ini.getMuro(instId, usuId).subscribe(
+              dataMuro => {
+                //elementos del muro
+                this.solicitudes = dataMuro.json();
+                if (this.solicitudes.length > 0){
+                  var entidad = {
+                    Titulo: 'Novedades',
+                    Texto: 'Existen ' + this.solicitudes.length + ' novedades.',
+                    IconoGeneral: 'chatboxes',
+                    IconoBoton: 'arrow-forward'
+                  };
+                  this.tarjetas.push(entidad);
+
+                }
+
+              });
+
+
           },
-          err =>{ 
+          err =>{
             console.error(err);
             loader.dismiss();
           },
           () => {
-            console.log('get users completed');
+            console.log('get completed');
             //terminamos;
             loader.dismiss();
           }
         );
 
-      
+
     });
 
 
@@ -182,13 +205,18 @@ export class InicioPage {
         break;
       case 'Tricel':
         alert('tricel');
-        break;        
+        break;
       case 'Rendiciones':
         alert('rendicion');
-        break;        
+        break;
       case 'Documentos':
         alert('documentos');
-        break;        
+        break;
+      case 'Novedades':
+        //alert('documentos');
+        //this.navCtrl.push(NovedadesPage, {id: id});
+        this.navCtrl.push(NovedadesPage);
+        break;
     }
   }
 

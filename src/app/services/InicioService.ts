@@ -20,5 +20,14 @@ export class InicioService{
     });
     return data;
   }
+  getMuro(instId, usuId){
+    let url = AppSettings.API_ENDPOINT + 'Muro';
+    let dataGet = { InstId: instId, UsuId: usuId };
+
+    let data = this.http.post(url, dataGet, {
+      headers: new Headers({'Content-Type': 'application/json'})
+    });
+    return data;
+  }
 
 }
