@@ -8,8 +8,8 @@ webpackJsonp([0],{
 var AppSettings = (function () {
     function AppSettings() {
     }
-    //public static API_ENDPOINT = 'http://apps.asambleas.cl/api/';
-    AppSettings.API_ENDPOINT = 'http://localhost:58013/api/';
+    AppSettings.API_ENDPOINT = 'http://apps.asambleas.cl/api/';
+    //public static API_ENDPOINT = 'http://localhost:58013/api/';
     AppSettings.URL_FOTOS = 'http://172.16.0.241/MiFamilia.WebApi/';
     return AppSettings;
 }());

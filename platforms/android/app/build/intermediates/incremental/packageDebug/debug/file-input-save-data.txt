@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Mon Jan 08 18:01:36 CLST 2018
+#Mon Jan 08 18:07:43 CLST 2018
 5.base=D\:\\APP_IMPACTO2V\\AppImpacto2V\\platforms\\android\\app\\build\\intermediates\\res\\debug\\resources-debug.ap_
 42.base=D\:\\APP_IMPACTO2V\\AppImpacto2V\\platforms\\android\\app\\build\\intermediates\\res\\debug\\resources-debug.ap_
 32.set=ASSET
