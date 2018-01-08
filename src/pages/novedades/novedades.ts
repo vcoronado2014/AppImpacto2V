@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, LoadingController } from 'ionic-angular';
+import { NavController, NavParams, LoadingController, ModalController } from 'ionic-angular';
 
 import { LoginPage } from '../login/login';
+import { DetailNovedadPage } from '../detail-novedad/detail-novedad';
 
 import { AuthService } from '../../app/services/AuthService';
 import { InicioService } from '../../app/services/InicioService';
@@ -27,6 +28,7 @@ export class NovedadesPage {
               public navParams: NavParams,
               public loading: LoadingController,
               public acceso: AuthService,
+              public modalCtrl: ModalController,
               public ini: InicioService
   ) {
     let loader = this.loading.create({
@@ -86,6 +88,12 @@ export class NovedadesPage {
   logout(){
     this.acceso.logout();
     this.navCtrl.setRoot(LoginPage);
+  }
+  //modal para agregar un comentario
+  presentModal(item) {
+    
+    let modal = this.modalCtrl.create(DetailNovedadPage, { novedad: item });
+    modal.present();
   }
 
 }

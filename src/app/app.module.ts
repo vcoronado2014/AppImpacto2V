@@ -11,6 +11,7 @@ import { LoginPage } from '../pages/login/login';
 import { SolicitudesPage } from '../pages/solicitudes/solicitudes';
 import { NovedadesPage } from '../pages/novedades/novedades';
 import {InicioPage} from "../pages/inicio/inicio";
+import { DetailNovedadPage } from '../pages/detail-novedad/detail-novedad';
 
 import { AuthService } from '../app/services/AuthService';
 
@@ -22,6 +23,7 @@ import { AuthService } from '../app/services/AuthService';
     LoginPage,
     SolicitudesPage,
     NovedadesPage,
+    DetailNovedadPage,
     InicioPage
   ],
   imports: [
@@ -36,6 +38,7 @@ import { AuthService } from '../app/services/AuthService';
     LoginPage,
     SolicitudesPage,
     NovedadesPage,
+    DetailNovedadPage,
     InicioPage
   ],
   providers: [

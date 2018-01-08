@@ -72,12 +72,14 @@ export class InicioPage {
               if (this.dataGeneral.Eventos){
                 this.eventos = this.dataGeneral.Eventos;
               }
+              /*
               if (this.dataGeneral.Proyectos){
                 this.proyectos = this.dataGeneral.Proyectos;
               }
               if (this.dataGeneral.Votaciones.proposals){
                 this.votaciones = this.dataGeneral.Votaciones.proposals;
               }
+              */
               if (this.dataGeneral.Usuarios){
                 this.usuarios = this.dataGeneral.Usuarios;
               }
@@ -102,6 +104,7 @@ export class InicioPage {
                 this.tarjetas.push(entidad);
 
               }
+              /*
               //Proyectos
               if (this.proyectos.length > 0){
                 var entidad = {
@@ -124,6 +127,7 @@ export class InicioPage {
                 this.tarjetas.push(entidad);
 
               }
+              */
               //rendiciones
               if (this.rendiciones.length > 0){
                 var entidad = {

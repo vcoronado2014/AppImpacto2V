@@ -1,5 +1,5 @@
 <!--
-  Generated template for the NovedadesPage page.
+  Generated template for the DetailNovedadPage page.
 
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
@@ -7,17 +7,14 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Novedades</ion-title>
+    <ion-title>Detalle</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-  <button ion-button full icon-right color="light">
-  Nueva Novedad
-    <ion-icon name="chatbubbles"></ion-icon>
-  </button>
+<button ion-button full class="bg-red-200 fg-white" (click)="closeModal()">Cerrar</button>
   <div *ngFor="let item of solicitudes">
     <ion-card>
       <ion-card-content>
@@ -26,12 +23,18 @@
           <ion-icon name="{{item.UrlImagen}}" style="float: right;" *ngIf="item.VisibleEliminar" class="fg-teal-800"></ion-icon>
         </ion-card-title>
         <span class="icono-fecha fg-teal-800"><ion-icon name="clock"></ion-icon> {{item.FechaString}}</span>
-        <button style="float: right; font-size: 0.8rem;" ion-button small class="bg-red-300 fg-white" (click)="presentModal(item)" >Comentar</button>
         <p text-wrap>
           <strong>
             {{item.Texto}}
           </strong>
         </p>
+        <ion-item>
+              <ion-label stacked>Ingrese Comentario</ion-label>
+              <ion-input type="text" [(ngModel)]="textoEnviar" required></ion-input>
+        </ion-item> 
+        <button style="float: right; font-size: 0.8rem;" ion-button small class="bg-red-300 fg-white" (click)="enviar(item)">Enviar</button>
+
+
         <!-- comentarios -->
         <ion-list *ngFor="let comen of item.RespuestaMuro">
           <ion-item>
@@ -46,10 +49,16 @@
     </ion-card>
   </div>
 
+<!--
+  <ion-grid>
+    <ion-row>
+      <ion-col col-6>
+        <button ion-button style="width: 100%;" class="bg-red-200 fg-white" (click)="closeModal()">Cancelar</button>
+      </ion-col>
+      <ion-col col-6>
+        <button ion-button style="width: 100%;" class="bg-red-400 fg-white" (click)="closeModal('actualizar')">Aceptar</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+-->
 </ion-content>
-
-<ion-fab top right right>
-  <button ion-fab mini (click)="logout()" class="btn-color">
-    <ion-icon name="close"></ion-icon>
-  </button>
-</ion-fab>
