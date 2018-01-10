@@ -32,5 +32,19 @@ export class NovedadService{
     return data;
   }
 
+  deleteRespuesta(id){
+    
+    var entidad = {
+          Id: id,
+          EsCpas: false   
+        };
+    
+
+    let url = AppSettings.API_ENDPOINT + 'RespuestaMuro';
+    let dataGet = entidad;
+
+    let data = this.http.delete(url, dataGet);
+    return data;
+  }
 
 }

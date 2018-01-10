@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, LoadingController } from 'ionic-angular';
+import { NavController, NavParams, LoadingController, ToastController  } from 'ionic-angular';
 
 import { NovedadesPage } from '../novedades/novedades';
 import { NovedadService } from '../../app/services/novedadService';
@@ -26,6 +26,7 @@ export class DetailNovedadPage {
     public navParams: NavParams,
     public nov: NovedadService,
     public loading: LoadingController,
+    public toastCtrl: ToastController
     ) {
     this.solicitudes = [];
     this.novedad = this.navParams.get('novedad');
@@ -51,29 +52,86 @@ export class DetailNovedadPage {
   enviar(item){
     //aca enviamos el comentario
     var textoGuardar = this.textoEnviar;
-    //obtenemos algunos elementos
-    if (item){
-      //extraemos los valores
-      var prioridadId = item.PrioridadId;
-      var mroId = item.Id;
-      var instId = sessionStorage.getItem("INST_ID");
-      var rolId = sessionStorage.getItem("ROL_ID");
-      var usuId = sessionStorage.getItem("USU_ID");
+    if (textoGuardar == '' || textoGuardar == undefined || textoGuardar == null){
+      let sms = this.presentToast('Debe ingresar un comentario válido');
+    }
+    else{
+      //obtenemos algunos elementos
+      if (item){
+        //extraemos los valores
+        var prioridadId = item.PrioridadId;
+        var mroId = item.Id;
+        var instId = sessionStorage.getItem("INST_ID");
+        var rolId = sessionStorage.getItem("ROL_ID");
+        var usuId = sessionStorage.getItem("USU_ID");
+        
+        let loader = this.loading.create({
+          content: 'Cargando...',
+        });
+
+        loader.present().then(() => {
+          
+          this.nov.putRespuesta(prioridadId, mroId, textoGuardar, instId.toString(), usuId, rolId).subscribe(
+            data => {
+              //actualizar el contenido
+              var ret = data.json();
+              var respuesta = {
+                Eliminado: 0,
+                FechaCreacion: new Date(),
+                Id:0,
+                InstId: instId,
+                MroId: mroId,
+                NombreRol: item.NombreRol,
+                NombreUsuario: item.NombreUsuario,
+                PrioridadId: prioridadId,
+                RolId: rolId,
+                Texto: textoGuardar,
+                UrlImagen: 'trash',
+                UsuId: usuId,
+                FechaString: 'hace nos segundos',
+                VisibleEliminar: false
+              };
+              //ahora agregamos este elemento
+              this.solicitudes[0].RespuestaMuro.push(respuesta);
+
+
+            },
+            err =>{
+              console.error(err);
+              loader.dismiss();
+            },
+            () => {
+              console.log('put completed');
+              //terminamos;
+              loader.dismiss();
+            }
+          );
       
+        });
+
+      }
+    }
+  }
+  delete(item){
+    if (item){
+
       let loader = this.loading.create({
-        content: 'Cargando...',
+        content: 'eliminando...',
       });
 
       loader.present().then(() => {
-        
-        this.nov.putRespuesta(prioridadId, mroId, textoGuardar, instId.toString(), usuId, rolId).subscribe(
+        var id = item.Id;
+        this.nov.deleteRespuesta(id).subscribe(
           data => {
             //actualizar el contenido
             var ret = data.json();
+            //por mientras
+            this.closeModal('actualizar');
+            /*
             var respuesta = {
               Eliminado: 0,
               FechaCreacion: new Date(),
-              Id:0,
+              Id: 0,
               InstId: instId,
               MroId: mroId,
               NombreRol: item.NombreRol,
@@ -88,10 +146,10 @@ export class DetailNovedadPage {
             };
             //ahora agregamos este elemento
             this.solicitudes[0].RespuestaMuro.push(respuesta);
-
+            */
 
           },
-          err =>{
+          err => {
             console.error(err);
             loader.dismiss();
           },
@@ -101,10 +159,19 @@ export class DetailNovedadPage {
             loader.dismiss();
           }
         );
-    
+
       });
 
     }
+  }
+
+  presentToast(mensaje) {
+    let toast = this.toastCtrl.create({
+      message: mensaje,
+      duration: 3000,
+      position: 'top'
+    });
+    toast.present();
   }
 
 }
