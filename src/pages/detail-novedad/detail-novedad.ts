@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, LoadingController, ToastController  } from 'ionic-angular';
+import { NavController, NavParams, LoadingController, ToastController, ActionSheetController   } from 'ionic-angular';
+
 
 import { NovedadesPage } from '../novedades/novedades';
 import { NovedadService } from '../../app/services/novedadService';
@@ -26,7 +27,8 @@ export class DetailNovedadPage {
     public navParams: NavParams,
     public nov: NovedadService,
     public loading: LoadingController,
-    public toastCtrl: ToastController
+    public toastCtrl: ToastController,
+    public actionSheetCtrl: ActionSheetController
     ) {
     this.solicitudes = [];
     this.novedad = this.navParams.get('novedad');
@@ -78,7 +80,7 @@ export class DetailNovedadPage {
               var respuesta = {
                 Eliminado: 0,
                 FechaCreacion: new Date(),
-                Id:0,
+                Id:ret.Id,
                 InstId: instId,
                 MroId: mroId,
                 NombreRol: item.NombreRol,
@@ -127,27 +129,6 @@ export class DetailNovedadPage {
             var ret = data.json();
             //por mientras
             this.closeModal('actualizar');
-            /*
-            var respuesta = {
-              Eliminado: 0,
-              FechaCreacion: new Date(),
-              Id: 0,
-              InstId: instId,
-              MroId: mroId,
-              NombreRol: item.NombreRol,
-              NombreUsuario: item.NombreUsuario,
-              PrioridadId: prioridadId,
-              RolId: rolId,
-              Texto: textoGuardar,
-              UrlImagen: 'trash',
-              UsuId: usuId,
-              FechaString: 'hace nos segundos',
-              VisibleEliminar: false
-            };
-            //ahora agregamos este elemento
-            this.solicitudes[0].RespuestaMuro.push(respuesta);
-            */
-
           },
           err => {
             console.error(err);
@@ -172,6 +153,30 @@ export class DetailNovedadPage {
       position: 'top'
     });
     toast.present();
+  }
+
+  presentActionSheet(item) {
+    let actionSheet = this.actionSheetCtrl.create({
+      title: '¿Está seguro de eliminar?',
+      buttons: [
+        {
+          text: 'Eliminar',
+          role: 'destructive',
+          handler: () => {
+            //console.log('Destructive clicked');
+            this.delete(item);
+          }
+        },{
+          text: 'Cancelar',
+          role: 'cancel',
+          handler: () => {
+            //console.log('Cancel clicked');
+
+          }
+        }
+      ]
+    });
+    actionSheet.present();
   }
 
 }

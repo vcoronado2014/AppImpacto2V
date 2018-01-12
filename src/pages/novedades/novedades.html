@@ -14,13 +14,23 @@
 
 
 <ion-content padding>
+
   <button ion-button full icon-right color="light">
   Nueva Novedad
     <ion-icon name="chatbubbles"></ion-icon>
   </button>
+  <!-- solo para pruebas de carga de archivos -->
+
+
   <div *ngFor="let item of solicitudes">
     <ion-card>
       <ion-card-content>
+          <img [src]="image" *ngIf="image" />
+          <ion-item>
+            <label>Carga de Archivos</label>
+            <input type="file" accept="image/*" (change)="changeListener($event, item)" style="opacity: 0" #fileInp>
+
+          </ion-item>
         <ion-card-title>
           {{item.NombreUsuario}}
           <ion-icon name="{{item.UrlImagen}}" style="float: right;" *ngIf="item.VisibleEliminar" class="fg-teal-800"></ion-icon>
@@ -39,7 +49,7 @@
             <h2><strong>{{comen.NombreUsuario}}</strong></h2>
             <h3 style="font-size: 1.2rem;" class="fg-teal-800"><ion-icon name="clock"></ion-icon> {{comen.FechaString}}</h3>
             <p text-wrap style="text-align: justify;">{{comen.Texto}}</p>
-            <ion-icon class="fg-teal-800" name="trash" *ngIf="comen.VisibleEliminar" item-end></ion-icon>
+            <ion-icon class="fg-teal-800" name="trash" *ngIf="comen.VisibleEliminar" item-end (click)="presentActionSheet(comen)"></ion-icon>
           </ion-item>
         </ion-list>
       </ion-card-content>

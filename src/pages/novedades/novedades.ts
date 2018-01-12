@@ -1,11 +1,14 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, LoadingController, ModalController } from 'ionic-angular';
+import { NavController, NavParams, LoadingController, ModalController, ToastController, ActionSheetController } from 'ionic-angular';
+//import { } from 'ionic-nati'
 
 import { LoginPage } from '../login/login';
 import { DetailNovedadPage } from '../detail-novedad/detail-novedad';
 
 import { AuthService } from '../../app/services/AuthService';
 import { InicioService } from '../../app/services/InicioService';
+import { NovedadService } from '../../app/services/novedadService';
+import {AppSettings } from '../../app/AppSettings';
 
 /**
  * Generated class for the NovedadesPage page.
@@ -17,25 +20,34 @@ import { InicioService } from '../../app/services/InicioService';
 @Component({
   selector: 'page-novedades',
   templateUrl: 'novedades.html',
-  providers: [AuthService, InicioService]
+  providers: [AuthService, InicioService, NovedadService]
 })
 
 export class NovedadesPage {
 
   solicitudes: any;
 
+//archivos 
+fileP: File;
+image: string = null;
+
+
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               public loading: LoadingController,
               public acceso: AuthService,
               public modalCtrl: ModalController,
-              public ini: InicioService
+              public ini: InicioService,
+              public nov: NovedadService,
+              public toastCtrl: ToastController,
+              public actionSheetCtrl: ActionSheetController
   ) {
     let loader = this.loading.create({
       content: 'Cargando...',
     });
 
     this.solicitudes=[];
+    this.image = AppSettings.URL_FOTOS + 'BB__4.png';
 
     loader.present().then(() => {
       //llamadas de negocio
@@ -94,6 +106,80 @@ export class NovedadesPage {
     
     let modal = this.modalCtrl.create(DetailNovedadPage, { novedad: item });
     modal.present();
+  }
+  delete(item){
+    if (item){
+
+      let loader = this.loading.create({
+        content: 'eliminando...',
+      });
+
+      loader.present().then(() => {
+        var id = item.Id;
+        this.nov.deleteRespuesta(id).subscribe(
+          data => {
+            //actualizar el contenido
+            var ret = data.json();
+            //por mientras
+            //this.closeModal('actualizar');
+            this.navCtrl.setRoot(this.navCtrl.getActive().component);
+          },
+          err => {
+            console.error(err);
+            loader.dismiss();
+          },
+          () => {
+            console.log('put completed');
+            //terminamos;
+            loader.dismiss();
+          }
+        );
+
+      });
+
+    }
+  }
+  presentActionSheet(item) {
+    let actionSheet = this.actionSheetCtrl.create({
+      title: '¿Está seguro de eliminar?',
+      buttons: [
+        {
+          text: 'Eliminar',
+          role: 'destructive',
+          handler: () => {
+            //console.log('Destructive clicked');
+            this.delete(item);
+          }
+        },{
+          text: 'Cancelar',
+          role: 'cancel',
+          handler: () => {
+            //console.log('Cancel clicked');
+
+          }
+        }
+      ]
+    });
+    actionSheet.present();
+  }  
+
+  changeListener($event, item) : void {
+
+    this.fileP = $event.target.files[0];
+
+    let loader = this.loading.create({
+      content: 'Cargando Archivo...',
+    });
+
+    loader.present().then(() => {
+      //lo comentamos por mientras
+      /*
+        this.putImagen(this.fileP);
+        */
+        this.image = this.fileP.name;
+
+      loader.dismiss();
+    });
   }
 
 }

@@ -55,7 +55,7 @@ export class InicioPage {
       this.tarjetas = [];
 
     let loader = this.loading.create({
-      content: 'Cargando...',
+      content: 'Cargando Inicio...',
     });
 
     loader.present().then(() => {
@@ -152,32 +152,49 @@ export class InicioPage {
               }
 
             }
+            //carga de los novedades
+            let loaderComen = this.loading.create({
+              content: 'Cargando Novedades...',
+            });
 
-            this.ini.getMuro(instId, usuId).subscribe(
-              dataMuro => {
-                //elementos del muro
-                this.solicitudes = dataMuro.json();
-                if (this.solicitudes.length > 0){
-                  var entidad = {
-                    Titulo: 'Novedades',
-                    Texto: 'Existen ' + this.solicitudes.length + ' novedades.',
-                    IconoGeneral: 'chatboxes',
-                    IconoBoton: 'arrow-forward'
-                  };
-                  this.tarjetas.push(entidad);
+            loaderComen.present().then(() => {
+              this.ini.getMuro(instId, usuId).subscribe(
+                dataMuro => {
+                
+                  //elementos del muro
+                  this.solicitudes = dataMuro.json();
+                  if (this.solicitudes.length > 0){
+                    var entidad = {
+                      Titulo: 'Novedades',
+                      Texto: 'Existen ' + this.solicitudes.length + ' novedades.',
+                      IconoGeneral: 'chatboxes',
+                      IconoBoton: 'arrow-forward'
+                    };
+                    this.tarjetas.push(entidad);
 
+                  }
+
+                },
+                err =>{
+                  console.error(err);
+                  loaderComen.dismiss();
+                },
+                () => {
+                  console.log('get comment completed');
+                  //terminamos;
+                  loaderComen.dismiss();
                 }
+                
+                );
 
-              });
-
-
+            });
           },
           err =>{
             console.error(err);
             loader.dismiss();
           },
           () => {
-            console.log('get completed');
+            console.log('get inicio completed');
             //terminamos;
             loader.dismiss();
           }
