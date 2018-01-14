@@ -12,12 +12,12 @@ export class NovedadService{
   constructor(
     private http: Http
   ){
-        this.headers = new Headers({ 'Content-Type': 'application/json', 
+        this.headers = new Headers({ 'Content-Type': 'application/json',
                                      'Accept': 'q=0.8;application/json;q=0.9' });
         this.options = new RequestOptions({ headers: this.headers });
   }
   putRespuesta(prioridadId, mroId, texto, instId, usuId, rolId){
-    
+
     var entidad = {
         InstId: instId,
         UsuId: usuId,
@@ -26,7 +26,7 @@ export class NovedadService{
         RolId: rolId,
         Texto: texto
         };
-    
+
 
     let url = AppSettings.API_ENDPOINT + 'RespuestaMuro';
     let dataGet = entidad;
@@ -37,11 +37,32 @@ export class NovedadService{
     return data;
   }
 
+  putMuro(prioridadId, mroId, texto, instId, usuId, rolId){
+
+    var entidad = {
+      InstId: instId,
+      UsuId: usuId,
+      PrioridadId: prioridadId,
+      RolId: rolId,
+      Texto: texto,
+      EsCpas: 'false'
+    };
+
+
+    let url = AppSettings.API_ENDPOINT + 'Muro';
+    let dataGet = entidad;
+
+    let data = this.http.put(url, dataGet, {
+      headers: new Headers({'Content-Type': 'application/json'})
+    });
+    return data;
+  }
+
   deleteRespuesta(id){
-  
+
     var entidad = {
           Id: id,
-          EsCpas: false   
+          EsCpas: false
     };
 
     let url = AppSettings.API_ENDPOINT + 'RespuestaMuro';
@@ -49,7 +70,7 @@ export class NovedadService{
 
     let data = this.http.delete(url, { params: {Id: id.toString(), EsCpas: false }});
     return data;
-  
+
 
   }
 

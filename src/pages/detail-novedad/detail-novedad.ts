@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, LoadingController, ToastController, ActionSheetController   } from 'ionic-angular';
+import { NavController, NavParams, LoadingController, ToastController, ActionSheetController, ModalController   } from 'ionic-angular';
 
 
 import { NovedadesPage } from '../novedades/novedades';
 import { NovedadService } from '../../app/services/novedadService';
+
+//pages
+import { VisorImagenPage } from '../visor-imagen/visor-imagen';
 
 /**
  * Generated class for the DetailNovedadPage page.
@@ -23,11 +26,12 @@ export class DetailNovedadPage {
   textoEnviar: any;
 
   constructor(
-    public navCtrl: NavController, 
+    public navCtrl: NavController,
     public navParams: NavParams,
     public nov: NovedadService,
     public loading: LoadingController,
     public toastCtrl: ToastController,
+    public modalCtrl: ModalController,
     public actionSheetCtrl: ActionSheetController
     ) {
     this.solicitudes = [];
@@ -41,6 +45,11 @@ export class DetailNovedadPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad DetailNovedadPage');
   }
+  presentModalImagen(item) {
+
+    let modal = this.modalCtrl.create(VisorImagenPage, { item: item });
+    modal.present();
+  }
   closeModal(param) {
     if (param != null){
       this.navCtrl.push(NovedadesPage);
@@ -49,7 +58,7 @@ export class DetailNovedadPage {
     {
       this.navCtrl.push(NovedadesPage);
     }
-    
+
   }
   enviar(item){
     //aca enviamos el comentario
@@ -66,13 +75,13 @@ export class DetailNovedadPage {
         var instId = sessionStorage.getItem("INST_ID");
         var rolId = sessionStorage.getItem("ROL_ID");
         var usuId = sessionStorage.getItem("USU_ID");
-        
+
         let loader = this.loading.create({
           content: 'Cargando...',
         });
 
         loader.present().then(() => {
-          
+
           this.nov.putRespuesta(prioridadId, mroId, textoGuardar, instId.toString(), usuId, rolId).subscribe(
             data => {
               //actualizar el contenido
@@ -108,7 +117,7 @@ export class DetailNovedadPage {
               loader.dismiss();
             }
           );
-      
+
         });
 
       }

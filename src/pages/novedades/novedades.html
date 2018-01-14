@@ -15,7 +15,7 @@
 
 <ion-content padding>
 
-  <button ion-button full icon-right color="light">
+  <button ion-button full icon-right color="light" (click)="presentModalCrearNovedad(null)">
   Nueva Novedad
     <ion-icon name="chatbubbles"></ion-icon>
   </button>
@@ -25,12 +25,31 @@
   <div *ngFor="let item of solicitudes">
     <ion-card>
       <ion-card-content>
+        <!-- lo comentamos por mientra
           <img [src]="image" *ngIf="image" />
           <ion-item>
             <label>Carga de Archivos</label>
             <input type="file" accept="image/*" (change)="changeListener($event, item)" style="opacity: 0" #fileInp>
 
           </ion-item>
+        -->
+        <ion-grid *ngIf="item.MuestraAdjuntos">
+          <ion-row>
+            <div [class]="item.ClaseUno" *ngIf="item.MuestraImagenUno">
+              <img [src]="item.ImgUno" (click)="presentModalImagen(item.ImgUno)" />
+            </div>
+            <div [class]="item.ClaseDos" *ngIf="item.MuestraImagenDos">
+              <img [src]="item.ImgDos" (click)="presentModalImagen(item.ImgDos)" />
+            </div>
+            <div [class]="item.ClaseTres" *ngIf="item.MuestraImagenTres">
+              <img [src]="item.ImgTres" (click)="presentModalImagen(item.ImgTres)" />
+            </div>
+            <div [class]="item.ClaseCuatro" *ngIf="item.MuestraImagenCuatro">
+              <img [src]="item.ImgCuatro" (click)="presentModalImagen(item.ImgCuatro)" />
+            </div>
+          </ion-row>
+
+        </ion-grid>
         <ion-card-title>
           {{item.NombreUsuario}}
           <ion-icon name="{{item.UrlImagen}}" style="float: right;" *ngIf="item.VisibleEliminar" class="fg-teal-800"></ion-icon>

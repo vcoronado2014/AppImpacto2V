@@ -18,6 +18,25 @@
   <div *ngFor="let item of solicitudes">
     <ion-card>
       <ion-card-content>
+        <!-- imagenes -->
+        <ion-grid *ngIf="item.MuestraAdjuntos">
+          <ion-row>
+            <div [class]="item.ClaseUno" *ngIf="item.MuestraImagenUno">
+              <img [src]="item.ImgUno" (click)="presentModalImagen(item.ImgUno)"/>
+            </div>
+            <div [class]="item.ClaseDos" *ngIf="item.MuestraImagenDos">
+              <img [src]="item.ImgDos" (click)="presentModalImagen(item.ImgDos)" />
+            </div>
+            <div [class]="item.ClaseTres" *ngIf="item.MuestraImagenTres">
+              <img [src]="item.ImgTres" (click)="presentModalImagen(item.ImgTres)" />
+            </div>
+            <div [class]="item.ClaseCuatro" *ngIf="item.MuestraImagenCuatro">
+              <img [src]="item.ImgCuatro" (click)="presentModalImagen(item.ImgCuatro)" />
+            </div>
+          </ion-row>
+
+        </ion-grid>
+
         <ion-card-title>
           {{item.NombreUsuario}}
           <ion-icon name="{{item.UrlImagen}}" style="float: right;" *ngIf="item.VisibleEliminar" class="fg-teal-800"></ion-icon>
@@ -31,7 +50,7 @@
         <ion-item>
               <ion-label stacked>Ingrese Comentario</ion-label>
               <ion-input type="text" [(ngModel)]="textoEnviar" required></ion-input>
-        </ion-item> 
+        </ion-item>
         <button style="float: right; font-size: 0.8rem;" ion-button class="bg-red-300 fg-white" (click)="enviar(item)">Enviar</button>
 
 

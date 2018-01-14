@@ -4,6 +4,8 @@ import { NavController, NavParams, LoadingController, ModalController, ToastCont
 
 import { LoginPage } from '../login/login';
 import { DetailNovedadPage } from '../detail-novedad/detail-novedad';
+import { VisorImagenPage } from '../visor-imagen/visor-imagen';
+import { CrearNovedadPage } from '../crear-novedad/crear-novedad';
 
 import { AuthService } from '../../app/services/AuthService';
 import { InicioService } from '../../app/services/InicioService';
@@ -27,7 +29,7 @@ export class NovedadesPage {
 
   solicitudes: any;
 
-//archivos 
+//archivos
 fileP: File;
 image: string = null;
 
@@ -65,8 +67,84 @@ image: string = null;
               var fechaStr = this.solicitudes[s].FechaString.split(' ');
               var mostrar = fechaStr[0] + ' ' + fechaStr[1] + ' ' + fechaStr[2];
               this.solicitudes[s].FechaString = mostrar;
-
               this.solicitudes[s].UrlImagen = 'trash';
+              //esta variable determina si hay archivos adjuntos y cuantos hay
+              var cantidadAdjuntos = 0;
+              var muestraImagenes = false;
+              var muestraImagenUno = false;
+              var muestraImagenDos = false;
+              var muestraImagenTres = false;
+              var muestraImagenCuatro=false;
+
+              //tratamos los archivos adjuntos
+              if (this.solicitudes[s].ArchivosAdjuntos){
+                //tiene archivos adjuntos
+                cantidadAdjuntos = this.solicitudes[s].ArchivosAdjuntos.length;
+                muestraImagenes = true;
+                //recorremos los archivos adjuntos
+                for (var r in this.solicitudes[s].ArchivosAdjuntos){
+                  this.solicitudes[s].ArchivosAdjuntos[r].Src = AppSettings.URL_RAIZ + this.solicitudes[s].ArchivosAdjuntos[r].NombreCarpeta + '/' + this.solicitudes[s].ArchivosAdjuntos[r].NombreArchivo;
+
+                }
+              }
+              //variables para controlar las imagenes adjuntas
+              if (cantidadAdjuntos == 1){
+                muestraImagenUno = true;
+                this.solicitudes[s].ImgUno = this.solicitudes[s].ArchivosAdjuntos[0].Src;
+                this.solicitudes[s].ClaseUno = 'img-100 imagenes-muro';
+                this.solicitudes[s].ColUno = 'col-12';
+              }
+              if (cantidadAdjuntos == 2){
+                muestraImagenUno = true;
+                muestraImagenDos = true;
+                this.solicitudes[s].ImgUno = this.solicitudes[s].ArchivosAdjuntos[0].Src;
+                this.solicitudes[s].ImgDos = this.solicitudes[s].ArchivosAdjuntos[1].Src;
+                this.solicitudes[s].ClaseUno = 'img-50 imagenes-muro';
+                this.solicitudes[s].ClaseDos = 'img-50 imagenes-muro';
+                this.solicitudes[s].ColUno = 'col-6';
+                this.solicitudes[s].ColDos = 'col-6';
+
+              }
+              if (cantidadAdjuntos == 3){
+                muestraImagenUno = true;
+                muestraImagenDos = true;
+                muestraImagenTres = true;
+                this.solicitudes[s].ImgUno = this.solicitudes[s].ArchivosAdjuntos[0].Src;
+                this.solicitudes[s].ImgDos = this.solicitudes[s].ArchivosAdjuntos[1].Src;
+                this.solicitudes[s].ImgTres = this.solicitudes[s].ArchivosAdjuntos[2].Src;
+                this.solicitudes[s].ClaseUno = 'img-100 imagenes-muro';
+                this.solicitudes[s].ClaseDos = 'img-50 imagenes-muro';
+                this.solicitudes[s].ClaseTres = 'img-50 imagenes-muro';
+                this.solicitudes[s].ColUno = 'col-12';
+                this.solicitudes[s].ColDos = 'col-6';
+                this.solicitudes[s].ColTres = 'col-6';
+              }
+              if (cantidadAdjuntos == 4){
+                muestraImagenUno = true;
+                muestraImagenDos = true;
+                muestraImagenTres = true;
+                muestraImagenCuatro = true;
+                this.solicitudes[s].ImgUno = this.solicitudes[s].ArchivosAdjuntos[0].Src;
+                this.solicitudes[s].ImgDos = this.solicitudes[s].ArchivosAdjuntos[1].Src;
+                this.solicitudes[s].ImgTres = this.solicitudes[s].ArchivosAdjuntos[2].Src;
+                this.solicitudes[s].ImgTres = this.solicitudes[s].ArchivosAdjuntos[3].Src;
+                this.solicitudes[s].ClaseUno = 'img-50 imagenes-muro';
+                this.solicitudes[s].ClaseDos = 'img-50 imagenes-muro';
+                this.solicitudes[s].ClaseTres = 'img-50 imagenes-muro';
+                this.solicitudes[s].ClaseCuatro = 'img-50 imagenes-muro';
+                this.solicitudes[s].ColUno = 'col-6';
+                this.solicitudes[s].ColDos = 'col-6';
+                this.solicitudes[s].ColTres = 'col-6';
+                this.solicitudes[s].ColCuatro = 'col-6';
+
+              }
+              this.solicitudes[s].CantidadAdjuntos = cantidadAdjuntos;
+              this.solicitudes[s].MuestraAdjuntos = muestraImagenes;
+              this.solicitudes[s].MuestraImagenUno = muestraImagenUno;
+              this.solicitudes[s].MuestraImagenDos = muestraImagenDos;
+              this.solicitudes[s].MuestraImagenTres = muestraImagenTres;
+              this.solicitudes[s].MuestraImagenCuatro = muestraImagenCuatro;
+              //*********************************************************
               if (this.solicitudes[s].RespuestaMuro){
                 for (var t in this.solicitudes[s].RespuestaMuro){
                   var fechaStrC = this.solicitudes[s].RespuestaMuro[t].FechaString.split(' ');
@@ -103,10 +181,36 @@ image: string = null;
   }
   //modal para agregar un comentario
   presentModal(item) {
-    
+
     let modal = this.modalCtrl.create(DetailNovedadPage, { novedad: item });
     modal.present();
   }
+  presentModalImagen(item) {
+
+    let modal = this.modalCtrl.create(VisorImagenPage, { item: item });
+    modal.present();
+  }
+  presentModalCrearNovedad(item) {
+
+    if (item == null){
+      var entidad = {
+        Id: 0,
+        Eliminado: 0,
+        InstId: sessionStorage.getItem("INST_ID"),
+        RolId: sessionStorage.getItem("ROL_ID"),
+        UsuId: sessionStorage.getItem("USU_ID"),
+        PrioridadId: 1,
+        ArchivosAdjuntos: [],
+        RespuestaMuro: []
+      }
+      item = entidad;
+    }
+
+
+    let modal = this.modalCtrl.create(CrearNovedadPage, { item: item });
+    modal.present();
+  }
+
   delete(item){
     if (item){
 
@@ -161,7 +265,7 @@ image: string = null;
       ]
     });
     actionSheet.present();
-  }  
+  }
 
   changeListener($event, item) : void {
 
