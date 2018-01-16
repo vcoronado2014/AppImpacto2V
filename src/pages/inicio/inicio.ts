@@ -160,7 +160,7 @@ export class InicioPage {
             loaderComen.present().then(() => {
               this.ini.getMuro(instId, usuId).subscribe(
                 dataMuro => {
-                
+
                   //elementos del muro
                   this.solicitudes = dataMuro.json();
                   if (this.solicitudes.length > 0){
@@ -184,7 +184,7 @@ export class InicioPage {
                   //terminamos;
                   loaderComen.dismiss();
                 }
-                
+
                 );
 
             });
@@ -236,7 +236,7 @@ export class InicioPage {
       case 'Novedades':
         //alert('documentos');
         //this.navCtrl.push(NovedadesPage, {id: id});
-        this.navCtrl.push(NovedadesPage);
+        this.navCtrl.setRoot(NovedadesPage);
         break;
     }
   }

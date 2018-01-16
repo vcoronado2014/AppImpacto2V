@@ -64,11 +64,11 @@ export class CrearNovedadPage {
   }
   closeModal(param) {
     if (param != null){
-      this.navCtrl.push(NovedadesPage);
+      this.navCtrl.setRoot(NovedadesPage);
     }
     else
     {
-      this.navCtrl.push(NovedadesPage);
+      this.navCtrl.setRoot(NovedadesPage);
     }
 
   }
@@ -284,25 +284,194 @@ export class CrearNovedadPage {
         return;
       }
       //aca guardar la novedad, si todo sale bien ir guardando los demas elementos
+      //setear los elementos del muro para guardar
+      var instId = sessionStorage.getItem("INST_ID");
+      var rolId = sessionStorage.getItem("ROL_ID");
+      var usuId = sessionStorage.getItem("USU_ID");
+      //para este elemento el tipoPadre = 1//novedades
+      //para este elemento el nombre carpeta = 'Novedades'
+      var tipoPadre = '1';
+      var nombreCarpeta = 'Novedades';
+      //el id es 0 porque es un elemento nuevo
+      var id='0';
 
-      if (this.fileUno){
-        //guardar archivo 1
-      }
-      if (this.fileDos){
-        //guardar archivo 2
-      }
-      if (this.fileTres){
-        //guardar archivo 3
-      }
-      if (this.fileCuatro){
-        //guardar archivo 4
-      }
+      this.nov.putMuro(1, this.textoEnviar, instId, usuId, rolId).subscribe(
+        data => {
+          var muro = data.json();
+          if (muro){
+
+            var idElemento = muro.Id.toString();
+            //esta todo correcto, ahora llamadas anidadas
+
+            let loaderArchivo = this.loading.create({
+              content: 'Cargando Archivos...',
+            });
+
+            loaderArchivo.present().then(() => {
 
 
+              if (this.fileUno) {
+                //guardar archivo 1
 
-      loader.dismiss();
+                  this.nov.sendFile(this.fileUno, idElemento, instId, tipoPadre, nombreCarpeta, id).subscribe(
+                    dataArchivo1 => {
+
+                      var datos = dataArchivo1.json();
+
+                    },
+                    err => {
+                      console.error(err);
+
+                    },
+                    () => {
+                      console.log('Archivo 1 cargado');
+
+                    }
+                  );
+
+
+              }
+              if (this.fileDos) {
+                //guardar archivo 2
+
+                  this.nov.sendFile(this.fileDos, idElemento, instId, tipoPadre, nombreCarpeta, id).subscribe(
+                    dataArchivo2 => {
+
+                      var datosDos = dataArchivo2.json();
+
+                    },
+                    err => {
+                      console.error(err);
+
+                    },
+                    () => {
+                      console.log('Archivo 2 cargado');
+                      //terminamos;
+
+                    }
+                  );
+
+              }
+              if (this.fileTres) {
+                //guardar archivo 3
+
+                  this.nov.sendFile(this.fileTres, idElemento, instId, tipoPadre, nombreCarpeta, id).subscribe(
+                    dataArchivo3 => {
+
+                      var datosTres = dataArchivo3.json();
+
+                    },
+                    err => {
+                      console.error(err);
+                    },
+                    () => {
+                      console.log('Archivo 3 cargado');
+                    }
+                  );
+
+              }
+              if (this.fileCuatro) {
+                //guardar archivo 4
+
+                  this.nov.sendFile(this.fileCuatro, idElemento, instId, tipoPadre, nombreCarpeta, id).subscribe(
+                    dataArchivo4 => {
+
+                      var datosCuatro = dataArchivo4.json();
+
+                    },
+                    err => {
+                      console.error(err);
+
+                    },
+                    () => {
+                      console.log('Archivo 4 cargado');
+
+                    }
+                  );
+
+
+              }
+
+              loaderArchivo.dismiss();
+              //aca esta todo ok, hay que direccionar a la pagina anterior
+              let sms = this.presentToast('La novedad ha sido creada con éxito.');
+              this.navCtrl.setRoot(NovedadesPage);
+
+            });
+
+          }
+
+        },
+        err =>{
+          console.error(err);
+          loader.dismiss();
+        },
+        () => {
+          console.log('get inicio completed');
+          //terminamos;
+          loader.dismiss();
+        }
+      );
+
+      //loader.dismiss();
     });
 
+  }
+
+  delete(item){
+    if (item){
+
+      let loader = this.loading.create({
+        content: 'eliminando...',
+      });
+
+      loader.present().then(() => {
+        var id = item.Id;
+        this.nov.deleteMuro(id).subscribe(
+          data => {
+            //actualizar el contenido
+            var ret = data.json();
+            //por mientras
+            this.closeModal('actualizar');
+          },
+          err => {
+            console.error(err);
+            loader.dismiss();
+          },
+          () => {
+            console.log('put completed');
+            //terminamos;
+            loader.dismiss();
+          }
+        );
+
+      });
+
+    }
+  }
+
+  presentActionSheet(item) {
+    let actionSheet = this.actionSheetCtrl.create({
+      title: '¿Está seguro de eliminar?',
+      buttons: [
+        {
+          text: 'Eliminar',
+          role: 'destructive',
+          handler: () => {
+            //console.log('Destructive clicked');
+            this.delete(item);
+          }
+        },{
+          text: 'Cancelar',
+          role: 'cancel',
+          handler: () => {
+            //console.log('Cancel clicked');
+
+          }
+        }
+      ]
+    });
+    actionSheet.present();
   }
 
   presentToast(mensaje) {

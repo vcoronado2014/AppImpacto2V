@@ -37,7 +37,7 @@ export class NovedadService{
     return data;
   }
 
-  putMuro(prioridadId, mroId, texto, instId, usuId, rolId){
+  putMuro(prioridadId, texto, instId, usuId, rolId){
 
     var entidad = {
       InstId: instId,
@@ -57,6 +57,23 @@ export class NovedadService{
     });
     return data;
   }
+  sendFile(File, mroId, instId, tipoPadre, nombreCarpeta, id){
+    let model = new FormData();
+    model.append("UploadedImage", File);
+    model.append("idElemento", mroId);
+    model.append("instId", instId);
+    model.append("tipoPadre", tipoPadre);
+    model.append("nombreCarpeta", nombreCarpeta);
+    model.append("id", id);
+
+    let url = AppSettings.API_ENDPOINT + 'ArchivoAdjunto';
+
+    let data = this.http.post(url, model, {
+      headers: new Headers({})
+    });
+    return data;
+
+  }
 
   deleteRespuesta(id){
 
@@ -66,6 +83,21 @@ export class NovedadService{
     };
 
     let url = AppSettings.API_ENDPOINT + 'RespuestaMuro';
+    let dataGet = entidad;
+
+    let data = this.http.delete(url, { params: {Id: id.toString(), EsCpas: false }});
+    return data;
+
+
+  }
+  deleteMuro(id){
+
+    var entidad = {
+      Id: id,
+      EsCpas: false
+    };
+
+    let url = AppSettings.API_ENDPOINT + 'Muro';
     let dataGet = entidad;
 
     let data = this.http.delete(url, { params: {Id: id.toString(), EsCpas: false }});

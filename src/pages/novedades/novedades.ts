@@ -267,6 +267,62 @@ image: string = null;
     actionSheet.present();
   }
 
+  deleteMuro(item){
+    if (item){
+
+      let loader = this.loading.create({
+        content: 'eliminando...',
+      });
+
+      loader.present().then(() => {
+        var id = item.Id;
+        this.nov.deleteMuro(id).subscribe(
+          data => {
+            //actualizar el contenido
+            var ret = data.json();
+            //por mientras
+            //this.closeModal('actualizar');
+            this.navCtrl.setRoot(this.navCtrl.getActive().component);
+          },
+          err => {
+            console.error(err);
+            loader.dismiss();
+          },
+          () => {
+            console.log('put completed');
+            //terminamos;
+            loader.dismiss();
+          }
+        );
+
+      });
+
+    }
+  }
+  presentActionSheetMuro(item) {
+    let actionSheet = this.actionSheetCtrl.create({
+      title: '¿Está seguro de eliminar?',
+      buttons: [
+        {
+          text: 'Eliminar',
+          role: 'destructive',
+          handler: () => {
+            //console.log('Destructive clicked');
+            this.deleteMuro(item);
+          }
+        },{
+          text: 'Cancelar',
+          role: 'cancel',
+          handler: () => {
+            //console.log('Cancel clicked');
+
+          }
+        }
+      ]
+    });
+    actionSheet.present();
+  }
+
   changeListener($event, item) : void {
 
     this.fileP = $event.target.files[0];
