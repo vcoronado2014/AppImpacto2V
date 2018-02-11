@@ -93,6 +93,7 @@ image: string = null;
                 this.solicitudes[s].ImgUno = this.solicitudes[s].ArchivosAdjuntos[0].Src;
                 this.solicitudes[s].ClaseUno = 'img-100 imagenes-muro';
                 this.solicitudes[s].ColUno = 'col-12';
+                this.solicitudes[s].IdUno = this.solicitudes[s].ArchivosAdjuntos[0].Id;
               }
               if (cantidadAdjuntos == 2){
                 muestraImagenUno = true;
@@ -103,6 +104,8 @@ image: string = null;
                 this.solicitudes[s].ClaseDos = 'img-50 imagenes-muro';
                 this.solicitudes[s].ColUno = 'col-6';
                 this.solicitudes[s].ColDos = 'col-6';
+                this.solicitudes[s].IdUno = this.solicitudes[s].ArchivosAdjuntos[0].Id;
+                this.solicitudes[s].IdDos = this.solicitudes[s].ArchivosAdjuntos[1].Id;
 
               }
               if (cantidadAdjuntos == 3){
@@ -118,6 +121,10 @@ image: string = null;
                 this.solicitudes[s].ColUno = 'col-12';
                 this.solicitudes[s].ColDos = 'col-6';
                 this.solicitudes[s].ColTres = 'col-6';
+                this.solicitudes[s].IdUno = this.solicitudes[s].ArchivosAdjuntos[0].Id;
+                this.solicitudes[s].IdDos = this.solicitudes[s].ArchivosAdjuntos[1].Id;
+                this.solicitudes[s].IdTres = this.solicitudes[s].ArchivosAdjuntos[2].Id;
+
               }
               if (cantidadAdjuntos == 4){
                 muestraImagenUno = true;
@@ -136,7 +143,10 @@ image: string = null;
                 this.solicitudes[s].ColDos = 'col-6';
                 this.solicitudes[s].ColTres = 'col-6';
                 this.solicitudes[s].ColCuatro = 'col-6';
-
+                this.solicitudes[s].IdUno = this.solicitudes[s].ArchivosAdjuntos[0].Id;
+                this.solicitudes[s].IdDos = this.solicitudes[s].ArchivosAdjuntos[1].Id;
+                this.solicitudes[s].IdTres = this.solicitudes[s].ArchivosAdjuntos[2].Id;
+                this.solicitudes[s].IdCuatro = this.solicitudes[s].ArchivosAdjuntos[3].Id;
               }
               this.solicitudes[s].CantidadAdjuntos = cantidadAdjuntos;
               this.solicitudes[s].MuestraAdjuntos = muestraImagenes;
@@ -185,9 +195,9 @@ image: string = null;
     let modal = this.modalCtrl.create(DetailNovedadPage, { novedad: item });
     modal.present();
   }
-  presentModalImagen(item) {
+  presentModalImagen(item, idImagen, id) {
 
-    let modal = this.modalCtrl.create(VisorImagenPage, { item: item });
+    let modal = this.modalCtrl.create(VisorImagenPage, { item: item, idImagen: idImagen, MroId: id  });
     modal.present();
   }
   presentModalCrearNovedad(item) {

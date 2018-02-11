@@ -45,9 +45,9 @@ export class DetailNovedadPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad DetailNovedadPage');
   }
-  presentModalImagen(item) {
+  presentModalImagen(item, idImagen, id) {
 
-    let modal = this.modalCtrl.create(VisorImagenPage, { item: item });
+    let modal = this.modalCtrl.create(VisorImagenPage, { item: item, idImagen: idImagen, MroId: id });
     modal.present();
   }
   closeModal(param) {

@@ -22,16 +22,16 @@
         <ion-grid *ngIf="item.MuestraAdjuntos">
           <ion-row>
             <div [class]="item.ClaseUno" *ngIf="item.MuestraImagenUno">
-              <img [src]="item.ImgUno" (click)="presentModalImagen(item.ImgUno)"/>
+              <img [src]="item.ImgUno" (click)="presentModalImagen(item.ImgUno, item.IdUno, item.Id)" />
             </div>
             <div [class]="item.ClaseDos" *ngIf="item.MuestraImagenDos">
-              <img [src]="item.ImgDos" (click)="presentModalImagen(item.ImgDos)" />
+              <img [src]="item.ImgDos" (click)="presentModalImagen(item.ImgDos, item.IdDos, item.Id)" />
             </div>
             <div [class]="item.ClaseTres" *ngIf="item.MuestraImagenTres">
-              <img [src]="item.ImgTres" (click)="presentModalImagen(item.ImgTres)" />
+              <img [src]="item.ImgTres" (click)="presentModalImagen(item.ImgTres, item.IdTres, item.Id)" />
             </div>
             <div [class]="item.ClaseCuatro" *ngIf="item.MuestraImagenCuatro">
-              <img [src]="item.ImgCuatro" (click)="presentModalImagen(item.ImgCuatro)" />
+              <img [src]="item.ImgCuatro" (click)="presentModalImagen(item.ImgCuatro, item.IdCuatro, item.Id)" />
             </div>
           </ion-row>
 
