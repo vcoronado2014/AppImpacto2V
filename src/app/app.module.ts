@@ -14,6 +14,7 @@ import {InicioPage} from "../pages/inicio/inicio";
 import { DetailNovedadPage } from '../pages/detail-novedad/detail-novedad';
 import { VisorImagenPage } from '../pages/visor-imagen/visor-imagen';
 import { CrearNovedadPage } from '../pages/crear-novedad/crear-novedad';
+import { EditarNovedadPage } from '../pages/editar-novedad/editar-novedad';
 
 import { AuthService } from '../app/services/AuthService';
 
@@ -28,6 +29,7 @@ import { AuthService } from '../app/services/AuthService';
     DetailNovedadPage,
     VisorImagenPage,
     CrearNovedadPage,
+    EditarNovedadPage,
     InicioPage
   ],
   imports: [
@@ -45,6 +47,7 @@ import { AuthService } from '../app/services/AuthService';
     DetailNovedadPage,
     VisorImagenPage,
     CrearNovedadPage,
+    EditarNovedadPage,
     InicioPage
   ],
   providers: [

@@ -6,6 +6,7 @@ import { LoginPage } from '../login/login';
 import { DetailNovedadPage } from '../detail-novedad/detail-novedad';
 import { VisorImagenPage } from '../visor-imagen/visor-imagen';
 import { CrearNovedadPage } from '../crear-novedad/crear-novedad';
+import { EditarNovedadPage } from '../editar-novedad/editar-novedad';
 
 import { AuthService } from '../../app/services/AuthService';
 import { InicioService } from '../../app/services/InicioService';
@@ -68,6 +69,10 @@ image: string = null;
               var mostrar = fechaStr[0] + ' ' + fechaStr[1] + ' ' + fechaStr[2];
               this.solicitudes[s].FechaString = mostrar;
               this.solicitudes[s].UrlImagen = 'trash';
+              this.solicitudes[s].UrlImagenEdit = 'edit';
+              this.solicitudes[s].VisibleEditar = false;
+              if (usuId == this.solicitudes[s].UsuId)
+                this.solicitudes[s].VisibleEditar = true;
               //esta variable determina si hay archivos adjuntos y cuantos hay
               var cantidadAdjuntos = 0;
               var muestraImagenes = false;
@@ -218,6 +223,27 @@ image: string = null;
 
 
     let modal = this.modalCtrl.create(CrearNovedadPage, { item: item });
+    modal.present();
+  }
+
+  presentModalEditarNovedad(item) {
+
+    if (item == null){
+      var entidad = {
+        Id: 0,
+        Eliminado: 0,
+        InstId: sessionStorage.getItem("INST_ID"),
+        RolId: sessionStorage.getItem("ROL_ID"),
+        UsuId: sessionStorage.getItem("USU_ID"),
+        PrioridadId: 1,
+        ArchivosAdjuntos: [],
+        RespuestaMuro: []
+      }
+      item = entidad;
+    }
+
+
+    let modal = this.modalCtrl.create(EditarNovedadPage, { item: item });
     modal.present();
   }
 
