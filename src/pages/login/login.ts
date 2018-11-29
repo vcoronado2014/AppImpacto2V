@@ -4,6 +4,8 @@ import { ToastController } from 'ionic-angular';
 import { AuthService } from '../../app/services/AuthService';
 import {HomePage} from "../home/home";
 import {InicioPage} from "../inicio/inicio";
+import {ClientePage} from "../cliente/cliente";
+
 
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
@@ -35,6 +37,7 @@ export class LoginPage {
     private auth: AuthService,
     public toastCtrl: ToastController
     ) {
+
   }
   
   
@@ -73,7 +76,8 @@ export class LoginPage {
         },
         () => {
           if (this.isLogged){
-            this.nav.setRoot(InicioPage)
+            //this.nav.push(InicioPage)
+            this.nav.push(ClientePage)
               .then(data => console.log(data),
               error => {
                 //console.log(error)

@@ -1,4 +1,8 @@
 {
-    "WebKit.framework": 1,
-    "libz.tbd": 2
+    "WebKit.framework": 2,
+    "libz.tbd": 2,
+    "libz.dylib": 1,
+    "CFNetwork.framework": 1,
+    "SystemConfiguration.framework": 2,
+    "Security.framework": 1
 }

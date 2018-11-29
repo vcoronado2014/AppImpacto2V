@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, LoadingController, ModalController, ToastController, ActionSheetController } from 'ionic-angular';
+import { NavController, NavParams, LoadingController, ModalController, ToastController, ActionSheetController, ViewController, App } from 'ionic-angular';
 //import { } from 'ionic-nati'
 
 import { LoginPage } from '../login/login';
@@ -38,10 +38,12 @@ image: string = null;
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               public loading: LoadingController,
+              private app: App,
               public acceso: AuthService,
               public modalCtrl: ModalController,
               public ini: InicioService,
               public nov: NovedadService,
+              private viewCtrl: ViewController,
               public toastCtrl: ToastController,
               public actionSheetCtrl: ActionSheetController
   ) {
@@ -192,7 +194,10 @@ image: string = null;
   }
   logout(){
     this.acceso.logout();
-    this.navCtrl.setRoot(LoginPage);
+    //esto lo comentamos
+    //this.navCtrl.setRoot(LoginPage);
+    this.app.getRootNav().setRoot(LoginPage);
+
   }
   //modal para agregar un comentario
   presentModal(item) {
@@ -376,6 +381,9 @@ image: string = null;
 
       loader.dismiss();
     });
+  }
+  cancel(){
+    this.viewCtrl.dismiss();
   }
 
 }

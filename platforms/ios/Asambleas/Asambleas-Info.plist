@@ -49,6 +49,8 @@
     <true/>
     <key>NSAppTransportSecurity</key>
     <dict>
+      <key>NSAllowsArbitraryLoads</key>
+      <true/>
       <key>NSExceptionDomains</key>
       <dict>
         <key>localhost</key>
@@ -57,10 +59,10 @@
           <true/>
         </dict>
       </dict>
-      <key>NSAllowsArbitraryLoads</key>
-      <true/>
     </dict>
     <key>UILaunchStoryboardName</key>
     <string>CDVLaunchScreen</string>
+    <key>WKWebViewPluginEmbeddedServerPort</key>
+    <string>12344</string>
   </dict>
 </plist>

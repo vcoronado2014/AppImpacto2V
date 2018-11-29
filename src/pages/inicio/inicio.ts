@@ -3,6 +3,7 @@ import { NavController, NavParams, LoadingController } from 'ionic-angular';
 
 import { LoginPage } from '../login/login';
 import { NovedadesPage } from '../novedades/novedades';
+import { ClientePage } from '../cliente/cliente';
 
 import { AuthService } from '../../app/services/AuthService';
 import { InicioService } from '../../app/services/InicioService';
@@ -235,8 +236,8 @@ export class InicioPage {
         break;
       case 'Novedades':
         //alert('documentos');
-        //this.navCtrl.push(NovedadesPage, {id: id});
-        this.navCtrl.setRoot(NovedadesPage);
+        this.navCtrl.push(ClientePage);
+        //this.navCtrl.setRoot(NovedadesPage);
         break;
     }
   }

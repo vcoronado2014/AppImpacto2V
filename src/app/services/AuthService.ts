@@ -1,6 +1,7 @@
 import { Injectable, Component } from '@angular/core';
 import { Http, Headers } from '@angular/http';
 import {AppSettings } from '../AppSettings';
+import { DomSanitizer, BrowserModule } from '@angular/platform-browser';
 
 import 'rxjs/add/operator/map';
 
@@ -10,7 +11,8 @@ export class AuthService{
   loggedIn: boolean;
 
   constructor(
-    private http: Http
+    private http: Http,
+    private sanitized: DomSanitizer
   ){
     //inicializamos los valores
     this.username = '';

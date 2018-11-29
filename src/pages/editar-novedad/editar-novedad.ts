@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, LoadingController, ModalController, ToastController, ActionSheetController } from 'ionic-angular';
+import { NavController, NavParams, LoadingController, ModalController, ToastController, ActionSheetController, ViewController } from 'ionic-angular';
 
 import { AuthService } from '../../app/services/AuthService';
 import { InicioService } from '../../app/services/InicioService';
@@ -40,6 +40,7 @@ export class EditarNovedadPage {
               public acceso: AuthService,
               public modalCtrl: ModalController,
               public ini: InicioService,
+              private viewCtrl: ViewController,
               public nov: NovedadService,
               public toastCtrl: ToastController,
               public actionSheetCtrl: ActionSheetController) {
@@ -271,7 +272,9 @@ export class EditarNovedadPage {
       loader.dismiss();
     });
   }
-
+  cancel(){
+    this.viewCtrl.dismiss();
+  }
   enviarComentario(){
     let loader = this.loading.create({
       content: 'Verificando...',

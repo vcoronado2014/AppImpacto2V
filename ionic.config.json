@@ -1,8 +1,8 @@
 {
   "name": "Asambleas",
-  "app_id": "com.asambleas.cl",
-  "type": "ionic-angular",
   "integrations": {
     "cordova": {}
-  }
+  },
+  "type": "ionic-angular",
+  "pro_id": "com.asambleas.cl"
 }

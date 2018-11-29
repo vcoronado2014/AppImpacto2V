@@ -6,6 +6,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { HttpModule } from '@angular/http';
 
 import { MyApp } from './app.component';
+import { ClientePage } from '../pages/cliente/cliente';
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 import { SolicitudesPage } from '../pages/solicitudes/solicitudes';
@@ -22,6 +23,7 @@ import { AuthService } from '../app/services/AuthService';
 @NgModule({
   declarations: [
     MyApp,
+    ClientePage,
     HomePage,
     LoginPage,
     SolicitudesPage,
@@ -40,6 +42,7 @@ import { AuthService } from '../app/services/AuthService';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
+    ClientePage,
     HomePage,
     LoginPage,
     SolicitudesPage,
