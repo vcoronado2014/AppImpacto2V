@@ -1,0 +1,94 @@
+<!--
+  Generated template for the SolicitudesPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header class="mui--bg-color-red-500 fg-light">
+
+    <ion-navbar>
+      <ion-title>Usuarios</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+
+
+<ion-content padding>
+  <!-- refresh-->
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+      <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+    <ion-label no-padding no-margin text-center style="font-style: italic;
+    font-size: 0.9rem;">
+        Deslize hacia abajo para actualizar
+    </ion-label>
+    <ion-item *ngIf="esAdministrador">
+        <ion-label>Seleccione Institución</ion-label>
+        <ion-select [(ngModel)]="nombreFiltrar">
+          <ion-option *ngFor="let filt of filtrosInstitucion" (ionSelect)="cambioFiltros(filt)">{{filt.NombreCompleto}}</ion-option>
+        </ion-select>
+      </ion-item>
+    <!-- lista-->
+    <ion-list *ngIf="esAdministrador">
+        <ion-item-sliding *ngFor="let clie of usuariosArr">
+          <ion-item>
+            <ion-avatar item-start>
+              <text-avatar [text]="clie.NombreCompleto" item-left></text-avatar>
+            </ion-avatar>
+            <h2>{{clie.NombreCompleto}}</h2>
+            <p>
+              {{clie.OtroUno}}
+              <!--
+              <ion-icon *ngIf="prof.Activo == 1" name="checkmark"> Activo</ion-icon>
+              <ion-icon *ngIf="prof.Activo == 0" name="close"> Inactivo</ion-icon>
+              -->
+            </p>
+          </ion-item>
+          <!--
+          <ion-item-options side="left">
+            <button ion-button color="primary" *ngIf="prof.Activo == 1" (click)="asociarComunas(prof)">
+              <ion-icon name="globe"></ion-icon>
+              Comunas
+            </button>
+          </ion-item-options>
+          <ion-item-options side="right">
+            <button ion-button color="primary" *ngIf="prof.Activo == 1" (click)="editarProfesor(prof)">
+              <ion-icon name="create"></ion-icon>
+              Editar
+            </button>
+            <button ion-button color="danger" *ngIf="prof.Activo == 1"  (click)="desactivarProfesor(prof)">
+              <ion-icon name="trash"></ion-icon>
+              Eliminar
+            </button>
+            <button ion-button color="secondary" *ngIf="prof.Activo == 0"  (click)="activarProfesor(prof)">
+              <ion-icon name="checkmark-circle"></ion-icon>
+              Activar
+            </button>
+          </ion-item-options>
+        -->
+        </ion-item-sliding>
+      </ion-list>
+
+      <ion-card *ngIf="esAdministrador == false">
+        <ion-card-content>
+          <ion-card-title>
+            Usuarios del Sistema
+          </ion-card-title>
+          <ion-item>
+            <ion-avatar item-start>
+              <ion-icon name="people" style="font-size: 3em;"></ion-icon>
+            </ion-avatar>
+            <p text-wrap>Actualmente existen <strong>{{cantidadUsuarios}}</strong> usuarios para tu asamblea.</p>
+          </ion-item>
+      
+        </ion-card-content>
+      </ion-card>
+
+
+
+</ion-content>
+<ion-fab top right right>
+    <button ion-fab mini (click)="logout()" class="btn-color">
+      <ion-icon name="close"></ion-icon>
+    </button>
+  </ion-fab>

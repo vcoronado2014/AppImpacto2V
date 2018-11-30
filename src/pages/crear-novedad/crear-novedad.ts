@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, LoadingController, ModalController, ToastController, ActionSheetController } from 'ionic-angular';
+import { NavController, NavParams, LoadingController, ModalController, ToastController, ActionSheetController, ViewController } from 'ionic-angular';
 
 import { AuthService } from '../../app/services/AuthService';
 import { InicioService } from '../../app/services/InicioService';
@@ -42,6 +42,7 @@ export class CrearNovedadPage {
               public ini: InicioService,
               public nov: NovedadService,
               public toastCtrl: ToastController,
+              private viewCtrl: ViewController,
               public actionSheetCtrl: ActionSheetController) {
 
     this.novedad = this.navParams.get('item');
@@ -63,6 +64,8 @@ export class CrearNovedadPage {
     console.log('ionViewDidLoad CrearNovedadPage');
   }
   closeModal(param) {
+    this.viewCtrl.dismiss();
+    /*
     if (param != null){
       this.navCtrl.setRoot(NovedadesPage);
     }
@@ -70,6 +73,7 @@ export class CrearNovedadPage {
     {
       this.navCtrl.setRoot(NovedadesPage);
     }
+    */
 
   }
   changeListener($event) : void {

@@ -47,6 +47,10 @@ image: string = null;
               public toastCtrl: ToastController,
               public actionSheetCtrl: ActionSheetController
   ) {
+
+
+  }
+  cargar(){
     let loader = this.loading.create({
       content: 'Cargando...',
     });
@@ -186,9 +190,18 @@ image: string = null;
       );
 
     });
-
   }
+  doRefresh(refresher) {
+    console.log('Begin async operation', refresher);
 
+    setTimeout(() => {
+      this.cargar();
+      refresher.complete();
+    }, 2000);
+  }
+  ionViewWillEnter() {
+    this.cargar();
+  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad NovedadesPage');
   }

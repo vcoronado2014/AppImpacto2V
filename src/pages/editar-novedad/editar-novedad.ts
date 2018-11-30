@@ -63,6 +63,8 @@ export class EditarNovedadPage {
     console.log('ionViewDidLoad EditarNovedadPage');
   }
   closeModal(param) {
+    this.viewCtrl.dismiss();
+    /*
     if (param != null){
       this.navCtrl.setRoot(NovedadesPage);
     }
@@ -70,6 +72,7 @@ export class EditarNovedadPage {
     {
       this.navCtrl.setRoot(NovedadesPage);
     }
+    */
 
   }
   changeListener($event) : void {

@@ -14,6 +14,14 @@
 
 
 <ion-content padding>
+    <!-- refresh-->
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+      </ion-refresher>
+      <ion-label no-padding no-margin text-center style="font-style: italic;
+      font-size: 0.9rem;">
+          Deslize hacia abajo para actualizar
+      </ion-label>
 
   <button ion-button full icon-right color="light" (click)="presentModalCrearNovedad(null)">
   Nueva Novedad

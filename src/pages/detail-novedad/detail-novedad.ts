@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, LoadingController, ToastController, ActionSheetController, ModalController   } from 'ionic-angular';
+import { NavController, NavParams, LoadingController, ToastController, ActionSheetController, ModalController, ViewController   } from 'ionic-angular';
 
 
 import { NovedadesPage } from '../novedades/novedades';
@@ -31,6 +31,7 @@ export class DetailNovedadPage {
     public nov: NovedadService,
     public loading: LoadingController,
     public toastCtrl: ToastController,
+    private viewCtrl: ViewController,
     public modalCtrl: ModalController,
     public actionSheetCtrl: ActionSheetController
     ) {
@@ -51,6 +52,8 @@ export class DetailNovedadPage {
     modal.present();
   }
   closeModal(param) {
+    this.viewCtrl.dismiss();
+    /*
     if (param != null){
       this.navCtrl.push(NovedadesPage);
     }
@@ -58,6 +61,7 @@ export class DetailNovedadPage {
     {
       this.navCtrl.push(NovedadesPage);
     }
+    */
 
   }
   enviar(item){

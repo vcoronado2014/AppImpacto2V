@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { NavController, NavParams, LoadingController } from 'ionic-angular';
 
 import { NovedadesPage } from '../novedades/novedades';
+import { UsuariosPage } from '../usuarios/usuarios';
+import { RendicionPage } from '../rendicion/rendicion';
+import { SolicitudesPage } from '../solicitudes/solicitudes';
 import { InicioService } from '../../app/services/InicioService';
 
 
@@ -11,8 +14,10 @@ import { InicioService } from '../../app/services/InicioService';
   })
   export class ClientePage {
     tab1Root = NovedadesPage;
+    tab2Root = UsuariosPage;
+    tab3Root = RendicionPage;
       /*
-    tab1Root = ClientesPage;
+    
     tab2Root = PacksPage;
     tab3Root = ProfesoresPage;
     tab4Root = PlanillaProfesoresPage;

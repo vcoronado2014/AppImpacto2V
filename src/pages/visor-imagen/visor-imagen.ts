@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, LoadingController, ToastController, ActionSheetController   } from 'ionic-angular';
+import { NavController, NavParams, LoadingController, ToastController, ActionSheetController, ViewController  } from 'ionic-angular';
 
 /**
  * Generated class for the VisorImagenPage page.
@@ -22,6 +22,7 @@ export class VisorImagenPage {
                   public navParams: NavParams,
                   public loading: LoadingController,
                   public toastCtrl: ToastController,
+                  private viewCtrl: ViewController,
                   public actionSheetCtrl: ActionSheetController) {
 
     this.rutaImagen = this.navParams.get('item');
@@ -30,7 +31,8 @@ export class VisorImagenPage {
 
   }
   closeModal(param) {
-      this.navCtrl.pop();
+    this.viewCtrl.dismiss();
+      //this.navCtrl.pop();
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad VisorImagenPage');
