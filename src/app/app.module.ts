@@ -4,6 +4,8 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { HttpModule } from '@angular/http';
+//directivas
+import { TextAvatarDirective } from '../directives/text-avatar/text-avatar';
 
 import { MyApp } from './app.component';
 import { ClientePage } from '../pages/cliente/cliente';
@@ -16,8 +18,11 @@ import { DetailNovedadPage } from '../pages/detail-novedad/detail-novedad';
 import { VisorImagenPage } from '../pages/visor-imagen/visor-imagen';
 import { CrearNovedadPage } from '../pages/crear-novedad/crear-novedad';
 import { EditarNovedadPage } from '../pages/editar-novedad/editar-novedad';
+import { UsuariosPage } from '../pages/usuarios/usuarios';
+import { RendicionPage } from '../pages/rendicion/rendicion';
 
 import { AuthService } from '../app/services/AuthService';
+import { GlobalService } from '../app/services/GlobalService';
 
 
 @NgModule({
@@ -32,7 +37,10 @@ import { AuthService } from '../app/services/AuthService';
     VisorImagenPage,
     CrearNovedadPage,
     EditarNovedadPage,
-    InicioPage
+    UsuariosPage,
+    InicioPage,
+    RendicionPage,
+    TextAvatarDirective
   ],
   imports: [
     BrowserModule,
@@ -51,12 +59,15 @@ import { AuthService } from '../app/services/AuthService';
     VisorImagenPage,
     CrearNovedadPage,
     EditarNovedadPage,
+    UsuariosPage,
+    RendicionPage,
     InicioPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     AuthService,
+    GlobalService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
