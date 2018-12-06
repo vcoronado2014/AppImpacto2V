@@ -38,13 +38,13 @@
     <ion-card-content>
       <ion-grid>
         <ion-row>
-          <div [class]="item.ClaseUno" *ngIf="item.MuestraImagenUno">
-            <img [src]="item.ImgUno"/>
+          <div [class]="novedad.ClaseUno" *ngIf="novedad.MuestraImagenUno">
+            <img [src]="novedad.ImgUno"/>
           </div>
-          <ion-col col-12>
+          <ion-col col-12 *ngIf="novedad.MuestraImagenUno == false">
             <ion-icon name="document"></ion-icon> Archivo 1:
           </ion-col>
-          <ion-col col-12>
+          <ion-col col-12 *ngIf="novedad.MuestraImagenUno == false">
             <input type="file" accept="image/*" (change)="changeListener($event)"  #fileInput>
           </ion-col>
         </ion-row>

@@ -297,10 +297,10 @@ export class EditarNovedadPage {
       //para este elemento el nombre carpeta = 'Novedades'
       var tipoPadre = '1';
       var nombreCarpeta = 'Novedades';
-      //el id es 0 porque es un elemento nuevo
-      var id='0';
+      //
+      var id=this.novedad.Id.toString();
 
-      this.nov.putMuro(1, this.textoEnviar, instId, usuId, rolId).subscribe(
+      this.nov.putMuro(1, this.textoEnviar, instId, usuId, rolId, id).subscribe(
         data => {
           var muro = data.json();
           if (muro){
@@ -400,7 +400,8 @@ export class EditarNovedadPage {
               loaderArchivo.dismiss();
               //aca esta todo ok, hay que direccionar a la pagina anterior
               let sms = this.presentToast('La novedad ha sido creada con éxito.');
-              this.navCtrl.setRoot(NovedadesPage);
+              //this.navCtrl.setRoot(NovedadesPage);
+              this.viewCtrl.dismiss();
 
             });
 

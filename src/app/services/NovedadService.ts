@@ -37,7 +37,7 @@ export class NovedadService{
     return data;
   }
 
-  putMuro(prioridadId, texto, instId, usuId, rolId){
+  putMuro(prioridadId, texto, instId, usuId, rolId, id){
 
     var entidad = {
       InstId: instId,
@@ -45,7 +45,8 @@ export class NovedadService{
       PrioridadId: prioridadId,
       RolId: rolId,
       Texto: texto,
-      EsCpas: 'false'
+      EsCpas: 'false',
+      Id: id
     };
 
 

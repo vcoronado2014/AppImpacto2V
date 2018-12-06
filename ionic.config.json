@@ -4,5 +4,6 @@
     "cordova": {}
   },
   "type": "ionic-angular",
-  "pro_id": "com.asambleas.cl"
+  "pro_id": "com.asambleas.cl",
+  "id": "com.asambleas.cl"
 }

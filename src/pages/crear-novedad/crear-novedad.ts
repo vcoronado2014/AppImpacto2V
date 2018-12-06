@@ -299,7 +299,7 @@ export class CrearNovedadPage {
       //el id es 0 porque es un elemento nuevo
       var id='0';
 
-      this.nov.putMuro(1, this.textoEnviar, instId, usuId, rolId).subscribe(
+      this.nov.putMuro(1, this.textoEnviar, instId, usuId, rolId, '0').subscribe(
         data => {
           var muro = data.json();
           if (muro){
@@ -399,7 +399,8 @@ export class CrearNovedadPage {
               loaderArchivo.dismiss();
               //aca esta todo ok, hay que direccionar a la pagina anterior
               let sms = this.presentToast('La novedad ha sido creada con éxito.');
-              this.navCtrl.setRoot(NovedadesPage);
+              //this.navCtrl.setRoot(NovedadesPage);
+              this.viewCtrl.dismiss();
 
             });
 
