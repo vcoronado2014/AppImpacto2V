@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, LoadingController, ToastController, ActionSheetController, ViewController  } from 'ionic-angular';
+//agregado ahora para las fotos
+import { PhotoViewer, PhotoViewerOptions } from '@ionic-native/photo-viewer';
 
 /**
  * Generated class for the VisorImagenPage page.
@@ -23,6 +25,7 @@ export class VisorImagenPage {
                   public loading: LoadingController,
                   public toastCtrl: ToastController,
                   private viewCtrl: ViewController,
+                  private photoViewer: PhotoViewer,
                   public actionSheetCtrl: ActionSheetController) {
 
     this.rutaImagen = this.navParams.get('item');
@@ -34,6 +37,15 @@ export class VisorImagenPage {
     this.viewCtrl.dismiss();
       //this.navCtrl.pop();
   }
+  
+  viewImage(){
+    const option: PhotoViewerOptions = {
+      share: true
+    }
+    alert(this.rutaImagen);
+    this.photoViewer.show(this.rutaImagen, "titulo");
+  }
+  
   ionViewDidLoad() {
     console.log('ionViewDidLoad VisorImagenPage');
   }
