@@ -5,6 +5,7 @@
     <author email="contacto@asambleas.cl" href="http://www.asambleas.cl/">Impacto 2V SPA</author>
     <content src="index.html" />
     <access origin="*" />
+    <allow-navigation href="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
     <allow-intent href="tel:*" />

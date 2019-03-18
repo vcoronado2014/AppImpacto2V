@@ -1,8 +1,10 @@
 import { Injectable, Component } from '@angular/core';
-import { Http, Headers } from '@angular/http';
+//import { Http, Headers } from '@angular/http';
 import {AppSettings } from '../AppSettings';
+import { HttpClient } from '@angular/common/http';
 
 import 'rxjs/add/operator/map';
+//import { HttpBackend } from '@angular/common/http';
 
 @Injectable()
 export class AuthService{
@@ -10,7 +12,7 @@ export class AuthService{
   loggedIn: boolean;
 
   constructor(
-    private http: Http
+    private http: HttpClient
   ){
     //inicializamos los valores
     this.username = '';
@@ -18,24 +20,45 @@ export class AuthService{
     //this.url = config.getUrl(this.modo, 'Login');
 
   }
-
+  postDatos(){
+    let datos = { nombre:'Edu',email:'edu.revilla.vaquero@gmail.com'}
+    
+    let options = {
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      }
+    };
+   var url = 'www.miservicio.com/adduser/';
+   return new Promise(resolve => {
+    this.http.post(url,JSON.stringify(datos),options)
+       .subscribe(data => {
+         resolve(data);
+        });
+   });
+  }
   login(userInfo){
     let url = AppSettings.API_ENDPOINT + 'Login';
     //let url = 'http://api.asambleas.cl/api/login';
-
-
     let iJson = JSON.stringify(userInfo);
 
+    let options = {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    };
+/*
     return this.http.post(url, iJson, {
       headers: new Headers({'Content-Type': 'application/json'})
     })
-      .map(res => res.text())
+    */
+    return this.http.post(url,iJson,options)
+      //.map(res => res.text())
       .map(res => {
           if (res == "error" || res == "nofound"){
             this.loggedIn = false;
           } else {
 
-            let retorno = JSON.parse(res);
+            let retorno = JSON.parse(res.toString());
 
             sessionStorage.setItem('USU_ID', retorno.AutentificacionUsuario.Id);
             sessionStorage.setItem('ROL_ID', retorno.Rol.Id);
