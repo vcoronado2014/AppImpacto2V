@@ -22,11 +22,14 @@ import { CrearNovedadPage } from '../pages/crear-novedad/crear-novedad';
 import { EditarNovedadPage } from '../pages/editar-novedad/editar-novedad';
 import { UsuariosPage } from '../pages/usuarios/usuarios';
 import { RendicionPage } from '../pages/rendicion/rendicion';
+import { DocumentosPage } from '../pages/documentos/documentos';
+import { CalendarioPage } from '../pages/calendario/calendario';
 
 import { AuthService } from '../app/services/AuthService';
 import { GlobalService } from '../app/services/GlobalService';
-import { NgxChartsModule } from '@swimlane/ngx-charts';
+//import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgCalendarModule } from 'ionic2-calendar';
 
 
 
@@ -45,11 +48,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     UsuariosPage,
     InicioPage,
     RendicionPage,
+    DocumentosPage,
+    CalendarioPage,
     TextAvatarDirective
   ],
   imports: [
     BrowserModule,
     HttpModule,
+    NgCalendarModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -66,6 +72,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     EditarNovedadPage,
     UsuariosPage,
     RendicionPage,
+    DocumentosPage,
+    CalendarioPage,
     InicioPage
   ],
   providers: [

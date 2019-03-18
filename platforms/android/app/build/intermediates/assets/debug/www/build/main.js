@@ -6,10 +6,11 @@ webpackJsonp([0],{
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ClientePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__novedades_novedades__ = __webpack_require__(204);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__usuarios_usuarios__ = __webpack_require__(208);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__rendicion_rendicion__ = __webpack_require__(209);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__documentos_documentos__ = __webpack_require__(210);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -19,6 +20,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -37,6 +39,7 @@ var ClientePage = (function () {
         this.tab1Root = __WEBPACK_IMPORTED_MODULE_2__novedades_novedades__["a" /* NovedadesPage */];
         this.tab2Root = __WEBPACK_IMPORTED_MODULE_3__usuarios_usuarios__["a" /* UsuariosPage */];
         this.tab3Root = __WEBPACK_IMPORTED_MODULE_4__rendicion_rendicion__["a" /* RendicionPage */];
+        this.tab4Root = __WEBPACK_IMPORTED_MODULE_5__documentos_documentos__["a" /* DocumentosPage */];
     }
     ClientePage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad ClientePage');
@@ -45,7 +48,7 @@ var ClientePage = (function () {
 }());
 ClientePage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-cliente',template:/*ion-inline-start:"D:\impacto2v\AppImpacto2V_new\src\pages\cliente\cliente.html"*/'<ion-content padding>\n\n\n\n    <ion-tabs id="tabCliente">\n\n        <ion-tab [root]="tab1Root" tabTitle="Novedades" tabIcon="chatbubbles" id="tabNovedades">\n\n        </ion-tab>\n\n        <ion-tab [root]="tab2Root" tabTitle="Usuarios" tabIcon="people" id="tabUsuarios">\n\n        </ion-tab>\n\n        <ion-tab [root]="tab3Root" tabTitle="Rendiciones" tabIcon="logo-usd" id="tabRendiciones">\n\n            </ion-tab>\n\n        <!--\n\n        <ion-tab [root]="tab1Root" tabTitle="Clientes" tabIcon="people" id="tabClientes">\n\n        </ion-tab>\n\n        <ion-tab [root]="tab2Root"  tabTitle="Packs" tabIcon="barcode" id="tabPacks">\n\n        </ion-tab>\n\n        <ion-tab [root]="tab3Root" tabTitle="Profesores" tabIcon="body" id="tabProfesores">\n\n        </ion-tab>\n\n        <ion-tab [root]="tab4Root" tabTitle="Reporte" tabIcon="clipboard" id="tabPlanilla">\n\n        </ion-tab>\n\n    -->\n\n    </ion-tabs>\n\n\n\n</ion-content>'/*ion-inline-end:"D:\impacto2v\AppImpacto2V_new\src\pages\cliente\cliente.html"*/,
+        selector: 'page-cliente',template:/*ion-inline-start:"F:\impacto2v\AppImpacto2V_new\src\pages\cliente\cliente.html"*/'<ion-content padding>\n\n\n\n    <ion-tabs id="tabCliente">\n\n        <ion-tab [root]="tab1Root" tabTitle="Novedades" tabIcon="chatbubbles" id="tabNovedades">\n\n        </ion-tab>\n\n        <ion-tab [root]="tab2Root" tabTitle="Usuarios" tabIcon="people" id="tabUsuarios">\n\n        </ion-tab>\n\n        <ion-tab [root]="tab3Root" tabTitle="Rendiciones" tabIcon="logo-usd" id="tabRendiciones">\n\n        </ion-tab>\n\n        <ion-tab [root]="tab4Root" tabTitle="Documentos" tabIcon="document" id="tabDocumentos">\n\n        </ion-tab>\n\n        <!--\n\n        <ion-tab [root]="tab1Root" tabTitle="Clientes" tabIcon="people" id="tabClientes">\n\n        </ion-tab>\n\n        <ion-tab [root]="tab2Root"  tabTitle="Packs" tabIcon="barcode" id="tabPacks">\n\n        </ion-tab>\n\n        <ion-tab [root]="tab3Root" tabTitle="Profesores" tabIcon="body" id="tabProfesores">\n\n        </ion-tab>\n\n        <ion-tab [root]="tab4Root" tabTitle="Reporte" tabIcon="clipboard" id="tabPlanilla">\n\n        </ion-tab>\n\n    -->\n\n    </ion-tabs>\n\n\n\n</ion-content>'/*ion-inline-end:"F:\impacto2v\AppImpacto2V_new\src\pages\cliente\cliente.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]])
 ], ClientePage);
@@ -60,7 +63,7 @@ ClientePage = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return VisorImagenPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_photo_viewer__ = __webpack_require__(203);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -135,7 +138,7 @@ var VisorImagenPage = (function () {
 }());
 VisorImagenPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-visor-imagen',template:/*ion-inline-start:"D:\impacto2v\AppImpacto2V_new\src\pages\visor-imagen\visor-imagen.html"*/'<!--\n\n  Generated template for the VisorImagenPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header class="mui--bg-color-red-400 fg-light">\n\n\n\n  <ion-navbar>\n\n    <ion-title>Imágen</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <button ion-button full class="bg-red-200 fg-white" (click)="closeModal()">Cerrar</button>\n\n  <img [src]="rutaImagen" style="width: 100%;" (click)="viewImage()" />\n\n  <ion-fab bottom right>\n\n    <button ion-fab class="bg-teal-800" (click)="presentActionSheet()"><ion-icon name="trash"></ion-icon></button>\n\n  </ion-fab>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"D:\impacto2v\AppImpacto2V_new\src\pages\visor-imagen\visor-imagen.html"*/,
+        selector: 'page-visor-imagen',template:/*ion-inline-start:"F:\impacto2v\AppImpacto2V_new\src\pages\visor-imagen\visor-imagen.html"*/'<!--\n\n  Generated template for the VisorImagenPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header class="mui--bg-color-red-400 fg-light">\n\n\n\n  <ion-navbar>\n\n    <ion-title>Imágen</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <button ion-button full class="bg-red-200 fg-white" (click)="closeModal()">Cerrar</button>\n\n  <img [src]="rutaImagen" style="width: 100%;" (click)="viewImage()" />\n\n  <ion-fab bottom right>\n\n    <button ion-fab class="bg-teal-800" (click)="presentActionSheet()"><ion-icon name="trash"></ion-icon></button>\n\n  </ion-fab>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"F:\impacto2v\AppImpacto2V_new\src\pages\visor-imagen\visor-imagen.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
         __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
@@ -184,22 +187,109 @@ webpackEmptyAsyncContext.id = 162;
 
 /***/ }),
 
+/***/ 19:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AuthService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__AppSettings__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_platform_browser__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var AuthService = (function () {
+    function AuthService(http, sanitized) {
+        this.http = http;
+        this.sanitized = sanitized;
+        //inicializamos los valores
+        this.username = '';
+        this.loggedIn = false;
+        //this.url = config.getUrl(this.modo, 'Login');
+    }
+    AuthService.prototype.login = function (userInfo) {
+        var _this = this;
+        var url = __WEBPACK_IMPORTED_MODULE_2__AppSettings__["a" /* AppSettings */].API_ENDPOINT + 'Login';
+        //let url = 'http://api.asambleas.cl/api/login';
+        var iJson = JSON.stringify(userInfo);
+        return this.http.post(url, iJson, {
+            headers: new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]({ 'Content-Type': 'application/json' })
+        })
+            .map(function (res) { return res.text(); })
+            .map(function (res) {
+            if (res == "error" || res == "nofound") {
+                _this.loggedIn = false;
+            }
+            else {
+                var retorno = JSON.parse(res);
+                sessionStorage.setItem('USU_ID', retorno.AutentificacionUsuario.Id);
+                sessionStorage.setItem('ROL_ID', retorno.Rol.Id);
+                sessionStorage.setItem('ROL_NOMBRE', retorno.Rol.Nombre);
+                sessionStorage.setItem('INST_ID', retorno.Institucion.Id);
+                sessionStorage.setItem('INSTITUCION_NOMBRE', retorno.Institucion.Nombre);
+                sessionStorage.setItem('PERSONA_NOMBRE', retorno.Persona.Nombres + ' ' + retorno.Persona.ApellidoPaterno + ' ' + retorno.Persona.ApellidoMaterno);
+                sessionStorage.setItem('REG_ID', retorno.Region.Id);
+                sessionStorage.setItem('REG_NOMBRE', retorno.Region.Nombre);
+                sessionStorage.setItem('COM_ID', retorno.Comuna.Id);
+                sessionStorage.setItem('COM_NOMBRE', retorno.Comuna.Nombre);
+                sessionStorage.setItem('ROL_NOMBRE_INSTITUCION', retorno.RolInstitucion.Nombre);
+                sessionStorage.setItem('ROL_ID_INSTITUCION', retorno.RolInstitucion.IdOriginal);
+                _this.username = userInfo.usuario;
+                _this.loggedIn = true;
+            }
+            return _this.loggedIn;
+        });
+    };
+    AuthService.prototype.logout = function () {
+        sessionStorage.clear();
+        this.username = '';
+        this.loggedIn = false;
+    };
+    AuthService.prototype.isLoggedId = function () {
+        return this.loggedIn;
+    };
+    return AuthService;
+}());
+AuthService = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */],
+        __WEBPACK_IMPORTED_MODULE_3__angular_platform_browser__["c" /* DomSanitizer */]])
+], AuthService);
+
+//# sourceMappingURL=AuthService.js.map
+
+/***/ }),
+
 /***/ 204:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NovedadesPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login_login__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login_login__ = __webpack_require__(27);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__detail_novedad_detail_novedad__ = __webpack_require__(205);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__visor_imagen_visor_imagen__ = __webpack_require__(111);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__crear_novedad_crear_novedad__ = __webpack_require__(206);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__editar_novedad_editar_novedad__ = __webpack_require__(207);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_services_AuthService__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__app_services_InicioService__ = __webpack_require__(56);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__app_services_novedadService__ = __webpack_require__(55);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__app_AppSettings__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_services_AuthService__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__app_services_InicioService__ = __webpack_require__(58);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__app_services_novedadService__ = __webpack_require__(57);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__app_AppSettings__ = __webpack_require__(34);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -552,7 +642,7 @@ var NovedadesPage = (function () {
 }());
 NovedadesPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-novedades',template:/*ion-inline-start:"D:\impacto2v\AppImpacto2V_new\src\pages\novedades\novedades.html"*/'<!--\n\n  Generated template for the NovedadesPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header class="mui--bg-color-red-500 fg-light">\n\n\n\n  <ion-navbar>\n\n    <ion-title>Novedades</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n    <!-- refresh-->\n\n    <ion-refresher (ionRefresh)="doRefresh($event)">\n\n        <ion-refresher-content></ion-refresher-content>\n\n      </ion-refresher>\n\n      <ion-label no-padding no-margin text-center style="font-style: italic;\n\n      font-size: 0.9rem;">\n\n          Deslize hacia abajo para actualizar\n\n      </ion-label>\n\n\n\n  <button ion-button full icon-right color="light" (click)="presentModalCrearNovedad(null)">\n\n  Nueva Novedad\n\n    <ion-icon name="chatbubbles"></ion-icon>\n\n  </button>\n\n  <!-- solo para pruebas de carga de archivos -->\n\n\n\n\n\n  <div *ngFor="let item of solicitudes">\n\n    <ion-card>\n\n      <ion-card-content>\n\n        <!-- lo comentamos por mientra\n\n          <img [src]="image" *ngIf="image" />\n\n          <ion-item>\n\n            <label>Carga de Archivos</label>\n\n            <input type="file" accept="image/*" (change)="changeListener($event, item)" style="opacity: 0" #fileInp>\n\n\n\n          </ion-item>\n\n        -->\n\n        <ion-grid *ngIf="item.MuestraAdjuntos">\n\n          <ion-row>\n\n            <div [class]="item.ClaseUno" *ngIf="item.MuestraImagenUno">\n\n              <img [src]="item.ImgUno" (click)="presentModalImagen(item.ImgUno, item.IdUno, item.Id)" />\n\n            </div>\n\n            <div [class]="item.ClaseDos" *ngIf="item.MuestraImagenDos">\n\n              <img [src]="item.ImgDos" (click)="presentModalImagen(item.ImgDos, item.IdDos, item.Id)" />\n\n            </div>\n\n            <div [class]="item.ClaseTres" *ngIf="item.MuestraImagenTres">\n\n              <img [src]="item.ImgTres" (click)="presentModalImagen(item.ImgTres, item.IdTres, item.Id)" />\n\n            </div>\n\n            <div [class]="item.ClaseCuatro" *ngIf="item.MuestraImagenCuatro">\n\n              <img [src]="item.ImgCuatro" (click)="presentModalImagen(item.ImgCuatro, item.IdCuatro, item.Id)" />\n\n            </div>\n\n          </ion-row>\n\n\n\n        </ion-grid>\n\n        <ion-card-title>\n\n          <ion-icon name="create" style="float: left;" *ngIf="item.VisibleEditar" class="fg-teal-800"  (click)="presentModalEditarNovedad(item)"></ion-icon>&nbsp;\n\n          {{item.NombreUsuario}}\n\n          <ion-icon name="{{item.UrlImagen}}" style="float: right;" *ngIf="item.VisibleEliminar" class="fg-teal-800"  (click)="presentActionSheetMuro(item)"></ion-icon>\n\n\n\n        </ion-card-title>\n\n        <span class="icono-fecha fg-teal-800"><ion-icon name="clock"></ion-icon> {{item.FechaString}}</span>\n\n        <button style="float: right; font-size: 0.8rem;" ion-button small class="bg-red-300 fg-white" (click)="presentModal(item)" >Comentar</button>\n\n        <p text-wrap>\n\n          <strong>\n\n            {{item.Texto}}\n\n          </strong>\n\n        </p>\n\n        <!-- comentarios -->\n\n        <ion-list *ngFor="let comen of item.RespuestaMuro">\n\n          <ion-item>\n\n            <ion-icon name="chatbubbles" item-start style="font-size: 1.8rem;" class="fg-teal-800"></ion-icon>\n\n            <h2><strong>{{comen.NombreUsuario}}</strong></h2>\n\n            <h3 style="font-size: 1.2rem;" class="fg-teal-800"><ion-icon name="clock"></ion-icon> {{comen.FechaString}}</h3>\n\n            <p text-wrap style="text-align: justify;">{{comen.Texto}}</p>\n\n            <ion-icon class="fg-teal-800" name="trash" *ngIf="comen.VisibleEliminar" item-end (click)="presentActionSheet(comen)"></ion-icon>\n\n          </ion-item>\n\n        </ion-list>\n\n      </ion-card-content>\n\n    </ion-card>\n\n  </div>\n\n\n\n</ion-content>\n\n\n\n<ion-fab top right right>\n\n  <button ion-fab mini (click)="logout()" class="btn-color">\n\n    <ion-icon name="close"></ion-icon>\n\n  </button>\n\n</ion-fab>\n\n'/*ion-inline-end:"D:\impacto2v\AppImpacto2V_new\src\pages\novedades\novedades.html"*/,
+        selector: 'page-novedades',template:/*ion-inline-start:"F:\impacto2v\AppImpacto2V_new\src\pages\novedades\novedades.html"*/'<!--\n\n  Generated template for the NovedadesPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header class="mui--bg-color-red-500 fg-light">\n\n\n\n  <ion-navbar>\n\n    <ion-title>Novedades</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n    <!-- refresh-->\n\n    <ion-refresher (ionRefresh)="doRefresh($event)">\n\n        <ion-refresher-content></ion-refresher-content>\n\n      </ion-refresher>\n\n      <ion-label no-padding no-margin text-center style="font-style: italic;\n\n      font-size: 0.9rem;">\n\n          Deslize hacia abajo para actualizar\n\n      </ion-label>\n\n\n\n  <button ion-button full icon-right color="light" (click)="presentModalCrearNovedad(null)">\n\n  Nueva Novedad\n\n    <ion-icon name="chatbubbles"></ion-icon>\n\n  </button>\n\n  <!-- solo para pruebas de carga de archivos -->\n\n\n\n\n\n  <div *ngFor="let item of solicitudes">\n\n    <ion-card>\n\n      <ion-card-content>\n\n        <!-- lo comentamos por mientra\n\n          <img [src]="image" *ngIf="image" />\n\n          <ion-item>\n\n            <label>Carga de Archivos</label>\n\n            <input type="file" accept="image/*" (change)="changeListener($event, item)" style="opacity: 0" #fileInp>\n\n\n\n          </ion-item>\n\n        -->\n\n        <ion-grid *ngIf="item.MuestraAdjuntos">\n\n          <ion-row>\n\n            <div [class]="item.ClaseUno" *ngIf="item.MuestraImagenUno">\n\n              <img [src]="item.ImgUno" (click)="presentModalImagen(item.ImgUno, item.IdUno, item.Id)" />\n\n            </div>\n\n            <div [class]="item.ClaseDos" *ngIf="item.MuestraImagenDos">\n\n              <img [src]="item.ImgDos" (click)="presentModalImagen(item.ImgDos, item.IdDos, item.Id)" />\n\n            </div>\n\n            <div [class]="item.ClaseTres" *ngIf="item.MuestraImagenTres">\n\n              <img [src]="item.ImgTres" (click)="presentModalImagen(item.ImgTres, item.IdTres, item.Id)" />\n\n            </div>\n\n            <div [class]="item.ClaseCuatro" *ngIf="item.MuestraImagenCuatro">\n\n              <img [src]="item.ImgCuatro" (click)="presentModalImagen(item.ImgCuatro, item.IdCuatro, item.Id)" />\n\n            </div>\n\n          </ion-row>\n\n\n\n        </ion-grid>\n\n        <ion-card-title>\n\n          <ion-icon name="create" style="float: left;" *ngIf="item.VisibleEditar" class="fg-teal-800"  (click)="presentModalEditarNovedad(item)"></ion-icon>&nbsp;\n\n          {{item.NombreUsuario}}\n\n          <ion-icon name="{{item.UrlImagen}}" style="float: right;" *ngIf="item.VisibleEliminar" class="fg-teal-800"  (click)="presentActionSheetMuro(item)"></ion-icon>\n\n\n\n        </ion-card-title>\n\n        <span class="icono-fecha fg-teal-800"><ion-icon name="clock"></ion-icon> {{item.FechaString}}</span>\n\n        <button style="float: right; font-size: 0.8rem;" ion-button small class="bg-red-300 fg-white" (click)="presentModal(item)" >Comentar</button>\n\n        <p text-wrap>\n\n          <strong>\n\n            {{item.Texto}}\n\n          </strong>\n\n        </p>\n\n        <!-- comentarios -->\n\n        <ion-list *ngFor="let comen of item.RespuestaMuro">\n\n          <ion-item>\n\n            <ion-icon name="chatbubbles" item-start style="font-size: 1.8rem;" class="fg-teal-800"></ion-icon>\n\n            <h2><strong>{{comen.NombreUsuario}}</strong></h2>\n\n            <h3 style="font-size: 1.2rem;" class="fg-teal-800"><ion-icon name="clock"></ion-icon> {{comen.FechaString}}</h3>\n\n            <p text-wrap style="text-align: justify;">{{comen.Texto}}</p>\n\n            <ion-icon class="fg-teal-800" name="trash" *ngIf="comen.VisibleEliminar" item-end (click)="presentActionSheet(comen)"></ion-icon>\n\n          </ion-item>\n\n        </ion-list>\n\n      </ion-card-content>\n\n    </ion-card>\n\n  </div>\n\n\n\n</ion-content>\n\n\n\n<ion-fab top right right>\n\n  <button ion-fab mini (click)="logout()" class="btn-color">\n\n    <ion-icon name="close"></ion-icon>\n\n  </button>\n\n</ion-fab>\n\n'/*ion-inline-end:"F:\impacto2v\AppImpacto2V_new\src\pages\novedades\novedades.html"*/,
         providers: [__WEBPACK_IMPORTED_MODULE_7__app_services_AuthService__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_8__app_services_InicioService__["a" /* InicioService */], __WEBPACK_IMPORTED_MODULE_9__app_services_novedadService__["a" /* NovedadService */]]
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
@@ -578,8 +668,8 @@ NovedadesPage = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DetailNovedadPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_services_novedadService__ = __webpack_require__(55);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_services_novedadService__ = __webpack_require__(57);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__visor_imagen_visor_imagen__ = __webpack_require__(111);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -797,7 +887,7 @@ var DetailNovedadPage = (function () {
 }());
 DetailNovedadPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-detail-novedad',template:/*ion-inline-start:"D:\impacto2v\AppImpacto2V_new\src\pages\detail-novedad\detail-novedad.html"*/'<!--\n\n  Generated template for the DetailNovedadPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header class="mui--bg-color-red-400 fg-light">\n\n\n\n  <ion-navbar>\n\n    <ion-title>Detalle</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n<button ion-button full class="bg-red-200 fg-white" (click)="closeModal()">Cerrar</button>\n\n  <div *ngFor="let item of solicitudes">\n\n    <ion-card>\n\n      <ion-card-content>\n\n        <!-- imagenes -->\n\n        <ion-grid *ngIf="item.MuestraAdjuntos">\n\n          <ion-row>\n\n            <div [class]="item.ClaseUno" *ngIf="item.MuestraImagenUno">\n\n              <img [src]="item.ImgUno" (click)="presentModalImagen(item.ImgUno, item.IdUno, item.Id)" />\n\n            </div>\n\n            <div [class]="item.ClaseDos" *ngIf="item.MuestraImagenDos">\n\n              <img [src]="item.ImgDos" (click)="presentModalImagen(item.ImgDos, item.IdDos, item.Id)" />\n\n            </div>\n\n            <div [class]="item.ClaseTres" *ngIf="item.MuestraImagenTres">\n\n              <img [src]="item.ImgTres" (click)="presentModalImagen(item.ImgTres, item.IdTres, item.Id)" />\n\n            </div>\n\n            <div [class]="item.ClaseCuatro" *ngIf="item.MuestraImagenCuatro">\n\n              <img [src]="item.ImgCuatro" (click)="presentModalImagen(item.ImgCuatro, item.IdCuatro, item.Id)" />\n\n            </div>\n\n          </ion-row>\n\n\n\n        </ion-grid>\n\n\n\n        <ion-card-title>\n\n          {{item.NombreUsuario}}\n\n          <ion-icon name="{{item.UrlImagen}}" style="float: right;" *ngIf="item.VisibleEliminar" class="fg-teal-800" (click)="presentActionSheetMuro(item)"></ion-icon>\n\n        </ion-card-title>\n\n        <span class="icono-fecha fg-teal-800"><ion-icon name="clock"></ion-icon> {{item.FechaString}}</span>\n\n        <p text-wrap>\n\n          <strong>\n\n            {{item.Texto}}\n\n          </strong>\n\n        </p>\n\n        <ion-item>\n\n              <ion-label stacked>Ingrese Comentario</ion-label>\n\n              <ion-input type="text" [(ngModel)]="textoEnviar" required></ion-input>\n\n        </ion-item>\n\n        <button style="float: right; font-size: 0.8rem;" ion-button class="bg-red-300 fg-white" (click)="enviar(item)">Enviar</button>\n\n\n\n\n\n        <!-- comentarios -->\n\n        <ion-list *ngFor="let comen of item.RespuestaMuro">\n\n          <ion-item>\n\n            <ion-icon name="chatbubbles" item-start style="font-size: 1.8rem;" class="fg-teal-800"></ion-icon>\n\n            <h2><strong>{{comen.NombreUsuario}}</strong></h2>\n\n            <h3 style="font-size: 1.2rem;" class="fg-teal-800"><ion-icon name="clock"></ion-icon> {{comen.FechaString}}</h3>\n\n            <p text-wrap style="text-align: justify;">{{comen.Texto}}</p>\n\n            <ion-icon class="fg-teal-800" name="trash" *ngIf="comen.VisibleEliminar" item-end (click)="presentActionSheet(comen)"></ion-icon>\n\n          </ion-item>\n\n        </ion-list>\n\n      </ion-card-content>\n\n    </ion-card>\n\n  </div>\n\n\n\n<!--\n\n  <ion-grid>\n\n    <ion-row>\n\n      <ion-col col-6>\n\n        <button ion-button style="width: 100%;" class="bg-red-200 fg-white" (click)="closeModal()">Cancelar</button>\n\n      </ion-col>\n\n      <ion-col col-6>\n\n        <button ion-button style="width: 100%;" class="bg-red-400 fg-white" (click)="closeModal(\'actualizar\')">Aceptar</button>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-grid>\n\n-->\n\n</ion-content>\n\n'/*ion-inline-end:"D:\impacto2v\AppImpacto2V_new\src\pages\detail-novedad\detail-novedad.html"*/,
+        selector: 'page-detail-novedad',template:/*ion-inline-start:"F:\impacto2v\AppImpacto2V_new\src\pages\detail-novedad\detail-novedad.html"*/'<!--\n\n  Generated template for the DetailNovedadPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header class="mui--bg-color-red-400 fg-light">\n\n\n\n  <ion-navbar>\n\n    <ion-title>Detalle</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n<button ion-button full class="bg-red-200 fg-white" (click)="closeModal()">Cerrar</button>\n\n  <div *ngFor="let item of solicitudes">\n\n    <ion-card>\n\n      <ion-card-content>\n\n        <!-- imagenes -->\n\n        <ion-grid *ngIf="item.MuestraAdjuntos">\n\n          <ion-row>\n\n            <div [class]="item.ClaseUno" *ngIf="item.MuestraImagenUno">\n\n              <img [src]="item.ImgUno" (click)="presentModalImagen(item.ImgUno, item.IdUno, item.Id)" />\n\n            </div>\n\n            <div [class]="item.ClaseDos" *ngIf="item.MuestraImagenDos">\n\n              <img [src]="item.ImgDos" (click)="presentModalImagen(item.ImgDos, item.IdDos, item.Id)" />\n\n            </div>\n\n            <div [class]="item.ClaseTres" *ngIf="item.MuestraImagenTres">\n\n              <img [src]="item.ImgTres" (click)="presentModalImagen(item.ImgTres, item.IdTres, item.Id)" />\n\n            </div>\n\n            <div [class]="item.ClaseCuatro" *ngIf="item.MuestraImagenCuatro">\n\n              <img [src]="item.ImgCuatro" (click)="presentModalImagen(item.ImgCuatro, item.IdCuatro, item.Id)" />\n\n            </div>\n\n          </ion-row>\n\n\n\n        </ion-grid>\n\n\n\n        <ion-card-title>\n\n          {{item.NombreUsuario}}\n\n          <ion-icon name="{{item.UrlImagen}}" style="float: right;" *ngIf="item.VisibleEliminar" class="fg-teal-800" (click)="presentActionSheetMuro(item)"></ion-icon>\n\n        </ion-card-title>\n\n        <span class="icono-fecha fg-teal-800"><ion-icon name="clock"></ion-icon> {{item.FechaString}}</span>\n\n        <p text-wrap>\n\n          <strong>\n\n            {{item.Texto}}\n\n          </strong>\n\n        </p>\n\n        <ion-item>\n\n              <ion-label stacked>Ingrese Comentario</ion-label>\n\n              <ion-input type="text" [(ngModel)]="textoEnviar" required></ion-input>\n\n        </ion-item>\n\n        <button style="float: right; font-size: 0.8rem;" ion-button class="bg-red-300 fg-white" (click)="enviar(item)">Enviar</button>\n\n\n\n\n\n        <!-- comentarios -->\n\n        <ion-list *ngFor="let comen of item.RespuestaMuro">\n\n          <ion-item>\n\n            <ion-icon name="chatbubbles" item-start style="font-size: 1.8rem;" class="fg-teal-800"></ion-icon>\n\n            <h2><strong>{{comen.NombreUsuario}}</strong></h2>\n\n            <h3 style="font-size: 1.2rem;" class="fg-teal-800"><ion-icon name="clock"></ion-icon> {{comen.FechaString}}</h3>\n\n            <p text-wrap style="text-align: justify;">{{comen.Texto}}</p>\n\n            <ion-icon class="fg-teal-800" name="trash" *ngIf="comen.VisibleEliminar" item-end (click)="presentActionSheet(comen)"></ion-icon>\n\n          </ion-item>\n\n        </ion-list>\n\n      </ion-card-content>\n\n    </ion-card>\n\n  </div>\n\n\n\n<!--\n\n  <ion-grid>\n\n    <ion-row>\n\n      <ion-col col-6>\n\n        <button ion-button style="width: 100%;" class="bg-red-200 fg-white" (click)="closeModal()">Cancelar</button>\n\n      </ion-col>\n\n      <ion-col col-6>\n\n        <button ion-button style="width: 100%;" class="bg-red-400 fg-white" (click)="closeModal(\'actualizar\')">Aceptar</button>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-grid>\n\n-->\n\n</ion-content>\n\n'/*ion-inline-end:"F:\impacto2v\AppImpacto2V_new\src\pages\detail-novedad\detail-novedad.html"*/,
         providers: [__WEBPACK_IMPORTED_MODULE_2__app_services_novedadService__["a" /* NovedadService */]]
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
@@ -820,10 +910,10 @@ DetailNovedadPage = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CrearNovedadPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_services_AuthService__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_services_InicioService__ = __webpack_require__(56);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_services_novedadService__ = __webpack_require__(55);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_services_AuthService__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_services_InicioService__ = __webpack_require__(58);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_services_novedadService__ = __webpack_require__(57);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1206,7 +1296,7 @@ var CrearNovedadPage = (function () {
 }());
 CrearNovedadPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-crear-novedad',template:/*ion-inline-start:"D:\impacto2v\AppImpacto2V_new\src\pages\crear-novedad\crear-novedad.html"*/'<!--\n\n  Generated template for the CrearNovedadPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header class="mui--bg-color-red-400 fg-light">\n\n\n\n  <ion-navbar>\n\n    <ion-title>Crear Novedad</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <button ion-button full class="bg-red-200 fg-white" (click)="closeModal()">Cerrar</button>\n\n  <!--\n\n  <ion-item>\n\n\n\n\n\n  </ion-item>\n\n\n\n  -->\n\n\n\n  <ion-card>\n\n    <ion-card-header>\n\n      Archivos\n\n    </ion-card-header>\n\n    <ion-card-content>\n\n      <ion-grid>\n\n        <ion-row>\n\n          <ion-col col-12>\n\n            <ion-icon name="document"></ion-icon> Archivo 1:\n\n          </ion-col>\n\n          <ion-col col-12>\n\n            <input type="file" accept="image/*" (change)="changeListener($event)"  #fileInput>\n\n          </ion-col>\n\n        </ion-row>\n\n        <ion-row>\n\n          <ion-col col-12>\n\n            <ion-icon name="document"></ion-icon> Archivo 2:\n\n          </ion-col>\n\n          <ion-col col-12>\n\n\n\n              <input type="file" accept="image/*" (change)="changeListenerDos($event)" #fileInput2>\n\n\n\n          </ion-col>\n\n        </ion-row>\n\n        <ion-row>\n\n          <ion-col col-12>\n\n            <ion-icon name="document"></ion-icon> Archivo 3:\n\n          </ion-col>\n\n          <ion-col col-12>\n\n            <input type="file"  accept="image/*"  (change)="changeListenerTres($event)"  #fileInput3>\n\n          </ion-col>\n\n        </ion-row>\n\n        <ion-row>\n\n          <ion-col col-12>\n\n            <ion-icon name="document"></ion-icon> Archivo 4:\n\n          </ion-col>\n\n          <ion-col col-12>\n\n            <input type="file" accept="image/*" (change)="changeListenerCuatro($event)"  #fileInput4>\n\n          </ion-col>\n\n        </ion-row>\n\n      </ion-grid>\n\n\n\n    </ion-card-content>\n\n  </ion-card>\n\n\n\n  <ion-card>\n\n    <ion-card-header>\n\n      Novedad\n\n    </ion-card-header>\n\n    <ion-card-content>\n\n      <ion-label stacked>Ingrese Novedad\n\n        <ion-input type="text" [(ngModel)]="textoEnviar"></ion-input>\n\n      </ion-label>\n\n    </ion-card-content>\n\n  </ion-card>\n\n\n\n  <button ion-button full class="bg-red-300 fg-white" (click)="enviarComentario()">Guardar</button>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"D:\impacto2v\AppImpacto2V_new\src\pages\crear-novedad\crear-novedad.html"*/,
+        selector: 'page-crear-novedad',template:/*ion-inline-start:"F:\impacto2v\AppImpacto2V_new\src\pages\crear-novedad\crear-novedad.html"*/'<!--\n\n  Generated template for the CrearNovedadPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header class="mui--bg-color-red-400 fg-light">\n\n\n\n  <ion-navbar>\n\n    <ion-title>Crear Novedad</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <button ion-button full class="bg-red-200 fg-white" (click)="closeModal()">Cerrar</button>\n\n  <!--\n\n  <ion-item>\n\n\n\n\n\n  </ion-item>\n\n\n\n  -->\n\n\n\n  <ion-card>\n\n    <ion-card-header>\n\n      Archivos\n\n    </ion-card-header>\n\n    <ion-card-content>\n\n      <ion-grid>\n\n        <ion-row>\n\n          <ion-col col-12>\n\n            <ion-icon name="document"></ion-icon> Archivo 1:\n\n          </ion-col>\n\n          <ion-col col-12>\n\n            <input type="file" accept="image/*" (change)="changeListener($event)"  #fileInput>\n\n          </ion-col>\n\n        </ion-row>\n\n        <ion-row>\n\n          <ion-col col-12>\n\n            <ion-icon name="document"></ion-icon> Archivo 2:\n\n          </ion-col>\n\n          <ion-col col-12>\n\n\n\n              <input type="file" accept="image/*" (change)="changeListenerDos($event)" #fileInput2>\n\n\n\n          </ion-col>\n\n        </ion-row>\n\n        <ion-row>\n\n          <ion-col col-12>\n\n            <ion-icon name="document"></ion-icon> Archivo 3:\n\n          </ion-col>\n\n          <ion-col col-12>\n\n            <input type="file"  accept="image/*"  (change)="changeListenerTres($event)"  #fileInput3>\n\n          </ion-col>\n\n        </ion-row>\n\n        <ion-row>\n\n          <ion-col col-12>\n\n            <ion-icon name="document"></ion-icon> Archivo 4:\n\n          </ion-col>\n\n          <ion-col col-12>\n\n            <input type="file" accept="image/*" (change)="changeListenerCuatro($event)"  #fileInput4>\n\n          </ion-col>\n\n        </ion-row>\n\n      </ion-grid>\n\n\n\n    </ion-card-content>\n\n  </ion-card>\n\n\n\n  <ion-card>\n\n    <ion-card-header>\n\n      Novedad\n\n    </ion-card-header>\n\n    <ion-card-content>\n\n      <ion-label stacked>Ingrese Novedad\n\n        <ion-input type="text" [(ngModel)]="textoEnviar"></ion-input>\n\n      </ion-label>\n\n    </ion-card-content>\n\n  </ion-card>\n\n\n\n  <button ion-button full class="bg-red-300 fg-white" (click)="enviarComentario()">Guardar</button>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"F:\impacto2v\AppImpacto2V_new\src\pages\crear-novedad\crear-novedad.html"*/,
         providers: [__WEBPACK_IMPORTED_MODULE_2__app_services_AuthService__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_3__app_services_InicioService__["a" /* InicioService */], __WEBPACK_IMPORTED_MODULE_4__app_services_novedadService__["a" /* NovedadService */]]
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
@@ -1231,10 +1321,10 @@ CrearNovedadPage = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EditarNovedadPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_services_AuthService__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_services_InicioService__ = __webpack_require__(56);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_services_novedadService__ = __webpack_require__(55);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_services_AuthService__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_services_InicioService__ = __webpack_require__(58);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_services_novedadService__ = __webpack_require__(57);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1621,7 +1711,7 @@ var EditarNovedadPage = (function () {
 }());
 EditarNovedadPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-editar-novedad',template:/*ion-inline-start:"D:\impacto2v\AppImpacto2V_new\src\pages\editar-novedad\editar-novedad.html"*/'<!--\n\n  Generated template for the EditarNovedadPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header class="mui--bg-color-red-400 fg-light">\n\n\n\n  <ion-navbar>\n\n    <ion-buttons style="float: right;">\n\n      <button (click)="cancel()">\n\n        <ion-icon name="close"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n    <ion-title>Editar Novedad</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <button ion-button full class="bg-red-200 fg-white" (click)="closeModal()">Cerrar</button>\n\n\n\n  <ion-card>\n\n    <ion-card-header>\n\n      Novedad\n\n    </ion-card-header>\n\n    <ion-card-content>\n\n      <ion-label stacked>Ingrese Novedad\n\n        <ion-input type="text" [(ngModel)]="textoEnviar"></ion-input>\n\n      </ion-label>\n\n    </ion-card-content>\n\n  </ion-card>\n\n  <ion-card>\n\n    <ion-card-header>\n\n      Imágenes\n\n    </ion-card-header>\n\n    <ion-card-content>\n\n      <ion-grid>\n\n        <ion-row>\n\n          <div [class]="novedad.ClaseUno" *ngIf="novedad.MuestraImagenUno">\n\n            <img [src]="novedad.ImgUno"/>\n\n          </div>\n\n          <ion-col col-12 *ngIf="novedad.MuestraImagenUno == false">\n\n            <ion-icon name="document"></ion-icon> Archivo 1:\n\n          </ion-col>\n\n          <ion-col col-12 *ngIf="novedad.MuestraImagenUno == false">\n\n            <input type="file" accept="image/*" (change)="changeListener($event)"  #fileInput>\n\n          </ion-col>\n\n        </ion-row>\n\n        <ion-row>\n\n          <ion-col col-12>\n\n            <ion-icon name="document"></ion-icon> Archivo 2:\n\n          </ion-col>\n\n          <ion-col col-12>\n\n\n\n            <input type="file" accept="image/*" (change)="changeListenerDos($event)" #fileInput2>\n\n\n\n          </ion-col>\n\n        </ion-row>\n\n        <ion-row>\n\n          <ion-col col-12>\n\n            <ion-icon name="document"></ion-icon> Archivo 3:\n\n          </ion-col>\n\n          <ion-col col-12>\n\n            <input type="file"  accept="image/*"  (change)="changeListenerTres($event)"  #fileInput3>\n\n          </ion-col>\n\n        </ion-row>\n\n        <ion-row>\n\n          <ion-col col-12>\n\n            <ion-icon name="document"></ion-icon> Archivo 4:\n\n          </ion-col>\n\n          <ion-col col-12>\n\n            <input type="file" accept="image/*" (change)="changeListenerCuatro($event)"  #fileInput4>\n\n          </ion-col>\n\n        </ion-row>\n\n      </ion-grid>\n\n\n\n    </ion-card-content>\n\n  </ion-card>\n\n\n\n  <button ion-button full class="bg-red-300 fg-white" (click)="enviarComentario()">Guardar</button>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"D:\impacto2v\AppImpacto2V_new\src\pages\editar-novedad\editar-novedad.html"*/,
+        selector: 'page-editar-novedad',template:/*ion-inline-start:"F:\impacto2v\AppImpacto2V_new\src\pages\editar-novedad\editar-novedad.html"*/'<!--\n\n  Generated template for the EditarNovedadPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header class="mui--bg-color-red-400 fg-light">\n\n\n\n  <ion-navbar>\n\n    <ion-buttons style="float: right;">\n\n      <button (click)="cancel()">\n\n        <ion-icon name="close"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n    <ion-title>Editar Novedad</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <button ion-button full class="bg-red-200 fg-white" (click)="closeModal()">Cerrar</button>\n\n\n\n  <ion-card>\n\n    <ion-card-header>\n\n      Novedad\n\n    </ion-card-header>\n\n    <ion-card-content>\n\n      <ion-label stacked>Ingrese Novedad\n\n        <ion-input type="text" [(ngModel)]="textoEnviar"></ion-input>\n\n      </ion-label>\n\n    </ion-card-content>\n\n  </ion-card>\n\n  <ion-card>\n\n    <ion-card-header>\n\n      Imágenes\n\n    </ion-card-header>\n\n    <ion-card-content>\n\n      <ion-grid>\n\n        <ion-row>\n\n          <div [class]="novedad.ClaseUno" *ngIf="novedad.MuestraImagenUno">\n\n            <img [src]="novedad.ImgUno"/>\n\n          </div>\n\n          <ion-col col-12 *ngIf="novedad.MuestraImagenUno == false">\n\n            <ion-icon name="document"></ion-icon> Archivo 1:\n\n          </ion-col>\n\n          <ion-col col-12 *ngIf="novedad.MuestraImagenUno == false">\n\n            <input type="file" accept="image/*" (change)="changeListener($event)"  #fileInput>\n\n          </ion-col>\n\n        </ion-row>\n\n        <ion-row>\n\n          <ion-col col-12>\n\n            <ion-icon name="document"></ion-icon> Archivo 2:\n\n          </ion-col>\n\n          <ion-col col-12>\n\n\n\n            <input type="file" accept="image/*" (change)="changeListenerDos($event)" #fileInput2>\n\n\n\n          </ion-col>\n\n        </ion-row>\n\n        <ion-row>\n\n          <ion-col col-12>\n\n            <ion-icon name="document"></ion-icon> Archivo 3:\n\n          </ion-col>\n\n          <ion-col col-12>\n\n            <input type="file"  accept="image/*"  (change)="changeListenerTres($event)"  #fileInput3>\n\n          </ion-col>\n\n        </ion-row>\n\n        <ion-row>\n\n          <ion-col col-12>\n\n            <ion-icon name="document"></ion-icon> Archivo 4:\n\n          </ion-col>\n\n          <ion-col col-12>\n\n            <input type="file" accept="image/*" (change)="changeListenerCuatro($event)"  #fileInput4>\n\n          </ion-col>\n\n        </ion-row>\n\n      </ion-grid>\n\n\n\n    </ion-card-content>\n\n  </ion-card>\n\n\n\n  <button ion-button full class="bg-red-300 fg-white" (click)="enviarComentario()">Guardar</button>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"F:\impacto2v\AppImpacto2V_new\src\pages\editar-novedad\editar-novedad.html"*/,
         providers: [__WEBPACK_IMPORTED_MODULE_2__app_services_AuthService__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_3__app_services_InicioService__["a" /* InicioService */], __WEBPACK_IMPORTED_MODULE_4__app_services_novedadService__["a" /* NovedadService */]]
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
@@ -1646,10 +1736,10 @@ EditarNovedadPage = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UsuariosPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login_login__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_services_AuthService__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_services_GlobalService__ = __webpack_require__(57);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login_login__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_services_AuthService__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_services_GlobalService__ = __webpack_require__(44);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1797,7 +1887,7 @@ var UsuariosPage = (function () {
 }());
 UsuariosPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-usuarios',template:/*ion-inline-start:"D:\impacto2v\AppImpacto2V_new\src\pages\usuarios\usuarios.html"*/'<!--\n\n  Generated template for the SolicitudesPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header class="mui--bg-color-red-500 fg-light">\n\n\n\n    <ion-navbar>\n\n      <ion-title>Usuarios</ion-title>\n\n    </ion-navbar>\n\n  \n\n  </ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <!-- refresh-->\n\n  <ion-refresher (ionRefresh)="doRefresh($event)">\n\n      <ion-refresher-content></ion-refresher-content>\n\n    </ion-refresher>\n\n    <ion-label no-padding no-margin text-center style="font-style: italic;\n\n    font-size: 0.9rem;">\n\n        Deslize hacia abajo para actualizar\n\n    </ion-label>\n\n    <ion-item *ngIf="esAdministrador">\n\n        <ion-label>Seleccione Institución</ion-label>\n\n        <ion-select [(ngModel)]="nombreFiltrar">\n\n          <ion-option *ngFor="let filt of filtrosInstitucion" (ionSelect)="cambioFiltros(filt)">{{filt.NombreCompleto}}</ion-option>\n\n        </ion-select>\n\n      </ion-item>\n\n    <!-- lista-->\n\n    <ion-list *ngIf="esAdministrador">\n\n        <ion-item-sliding *ngFor="let clie of usuariosArr">\n\n          <ion-item>\n\n            <ion-avatar item-start>\n\n              <text-avatar [text]="clie.NombreCompleto" item-left></text-avatar>\n\n            </ion-avatar>\n\n            <h2>{{clie.NombreCompleto}}</h2>\n\n            <p>\n\n              {{clie.OtroUno}}\n\n              <!--\n\n              <ion-icon *ngIf="prof.Activo == 1" name="checkmark"> Activo</ion-icon>\n\n              <ion-icon *ngIf="prof.Activo == 0" name="close"> Inactivo</ion-icon>\n\n              -->\n\n            </p>\n\n          </ion-item>\n\n          <!--\n\n          <ion-item-options side="left">\n\n            <button ion-button color="primary" *ngIf="prof.Activo == 1" (click)="asociarComunas(prof)">\n\n              <ion-icon name="globe"></ion-icon>\n\n              Comunas\n\n            </button>\n\n          </ion-item-options>\n\n          <ion-item-options side="right">\n\n            <button ion-button color="primary" *ngIf="prof.Activo == 1" (click)="editarProfesor(prof)">\n\n              <ion-icon name="create"></ion-icon>\n\n              Editar\n\n            </button>\n\n            <button ion-button color="danger" *ngIf="prof.Activo == 1"  (click)="desactivarProfesor(prof)">\n\n              <ion-icon name="trash"></ion-icon>\n\n              Eliminar\n\n            </button>\n\n            <button ion-button color="secondary" *ngIf="prof.Activo == 0"  (click)="activarProfesor(prof)">\n\n              <ion-icon name="checkmark-circle"></ion-icon>\n\n              Activar\n\n            </button>\n\n          </ion-item-options>\n\n        -->\n\n        </ion-item-sliding>\n\n      </ion-list>\n\n\n\n      <ion-card *ngIf="esAdministrador == false">\n\n        <ion-card-content>\n\n          <ion-card-title>\n\n            Usuarios del Sistema\n\n          </ion-card-title>\n\n          <ion-item>\n\n            <ion-avatar item-start>\n\n              <ion-icon name="people" style="font-size: 3em;"></ion-icon>\n\n            </ion-avatar>\n\n            <p text-wrap>Actualmente existen <strong>{{cantidadUsuarios}}</strong> usuarios para tu asamblea.</p>\n\n          </ion-item>\n\n      \n\n        </ion-card-content>\n\n      </ion-card>\n\n\n\n\n\n\n\n</ion-content>\n\n<ion-fab top right right>\n\n    <button ion-fab mini (click)="logout()" class="btn-color">\n\n      <ion-icon name="close"></ion-icon>\n\n    </button>\n\n  </ion-fab>\n\n'/*ion-inline-end:"D:\impacto2v\AppImpacto2V_new\src\pages\usuarios\usuarios.html"*/,
+        selector: 'page-usuarios',template:/*ion-inline-start:"F:\impacto2v\AppImpacto2V_new\src\pages\usuarios\usuarios.html"*/'<!--\n\n  Generated template for the SolicitudesPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header class="mui--bg-color-red-500 fg-light">\n\n\n\n    <ion-navbar>\n\n      <ion-title>Usuarios</ion-title>\n\n    </ion-navbar>\n\n  \n\n  </ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <!-- refresh-->\n\n  <ion-refresher (ionRefresh)="doRefresh($event)">\n\n      <ion-refresher-content></ion-refresher-content>\n\n    </ion-refresher>\n\n    <ion-label no-padding no-margin text-center style="font-style: italic;\n\n    font-size: 0.9rem;">\n\n        Deslize hacia abajo para actualizar\n\n    </ion-label>\n\n    <ion-item *ngIf="esAdministrador">\n\n        <ion-label>Seleccione Institución</ion-label>\n\n        <ion-select [(ngModel)]="nombreFiltrar">\n\n          <ion-option *ngFor="let filt of filtrosInstitucion" (ionSelect)="cambioFiltros(filt)">{{filt.NombreCompleto}}</ion-option>\n\n        </ion-select>\n\n      </ion-item>\n\n    <!-- lista-->\n\n    <ion-list *ngIf="esAdministrador">\n\n        <ion-item-sliding *ngFor="let clie of usuariosArr">\n\n          <ion-item>\n\n            <ion-avatar item-start>\n\n              <text-avatar [text]="clie.NombreCompleto" item-left></text-avatar>\n\n            </ion-avatar>\n\n            <h2>{{clie.NombreCompleto}}</h2>\n\n            <p>\n\n              {{clie.OtroUno}}\n\n              <!--\n\n              <ion-icon *ngIf="prof.Activo == 1" name="checkmark"> Activo</ion-icon>\n\n              <ion-icon *ngIf="prof.Activo == 0" name="close"> Inactivo</ion-icon>\n\n              -->\n\n            </p>\n\n          </ion-item>\n\n          <!--\n\n          <ion-item-options side="left">\n\n            <button ion-button color="primary" *ngIf="prof.Activo == 1" (click)="asociarComunas(prof)">\n\n              <ion-icon name="globe"></ion-icon>\n\n              Comunas\n\n            </button>\n\n          </ion-item-options>\n\n          <ion-item-options side="right">\n\n            <button ion-button color="primary" *ngIf="prof.Activo == 1" (click)="editarProfesor(prof)">\n\n              <ion-icon name="create"></ion-icon>\n\n              Editar\n\n            </button>\n\n            <button ion-button color="danger" *ngIf="prof.Activo == 1"  (click)="desactivarProfesor(prof)">\n\n              <ion-icon name="trash"></ion-icon>\n\n              Eliminar\n\n            </button>\n\n            <button ion-button color="secondary" *ngIf="prof.Activo == 0"  (click)="activarProfesor(prof)">\n\n              <ion-icon name="checkmark-circle"></ion-icon>\n\n              Activar\n\n            </button>\n\n          </ion-item-options>\n\n        -->\n\n        </ion-item-sliding>\n\n      </ion-list>\n\n\n\n      <ion-card *ngIf="esAdministrador == false">\n\n        <ion-card-content>\n\n          <ion-card-title>\n\n            Usuarios del Sistema\n\n          </ion-card-title>\n\n          <ion-item>\n\n            <ion-avatar item-start>\n\n              <ion-icon name="people" style="font-size: 3em;"></ion-icon>\n\n            </ion-avatar>\n\n            <p text-wrap>Actualmente existen <strong>{{cantidadUsuarios}}</strong> usuarios para tu asamblea.</p>\n\n          </ion-item>\n\n      \n\n        </ion-card-content>\n\n      </ion-card>\n\n\n\n\n\n\n\n</ion-content>\n\n<ion-fab top right right>\n\n    <button ion-fab mini (click)="logout()" class="btn-color">\n\n      <ion-icon name="close"></ion-icon>\n\n    </button>\n\n  </ion-fab>\n\n'/*ion-inline-end:"F:\impacto2v\AppImpacto2V_new\src\pages\usuarios\usuarios.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* App */],
         __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
@@ -1817,10 +1907,10 @@ UsuariosPage = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RendicionPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login_login__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_services_AuthService__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_services_GlobalService__ = __webpack_require__(57);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login_login__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_services_AuthService__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_services_GlobalService__ = __webpack_require__(44);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2009,7 +2099,7 @@ __decorate([
 ], RendicionPage.prototype, "pieChart", void 0);
 RendicionPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-rendicion',template:/*ion-inline-start:"D:\impacto2v\AppImpacto2V_new\src\pages\rendicion\rendicion.html"*/'<!--\n\n  Generated template for the SolicitudesPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header class="mui--bg-color-red-500 fg-light">\n\n\n\n    <ion-navbar>\n\n      <ion-title>Rendiciones</ion-title>\n\n    </ion-navbar>\n\n  \n\n  </ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <!-- refresh-->\n\n  <ion-refresher (ionRefresh)="doRefresh($event)">\n\n      <ion-refresher-content></ion-refresher-content>\n\n      </ion-refresher>\n\n      <ion-label no-padding no-margin text-center style="font-style: italic;\n\n          font-size: 0.9rem;">\n\n        Deslize hacia abajo para actualizar\n\n      </ion-label>\n\n    <!--\n\n    <ion-item *ngIf="esAdministrador">\n\n        <ion-label>Seleccione Institución</ion-label>\n\n        <ion-select [(ngModel)]="nombreFiltrar">\n\n          <ion-option *ngFor="let filt of filtrosInstitucion" (ionSelect)="cambioFiltros(filt)">{{filt.NombreCompleto}}</ion-option>\n\n        </ion-select>\n\n      </ion-item>\n\n    -->\n\n    <!-- lista-->\n\n    <ion-list *ngIf="esAdministrador">\n\n        <ion-item-sliding *ngFor="let clie of rendicionesArr">\n\n          <ion-item>\n\n            <ion-avatar item-start>\n\n              <!--salida-->\n\n                <ion-icon name="arrow-back" item-left *ngIf="clie.OtroUno == \'Egreso\'" style="color: red; font-size: 3em;"></ion-icon>\n\n                <!--entrada-->\n\n                <ion-icon name="arrow-forward" item-left  *ngIf="clie.OtroUno == \'Ingreso\'" style="font-size: 3em;"></ion-icon>\n\n            </ion-avatar>\n\n            <h2>{{clie.NombreCompleto}}</h2>\n\n            <ion-row>\n\n                <ion-col>\n\n                    <div text-wrap  *ngIf="clie.OtroUno == \'Egreso\'" style="color: red;">{{clie.OtroUno}}</div>\n\n                    <div text-wrap  *ngIf="clie.OtroUno == \'Ingreso\'">{{clie.OtroUno}}</div>\n\n                </ion-col>\n\n                <ion-col>\n\n\n\n                    <div>{{clie.OtroCuatro}}</div>\n\n\n\n                </ion-col>\n\n                <ion-col center text-center>\n\n                  <ion-note>\n\n                      {{clie.NombreUsuario}}\n\n                  </ion-note>\n\n                </ion-col>\n\n              </ion-row>\n\n          </ion-item>\n\n          <!--\n\n          <ion-item-options side="left">\n\n            <button ion-button color="primary" *ngIf="prof.Activo == 1" (click)="asociarComunas(prof)">\n\n              <ion-icon name="globe"></ion-icon>\n\n              Comunas\n\n            </button>\n\n          </ion-item-options>\n\n          <ion-item-options side="right">\n\n            <button ion-button color="primary" *ngIf="prof.Activo == 1" (click)="editarProfesor(prof)">\n\n              <ion-icon name="create"></ion-icon>\n\n              Editar\n\n            </button>\n\n            <button ion-button color="danger" *ngIf="prof.Activo == 1"  (click)="desactivarProfesor(prof)">\n\n              <ion-icon name="trash"></ion-icon>\n\n              Eliminar\n\n            </button>\n\n            <button ion-button color="secondary" *ngIf="prof.Activo == 0"  (click)="activarProfesor(prof)">\n\n              <ion-icon name="checkmark-circle"></ion-icon>\n\n              Activar\n\n            </button>\n\n          </ion-item-options>\n\n        -->\n\n        </ion-item-sliding>\n\n      </ion-list>\n\n\n\n      <ion-card *ngIf="esAdministrador == false">\n\n        <ion-card-content>\n\n          <ion-card-title>\n\n            Usuarios del Sistema\n\n          </ion-card-title>\n\n          <ion-item>\n\n            <ion-avatar item-start>\n\n              <ion-icon name="people" style="font-size: 3em;"></ion-icon>\n\n            </ion-avatar>\n\n            <p text-wrap>Actualmente existen <strong>{{cantidadUsuarios}}</strong> usuarios para tu asamblea.</p>\n\n          </ion-item>\n\n      \n\n        </ion-card-content>\n\n      </ion-card>\n\n\n\n\n\n\n\n</ion-content>\n\n<ion-fab top right right>\n\n    <button ion-fab mini (click)="logout()" class="btn-color">\n\n      <ion-icon name="close"></ion-icon>\n\n    </button>\n\n  </ion-fab>\n\n'/*ion-inline-end:"D:\impacto2v\AppImpacto2V_new\src\pages\rendicion\rendicion.html"*/,
+        selector: 'page-rendicion',template:/*ion-inline-start:"F:\impacto2v\AppImpacto2V_new\src\pages\rendicion\rendicion.html"*/'<!--\n\n  Generated template for the SolicitudesPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header class="mui--bg-color-red-500 fg-light">\n\n\n\n    <ion-navbar>\n\n      <ion-title>Rendiciones</ion-title>\n\n    </ion-navbar>\n\n  \n\n  </ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <!-- refresh-->\n\n  <ion-refresher (ionRefresh)="doRefresh($event)">\n\n      <ion-refresher-content></ion-refresher-content>\n\n      </ion-refresher>\n\n      <ion-label no-padding no-margin text-center style="font-style: italic;\n\n          font-size: 0.9rem;">\n\n        Deslize hacia abajo para actualizar\n\n      </ion-label>\n\n    <!--\n\n    <ion-item *ngIf="esAdministrador">\n\n        <ion-label>Seleccione Institución</ion-label>\n\n        <ion-select [(ngModel)]="nombreFiltrar">\n\n          <ion-option *ngFor="let filt of filtrosInstitucion" (ionSelect)="cambioFiltros(filt)">{{filt.NombreCompleto}}</ion-option>\n\n        </ion-select>\n\n      </ion-item>\n\n    -->\n\n    <!-- lista-->\n\n    <ion-list *ngIf="esAdministrador">\n\n        <ion-item-sliding *ngFor="let clie of rendicionesArr">\n\n          <ion-item>\n\n            <ion-avatar item-start>\n\n              <!--salida-->\n\n                <ion-icon name="arrow-back" item-left *ngIf="clie.OtroUno == \'Egreso\'" style="color: red; font-size: 3em;"></ion-icon>\n\n                <!--entrada-->\n\n                <ion-icon name="arrow-forward" item-left  *ngIf="clie.OtroUno == \'Ingreso\'" style="font-size: 3em;"></ion-icon>\n\n            </ion-avatar>\n\n            <h2>{{clie.NombreCompleto}}</h2>\n\n            <ion-row>\n\n                <ion-col>\n\n                    <div text-wrap  *ngIf="clie.OtroUno == \'Egreso\'" style="color: red;">{{clie.OtroUno}}</div>\n\n                    <div text-wrap  *ngIf="clie.OtroUno == \'Ingreso\'">{{clie.OtroUno}}</div>\n\n                </ion-col>\n\n                <ion-col>\n\n\n\n                    <div>{{clie.OtroCuatro}}</div>\n\n\n\n                </ion-col>\n\n                <ion-col center text-center>\n\n                  <ion-note>\n\n                      {{clie.NombreUsuario}}\n\n                  </ion-note>\n\n                </ion-col>\n\n              </ion-row>\n\n          </ion-item>\n\n          <!--\n\n          <ion-item-options side="left">\n\n            <button ion-button color="primary" *ngIf="prof.Activo == 1" (click)="asociarComunas(prof)">\n\n              <ion-icon name="globe"></ion-icon>\n\n              Comunas\n\n            </button>\n\n          </ion-item-options>\n\n          <ion-item-options side="right">\n\n            <button ion-button color="primary" *ngIf="prof.Activo == 1" (click)="editarProfesor(prof)">\n\n              <ion-icon name="create"></ion-icon>\n\n              Editar\n\n            </button>\n\n            <button ion-button color="danger" *ngIf="prof.Activo == 1"  (click)="desactivarProfesor(prof)">\n\n              <ion-icon name="trash"></ion-icon>\n\n              Eliminar\n\n            </button>\n\n            <button ion-button color="secondary" *ngIf="prof.Activo == 0"  (click)="activarProfesor(prof)">\n\n              <ion-icon name="checkmark-circle"></ion-icon>\n\n              Activar\n\n            </button>\n\n          </ion-item-options>\n\n        -->\n\n        </ion-item-sliding>\n\n      </ion-list>\n\n\n\n      <ion-card *ngIf="esAdministrador == false">\n\n        <ion-card-content>\n\n          <ion-card-title>\n\n            Usuarios del Sistema\n\n          </ion-card-title>\n\n          <ion-item>\n\n            <ion-avatar item-start>\n\n              <ion-icon name="people" style="font-size: 3em;"></ion-icon>\n\n            </ion-avatar>\n\n            <p text-wrap>Actualmente existen <strong>{{cantidadUsuarios}}</strong> usuarios para tu asamblea.</p>\n\n          </ion-item>\n\n      \n\n        </ion-card-content>\n\n      </ion-card>\n\n\n\n\n\n\n\n</ion-content>\n\n<ion-fab top right right>\n\n    <button ion-fab mini (click)="logout()" class="btn-color">\n\n      <ion-icon name="close"></ion-icon>\n\n    </button>\n\n  </ion-fab>\n\n'/*ion-inline-end:"F:\impacto2v\AppImpacto2V_new\src\pages\rendicion\rendicion.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* App */],
         __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
@@ -2023,17 +2113,18 @@ RendicionPage = __decorate([
 
 /***/ }),
 
-/***/ 21:
+/***/ 210:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AuthService; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DocumentosPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(42);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__AppSettings__ = __webpack_require__(43);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_platform_browser__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__ = __webpack_require__(54);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login_login__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_services_AuthService__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_services_GlobalService__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_in_app_browser__ = __webpack_require__(281);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_AppSettings__ = __webpack_require__(34);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2045,79 +2136,112 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+//pages
+
+//servicios
 
 
 
-var AuthService = (function () {
-    function AuthService(http, sanitized) {
-        this.http = http;
-        this.sanitized = sanitized;
-        //inicializamos los valores
-        this.username = '';
-        this.loggedIn = false;
-        //this.url = config.getUrl(this.modo, 'Login');
+
+/**
+ * Generated class for the DocumentosPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var DocumentosPage = (function () {
+    function DocumentosPage(app, navCtrl, navParams, loading, global, acceso) {
+        this.app = app;
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.loading = loading;
+        this.global = global;
+        this.acceso = acceso;
+        this.documentosArr = [];
     }
-    AuthService.prototype.login = function (userInfo) {
+    DocumentosPage.prototype.ionViewWillEnter = function () {
+        var rolId = sessionStorage.getItem("ROL_ID");
+        this.cargar();
+        //this.openUrl();
+    };
+    DocumentosPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad DocumentosPage');
+    };
+    DocumentosPage.prototype.cargar = function () {
         var _this = this;
-        var url = __WEBPACK_IMPORTED_MODULE_2__AppSettings__["a" /* AppSettings */].API_ENDPOINT + 'Login';
-        //let url = 'http://api.asambleas.cl/api/login';
-        var iJson = JSON.stringify(userInfo);
-        return this.http.post(url, iJson, {
-            headers: new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]({ 'Content-Type': 'application/json' })
-        })
-            .map(function (res) { return res.text(); })
-            .map(function (res) {
-            if (res == "error" || res == "nofound") {
-                _this.loggedIn = false;
-            }
-            else {
-                var retorno = JSON.parse(res);
-                sessionStorage.setItem('USU_ID', retorno.AutentificacionUsuario.Id);
-                sessionStorage.setItem('ROL_ID', retorno.Rol.Id);
-                sessionStorage.setItem('ROL_NOMBRE', retorno.Rol.Nombre);
-                sessionStorage.setItem('INST_ID', retorno.Institucion.Id);
-                sessionStorage.setItem('INSTITUCION_NOMBRE', retorno.Institucion.Nombre);
-                sessionStorage.setItem('PERSONA_NOMBRE', retorno.Persona.Nombres + ' ' + retorno.Persona.ApellidoPaterno + ' ' + retorno.Persona.ApellidoMaterno);
-                sessionStorage.setItem('REG_ID', retorno.Region.Id);
-                sessionStorage.setItem('REG_NOMBRE', retorno.Region.Nombre);
-                sessionStorage.setItem('COM_ID', retorno.Comuna.Id);
-                sessionStorage.setItem('COM_NOMBRE', retorno.Comuna.Nombre);
-                sessionStorage.setItem('ROL_NOMBRE_INSTITUCION', retorno.RolInstitucion.Nombre);
-                sessionStorage.setItem('ROL_ID_INSTITUCION', retorno.RolInstitucion.IdOriginal);
-                _this.username = userInfo.usuario;
-                _this.loggedIn = true;
-            }
-            return _this.loggedIn;
+        this.documentosArr = [];
+        //this.filtrosInstitucion = [];
+        var instId = sessionStorage.getItem("INST_ID");
+        var usuId = sessionStorage.getItem("USU_ID");
+        var loader = this.loading.create({
+            content: 'Cargando...',
+        });
+        loader.present().then(function () {
+            _this.global.postDocumentosUsuario(instId, usuId).subscribe(function (data) {
+                var datos = data.json();
+                var datosProcesar = datos.proposals;
+                var urlPrevia = __WEBPACK_IMPORTED_MODULE_6__app_AppSettings__["a" /* AppSettings */].URL_RAIZ + 'Repositorio/';
+                if (datosProcesar && datosProcesar.length > 0) {
+                    //ahora procesamos las rutas para mostrar los archivos
+                    datosProcesar.forEach(function (element) {
+                        element.UrlMostrar = urlPrevia + element.NombreCompleto;
+                        _this.documentosArr.push(element);
+                    });
+                }
+                //this.documentosArr = datos.proposals;
+            }, function (err) {
+                console.error(err);
+                loader.dismiss();
+            }, function () {
+                console.log('get rendciones completed');
+                loader.dismiss();
+            });
         });
     };
-    AuthService.prototype.logout = function () {
-        sessionStorage.clear();
-        this.username = '';
-        this.loggedIn = false;
+    DocumentosPage.prototype.logout = function () {
+        this.acceso.logout();
+        //esto lo comentamos
+        //this.navCtrl.setRoot(LoginPage);
+        this.app.getRootNav().setRoot(__WEBPACK_IMPORTED_MODULE_2__login_login__["a" /* LoginPage */]);
     };
-    AuthService.prototype.isLoggedId = function () {
-        return this.loggedIn;
+    DocumentosPage.prototype.openUrl = function (url) {
+        var browser = new __WEBPACK_IMPORTED_MODULE_5__ionic_native_in_app_browser__["a" /* InAppBrowser */]();
+        browser.create(url, '_blank');
     };
-    return AuthService;
+    DocumentosPage.prototype.doRefresh = function (refresher) {
+        var _this = this;
+        console.log('Begin async operation', refresher);
+        setTimeout(function () {
+            _this.cargar();
+            refresher.complete();
+        }, 2000);
+    };
+    return DocumentosPage;
 }());
-AuthService = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */],
-        __WEBPACK_IMPORTED_MODULE_3__angular_platform_browser__["c" /* DomSanitizer */]])
-], AuthService);
+DocumentosPage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'page-documentos',template:/*ion-inline-start:"F:\impacto2v\AppImpacto2V_new\src\pages\documentos\documentos.html"*/'<!--\n  Generated template for the DocumentosPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header class="mui--bg-color-red-500 fg-light">\n\n  <ion-navbar>\n    <ion-title>Documentos</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n    <!-- refresh-->\n    <ion-refresher (ionRefresh)="doRefresh($event)">\n      <ion-refresher-content></ion-refresher-content>\n    </ion-refresher>\n    <ion-label no-padding no-margin text-center style="font-style: italic;\n                font-size: 0.9rem;">\n      Deslize hacia abajo para actualizar\n    </ion-label>\n    <!--contenido de la pagina -->\n    <!-- lista-->\n    <ion-list>\n        <ion-item-sliding *ngFor="let clie of documentosArr">\n          <ion-item>\n            <ion-avatar item-start>\n              <!--descargar-->\n                <ion-icon name="cloud-download" item-left style="font-size: 3em;" (click)="openUrl(clie.UrlMostrar)"></ion-icon>\n            </ion-avatar>\n            <h2 text-wrap>{{clie.NombreCompleto}}</h2>\n            <ion-badge slot="end">{{clie.OtroUno}}</ion-badge>\n            <ion-row>\n                <ion-col>\n\n                    <div text-wrap>{{clie.OtroCinco}}</div>\n\n                </ion-col>\n                <ion-col center text-center>\n                  <ion-note>\n                      {{clie.NombreUsuario}}\n                  </ion-note>\n                </ion-col>\n              </ion-row>\n          </ion-item>\n        </ion-item-sliding>\n      </ion-list>    \n\n</ion-content>\n<ion-fab top right right>\n  <button ion-fab mini (click)="logout()" class="btn-color">\n    <ion-icon name="close"></ion-icon>\n  </button>\n</ion-fab>\n'/*ion-inline-end:"F:\impacto2v\AppImpacto2V_new\src\pages\documentos\documentos.html"*/,
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* App */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */],
+        __WEBPACK_IMPORTED_MODULE_4__app_services_GlobalService__["a" /* GlobalService */],
+        __WEBPACK_IMPORTED_MODULE_3__app_services_AuthService__["a" /* AuthService */]])
+], DocumentosPage);
 
-//# sourceMappingURL=AuthService.js.map
+//# sourceMappingURL=documentos.js.map
 
 /***/ }),
 
-/***/ 210:
+/***/ 211:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(211);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(229);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_hammerjs__ = __webpack_require__(283);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(212);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(230);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_hammerjs__ = __webpack_require__(285);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_hammerjs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_hammerjs__);
 
 
@@ -2128,34 +2252,35 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 229:
+/***/ 230:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(106);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(107);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(109);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_http__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_http__ = __webpack_require__(43);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_photo_viewer__ = __webpack_require__(203);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__directives_text_avatar_text_avatar__ = __webpack_require__(277);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__app_component__ = __webpack_require__(279);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__directives_text_avatar_text_avatar__ = __webpack_require__(278);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__app_component__ = __webpack_require__(280);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_cliente_cliente__ = __webpack_require__(110);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_home_home__ = __webpack_require__(280);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_login_login__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_solicitudes_solicitudes__ = __webpack_require__(281);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_home_home__ = __webpack_require__(282);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_login_login__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_solicitudes_solicitudes__ = __webpack_require__(283);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_novedades_novedades__ = __webpack_require__(204);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_inicio_inicio__ = __webpack_require__(282);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_inicio_inicio__ = __webpack_require__(284);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_detail_novedad_detail_novedad__ = __webpack_require__(205);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_visor_imagen_visor_imagen__ = __webpack_require__(111);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_crear_novedad_crear_novedad__ = __webpack_require__(206);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_editar_novedad_editar_novedad__ = __webpack_require__(207);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_usuarios_usuarios__ = __webpack_require__(208);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_rendicion_rendicion__ = __webpack_require__(209);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__app_services_AuthService__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__app_services_GlobalService__ = __webpack_require__(57);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_documentos_documentos__ = __webpack_require__(210);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__app_services_AuthService__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__app_services_GlobalService__ = __webpack_require__(44);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2171,6 +2296,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 //agregado ahora para ver el album de fotos en las novedades
 
 //directivas
+
 
 
 
@@ -2208,6 +2334,7 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_19__pages_usuarios_usuarios__["a" /* UsuariosPage */],
             __WEBPACK_IMPORTED_MODULE_14__pages_inicio_inicio__["a" /* InicioPage */],
             __WEBPACK_IMPORTED_MODULE_20__pages_rendicion_rendicion__["a" /* RendicionPage */],
+            __WEBPACK_IMPORTED_MODULE_21__pages_documentos_documentos__["a" /* DocumentosPage */],
             __WEBPACK_IMPORTED_MODULE_7__directives_text_avatar_text_avatar__["a" /* TextAvatarDirective */]
         ],
         imports: [
@@ -2231,13 +2358,14 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_18__pages_editar_novedad_editar_novedad__["a" /* EditarNovedadPage */],
             __WEBPACK_IMPORTED_MODULE_19__pages_usuarios_usuarios__["a" /* UsuariosPage */],
             __WEBPACK_IMPORTED_MODULE_20__pages_rendicion_rendicion__["a" /* RendicionPage */],
+            __WEBPACK_IMPORTED_MODULE_21__pages_documentos_documentos__["a" /* DocumentosPage */],
             __WEBPACK_IMPORTED_MODULE_14__pages_inicio_inicio__["a" /* InicioPage */]
         ],
         providers: [
             __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__["a" /* StatusBar */],
             __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */],
-            __WEBPACK_IMPORTED_MODULE_21__app_services_AuthService__["a" /* AuthService */],
-            __WEBPACK_IMPORTED_MODULE_22__app_services_GlobalService__["a" /* GlobalService */],
+            __WEBPACK_IMPORTED_MODULE_22__app_services_AuthService__["a" /* AuthService */],
+            __WEBPACK_IMPORTED_MODULE_23__app_services_GlobalService__["a" /* GlobalService */],
             __WEBPACK_IMPORTED_MODULE_6__ionic_native_photo_viewer__["a" /* PhotoViewer */],
             { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["v" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["d" /* IonicErrorHandler */] }
         ]
@@ -2248,13 +2376,110 @@ AppModule = __decorate([
 
 /***/ }),
 
-/***/ 277:
+/***/ 27:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_services_AuthService__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__cliente_cliente__ = __webpack_require__(110);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+/**
+ * Generated class for the LoginPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var LoginPage = (function () {
+    function LoginPage(nav, auth, toastCtrl) {
+        this.nav = nav;
+        this.auth = auth;
+        this.toastCtrl = toastCtrl;
+        this.presentToast = function (mensaje, posicion, duracion) {
+            var toast = this.toastCtrl.create({
+                message: mensaje,
+                duration: duracion,
+                position: posicion
+            });
+            toast.onDidDismiss(function () {
+                console.log('Dismissed toast');
+            });
+            toast.present();
+        };
+    }
+    LoginPage.prototype.Signup = function () {
+        var _this = this;
+        //validaciones
+        if (!this.usuario) {
+            var mi = this.presentToast('Nombre de usuario requerido', 'bottom', 4000);
+            return;
+        }
+        if (!this.password) {
+            var mi = this.presentToast('Password requerida', 'bottom', 4000);
+            return;
+        }
+        var f = { usuario: this.usuario, password: this.password };
+        this.auth.login(f)
+            .subscribe(function (rs) { return _this.isLogged = rs; }, function (er) {
+            //console.log(error)
+            var mi = _this.presentToast('Usuario no exite', 'bottom', 4000);
+        }, function () {
+            if (_this.isLogged) {
+                //this.nav.push(InicioPage)
+                _this.nav.push(__WEBPACK_IMPORTED_MODULE_3__cliente_cliente__["a" /* ClientePage */])
+                    .then(function (data) { return console.log(data); }, function (error) {
+                    //console.log(error)
+                    var mi = _this.presentToast(error, 'bottom', 4000);
+                });
+            }
+            else {
+                //incorrecto
+                console.log('Acceso denegado');
+                var mi = _this.presentToast('Usuario no exite', 'bottom', 4000);
+            }
+        });
+    };
+    LoginPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad LoginPage');
+    };
+    return LoginPage;
+}());
+LoginPage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'page-login',template:/*ion-inline-start:"F:\impacto2v\AppImpacto2V_new\src\pages\login\login.html"*/'<!--\n\n  Generated template for the LoginPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Ingreso</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding class="color-fixed">\n\n<div >\n\n  <ion-row class="encabezado">\n\n    <h2 class="titulo">Bienvenido a la Aplicación de Asambleas</h2>\n\n  </ion-row>\n\n    <ion-row class="bg-transparente">\n\n      <ion-col class="bg-transparente">\n\n        <ion-list inset class="bg-transparente fg-blanco">\n\n\n\n          <ion-item class="bg-transparente fg-blanco">\n\n            <ion-label  class="bg-transparente fg-blanco" floating>Nombre de Usuario</ion-label>\n\n            <ion-input type="text" [(ngModel)]="usuario" required class="bg-transparente fg-blanco"></ion-input>\n\n          </ion-item>\n\n\n\n          <ion-item  class="bg-transparente fg-blanco">\n\n            <ion-label floating  class="bg-transparente fg-blanco">Password</ion-label>\n\n            <ion-input  class="bg-transparente fg-blanco" type="password" [(ngModel)]="password" required></ion-input>\n\n          </ion-item>\n\n\n\n        </ion-list>\n\n      </ion-col>\n\n    </ion-row>\n\n\n\n    <ion-row>\n\n      <ion-col class="signup-col">\n\n        <button ion-button class="btn-color" block (click)="Signup()">Ingresar</button>\n\n\n\n      </ion-col>\n\n    </ion-row>\n\n</div>\n\n<!-- fav -->\n\n  <ion-fab top right>\n\n    <button ion-fab mini class="btn-color"><ion-icon name="add"></ion-icon></button>\n\n    <ion-fab-list>\n\n      <button ion-fab><ion-icon name="logo-facebook"></ion-icon></button>\n\n      <button ion-fab><ion-icon name="logo-twitter"></ion-icon></button>\n\n      <button ion-fab><ion-icon name="logo-vimeo"></ion-icon></button>\n\n      <button ion-fab><ion-icon name="logo-googleplus"></ion-icon></button>\n\n    </ion-fab-list>\n\n  </ion-fab>\n\n</ion-content>\n\n<ion-footer>\n\n  <ion-toolbar>\n\n    <ion-title text-wrap>@Copyright 2018 Impacto 2V SPA</ion-title>\n\n  </ion-toolbar>\n\n</ion-footer>\n\n'/*ion-inline-end:"F:\impacto2v\AppImpacto2V_new\src\pages\login\login.html"*/,
+        providers: [__WEBPACK_IMPORTED_MODULE_2__app_services_AuthService__["a" /* AuthService */]]
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_2__app_services_AuthService__["a" /* AuthService */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* ToastController */]])
+], LoginPage);
+
+//# sourceMappingURL=login.js.map
+
+/***/ }),
+
+/***/ 278:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TextAvatarDirective; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__color_generator__ = __webpack_require__(278);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__color_generator__ = __webpack_require__(279);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2305,7 +2530,7 @@ TextAvatarDirective = __decorate([
 
 /***/ }),
 
-/***/ 278:
+/***/ 279:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2335,16 +2560,16 @@ var ColorGenerator = (function () {
 
 /***/ }),
 
-/***/ 279:
+/***/ 280:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(109);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(106);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_login_login__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(107);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_login_login__ = __webpack_require__(27);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2372,7 +2597,7 @@ var MyApp = (function () {
     return MyApp;
 }());
 MyApp = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"D:\impacto2v\AppImpacto2V_new\src\app\app.html"*/'<ion-nav [root]="rootPage" #content swipeBackEnabled="true"></ion-nav>\n\n'/*ion-inline-end:"D:\impacto2v\AppImpacto2V_new\src\app\app.html"*/
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"F:\impacto2v\AppImpacto2V_new\src\app\app.html"*/'<ion-nav [root]="rootPage" #content swipeBackEnabled="true"></ion-nav>\n\n'/*ion-inline-end:"F:\impacto2v\AppImpacto2V_new\src\app\app.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
 ], MyApp);
@@ -2381,15 +2606,15 @@ MyApp = __decorate([
 
 /***/ }),
 
-/***/ 280:
+/***/ 282:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(109);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(106);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(107);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2433,7 +2658,7 @@ __decorate([
 ], HomePage.prototype, "nav", void 0);
 HomePage = HomePage_1 = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-home',template:/*ion-inline-start:"D:\impacto2v\AppImpacto2V_new\src\pages\home\home.html"*/'\n\n<!--SideNav-->\n\n<ion-menu side="left" [content]="content" persistent="true">\n\n  <ion-header>\n\n    <ion-toolbar color="blanco">\n\n      <ion-title>Menu</ion-title>\n\n    </ion-toolbar>\n\n  </ion-header>\n\n  <ion-content>\n\n    <ion-col width-67>\n\n     <!-- <img src="{{usuarioAps.UrlImagen}}" style="max-width: 97%;"/>-->\n\n     <!-- <h2  text-wrap>{{usuarioAps.Nombres + \' \' + usuarioAps.ApellidoPaterno + \' \' + usuarioAps.ApellidoMaterno}}</h2>-->\n\n     <h2  text-wrap>nombre completo</h2>\n\n    </ion-col>\n\n    <div class="position-menu-bottom border-superior-menu-bottom">\n\n      <ion-row *ngFor="let p of pages" (click)="openPage(p)">\n\n        <ion-list ion-item style="padding: 0; margin: 0; padding-left: 10px;">\n\n          <button menu-toggle  style="background-color: transparent; width: 100%; text-align: left;">\n\n            <ion-icon name={{p.icon}} style="padding-right:5px;"></ion-icon>\n\n            {{p.title}}\n\n          </button>\n\n        </ion-list>\n\n      </ion-row>\n\n    </div>\n\n  </ion-content>\n\n</ion-menu>\n\n<ion-nav [root]="rootPage" #content swipeBackEnabled="true"></ion-nav>\n\n<!--Fin SideNav-->\n\n\n\n<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>\n\n      Ionic Blank\n\n    </ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  The world is your oyster.\n\n  <p>\n\n    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.\n\n  </p>\n\n</ion-content>\n\n'/*ion-inline-end:"D:\impacto2v\AppImpacto2V_new\src\pages\home\home.html"*/
+        selector: 'page-home',template:/*ion-inline-start:"F:\impacto2v\AppImpacto2V_new\src\pages\home\home.html"*/'\n\n<!--SideNav-->\n\n<ion-menu side="left" [content]="content" persistent="true">\n\n  <ion-header>\n\n    <ion-toolbar color="blanco">\n\n      <ion-title>Menu</ion-title>\n\n    </ion-toolbar>\n\n  </ion-header>\n\n  <ion-content>\n\n    <ion-col width-67>\n\n     <!-- <img src="{{usuarioAps.UrlImagen}}" style="max-width: 97%;"/>-->\n\n     <!-- <h2  text-wrap>{{usuarioAps.Nombres + \' \' + usuarioAps.ApellidoPaterno + \' \' + usuarioAps.ApellidoMaterno}}</h2>-->\n\n     <h2  text-wrap>nombre completo</h2>\n\n    </ion-col>\n\n    <div class="position-menu-bottom border-superior-menu-bottom">\n\n      <ion-row *ngFor="let p of pages" (click)="openPage(p)">\n\n        <ion-list ion-item style="padding: 0; margin: 0; padding-left: 10px;">\n\n          <button menu-toggle  style="background-color: transparent; width: 100%; text-align: left;">\n\n            <ion-icon name={{p.icon}} style="padding-right:5px;"></ion-icon>\n\n            {{p.title}}\n\n          </button>\n\n        </ion-list>\n\n      </ion-row>\n\n    </div>\n\n  </ion-content>\n\n</ion-menu>\n\n<ion-nav [root]="rootPage" #content swipeBackEnabled="true"></ion-nav>\n\n<!--Fin SideNav-->\n\n\n\n<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>\n\n      Ionic Blank\n\n    </ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  The world is your oyster.\n\n  <p>\n\n    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.\n\n  </p>\n\n</ion-content>\n\n'/*ion-inline-end:"F:\impacto2v\AppImpacto2V_new\src\pages\home\home.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
         __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Nav */],
@@ -2447,16 +2672,16 @@ var HomePage_1;
 
 /***/ }),
 
-/***/ 281:
+/***/ 283:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SolicitudesPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login_login__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_services_AuthService__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_services_GlobalService__ = __webpack_require__(57);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login_login__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_services_AuthService__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_services_GlobalService__ = __webpack_require__(44);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2523,7 +2748,7 @@ var SolicitudesPage = (function () {
 }());
 SolicitudesPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-solicitudes',template:/*ion-inline-start:"D:\impacto2v\AppImpacto2V_new\src\pages\solicitudes\solicitudes.html"*/'<!--\n\n  Generated template for the SolicitudesPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header class="mui--bg-color-red-500 fg-light">\n\n\n\n    <ion-navbar>\n\n      <ion-title>Solicitudes</ion-title>\n\n    </ion-navbar>\n\n  \n\n  </ion-header>\n\n\n\n\n\n<ion-content padding>\n\n\n\n</ion-content>\n\n<ion-fab top right right>\n\n    <button ion-fab mini (click)="logout()" class="btn-color">\n\n      <ion-icon name="close"></ion-icon>\n\n    </button>\n\n  </ion-fab>\n\n'/*ion-inline-end:"D:\impacto2v\AppImpacto2V_new\src\pages\solicitudes\solicitudes.html"*/,
+        selector: 'page-solicitudes',template:/*ion-inline-start:"F:\impacto2v\AppImpacto2V_new\src\pages\solicitudes\solicitudes.html"*/'<!--\n\n  Generated template for the SolicitudesPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header class="mui--bg-color-red-500 fg-light">\n\n\n\n    <ion-navbar>\n\n      <ion-title>Solicitudes</ion-title>\n\n    </ion-navbar>\n\n  \n\n  </ion-header>\n\n\n\n\n\n<ion-content padding>\n\n\n\n</ion-content>\n\n<ion-fab top right right>\n\n    <button ion-fab mini (click)="logout()" class="btn-color">\n\n      <ion-icon name="close"></ion-icon>\n\n    </button>\n\n  </ion-fab>\n\n'/*ion-inline-end:"F:\impacto2v\AppImpacto2V_new\src\pages\solicitudes\solicitudes.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* App */],
         __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
@@ -2537,17 +2762,17 @@ SolicitudesPage = __decorate([
 
 /***/ }),
 
-/***/ 282:
+/***/ 284:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return InicioPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login_login__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login_login__ = __webpack_require__(27);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__cliente_cliente__ = __webpack_require__(110);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_services_AuthService__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_services_InicioService__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_services_AuthService__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_services_InicioService__ = __webpack_require__(58);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2752,7 +2977,7 @@ var InicioPage = (function () {
 }());
 InicioPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-inicio',template:/*ion-inline-start:"D:\impacto2v\AppImpacto2V_new\src\pages\inicio\inicio.html"*/'<!--\n\n  Generated template for the InicioPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header class="mui--bg-color-red-500 fg-light">\n\n  <ion-navbar>\n\n    <ion-title>Inicio</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n<div *ngFor="let item of tarjetas">\n\n  <ion-card>\n\n    <ion-card-content>\n\n      <ion-card-title>\n\n        {{item.Titulo}}\n\n        <ion-icon name="{{item.IconoGeneral}}" style="float: right;"></ion-icon>\n\n        </ion-card-title>\n\n      <p>\n\n        {{item.Texto}}\n\n      </p>\n\n    </ion-card-content>\n\n      <ion-row>\n\n    <ion-col>\n\n      <button ion-button icon-left clear (click)="openPage(item)" style="float:right;">\n\n        <ion-icon name="{{item.IconoBoton}}"></ion-icon>\n\n        <div>Ir...</div>\n\n      </button>\n\n    </ion-col>\n\n\n\n  </ion-row>\n\n  </ion-card>\n\n</div>\n\n</ion-content>\n\n<ion-fab top right right>\n\n  <button ion-fab mini (click)="logout()" class="btn-color">\n\n    <ion-icon name="close"></ion-icon>\n\n  </button>\n\n</ion-fab>\n\n'/*ion-inline-end:"D:\impacto2v\AppImpacto2V_new\src\pages\inicio\inicio.html"*/,
+        selector: 'page-inicio',template:/*ion-inline-start:"F:\impacto2v\AppImpacto2V_new\src\pages\inicio\inicio.html"*/'<!--\n\n  Generated template for the InicioPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header class="mui--bg-color-red-500 fg-light">\n\n  <ion-navbar>\n\n    <ion-title>Inicio</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n<div *ngFor="let item of tarjetas">\n\n  <ion-card>\n\n    <ion-card-content>\n\n      <ion-card-title>\n\n        {{item.Titulo}}\n\n        <ion-icon name="{{item.IconoGeneral}}" style="float: right;"></ion-icon>\n\n        </ion-card-title>\n\n      <p>\n\n        {{item.Texto}}\n\n      </p>\n\n    </ion-card-content>\n\n      <ion-row>\n\n    <ion-col>\n\n      <button ion-button icon-left clear (click)="openPage(item)" style="float:right;">\n\n        <ion-icon name="{{item.IconoBoton}}"></ion-icon>\n\n        <div>Ir...</div>\n\n      </button>\n\n    </ion-col>\n\n\n\n  </ion-row>\n\n  </ion-card>\n\n</div>\n\n</ion-content>\n\n<ion-fab top right right>\n\n  <button ion-fab mini (click)="logout()" class="btn-color">\n\n    <ion-icon name="close"></ion-icon>\n\n  </button>\n\n</ion-fab>\n\n'/*ion-inline-end:"F:\impacto2v\AppImpacto2V_new\src\pages\inicio\inicio.html"*/,
         providers: [__WEBPACK_IMPORTED_MODULE_4__app_services_AuthService__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_5__app_services_InicioService__["a" /* InicioService */]]
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
@@ -2766,15 +2991,37 @@ InicioPage = __decorate([
 
 /***/ }),
 
-/***/ 30:
+/***/ 34:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppSettings; });
+var AppSettings = (function () {
+    function AppSettings() {
+    }
+    return AppSettings;
+}());
+
+//public static API_ENDPOINT = 'http://apps.asambleas.cl/api/';
+//public static URL_FOTOS = 'http://apps.asambleas.cl/Repositorio/';
+//public static URL_RAIZ = 'http://apps.asambleas.cl/';
+AppSettings.API_ENDPOINT = 'http://localhost:58013/api/';
+AppSettings.URL_FOTOS = 'http://localhost:58013/Repositorio/';
+AppSettings.URL_RAIZ = 'http://localhost:58013/';
+//# sourceMappingURL=AppSettings.js.map
+
+/***/ }),
+
+/***/ 44:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GlobalService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_services_AuthService__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__cliente_cliente__ = __webpack_require__(110);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__AppSettings__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2788,108 +3035,71 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
-/**
- * Generated class for the LoginPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var LoginPage = (function () {
-    function LoginPage(nav, auth, toastCtrl) {
-        this.nav = nav;
-        this.auth = auth;
-        this.toastCtrl = toastCtrl;
-        this.presentToast = function (mensaje, posicion, duracion) {
-            var toast = this.toastCtrl.create({
-                message: mensaje,
-                duration: duracion,
-                position: posicion
-            });
-            toast.onDidDismiss(function () {
-                console.log('Dismissed toast');
-            });
-            toast.present();
-        };
+var GlobalService = (function () {
+    function GlobalService(http) {
+        this.http = http;
+        this.headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]({ 'Content-Type': 'application/json',
+            'Accept': 'q=0.8;application/json;q=0.9' });
+        this.options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: this.headers });
     }
-    LoginPage.prototype.Signup = function () {
-        var _this = this;
-        //validaciones
-        if (!this.usuario) {
-            var mi = this.presentToast('Nombre de usuario requerido', 'bottom', 4000);
-            return;
-        }
-        if (!this.password) {
-            var mi = this.presentToast('Password requerida', 'bottom', 4000);
-            return;
-        }
-        var f = { usuario: this.usuario, password: this.password };
-        this.auth.login(f)
-            .subscribe(function (rs) { return _this.isLogged = rs; }, function (er) {
-            //console.log(error)
-            var mi = _this.presentToast('Usuario no exite', 'bottom', 4000);
-        }, function () {
-            if (_this.isLogged) {
-                //this.nav.push(InicioPage)
-                _this.nav.push(__WEBPACK_IMPORTED_MODULE_3__cliente_cliente__["a" /* ClientePage */])
-                    .then(function (data) { return console.log(data); }, function (error) {
-                    //console.log(error)
-                    var mi = _this.presentToast(error, 'bottom', 4000);
-                });
-            }
-            else {
-                //incorrecto
-                console.log('Acceso denegado');
-                var mi = _this.presentToast('Usuario no exite', 'bottom', 4000);
-            }
+    GlobalService.prototype.postSolicitudes = function (instId) {
+        var url = __WEBPACK_IMPORTED_MODULE_2__AppSettings__["a" /* AppSettings */].API_ENDPOINT + 'Solicitudes';
+        var dataGet = { InstId: instId };
+        var data = this.http.post(url, dataGet, {
+            headers: this.headers
         });
+        return data;
     };
-    LoginPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad LoginPage');
+    GlobalService.prototype.getUsuarios = function (instId, rolId) {
+        var url = __WEBPACK_IMPORTED_MODULE_2__AppSettings__["a" /* AppSettings */].API_ENDPOINT + 'ListarUsuarios?instId=' + instId + '&rolId=' + rolId;
+        var dataGet = { InstId: instId };
+        var data = this.http.get(url);
+        return data;
     };
-    return LoginPage;
+    GlobalService.prototype.postInstituciones = function (buscarId, idUsuario) {
+        var url = __WEBPACK_IMPORTED_MODULE_2__AppSettings__["a" /* AppSettings */].API_ENDPOINT + 'Institucion';
+        var dataGet = { IdUsuario: idUsuario.toString() };
+        var data = this.http.post(url, dataGet, {
+            headers: this.headers
+        });
+        return data;
+    };
+    GlobalService.prototype.postRendiciones = function (instId) {
+        var url = __WEBPACK_IMPORTED_MODULE_2__AppSettings__["a" /* AppSettings */].API_ENDPOINT + 'Rendicion';
+        var dataGet = { InstId: instId };
+        var data = this.http.post(url, dataGet, {
+            headers: this.headers
+        });
+        return data;
+    };
+    GlobalService.prototype.postDocumentosUsuario = function (instId, usuId) {
+        var url = __WEBPACK_IMPORTED_MODULE_2__AppSettings__["a" /* AppSettings */].API_ENDPOINT + 'FileDocumento';
+        var dataGet = { InstId: instId.toString(), UsuId: usuId.toString() };
+        var data = this.http.post(url, dataGet, {
+            headers: this.headers
+        });
+        return data;
+    };
+    return GlobalService;
 }());
-LoginPage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-login',template:/*ion-inline-start:"D:\impacto2v\AppImpacto2V_new\src\pages\login\login.html"*/'<!--\n\n  Generated template for the LoginPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Ingreso</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding class="color-fixed">\n\n<div >\n\n  <ion-row class="encabezado">\n\n    <h2 class="titulo">Bienvenido a la Aplicación de Asambleas</h2>\n\n  </ion-row>\n\n    <ion-row class="bg-transparente">\n\n      <ion-col class="bg-transparente">\n\n        <ion-list inset class="bg-transparente fg-blanco">\n\n\n\n          <ion-item class="bg-transparente fg-blanco">\n\n            <ion-label  class="bg-transparente fg-blanco" floating>Nombre de Usuario</ion-label>\n\n            <ion-input type="text" [(ngModel)]="usuario" required class="bg-transparente fg-blanco"></ion-input>\n\n          </ion-item>\n\n\n\n          <ion-item  class="bg-transparente fg-blanco">\n\n            <ion-label floating  class="bg-transparente fg-blanco">Password</ion-label>\n\n            <ion-input  class="bg-transparente fg-blanco" type="password" [(ngModel)]="password" required></ion-input>\n\n          </ion-item>\n\n\n\n        </ion-list>\n\n      </ion-col>\n\n    </ion-row>\n\n\n\n    <ion-row>\n\n      <ion-col class="signup-col">\n\n        <button ion-button class="btn-color" block (click)="Signup()">Ingresar</button>\n\n\n\n      </ion-col>\n\n    </ion-row>\n\n</div>\n\n<!-- fav -->\n\n  <ion-fab top right>\n\n    <button ion-fab mini class="btn-color"><ion-icon name="add"></ion-icon></button>\n\n    <ion-fab-list>\n\n      <button ion-fab><ion-icon name="logo-facebook"></ion-icon></button>\n\n      <button ion-fab><ion-icon name="logo-twitter"></ion-icon></button>\n\n      <button ion-fab><ion-icon name="logo-vimeo"></ion-icon></button>\n\n      <button ion-fab><ion-icon name="logo-googleplus"></ion-icon></button>\n\n    </ion-fab-list>\n\n  </ion-fab>\n\n</ion-content>\n\n<ion-footer>\n\n  <ion-toolbar>\n\n    <ion-title text-wrap>@Copyright 2018 Impacto 2V SPA</ion-title>\n\n  </ion-toolbar>\n\n</ion-footer>\n\n'/*ion-inline-end:"D:\impacto2v\AppImpacto2V_new\src\pages\login\login.html"*/,
-        providers: [__WEBPACK_IMPORTED_MODULE_2__app_services_AuthService__["a" /* AuthService */]]
-    }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
-        __WEBPACK_IMPORTED_MODULE_2__app_services_AuthService__["a" /* AuthService */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* ToastController */]])
-], LoginPage);
+GlobalService = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]])
+], GlobalService);
 
-//# sourceMappingURL=login.js.map
+//# sourceMappingURL=GlobalService.js.map
 
 /***/ }),
 
-/***/ 43:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppSettings; });
-var AppSettings = (function () {
-    function AppSettings() {
-    }
-    return AppSettings;
-}());
-
-AppSettings.API_ENDPOINT = 'http://apps.asambleas.cl/api/';
-AppSettings.URL_FOTOS = 'http://apps.asambleas.cl/Repositorio/';
-AppSettings.URL_RAIZ = 'http://apps.asambleas.cl/';
-//# sourceMappingURL=AppSettings.js.map
-
-/***/ }),
-
-/***/ 55:
+/***/ 57:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NovedadService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(42);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__AppSettings__ = __webpack_require__(43);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__(54);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__AppSettings__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__(56);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2989,15 +3199,15 @@ NovedadService = __decorate([
 
 /***/ }),
 
-/***/ 56:
+/***/ 58:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return InicioService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(42);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__AppSettings__ = __webpack_require__(43);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__(54);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__AppSettings__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__(56);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -3041,78 +3251,7 @@ InicioService = __decorate([
 
 //# sourceMappingURL=InicioService.js.map
 
-/***/ }),
-
-/***/ 57:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GlobalService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(42);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__AppSettings__ = __webpack_require__(43);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__(54);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-var GlobalService = (function () {
-    function GlobalService(http) {
-        this.http = http;
-        this.headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]({ 'Content-Type': 'application/json',
-            'Accept': 'q=0.8;application/json;q=0.9' });
-        this.options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: this.headers });
-    }
-    GlobalService.prototype.postSolicitudes = function (instId) {
-        var url = __WEBPACK_IMPORTED_MODULE_2__AppSettings__["a" /* AppSettings */].API_ENDPOINT + 'Solicitudes';
-        var dataGet = { InstId: instId };
-        var data = this.http.post(url, dataGet, {
-            headers: this.headers
-        });
-        return data;
-    };
-    GlobalService.prototype.getUsuarios = function (instId, rolId) {
-        var url = __WEBPACK_IMPORTED_MODULE_2__AppSettings__["a" /* AppSettings */].API_ENDPOINT + 'ListarUsuarios?instId=' + instId + '&rolId=' + rolId;
-        var dataGet = { InstId: instId };
-        var data = this.http.get(url);
-        return data;
-    };
-    GlobalService.prototype.postInstituciones = function (buscarId, idUsuario) {
-        var url = __WEBPACK_IMPORTED_MODULE_2__AppSettings__["a" /* AppSettings */].API_ENDPOINT + 'Institucion';
-        var dataGet = { IdUsuario: idUsuario.toString() };
-        var data = this.http.post(url, dataGet, {
-            headers: this.headers
-        });
-        return data;
-    };
-    GlobalService.prototype.postRendiciones = function (instId) {
-        var url = __WEBPACK_IMPORTED_MODULE_2__AppSettings__["a" /* AppSettings */].API_ENDPOINT + 'Rendicion';
-        var dataGet = { InstId: instId };
-        var data = this.http.post(url, dataGet, {
-            headers: this.headers
-        });
-        return data;
-    };
-    return GlobalService;
-}());
-GlobalService = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]])
-], GlobalService);
-
-//# sourceMappingURL=GlobalService.js.map
-
 /***/ })
 
-},[210]);
+},[211]);
 //# sourceMappingURL=main.js.map

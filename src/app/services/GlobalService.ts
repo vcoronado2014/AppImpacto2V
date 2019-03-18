@@ -50,5 +50,14 @@ export class GlobalService{
     });
     return data;
   }
+  postDocumentosUsuario(instId, usuId){
+    let url = AppSettings.API_ENDPOINT + 'FileDocumento';
+    let dataGet = { InstId: instId.toString(), UsuId: usuId.toString() };
+
+    let data = this.http.post(url, dataGet, {
+      headers: this.headers
+    });
+    return data;
+  }
 
 }

@@ -5,6 +5,8 @@ import { NovedadesPage } from '../novedades/novedades';
 import { UsuariosPage } from '../usuarios/usuarios';
 import { RendicionPage } from '../rendicion/rendicion';
 import { SolicitudesPage } from '../solicitudes/solicitudes';
+import { DocumentosPage } from '../documentos/documentos';
+import { CalendarioPage } from '../calendario/calendario';
 import { InicioService } from '../../app/services/InicioService';
 
 
@@ -16,6 +18,8 @@ import { InicioService } from '../../app/services/InicioService';
     tab1Root = NovedadesPage;
     tab2Root = UsuariosPage;
     tab3Root = RendicionPage;
+    tab4Root = DocumentosPage;
+    tab5Root = CalendarioPage;
       /*
     
     tab2Root = PacksPage;
