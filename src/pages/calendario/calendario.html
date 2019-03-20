@@ -15,16 +15,27 @@
 
 
 <ion-content padding>
+  <!-- refresh-->
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ion-label no-padding no-margin text-center style="font-style: italic;
+                      font-size: 0.9rem;">
+    Deslize hacia abajo para actualizar
+  </ion-label>
   <ion-row>
       <ion-buttons end>
-          <button ion-button [disabled]="isToday" (click)="today()">Today</button>
-          <button ion-button (click)="changeMode('month')">M</button>
-          <button ion-button (click)="changeMode('week')">W</button>
-          <button ion-button (click)="changeMode('day')">D</button>
-          <button ion-button (click)="loadEvents()">Load Events</button>
+          <button ion-button small [disabled]="isToday" (click)="today()">Hoy</button>
+          <button ion-button small (click)="changeMode('month')">Mensual</button>
+          <button ion-button small (click)="changeMode('week')">Semanal</button>
+          <button ion-button small (click)="changeMode('day')">Diario</button>
+          <!-- comentado 
+          <button ion-button (click)="loadEvents()">Load Events</button>-->
       </ion-buttons>
   </ion-row>
-    <calendar [eventSource]="eventSource"
+    <calendar 
+              [monthviewEventDetailTemplate]="template"
+              [eventSource]="eventSource"
               [calendarMode]="calendar.mode"
               [currentDate]="calendar.currentDate"
               [locale]="calendar.locale"
@@ -34,6 +45,22 @@
               (onTimeSelected)="onTimeSelected($event)"
               step="30">
     </calendar>
+
+    <ng-template #template let-showEventDetail="showEventDetail" let-selectedDate="selectedDate" let-noEventsLabel="noEventsLabel">
+        
+        <h5 class="noEvents" *ngIf="selectedDate.events.length == 0">No Events</h5>
+        <ion-list>
+          <ion-item (click)="onEventSelected(event)" *ngFor="let event of selectedDate.events">
+            <h2 text-wrap>{{event.title}}</h2>
+            <p text-wrap>Start: {{event.startTime}}</p>
+            <p text-wrap>end: {{event.endTime}}</p>
+          </ion-item>
+        </ion-list>
+    </ng-template>
+
+
+
+
 </ion-content>
 <ion-fab top right right>
 <button ion-fab mini (click)="logout()" class="btn-color">

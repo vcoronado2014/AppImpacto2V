@@ -12,6 +12,8 @@ import { Chart } from 'chart.js';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import {AppSettings } from '../../app/AppSettings';
 import { NgCalendarModule  } from 'ionic2-calendar';
+//moment
+import moment from 'moment';
 
 /**
  * Generated class for the CalendarioPage page.
@@ -94,6 +96,55 @@ export class CalendarioPage {
       }
       return events;
   }
+  createEvents(){
+      this.eventSource = [];
+    var instId = sessionStorage.getItem("INST_ID");
+    var tipo = '1';
+    //var events = [];
+    let loader = this.loading.create({
+      content: 'Cargando...',
+    });
+    loader.present().then(() => {
+      this.global.postCalendario(instId, tipo).subscribe(
+        data => {
+          var datos = data.json();
+          var datosProcesar = datos;
+          
+          if (datosProcesar && datosProcesar.length > 0){
+            //ahora procesamos las rutas para mostrar los archivos
+            datosProcesar.forEach(element => {
+                var mesIniC = parseInt(element.mesIni) + 1; 
+                var mesTerC = parseInt(element.mesTer) + 1; 
+                var fechaIni = new Date(parseInt(element.annoIni), mesIniC, parseInt(element.diaIni), parseInt(element.horaIni), parseInt(element.minutosIni), 0, 0);
+                var fechaTer = new Date(parseInt(element.annoTer), mesTerC, parseInt(element.diaTer), parseInt(element.horaTer), parseInt(element.minutosTer), 0, 0);
+                //element.allDay, element.content, element.details, element.ubication
+                var title = element.content + '-' + element.details + ', ' + element.ubication;
+                this.eventSource.push(
+                    {
+                        title: title,
+                        startTime: fechaIni,
+                        endTime: fechaTer,
+                        allDay: element.allDay
+                    }
+                );
+
+            });
+
+          }
+          //this.documentosArr = datos.proposals;
+        },
+        err =>{ 
+          console.error(err);
+          loader.dismiss();
+        },
+        () => {
+          console.log('get rendciones completed');
+          loader.dismiss();
+        }
+      );
+      
+    });
+  }
   onRangeChanged(ev) {
       console.log('range changed: startTime: ' + ev.startTime + ', endTime: ' + ev.endTime);
   }
@@ -123,6 +174,18 @@ export class CalendarioPage {
     //this.navCtrl.setRoot(LoginPage);
     this.app.getRootNav().setRoot(LoginPage);
 
+  }
+  ionViewWillEnter() {
+    this.createEvents();
+    //this.openUrl();
+  }
+  doRefresh(refresher) {
+    console.log('Begin async operation', refresher);
+
+    setTimeout(() => {
+      this.createEvents();
+      refresher.complete();
+    }, 2000);
   }
 
 }

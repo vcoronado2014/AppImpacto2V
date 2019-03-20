@@ -59,5 +59,14 @@ export class GlobalService{
     });
     return data;
   }
+  postCalendario(instId, tipo){
+    let url = AppSettings.API_ENDPOINT + 'Calendario';
+    let dataGet = { InstId: instId.toString(), Tipo: tipo.toString() };
+
+    let data = this.http.post(url, dataGet, {
+      headers: this.headers
+    });
+    return data;
+  }
 
 }
