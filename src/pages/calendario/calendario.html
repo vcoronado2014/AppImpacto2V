@@ -7,7 +7,7 @@
 <ion-header class="mui--bg-color-red-500 fg-light">
 
     <ion-navbar>
-      <ion-title>{{viewTitle}}</ion-title>
+      <ion-title>Calendario</ion-title>
 
     </ion-navbar>
   
@@ -23,6 +23,7 @@
                       font-size: 0.9rem;">
     Deslize hacia abajo para actualizar
   </ion-label>
+  <h1 text-center>{{viewTitle}}</h1>
   <ion-row>
       <ion-buttons end>
           <button ion-button small [disabled]="isToday" (click)="today()">Hoy</button>
@@ -47,13 +48,30 @@
     </calendar>
 
     <ng-template #template let-showEventDetail="showEventDetail" let-selectedDate="selectedDate" let-noEventsLabel="noEventsLabel">
-        
+        <!--
         <h5 class="noEvents" *ngIf="selectedDate.events.length == 0">No Events</h5>
+        -->
+        <ion-list>
+          <ion-item class="noEvents" *ngIf="selectedDate.events.length == 0">
+            <ion-avatar item-start>
+              <ion-icon name="calendar" item-start style="font-size: 2.5em;"></ion-icon>
+            </ion-avatar>
+            <h1 text-wrap>No hay eventos</h1>
+          </ion-item>
+        
+        </ion-list>
         <ion-list>
           <ion-item (click)="onEventSelected(event)" *ngFor="let event of selectedDate.events">
-            <h2 text-wrap>{{event.title}}</h2>
+              
+              <ion-avatar item-start>
+                <ion-icon name="calendar" item-start style="font-size: 2.5em;"></ion-icon>
+              </ion-avatar>
+                <h1 text-wrap>{{event.startTime | dateFormat: 'dddd DD'}}</h1>
+                <h2 text-wrap>{{event.title}}</h2>
+                <ion-badge>{{event.startTime | dateFormat: 'DD-MM-YYYY HH:mm'}} - {{event.endTime | dateFormat: 'DD-MM-YYYY HH:mm'}}</ion-badge>
+              <!--
             <p text-wrap>Start: {{event.startTime}}</p>
-            <p text-wrap>end: {{event.endTime}}</p>
+            <p text-wrap>end: {{event.endTime}}</p>-->
           </ion-item>
         </ion-list>
     </ng-template>

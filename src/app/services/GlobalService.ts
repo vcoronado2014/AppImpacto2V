@@ -68,5 +68,14 @@ export class GlobalService{
     });
     return data;
   }
+  postProyectos(instId){
+    let url = AppSettings.API_ENDPOINT + 'Proyecto';
+    let dataGet = { InstId: instId.toString()};
+
+    let data = this.http.post(url, dataGet, {
+      headers: this.headers
+    });
+    return data;
+  }
 
 }

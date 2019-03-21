@@ -24,12 +24,15 @@ import { UsuariosPage } from '../pages/usuarios/usuarios';
 import { RendicionPage } from '../pages/rendicion/rendicion';
 import { DocumentosPage } from '../pages/documentos/documentos';
 import { CalendarioPage } from '../pages/calendario/calendario';
+import { ProyectosPage } from '../pages/proyectos/proyectos';
 
 import { AuthService } from '../app/services/AuthService';
 import { GlobalService } from '../app/services/GlobalService';
 //import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgCalendarModule } from 'ionic2-calendar';
+//pipes
+import { MomentPipe } from '../pipes/MomentPipe';
 
 
 
@@ -50,6 +53,8 @@ import { NgCalendarModule } from 'ionic2-calendar';
     RendicionPage,
     DocumentosPage,
     CalendarioPage,
+    ProyectosPage,
+    MomentPipe,
     TextAvatarDirective
   ],
   imports: [
@@ -74,6 +79,7 @@ import { NgCalendarModule } from 'ionic2-calendar';
     RendicionPage,
     DocumentosPage,
     CalendarioPage,
+    ProyectosPage,
     InicioPage
   ],
   providers: [

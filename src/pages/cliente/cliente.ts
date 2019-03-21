@@ -7,6 +7,7 @@ import { RendicionPage } from '../rendicion/rendicion';
 import { SolicitudesPage } from '../solicitudes/solicitudes';
 import { DocumentosPage } from '../documentos/documentos';
 import { CalendarioPage } from '../calendario/calendario';
+import { ProyectosPage } from '../proyectos/proyectos';
 import { InicioService } from '../../app/services/InicioService';
 
 
@@ -20,6 +21,7 @@ import { InicioService } from '../../app/services/InicioService';
     tab3Root = RendicionPage;
     tab4Root = DocumentosPage;
     tab5Root = CalendarioPage;
+    tab6Root = ProyectosPage;
       /*
     
     tab2Root = PacksPage;

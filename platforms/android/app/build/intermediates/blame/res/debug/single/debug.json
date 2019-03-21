@@ -8,8 +8,16 @@
         "source": "D:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\src\\main\\res\\drawable-land-xxhdpi\\screen.png"
     },
     {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_common_google_signin_btn_text_dark_normal_background.9.png.flat",
+        "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\87c43b619198c5a0a6249507b92c7578\\res\\drawable-hdpi-v4\\common_google_signin_btn_text_dark_normal_background.9.png"
+    },
+    {
         "merged": "Z:\\Proyectos_compartidos\\AppImpacto2V\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-port-mdpi_screen.png.flat",
         "source": "Z:\\Proyectos_compartidos\\AppImpacto2V\\platforms\\android\\app\\src\\main\\res\\drawable-port-mdpi\\screen.png"
+    },
+    {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\color_common_google_signin_btn_tint.xml.flat",
+        "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\87c43b619198c5a0a6249507b92c7578\\res\\color\\common_google_signin_btn_tint.xml"
     },
     {
         "merged": "F:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_common_full_open_on_phone.png.flat",
@@ -40,8 +48,20 @@
         "source": "C:\\Users\\Victor\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\395c6cc2e003c51bbda98e531efcf9ed\\res\\layout\\notification_template_part_time.xml"
     },
     {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_media_action.xml.flat",
+        "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-26.1.0.aar\\4659dd70ecb314adff909c028f0ee820\\res\\layout\\notification_media_action.xml"
+    },
+    {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_notification_tile_bg.xml.flat",
+        "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\5c643f4e755f705266d6eb212eedeec4\\res\\drawable\\notification_tile_bg.xml"
+    },
+    {
         "merged": "F:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_notification_bg_low_pressed.9.png.flat",
         "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\5c643f4e755f705266d6eb212eedeec4\\res\\drawable-hdpi-v4\\notification_bg_low_pressed.9.png"
+    },
+    {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_googleg_disabled_color_18.png.flat",
+        "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\87c43b619198c5a0a6249507b92c7578\\res\\drawable-hdpi-v4\\googleg_disabled_color_18.png"
     },
     {
         "merged": "Z:\\Proyectos_compartidos\\AppImpacto2V\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-port-xxxhdpi_screen.png.flat",
@@ -56,23 +76,43 @@
         "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\87c43b619198c5a0a6249507b92c7578\\res\\drawable-xhdpi-v4\\common_google_signin_btn_text_light_normal_background.9.png"
     },
     {
-        "merged": "D:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-port-hdpi_screen.png.flat",
-        "source": "D:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\src\\main\\res\\drawable-port-hdpi\\screen.png"
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_common_google_signin_btn_icon_light.xml.flat",
+        "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\87c43b619198c5a0a6249507b92c7578\\res\\drawable\\common_google_signin_btn_icon_light.xml"
     },
     {
-        "merged": "F:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_googleg_disabled_color_18.png.flat",
-        "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\87c43b619198c5a0a6249507b92c7578\\res\\drawable-mdpi-v4\\googleg_disabled_color_18.png"
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-land-xxhdpi_screen.png.flat",
+        "source": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\src\\main\\res\\drawable-land-xxhdpi\\screen.png"
+    },
+    {
+        "merged": "D:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-port-hdpi_screen.png.flat",
+        "source": "D:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\src\\main\\res\\drawable-port-hdpi\\screen.png"
     },
     {
         "merged": "F:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_common_google_signin_btn_text_dark_focused.xml.flat",
         "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\87c43b619198c5a0a6249507b92c7578\\res\\drawable\\common_google_signin_btn_text_dark_focused.xml"
     },
     {
+        "merged": "F:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_googleg_disabled_color_18.png.flat",
+        "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\87c43b619198c5a0a6249507b92c7578\\res\\drawable-mdpi-v4\\googleg_disabled_color_18.png"
+    },
+    {
         "merged": "F:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_common_google_signin_btn_icon_light_normal_background.9.png.flat",
         "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\87c43b619198c5a0a6249507b92c7578\\res\\drawable-xxhdpi-v4\\common_google_signin_btn_icon_light_normal_background.9.png"
     },
     {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_dummy_my_location_button.png.flat",
+        "source": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\src\\main\\res\\drawable\\dummy_my_location_button.png"
+    },
+    {
         "merged": "F:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_common_google_signin_btn_text_dark_normal_background.9.png.flat",
+        "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\87c43b619198c5a0a6249507b92c7578\\res\\drawable-xhdpi-v4\\common_google_signin_btn_text_dark_normal_background.9.png"
+    },
+    {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_common_google_signin_btn_icon_light_normal_background.9.png.flat",
+        "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\87c43b619198c5a0a6249507b92c7578\\res\\drawable-xhdpi-v4\\common_google_signin_btn_icon_light_normal_background.9.png"
+    },
+    {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_common_google_signin_btn_text_dark_normal_background.9.png.flat",
         "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\87c43b619198c5a0a6249507b92c7578\\res\\drawable-xhdpi-v4\\common_google_signin_btn_text_dark_normal_background.9.png"
     },
     {
@@ -92,32 +132,36 @@
         "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\5c643f4e755f705266d6eb212eedeec4\\res\\drawable\\notification_tile_bg.xml"
     },
     {
-        "merged": "D:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-ldpi_icon.png.flat",
-        "source": "D:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\src\\main\\res\\mipmap-ldpi\\icon.png"
-    },
-    {
         "merged": "F:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_notification_bg_low_pressed.9.png.flat",
         "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\5c643f4e755f705266d6eb212eedeec4\\res\\drawable-mdpi-v4\\notification_bg_low_pressed.9.png"
     },
     {
-        "merged": "D:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_notification_bg_low_pressed.9.png.flat",
-        "source": "C:\\Users\\Victor\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\395c6cc2e003c51bbda98e531efcf9ed\\res\\drawable-xhdpi-v4\\notification_bg_low_pressed.9.png"
+        "merged": "D:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-ldpi_icon.png.flat",
+        "source": "D:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\src\\main\\res\\mipmap-ldpi\\icon.png"
     },
     {
         "merged": "F:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_media_action.xml.flat",
         "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-26.1.0.aar\\4659dd70ecb314adff909c028f0ee820\\res\\layout\\notification_media_action.xml"
     },
     {
+        "merged": "D:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_notification_bg_low_pressed.9.png.flat",
+        "source": "C:\\Users\\Victor\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\395c6cc2e003c51bbda98e531efcf9ed\\res\\drawable-xhdpi-v4\\notification_bg_low_pressed.9.png"
+    },
+    {
         "merged": "D:\\APP_IMPACTO2V\\AppImpacto2V\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-ldpi_icon.png.flat",
         "source": "D:\\APP_IMPACTO2V\\AppImpacto2V\\platforms\\android\\app\\src\\main\\res\\mipmap-ldpi\\icon.png"
     },
     {
-        "merged": "D:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_photo.xml.flat",
-        "source": "D:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\src\\main\\res\\layout\\activity_photo.xml"
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-port-hdpi_screen.png.flat",
+        "source": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\src\\main\\res\\drawable-port-hdpi\\screen.png"
     },
     {
         "merged": "F:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_notification_bg_low_normal.9.png.flat",
         "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\5c643f4e755f705266d6eb212eedeec4\\res\\drawable-mdpi-v4\\notification_bg_low_normal.9.png"
+    },
+    {
+        "merged": "D:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_photo.xml.flat",
+        "source": "D:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\src\\main\\res\\layout\\activity_photo.xml"
     },
     {
         "merged": "F:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_dummy_my_location_button.png.flat",
@@ -126,6 +170,10 @@
     {
         "merged": "D:\\APP_IMPACTO2V\\AppImpacto2V\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-port-hdpi_screen.png.flat",
         "source": "D:\\APP_IMPACTO2V\\AppImpacto2V\\platforms\\android\\app\\src\\main\\res\\drawable-port-hdpi\\screen.png"
+    },
+    {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_notify_panel_notification_icon_bg.png.flat",
+        "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\5c643f4e755f705266d6eb212eedeec4\\res\\drawable-mdpi-v4\\notify_panel_notification_icon_bg.png"
     },
     {
         "merged": "D:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_notify_panel_notification_icon_bg.png.flat",
@@ -144,12 +192,32 @@
         "source": "C:\\Users\\Victor\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\0bff2c08ab32edfd1ca980f8177e68ec\\res\\drawable-hdpi-v4\\common_google_signin_btn_text_light_normal_background.9.png"
     },
     {
-        "merged": "F:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\color_common_google_signin_btn_text_dark.xml.flat",
-        "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\87c43b619198c5a0a6249507b92c7578\\res\\color\\common_google_signin_btn_text_dark.xml"
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_common_google_signin_btn_icon_light_normal_background.9.png.flat",
+        "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\87c43b619198c5a0a6249507b92c7578\\res\\drawable-mdpi-v4\\common_google_signin_btn_icon_light_normal_background.9.png"
     },
     {
         "merged": "F:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_common_google_signin_btn_text_light.xml.flat",
         "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\87c43b619198c5a0a6249507b92c7578\\res\\drawable\\common_google_signin_btn_text_light.xml"
+    },
+    {
+        "merged": "F:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\color_common_google_signin_btn_text_dark.xml.flat",
+        "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\87c43b619198c5a0a6249507b92c7578\\res\\color\\common_google_signin_btn_text_dark.xml"
+    },
+    {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_common_full_open_on_phone.png.flat",
+        "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\87c43b619198c5a0a6249507b92c7578\\res\\drawable-xhdpi-v4\\common_full_open_on_phone.png"
+    },
+    {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_icon_group.xml.flat",
+        "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\5c643f4e755f705266d6eb212eedeec4\\res\\layout\\notification_template_icon_group.xml"
+    },
+    {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_common_google_signin_btn_text_light_normal_background.9.png.flat",
+        "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\87c43b619198c5a0a6249507b92c7578\\res\\drawable-xxhdpi-v4\\common_google_signin_btn_text_light_normal_background.9.png"
+    },
+    {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_common_google_signin_btn_text_dark_focused.xml.flat",
+        "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\87c43b619198c5a0a6249507b92c7578\\res\\drawable\\common_google_signin_btn_text_dark_focused.xml"
     },
     {
         "merged": "F:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_media.xml.flat",
@@ -172,12 +240,20 @@
         "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\5c643f4e755f705266d6eb212eedeec4\\res\\drawable-mdpi-v4\\notify_panel_notification_icon_bg.png"
     },
     {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_notification_bg_normal.9.png.flat",
+        "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\5c643f4e755f705266d6eb212eedeec4\\res\\drawable-xhdpi-v4\\notification_bg_normal.9.png"
+    },
+    {
         "merged": "D:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_notify_panel_notification_icon_bg.png.flat",
         "source": "C:\\Users\\Victor\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\395c6cc2e003c51bbda98e531efcf9ed\\res\\drawable-mdpi-v4\\notify_panel_notification_icon_bg.png"
     },
     {
         "merged": "D:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_common_full_open_on_phone.png.flat",
         "source": "C:\\Users\\Victor\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\0bff2c08ab32edfd1ca980f8177e68ec\\res\\drawable-hdpi-v4\\common_full_open_on_phone.png"
+    },
+    {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_common_google_signin_btn_text_light.xml.flat",
+        "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\87c43b619198c5a0a6249507b92c7578\\res\\drawable\\common_google_signin_btn_text_light.xml"
     },
     {
         "merged": "D:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_notification_bg_low_normal.9.png.flat",
@@ -200,12 +276,16 @@
         "source": "C:\\Users\\Victor\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\0bff2c08ab32edfd1ca980f8177e68ec\\res\\drawable-mdpi-v4\\googleg_disabled_color_18.png"
     },
     {
+        "merged": "F:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_common_google_signin_btn_text_light_normal.xml.flat",
+        "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\87c43b619198c5a0a6249507b92c7578\\res\\drawable\\common_google_signin_btn_text_light_normal.xml"
+    },
+    {
         "merged": "F:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21_notification_action_background.xml.flat",
         "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\5c643f4e755f705266d6eb212eedeec4\\res\\drawable-v21\\notification_action_background.xml"
     },
     {
-        "merged": "F:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_common_google_signin_btn_text_light_normal.xml.flat",
-        "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\87c43b619198c5a0a6249507b92c7578\\res\\drawable\\common_google_signin_btn_text_light_normal.xml"
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-port-xxxhdpi_screen.png.flat",
+        "source": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\src\\main\\res\\drawable-port-xxxhdpi\\screen.png"
     },
     {
         "merged": "F:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_notification_bg_normal.9.png.flat",
@@ -214,6 +294,10 @@
     {
         "merged": "F:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout-v16_notification_template_custom_big.xml.flat",
         "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\5c643f4e755f705266d6eb212eedeec4\\res\\layout-v16\\notification_template_custom_big.xml"
+    },
+    {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_googleg_disabled_color_18.png.flat",
+        "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\87c43b619198c5a0a6249507b92c7578\\res\\drawable-xhdpi-v4\\googleg_disabled_color_18.png"
     },
     {
         "merged": "F:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_common_google_signin_btn_icon_dark.xml.flat",
@@ -228,8 +312,20 @@
         "source": "F:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\src\\main\\res\\drawable-port-hdpi\\screen.png"
     },
     {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-port-xhdpi_screen.png.flat",
+        "source": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\src\\main\\res\\drawable-port-xhdpi\\screen.png"
+    },
+    {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_part_time.xml.flat",
+        "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\5c643f4e755f705266d6eb212eedeec4\\res\\layout\\notification_template_part_time.xml"
+    },
+    {
         "merged": "D:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\color_common_google_signin_btn_tint.xml.flat",
         "source": "C:\\Users\\Victor\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\0bff2c08ab32edfd1ca980f8177e68ec\\res\\color\\common_google_signin_btn_tint.xml"
+    },
+    {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_common_google_signin_btn_text_dark_normal_background.9.png.flat",
+        "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\87c43b619198c5a0a6249507b92c7578\\res\\drawable-xxhdpi-v4\\common_google_signin_btn_text_dark_normal_background.9.png"
     },
     {
         "merged": "F:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-port-xxxhdpi_screen.png.flat",
@@ -238,6 +334,10 @@
     {
         "merged": "D:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_common_google_signin_btn_text_light_normal.xml.flat",
         "source": "C:\\Users\\Victor\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\0bff2c08ab32edfd1ca980f8177e68ec\\res\\drawable\\common_google_signin_btn_text_light_normal.xml"
+    },
+    {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_googleg_disabled_color_18.png.flat",
+        "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\87c43b619198c5a0a6249507b92c7578\\res\\drawable-xxhdpi-v4\\googleg_disabled_color_18.png"
     },
     {
         "merged": "D:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_icon.png.flat",
@@ -256,6 +356,18 @@
         "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\5c643f4e755f705266d6eb212eedeec4\\res\\drawable-xhdpi-v4\\notify_panel_notification_icon_bg.png"
     },
     {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_notification_bg_normal_pressed.9.png.flat",
+        "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\5c643f4e755f705266d6eb212eedeec4\\res\\drawable-hdpi-v4\\notification_bg_normal_pressed.9.png"
+    },
+    {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21_notification_action.xml.flat",
+        "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\5c643f4e755f705266d6eb212eedeec4\\res\\layout-v21\\notification_action.xml"
+    },
+    {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_notification_bg_low_normal.9.png.flat",
+        "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\5c643f4e755f705266d6eb212eedeec4\\res\\drawable-mdpi-v4\\notification_bg_low_normal.9.png"
+    },
+    {
         "merged": "F:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_common_google_signin_btn_icon_light_normal_background.9.png.flat",
         "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\87c43b619198c5a0a6249507b92c7578\\res\\drawable-hdpi-v4\\common_google_signin_btn_icon_light_normal_background.9.png"
     },
@@ -272,6 +384,14 @@
         "source": "C:\\Users\\Victor\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\0bff2c08ab32edfd1ca980f8177e68ec\\res\\drawable-mdpi-v4\\common_google_signin_btn_text_light_normal_background.9.png"
     },
     {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\color_common_google_signin_btn_text_light.xml.flat",
+        "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\87c43b619198c5a0a6249507b92c7578\\res\\color\\common_google_signin_btn_text_light.xml"
+    },
+    {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_common_google_signin_btn_text_light_normal.xml.flat",
+        "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\87c43b619198c5a0a6249507b92c7578\\res\\drawable\\common_google_signin_btn_text_light_normal.xml"
+    },
+    {
         "merged": "D:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_googleg_standard_color_18.png.flat",
         "source": "C:\\Users\\Victor\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\0bff2c08ab32edfd1ca980f8177e68ec\\res\\drawable-xxhdpi-v4\\googleg_standard_color_18.png"
     },
@@ -282,6 +402,14 @@
     {
         "merged": "F:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_common_google_signin_btn_icon_dark_normal_background.9.png.flat",
         "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\87c43b619198c5a0a6249507b92c7578\\res\\drawable-xxhdpi-v4\\common_google_signin_btn_icon_dark_normal_background.9.png"
+    },
+    {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-land-mdpi_screen.png.flat",
+        "source": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\src\\main\\res\\drawable-land-mdpi\\screen.png"
+    },
+    {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_notification_bg_normal.9.png.flat",
+        "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\5c643f4e755f705266d6eb212eedeec4\\res\\drawable-mdpi-v4\\notification_bg_normal.9.png"
     },
     {
         "merged": "D:\\APP_IMPACTO2V\\AppImpacto2V\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-port-xxhdpi_screen.png.flat",
@@ -312,6 +440,14 @@
         "source": "C:\\Users\\Victor\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\0bff2c08ab32edfd1ca980f8177e68ec\\res\\drawable-xxhdpi-v4\\common_google_signin_btn_icon_light_normal_background.9.png"
     },
     {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_notification_bg_low_normal.9.png.flat",
+        "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\5c643f4e755f705266d6eb212eedeec4\\res\\drawable-hdpi-v4\\notification_bg_low_normal.9.png"
+    },
+    {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_big_media_narrow.xml.flat",
+        "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-26.1.0.aar\\4659dd70ecb314adff909c028f0ee820\\res\\layout\\notification_template_big_media_narrow.xml"
+    },
+    {
         "merged": "D:\\APP_IMPACTO2V\\AppImpacto2V\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-port-ldpi_screen.png.flat",
         "source": "D:\\APP_IMPACTO2V\\AppImpacto2V\\platforms\\android\\app\\src\\main\\res\\drawable-port-ldpi\\screen.png"
     },
@@ -320,16 +456,36 @@
         "source": "C:\\Users\\Victor\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\0bff2c08ab32edfd1ca980f8177e68ec\\res\\drawable-xhdpi-v4\\googleg_standard_color_18.png"
     },
     {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_googleg_disabled_color_18.png.flat",
+        "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\87c43b619198c5a0a6249507b92c7578\\res\\drawable-mdpi-v4\\googleg_disabled_color_18.png"
+    },
+    {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_common_google_signin_btn_icon_light_focused.xml.flat",
+        "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\87c43b619198c5a0a6249507b92c7578\\res\\drawable\\common_google_signin_btn_icon_light_focused.xml"
+    },
+    {
         "merged": "F:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_common_google_signin_btn_icon_dark_normal_background.9.png.flat",
         "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\87c43b619198c5a0a6249507b92c7578\\res\\drawable-mdpi-v4\\common_google_signin_btn_icon_dark_normal_background.9.png"
+    },
+    {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21_notification_action_background.xml.flat",
+        "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\5c643f4e755f705266d6eb212eedeec4\\res\\drawable-v21\\notification_action_background.xml"
     },
     {
         "merged": "F:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_media_custom.xml.flat",
         "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-26.1.0.aar\\4659dd70ecb314adff909c028f0ee820\\res\\layout\\notification_template_media_custom.xml"
     },
     {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_common_google_signin_btn_icon_light_normal_background.9.png.flat",
+        "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\87c43b619198c5a0a6249507b92c7578\\res\\drawable-xxhdpi-v4\\common_google_signin_btn_icon_light_normal_background.9.png"
+    },
+    {
         "merged": "F:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_googleg_standard_color_18.png.flat",
         "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\87c43b619198c5a0a6249507b92c7578\\res\\drawable-hdpi-v4\\googleg_standard_color_18.png"
+    },
+    {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-land-ldpi_screen.png.flat",
+        "source": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\src\\main\\res\\drawable-land-ldpi\\screen.png"
     },
     {
         "merged": "D:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_common_google_signin_btn_text_disabled.xml.flat",
@@ -340,12 +496,24 @@
         "source": "C:\\Users\\Victor\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\0bff2c08ab32edfd1ca980f8177e68ec\\res\\drawable\\common_google_signin_btn_text_dark_focused.xml"
     },
     {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_common_google_signin_btn_icon_disabled.xml.flat",
+        "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\87c43b619198c5a0a6249507b92c7578\\res\\drawable\\common_google_signin_btn_icon_disabled.xml"
+    },
+    {
         "merged": "D:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_common_google_signin_btn_text_dark_normal.xml.flat",
         "source": "C:\\Users\\Victor\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\0bff2c08ab32edfd1ca980f8177e68ec\\res\\drawable\\common_google_signin_btn_text_dark_normal.xml"
     },
     {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21_notification_template_icon_group.xml.flat",
+        "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\5c643f4e755f705266d6eb212eedeec4\\res\\layout-v21\\notification_template_icon_group.xml"
+    },
+    {
         "merged": "F:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_common_google_signin_btn_text_dark_normal.xml.flat",
         "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\87c43b619198c5a0a6249507b92c7578\\res\\drawable\\common_google_signin_btn_text_dark_normal.xml"
+    },
+    {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_notification_bg_low_pressed.9.png.flat",
+        "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\5c643f4e755f705266d6eb212eedeec4\\res\\drawable-xhdpi-v4\\notification_bg_low_pressed.9.png"
     },
     {
         "merged": "D:\\APP_IMPACTO2V\\AppImpacto2V\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-port-mdpi_screen.png.flat",
@@ -384,12 +552,28 @@
         "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\87c43b619198c5a0a6249507b92c7578\\res\\drawable\\common_google_signin_btn_text_light_focused.xml"
     },
     {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_action_tombstone.xml.flat",
+        "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\5c643f4e755f705266d6eb212eedeec4\\res\\layout\\notification_action_tombstone.xml"
+    },
+    {
         "merged": "F:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21_notification_action.xml.flat",
         "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\5c643f4e755f705266d6eb212eedeec4\\res\\layout-v21\\notification_action.xml"
     },
     {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_common_google_signin_btn_icon_dark_normal.xml.flat",
+        "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\87c43b619198c5a0a6249507b92c7578\\res\\drawable\\common_google_signin_btn_icon_dark_normal.xml"
+    },
+    {
         "merged": "D:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_notification_bg_low.xml.flat",
         "source": "C:\\Users\\Victor\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\395c6cc2e003c51bbda98e531efcf9ed\\res\\drawable\\notification_bg_low.xml"
+    },
+    {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_media_custom.xml.flat",
+        "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-26.1.0.aar\\4659dd70ecb314adff909c028f0ee820\\res\\layout\\notification_template_media_custom.xml"
+    },
+    {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_common_google_signin_btn_icon_light_normal.xml.flat",
+        "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\87c43b619198c5a0a6249507b92c7578\\res\\drawable\\common_google_signin_btn_icon_light_normal.xml"
     },
     {
         "merged": "D:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_dummy_my_location_button.png.flat",
@@ -412,8 +596,20 @@
         "source": "C:\\Users\\Victor\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-26.1.0.aar\\fe27bdd41d46cae042b8af5c3d84a7b7\\res\\layout\\notification_template_big_media_custom.xml"
     },
     {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_dummy_mylocation_button_shadow.xml.flat",
+        "source": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\src\\main\\res\\drawable\\dummy_mylocation_button_shadow.xml"
+    },
+    {
         "merged": "F:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_common_google_signin_btn_text_disabled.xml.flat",
         "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\87c43b619198c5a0a6249507b92c7578\\res\\drawable\\common_google_signin_btn_text_disabled.xml"
+    },
+    {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_icon.png.flat",
+        "source": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\src\\main\\res\\mipmap-xhdpi\\icon.png"
+    },
+    {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\color_common_google_signin_btn_text_dark.xml.flat",
+        "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\87c43b619198c5a0a6249507b92c7578\\res\\color\\common_google_signin_btn_text_dark.xml"
     },
     {
         "merged": "D:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21_notification_action_tombstone.xml.flat",
@@ -422,6 +618,14 @@
     {
         "merged": "Z:\\Proyectos_compartidos\\AppImpacto2V\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\xml_config.xml.flat",
         "source": "Z:\\Proyectos_compartidos\\AppImpacto2V\\platforms\\android\\app\\src\\main\\res\\xml\\config.xml"
+    },
+    {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_common_google_signin_btn_icon_dark_normal_background.9.png.flat",
+        "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\87c43b619198c5a0a6249507b92c7578\\res\\drawable-hdpi-v4\\common_google_signin_btn_icon_dark_normal_background.9.png"
+    },
+    {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_lines_media.xml.flat",
+        "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-26.1.0.aar\\4659dd70ecb314adff909c028f0ee820\\res\\layout\\notification_template_lines_media.xml"
     },
     {
         "merged": "D:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\color_common_google_signin_btn_text_dark.xml.flat",
@@ -440,6 +644,14 @@
         "source": "F:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\src\\main\\res\\mipmap-xxhdpi\\icon.png"
     },
     {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_common_google_signin_btn_text_light_normal_background.9.png.flat",
+        "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\87c43b619198c5a0a6249507b92c7578\\res\\drawable-mdpi-v4\\common_google_signin_btn_text_light_normal_background.9.png"
+    },
+    {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout_dummy_infowindow.xml.flat",
+        "source": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\src\\main\\res\\layout\\dummy_infowindow.xml"
+    },
+    {
         "merged": "Z:\\Proyectos_compartidos\\AppImpacto2V\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-port-xxhdpi_screen.png.flat",
         "source": "Z:\\Proyectos_compartidos\\AppImpacto2V\\platforms\\android\\app\\src\\main\\res\\drawable-port-xxhdpi\\screen.png"
     },
@@ -452,6 +664,10 @@
         "source": "D:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\src\\main\\res\\drawable\\dummy_mylocation_button_shadow.xml"
     },
     {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_googleg_standard_color_18.png.flat",
+        "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\87c43b619198c5a0a6249507b92c7578\\res\\drawable-xxhdpi-v4\\googleg_standard_color_18.png"
+    },
+    {
         "merged": "D:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_common_google_signin_btn_icon_dark_normal_background.9.png.flat",
         "source": "C:\\Users\\Victor\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\0bff2c08ab32edfd1ca980f8177e68ec\\res\\drawable-hdpi-v4\\common_google_signin_btn_icon_dark_normal_background.9.png"
     },
@@ -460,8 +676,16 @@
         "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\87c43b619198c5a0a6249507b92c7578\\res\\drawable-xxhdpi-v4\\googleg_disabled_color_18.png"
     },
     {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-land-xhdpi_screen.png.flat",
+        "source": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\src\\main\\res\\drawable-land-xhdpi\\screen.png"
+    },
+    {
         "merged": "D:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-land-xxxhdpi_screen.png.flat",
         "source": "D:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\src\\main\\res\\drawable-land-xxxhdpi\\screen.png"
+    },
+    {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_common_google_signin_btn_icon_dark_normal_background.9.png.flat",
+        "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\87c43b619198c5a0a6249507b92c7578\\res\\drawable-mdpi-v4\\common_google_signin_btn_icon_dark_normal_background.9.png"
     },
     {
         "merged": "D:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\color_common_google_signin_btn_text_light.xml.flat",
@@ -472,12 +696,20 @@
         "source": "C:\\Users\\Victor\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\0bff2c08ab32edfd1ca980f8177e68ec\\res\\drawable-hdpi-v4\\googleg_standard_color_18.png"
     },
     {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_media_cancel_action.xml.flat",
+        "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-26.1.0.aar\\4659dd70ecb314adff909c028f0ee820\\res\\layout\\notification_media_cancel_action.xml"
+    },
+    {
         "merged": "D:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_googleg_standard_color_18.png.flat",
         "source": "C:\\Users\\Victor\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\0bff2c08ab32edfd1ca980f8177e68ec\\res\\drawable-mdpi-v4\\googleg_standard_color_18.png"
     },
     {
         "merged": "D:\\APP_IMPACTO2V\\AppImpacto2V\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-land-xxxhdpi_screen.png.flat",
         "source": "D:\\APP_IMPACTO2V\\AppImpacto2V\\platforms\\android\\app\\src\\main\\res\\drawable-land-xxxhdpi\\screen.png"
+    },
+    {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_common_full_open_on_phone.png.flat",
+        "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\87c43b619198c5a0a6249507b92c7578\\res\\drawable-hdpi-v4\\common_full_open_on_phone.png"
     },
     {
         "merged": "D:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_media_cancel_action.xml.flat",
@@ -488,6 +720,10 @@
         "source": "F:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\src\\main\\res\\mipmap-xhdpi\\icon.png"
     },
     {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_notification_icon_background.xml.flat",
+        "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\5c643f4e755f705266d6eb212eedeec4\\res\\drawable\\notification_icon_background.xml"
+    },
+    {
         "merged": "F:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-port-xhdpi_screen.png.flat",
         "source": "F:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\src\\main\\res\\drawable-port-xhdpi\\screen.png"
     },
@@ -496,8 +732,16 @@
         "source": "D:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\src\\main\\res\\drawable-port-xxhdpi\\screen.png"
     },
     {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_common_google_signin_btn_icon_dark_focused.xml.flat",
+        "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\87c43b619198c5a0a6249507b92c7578\\res\\drawable\\common_google_signin_btn_icon_dark_focused.xml"
+    },
+    {
         "merged": "D:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_notification_bg_normal.9.png.flat",
         "source": "C:\\Users\\Victor\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\395c6cc2e003c51bbda98e531efcf9ed\\res\\drawable-xhdpi-v4\\notification_bg_normal.9.png"
+    },
+    {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21_notification_action_tombstone.xml.flat",
+        "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\5c643f4e755f705266d6eb212eedeec4\\res\\layout-v21\\notification_action_tombstone.xml"
     },
     {
         "merged": "D:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_notification_bg_low_pressed.9.png.flat",
@@ -516,12 +760,28 @@
         "source": "C:\\Users\\Victor\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\0bff2c08ab32edfd1ca980f8177e68ec\\res\\drawable\\common_google_signin_btn_text_dark.xml"
     },
     {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_notification_bg_low_pressed.9.png.flat",
+        "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\5c643f4e755f705266d6eb212eedeec4\\res\\drawable-hdpi-v4\\notification_bg_low_pressed.9.png"
+    },
+    {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_googleg_standard_color_18.png.flat",
+        "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\87c43b619198c5a0a6249507b92c7578\\res\\drawable-hdpi-v4\\googleg_standard_color_18.png"
+    },
+    {
         "merged": "F:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21_notification_template_icon_group.xml.flat",
         "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\5c643f4e755f705266d6eb212eedeec4\\res\\layout-v21\\notification_template_icon_group.xml"
     },
     {
         "merged": "D:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_common_google_signin_btn_icon_light_normal.xml.flat",
         "source": "C:\\Users\\Victor\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\0bff2c08ab32edfd1ca980f8177e68ec\\res\\drawable\\common_google_signin_btn_icon_light_normal.xml"
+    },
+    {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_common_google_signin_btn_text_light_normal_background.9.png.flat",
+        "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\87c43b619198c5a0a6249507b92c7578\\res\\drawable-hdpi-v4\\common_google_signin_btn_text_light_normal_background.9.png"
+    },
+    {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-land-hdpi_screen.png.flat",
+        "source": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\src\\main\\res\\drawable-land-hdpi\\screen.png"
     },
     {
         "merged": "F:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_common_google_signin_btn_icon_dark_focused.xml.flat",
@@ -538,6 +798,10 @@
     {
         "merged": "D:\\APP_IMPACTO2V\\AppImpacto2V\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_icon.png.flat",
         "source": "D:\\APP_IMPACTO2V\\AppImpacto2V\\platforms\\android\\app\\src\\main\\res\\mipmap-xxhdpi\\icon.png"
+    },
+    {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_icon.png.flat",
+        "source": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\src\\main\\res\\mipmap-mdpi\\icon.png"
     },
     {
         "merged": "F:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_googleg_disabled_color_18.png.flat",
@@ -588,12 +852,20 @@
         "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\5c643f4e755f705266d6eb212eedeec4\\res\\drawable-hdpi-v4\\notification_bg_low_normal.9.png"
     },
     {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_notification_bg_low_pressed.9.png.flat",
+        "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\5c643f4e755f705266d6eb212eedeec4\\res\\drawable-mdpi-v4\\notification_bg_low_pressed.9.png"
+    },
+    {
         "merged": "D:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_common_google_signin_btn_icon_light_normal_background.9.png.flat",
         "source": "C:\\Users\\Victor\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\0bff2c08ab32edfd1ca980f8177e68ec\\res\\drawable-mdpi-v4\\common_google_signin_btn_icon_light_normal_background.9.png"
     },
     {
         "merged": "F:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_big_media_custom.xml.flat",
         "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-26.1.0.aar\\4659dd70ecb314adff909c028f0ee820\\res\\layout\\notification_template_big_media_custom.xml"
+    },
+    {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_notification_bg_normal.9.png.flat",
+        "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\5c643f4e755f705266d6eb212eedeec4\\res\\drawable-hdpi-v4\\notification_bg_normal.9.png"
     },
     {
         "merged": "F:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_big_media_narrow.xml.flat",
@@ -608,12 +880,24 @@
         "source": "C:\\Users\\Victor\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-26.1.0.aar\\fe27bdd41d46cae042b8af5c3d84a7b7\\res\\layout\\notification_template_media_custom.xml"
     },
     {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_notification_bg.xml.flat",
+        "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\5c643f4e755f705266d6eb212eedeec4\\res\\drawable\\notification_bg.xml"
+    },
+    {
         "merged": "Z:\\Proyectos_compartidos\\AppImpacto2V\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-land-xxhdpi_screen.png.flat",
         "source": "Z:\\Proyectos_compartidos\\AppImpacto2V\\platforms\\android\\app\\src\\main\\res\\drawable-land-xxhdpi\\screen.png"
     },
     {
         "merged": "F:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_googleg_standard_color_18.png.flat",
         "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\87c43b619198c5a0a6249507b92c7578\\res\\drawable-mdpi-v4\\googleg_standard_color_18.png"
+    },
+    {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21_notification_template_custom_big.xml.flat",
+        "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\5c643f4e755f705266d6eb212eedeec4\\res\\layout-v21\\notification_template_custom_big.xml"
+    },
+    {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_common_google_signin_btn_icon_dark_normal_background.9.png.flat",
+        "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\87c43b619198c5a0a6249507b92c7578\\res\\drawable-xxhdpi-v4\\common_google_signin_btn_icon_dark_normal_background.9.png"
     },
     {
         "merged": "Z:\\Proyectos_compartidos\\AppImpacto2V\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-port-ldpi_screen.png.flat",
@@ -640,6 +924,14 @@
         "source": "F:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\src\\main\\res\\drawable-land-ldpi\\screen.png"
     },
     {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_common_google_signin_btn_text_dark_normal_background.9.png.flat",
+        "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\87c43b619198c5a0a6249507b92c7578\\res\\drawable-mdpi-v4\\common_google_signin_btn_text_dark_normal_background.9.png"
+    },
+    {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-ldpi_icon.png.flat",
+        "source": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\src\\main\\res\\mipmap-ldpi\\icon.png"
+    },
+    {
         "merged": "D:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_part_chronometer.xml.flat",
         "source": "C:\\Users\\Victor\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\395c6cc2e003c51bbda98e531efcf9ed\\res\\layout\\notification_template_part_chronometer.xml"
     },
@@ -652,8 +944,16 @@
         "source": "C:\\Users\\Victor\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\0bff2c08ab32edfd1ca980f8177e68ec\\res\\drawable\\common_google_signin_btn_icon_disabled.xml"
     },
     {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_icon.png.flat",
+        "source": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\src\\main\\res\\mipmap-xxxhdpi\\icon.png"
+    },
+    {
         "merged": "D:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_big_media_narrow_custom.xml.flat",
         "source": "C:\\Users\\Victor\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-26.1.0.aar\\fe27bdd41d46cae042b8af5c3d84a7b7\\res\\layout\\notification_template_big_media_narrow_custom.xml"
+    },
+    {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_notify_panel_notification_icon_bg.png.flat",
+        "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\5c643f4e755f705266d6eb212eedeec4\\res\\drawable-hdpi-v4\\notify_panel_notification_icon_bg.png"
     },
     {
         "merged": "F:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_icon.png.flat",
@@ -688,12 +988,20 @@
         "source": "F:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\src\\main\\res\\drawable-port-xxhdpi\\screen.png"
     },
     {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_big_media_custom.xml.flat",
+        "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-26.1.0.aar\\4659dd70ecb314adff909c028f0ee820\\res\\layout\\notification_template_big_media_custom.xml"
+    },
+    {
         "merged": "D:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_notification_bg_normal.9.png.flat",
         "source": "C:\\Users\\Victor\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\395c6cc2e003c51bbda98e531efcf9ed\\res\\drawable-hdpi-v4\\notification_bg_normal.9.png"
     },
     {
         "merged": "D:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_common_google_signin_btn_icon_light_normal_background.9.png.flat",
         "source": "C:\\Users\\Victor\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\0bff2c08ab32edfd1ca980f8177e68ec\\res\\drawable-hdpi-v4\\common_google_signin_btn_icon_light_normal_background.9.png"
+    },
+    {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_notify_panel_notification_icon_bg.png.flat",
+        "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\5c643f4e755f705266d6eb212eedeec4\\res\\drawable-xhdpi-v4\\notify_panel_notification_icon_bg.png"
     },
     {
         "merged": "D:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_notification_tile_bg.xml.flat",
@@ -708,6 +1016,14 @@
         "source": "C:\\Users\\Victor\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\395c6cc2e003c51bbda98e531efcf9ed\\res\\drawable-v21\\notification_action_background.xml"
     },
     {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_icon.png.flat",
+        "source": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\src\\main\\res\\mipmap-hdpi\\icon.png"
+    },
+    {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_notification_bg_normal_pressed.9.png.flat",
+        "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\5c643f4e755f705266d6eb212eedeec4\\res\\drawable-mdpi-v4\\notification_bg_normal_pressed.9.png"
+    },
+    {
         "merged": "D:\\APP_IMPACTO2V\\AppImpacto2V\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-land-hdpi_screen.png.flat",
         "source": "D:\\APP_IMPACTO2V\\AppImpacto2V\\platforms\\android\\app\\src\\main\\res\\drawable-land-hdpi\\screen.png"
     },
@@ -720,8 +1036,20 @@
         "source": "F:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\src\\main\\res\\layout\\dummy_infowindow.xml"
     },
     {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_common_google_signin_btn_icon_dark_normal_background.9.png.flat",
+        "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\87c43b619198c5a0a6249507b92c7578\\res\\drawable-xhdpi-v4\\common_google_signin_btn_icon_dark_normal_background.9.png"
+    },
+    {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_photo.xml.flat",
+        "source": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\src\\main\\res\\layout\\activity_photo.xml"
+    },
+    {
         "merged": "F:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_googleg_standard_color_18.png.flat",
         "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\87c43b619198c5a0a6249507b92c7578\\res\\drawable-xxhdpi-v4\\googleg_standard_color_18.png"
+    },
+    {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_common_google_signin_btn_text_disabled.xml.flat",
+        "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\87c43b619198c5a0a6249507b92c7578\\res\\drawable\\common_google_signin_btn_text_disabled.xml"
     },
     {
         "merged": "D:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_big_media.xml.flat",
@@ -730,6 +1058,10 @@
     {
         "merged": "Z:\\Proyectos_compartidos\\AppImpacto2V\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-land-hdpi_screen.png.flat",
         "source": "Z:\\Proyectos_compartidos\\AppImpacto2V\\platforms\\android\\app\\src\\main\\res\\drawable-land-hdpi\\screen.png"
+    },
+    {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-port-xxhdpi_screen.png.flat",
+        "source": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\src\\main\\res\\drawable-port-xxhdpi\\screen.png"
     },
     {
         "merged": "D:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout_dummy_infowindow.xml.flat",
@@ -760,6 +1092,14 @@
         "source": "C:\\Users\\Victor\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\395c6cc2e003c51bbda98e531efcf9ed\\res\\drawable\\notification_bg.xml"
     },
     {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_common_google_signin_btn_text_light_focused.xml.flat",
+        "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\87c43b619198c5a0a6249507b92c7578\\res\\drawable\\common_google_signin_btn_text_light_focused.xml"
+    },
+    {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_googleg_standard_color_18.png.flat",
+        "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\87c43b619198c5a0a6249507b92c7578\\res\\drawable-mdpi-v4\\googleg_standard_color_18.png"
+    },
+    {
         "merged": "D:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_googleg_disabled_color_18.png.flat",
         "source": "C:\\Users\\Victor\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\0bff2c08ab32edfd1ca980f8177e68ec\\res\\drawable-xhdpi-v4\\googleg_disabled_color_18.png"
     },
@@ -770,6 +1110,10 @@
     {
         "merged": "D:\\APP_IMPACTO2V\\AppImpacto2V\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_icon.png.flat",
         "source": "D:\\APP_IMPACTO2V\\AppImpacto2V\\platforms\\android\\app\\src\\main\\res\\mipmap-xhdpi\\icon.png"
+    },
+    {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_common_google_signin_btn_text_dark_normal.xml.flat",
+        "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\87c43b619198c5a0a6249507b92c7578\\res\\drawable\\common_google_signin_btn_text_dark_normal.xml"
     },
     {
         "merged": "D:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_big_media_narrow.xml.flat",
@@ -804,8 +1148,16 @@
         "source": "C:\\Users\\Victor\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-26.1.0.aar\\fe27bdd41d46cae042b8af5c3d84a7b7\\res\\layout\\notification_template_media.xml"
     },
     {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_notification_bg_low_normal.9.png.flat",
+        "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\5c643f4e755f705266d6eb212eedeec4\\res\\drawable-xhdpi-v4\\notification_bg_low_normal.9.png"
+    },
+    {
         "merged": "Z:\\Proyectos_compartidos\\AppImpacto2V\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_icon.png.flat",
         "source": "Z:\\Proyectos_compartidos\\AppImpacto2V\\platforms\\android\\app\\src\\main\\res\\mipmap-mdpi\\icon.png"
+    },
+    {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-port-ldpi_screen.png.flat",
+        "source": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\src\\main\\res\\drawable-port-ldpi\\screen.png"
     },
     {
         "merged": "D:\\APP_IMPACTO2V\\AppImpacto2V\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-land-ldpi_screen.png.flat",
@@ -814,6 +1166,10 @@
     {
         "merged": "F:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_common_google_signin_btn_text_light_normal_background.9.png.flat",
         "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\87c43b619198c5a0a6249507b92c7578\\res\\drawable-mdpi-v4\\common_google_signin_btn_text_light_normal_background.9.png"
+    },
+    {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_notification_bg_normal_pressed.9.png.flat",
+        "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\5c643f4e755f705266d6eb212eedeec4\\res\\drawable-xhdpi-v4\\notification_bg_normal_pressed.9.png"
     },
     {
         "merged": "F:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_common_google_signin_btn_icon_dark_normal.xml.flat",
@@ -856,12 +1212,24 @@
         "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\87c43b619198c5a0a6249507b92c7578\\res\\drawable-mdpi-v4\\common_google_signin_btn_text_dark_normal_background.9.png"
     },
     {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_common_google_signin_btn_text_dark.xml.flat",
+        "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\87c43b619198c5a0a6249507b92c7578\\res\\drawable\\common_google_signin_btn_text_dark.xml"
+    },
+    {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-port-mdpi_screen.png.flat",
+        "source": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\src\\main\\res\\drawable-port-mdpi\\screen.png"
+    },
+    {
         "merged": "D:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_notification_bg_normal_pressed.9.png.flat",
         "source": "C:\\Users\\Victor\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\395c6cc2e003c51bbda98e531efcf9ed\\res\\drawable-hdpi-v4\\notification_bg_normal_pressed.9.png"
     },
     {
         "merged": "D:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_notify_panel_notification_icon_bg.png.flat",
         "source": "C:\\Users\\Victor\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\395c6cc2e003c51bbda98e531efcf9ed\\res\\drawable-hdpi-v4\\notify_panel_notification_icon_bg.png"
+    },
+    {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\xml_config.xml.flat",
+        "source": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\src\\main\\res\\xml\\config.xml"
     },
     {
         "merged": "D:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_common_google_signin_btn_text_dark_normal_background.9.png.flat",
@@ -888,6 +1256,14 @@
         "source": "D:\\APP_IMPACTO2V\\AppImpacto2V\\platforms\\android\\app\\src\\main\\res\\mipmap-hdpi\\icon.png"
     },
     {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_common_google_signin_btn_icon_dark.xml.flat",
+        "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\87c43b619198c5a0a6249507b92c7578\\res\\drawable\\common_google_signin_btn_icon_dark.xml"
+    },
+    {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_googleg_standard_color_18.png.flat",
+        "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\87c43b619198c5a0a6249507b92c7578\\res\\drawable-xhdpi-v4\\googleg_standard_color_18.png"
+    },
+    {
         "merged": "F:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_common_google_signin_btn_icon_light.xml.flat",
         "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\87c43b619198c5a0a6249507b92c7578\\res\\drawable\\common_google_signin_btn_icon_light.xml"
     },
@@ -900,8 +1276,16 @@
         "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\5c643f4e755f705266d6eb212eedeec4\\res\\drawable-mdpi-v4\\notification_bg_normal_pressed.9.png"
     },
     {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_big_media_narrow_custom.xml.flat",
+        "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-26.1.0.aar\\4659dd70ecb314adff909c028f0ee820\\res\\layout\\notification_template_big_media_narrow_custom.xml"
+    },
+    {
         "merged": "F:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_common_google_signin_btn_icon_light_normal.xml.flat",
         "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\87c43b619198c5a0a6249507b92c7578\\res\\drawable\\common_google_signin_btn_icon_light_normal.xml"
+    },
+    {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_icon.png.flat",
+        "source": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\src\\main\\res\\mipmap-xxhdpi\\icon.png"
     },
     {
         "merged": "Z:\\Proyectos_compartidos\\AppImpacto2V\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-land-ldpi_screen.png.flat",
@@ -916,8 +1300,20 @@
         "source": "Z:\\Proyectos_compartidos\\AppImpacto2V\\platforms\\android\\app\\src\\main\\res\\mipmap-xxhdpi\\icon.png"
     },
     {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_common_google_signin_btn_text_light_normal_background.9.png.flat",
+        "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\87c43b619198c5a0a6249507b92c7578\\res\\drawable-xhdpi-v4\\common_google_signin_btn_text_light_normal_background.9.png"
+    },
+    {
         "merged": "D:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_common_google_signin_btn_icon_light_normal_background.9.png.flat",
         "source": "C:\\Users\\Victor\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\0bff2c08ab32edfd1ca980f8177e68ec\\res\\drawable-xhdpi-v4\\common_google_signin_btn_icon_light_normal_background.9.png"
+    },
+    {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout-v16_notification_template_custom_big.xml.flat",
+        "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\5c643f4e755f705266d6eb212eedeec4\\res\\layout-v16\\notification_template_custom_big.xml"
+    },
+    {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_part_chronometer.xml.flat",
+        "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\5c643f4e755f705266d6eb212eedeec4\\res\\layout\\notification_template_part_chronometer.xml"
     },
     {
         "merged": "F:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\xml_config.xml.flat",
@@ -944,6 +1340,14 @@
         "source": "F:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\src\\main\\res\\drawable-land-xxhdpi\\screen.png"
     },
     {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-land-xxxhdpi_screen.png.flat",
+        "source": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\src\\main\\res\\drawable-land-xxxhdpi\\screen.png"
+    },
+    {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_common_google_signin_btn_icon_light_normal_background.9.png.flat",
+        "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\87c43b619198c5a0a6249507b92c7578\\res\\drawable-hdpi-v4\\common_google_signin_btn_icon_light_normal_background.9.png"
+    },
+    {
         "merged": "F:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_lines_media.xml.flat",
         "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-26.1.0.aar\\4659dd70ecb314adff909c028f0ee820\\res\\layout\\notification_template_lines_media.xml"
     },
@@ -956,8 +1360,16 @@
         "source": "D:\\APP_IMPACTO2V\\AppImpacto2V\\platforms\\android\\app\\src\\main\\res\\xml\\config.xml"
     },
     {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_notification_bg_low.xml.flat",
+        "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\5c643f4e755f705266d6eb212eedeec4\\res\\drawable\\notification_bg_low.xml"
+    },
+    {
         "merged": "F:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_common_google_signin_btn_icon_dark_normal_background.9.png.flat",
         "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\87c43b619198c5a0a6249507b92c7578\\res\\drawable-xhdpi-v4\\common_google_signin_btn_icon_dark_normal_background.9.png"
+    },
+    {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_big_media.xml.flat",
+        "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-26.1.0.aar\\4659dd70ecb314adff909c028f0ee820\\res\\layout\\notification_template_big_media.xml"
     },
     {
         "merged": "Z:\\Proyectos_compartidos\\AppImpacto2V\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-land-mdpi_screen.png.flat",
@@ -970,6 +1382,10 @@
     {
         "merged": "F:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_common_google_signin_btn_text_dark.xml.flat",
         "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\87c43b619198c5a0a6249507b92c7578\\res\\drawable\\common_google_signin_btn_text_dark.xml"
+    },
+    {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_media.xml.flat",
+        "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-26.1.0.aar\\4659dd70ecb314adff909c028f0ee820\\res\\layout\\notification_template_media.xml"
     },
     {
         "merged": "D:\\APP_IMPACTO2V\\AppImpacto2V\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-land-mdpi_screen.png.flat",
@@ -990,5 +1406,9 @@
     {
         "merged": "D:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_icon.png.flat",
         "source": "D:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\src\\main\\res\\mipmap-hdpi\\icon.png"
+    },
+    {
+        "merged": "W:\\impacto2v\\AppImpacto2V_new\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_action.xml.flat",
+        "source": "C:\\Users\\victorcoronado\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\5c643f4e755f705266d6eb212eedeec4\\res\\layout\\notification_action.xml"
     }
 ]

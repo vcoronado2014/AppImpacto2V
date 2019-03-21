@@ -184,6 +184,7 @@ export class CalendarioPage {
 
     setTimeout(() => {
       this.createEvents();
+      this.today();
       refresher.complete();
     }, 2000);
   }
