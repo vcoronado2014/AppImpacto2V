@@ -1,0 +1,64 @@
+<!--
+  Generated template for the CrearRendicionPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header class="mui--bg-color-teal-600 fg-light">
+
+  <ion-navbar>
+    <ion-title>Crear Rendición</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <button ion-button full class="bg-red-200 fg-white" (click)="closeModal()">Cerrar</button>
+    <ion-list>
+        <ion-item>
+          Fecha automatica a guardar
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Detalle</ion-label>
+          <ion-input type="text" [(ngModel)]="frmDetalle"></ion-input>
+        </ion-item>
+      
+        <ion-item>
+          <ion-label>Tipo Movimiento</ion-label>
+          <ion-select [(ngModel)]="frmTipoMovimiento">
+            <ion-option value="1">Ingreso</ion-option>
+            <ion-option value="2">Egreso</ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating>Número Comprobante</ion-label>
+          <ion-input type="text" [(ngModel)]="frmNumeroComprobante"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating>Monto</ion-label>
+          <ion-input type="number" [(ngModel)]="frmMonto"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          Selección archivo
+        </ion-item>
+      
+      </ion-list>
+      <!--
+    <ion-card>
+      <ion-card-header>
+        Rendición
+      </ion-card-header>
+      <ion-card-content>
+        <ion-label floating>Detalle
+          
+        </ion-label>
+        <ion-input type="text" [(ngModel)]="textoEnviar"></ion-input>
+      </ion-card-content>
+    </ion-card>
+  -->
+
+</ion-content>

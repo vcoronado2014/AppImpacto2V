@@ -25,6 +25,7 @@ import { RendicionPage } from '../pages/rendicion/rendicion';
 import { DocumentosPage } from '../pages/documentos/documentos';
 import { CalendarioPage } from '../pages/calendario/calendario';
 import { ProyectosPage } from '../pages/proyectos/proyectos';
+import { CrearRendicionPage } from '../pages/crear-rendicion/crear-rendicion';
 
 import { AuthService } from '../app/services/AuthService';
 import { GlobalService } from '../app/services/GlobalService';
@@ -54,6 +55,7 @@ import { MomentPipe } from '../pipes/MomentPipe';
     DocumentosPage,
     CalendarioPage,
     ProyectosPage,
+    CrearRendicionPage,
     MomentPipe,
     TextAvatarDirective
   ],
@@ -80,6 +82,7 @@ import { MomentPipe } from '../pipes/MomentPipe';
     DocumentosPage,
     CalendarioPage,
     ProyectosPage,
+    CrearRendicionPage,
     InicioPage
   ],
   providers: [

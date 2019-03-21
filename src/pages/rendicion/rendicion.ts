@@ -1,8 +1,9 @@
 import { Component, ViewChild } from '@angular/core';
-import { NavController, NavParams, LoadingController, App } from 'ionic-angular';
+import { NavController, NavParams, LoadingController, App, ModalController } from 'ionic-angular';
 //pages
 import { LoginPage } from '../login/login';
 import { NovedadesPage } from '../novedades/novedades';
+import { CrearRendicionPage } from '../crear-rendicion/crear-rendicion';
 //servicios
 import { AuthService } from '../../app/services/AuthService';
 import { GlobalService } from '../../app/services/GlobalService';
@@ -40,6 +41,7 @@ cantidadRendiciones = 0;
     public navParams: NavParams,
     public loading: LoadingController,
     public global: GlobalService,
+    public modalCtrl: ModalController,
     public acceso: AuthService
   ) {
 
@@ -195,6 +197,13 @@ cantidadRendiciones = 0;
       
     });
   }
+  //abrir la pagina de creaciòn de rendicion
+  presentModal(item) {
+
+    let modal = this.modalCtrl.create(CrearRendicionPage, { rendicion: item });
+    modal.present();
+  }
+
   /*
   cargarInstituciones() {
     this.filtrosInstitucion = [];
