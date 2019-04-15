@@ -24,6 +24,9 @@ import { DocumentosPage } from '../pages/documentos/documentos';
 import { CalendarioPage } from '../pages/calendario/calendario';
 import { ProyectosPage } from '../pages/proyectos/proyectos';
 import { CrearRendicionPage } from '../pages/crear-rendicion/crear-rendicion';
+//nueva
+import { TabTricelPage } from '../pages/tab-tricel/tab-tricel';
+import { TircelPage } from '../pages/tircel/tircel';
 
 //servicios
 import { AuthService } from '../app/services/AuthService';
@@ -53,6 +56,8 @@ import { LOCALE_ID } from '@angular/core';
     CalendarioPage,
     ProyectosPage,
     CrearRendicionPage,
+    TabTricelPage,
+    TircelPage,
     MomentPipe,
     TextAvatarDirective
   ],
@@ -80,6 +85,8 @@ import { LOCALE_ID } from '@angular/core';
     CalendarioPage,
     ProyectosPage,
     CrearRendicionPage,
+    TabTricelPage,
+    TircelPage,
     InicioPage
   ],
   providers: [

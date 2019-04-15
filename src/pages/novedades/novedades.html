@@ -7,7 +7,16 @@
 <ion-header class="mui--bg-color-red-500 fg-light">
 
   <ion-navbar>
-    <ion-title>Novedades</ion-title>
+      <ion-grid>
+          <ion-row>
+              <ion-col col-10>
+                  Novedades
+                </ion-col>
+                <ion-col col-2 text-right>
+                  <ion-icon name="close" (click)="logout()"></ion-icon>
+                </ion-col>
+          </ion-row>
+        </ion-grid>
   </ion-navbar>
 
 </ion-header>
@@ -22,11 +31,11 @@
       font-size: 0.9rem;">
           Deslize hacia abajo para actualizar
       </ion-label>
-
+<!--
   <button ion-button full icon-right color="light" (click)="presentModalCrearNovedad(null)"  *ngIf="permisos.CreaMuro == 1">
   Nueva Novedad
     <ion-icon name="chatbubbles"></ion-icon>
-  </button>
+  </button>-->
   <!-- solo para pruebas de carga de archivos -->
 
 
@@ -86,9 +95,15 @@
   </div>
 
 </ion-content>
-
+<ion-fab bottom right *ngIf="permisos.CreaMuro == 1" style ="bottom: 10%;">
+  <button ion-fab (click)="presentModalCrearNovedad(null)" class="mui--bg-color-red-500 fg-light">
+    <ion-icon name="add"></ion-icon>
+  </button>
+</ion-fab>
+<!--
 <ion-fab top right right>
   <button ion-fab mini (click)="logout()" class="btn-color">
     <ion-icon name="close"></ion-icon>
   </button>
 </ion-fab>
+-->

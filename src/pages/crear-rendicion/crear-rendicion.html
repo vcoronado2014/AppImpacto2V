@@ -14,7 +14,6 @@
 
 
 <ion-content padding>
-    <button ion-button full class="bg-red-200 fg-white" (click)="closeModal()">Cerrar</button>
     <ion-list>
         <ion-item>
             <ion-label floating>Fecha</ion-label>
@@ -63,19 +62,16 @@
         </ion-item>
       
       </ion-list>
-      <!--
-    <ion-card>
-      <ion-card-header>
-        Rendición
-      </ion-card-header>
-      <ion-card-content>
-        <ion-label floating>Detalle
-          
-        </ion-label>
-        <ion-input type="text" [(ngModel)]="textoEnviar"></ion-input>
-      </ion-card-content>
-    </ion-card>
-  -->
-  <button ion-button full class="bg-red-300 fg-white" (click)="enviarRendicion()">Guardar</button>
+
+  <ion-grid>
+      <ion-row>
+        <ion-col text-right>
+            <button ion-button clear (click)="closeModal()">Cerrar</button>
+        </ion-col>
+        <ion-col text-right>
+            <button ion-button  (click)="enviarRendicion()">Guardar</button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
 
 </ion-content>

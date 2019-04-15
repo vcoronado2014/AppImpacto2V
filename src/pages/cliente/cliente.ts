@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams, LoadingController } from 'ionic-angular';
 
 import { NovedadesPage } from '../novedades/novedades';
+import { TabTricelPage } from '../tab-tricel/tab-tricel';
 import { UsuariosPage } from '../usuarios/usuarios';
 import { RendicionPage } from '../rendicion/rendicion';
 import { SolicitudesPage } from '../solicitudes/solicitudes';
@@ -9,6 +10,7 @@ import { DocumentosPage } from '../documentos/documentos';
 import { CalendarioPage } from '../calendario/calendario';
 import { ProyectosPage } from '../proyectos/proyectos';
 import { InicioService } from '../../app/services/InicioService';
+
 
 
 @Component({
@@ -72,7 +74,8 @@ import { InicioService } from '../../app/services/InicioService';
     tab3Root = RendicionPage;
     tab4Root = DocumentosPage;
     tab5Root = CalendarioPage;
-    tab6Root = ProyectosPage;
+    //tab6Root = ProyectosPage;
+    tab6Root = TabTricelPage;
 
 
     constructor(public navCtrl: NavController, public navParams: NavParams) {

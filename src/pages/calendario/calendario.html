@@ -7,7 +7,16 @@
 <ion-header class="mui--bg-color-red-500 fg-light">
 
   <ion-navbar>
-    <ion-title>Calendario</ion-title>
+      <ion-grid>
+          <ion-row>
+              <ion-col col-10>
+                  Calendario
+                </ion-col>
+                <ion-col col-2 text-right>
+                  <ion-icon name="close" (click)="logout()"></ion-icon>
+                </ion-col>
+          </ion-row>
+        </ion-grid>
   </ion-navbar>
 
 </ion-header>
@@ -84,9 +93,3 @@
   
 
 </ion-content>
-
-<ion-fab top right right>
-  <button ion-fab mini (click)="logout()" class="btn-color">
-    <ion-icon name="close"></ion-icon>
-  </button>
-</ion-fab>

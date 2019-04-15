@@ -93,4 +93,14 @@ export class GlobalService{
 
   }
 
+  postTricel(instId){
+    let url = AppSettings.API_ENDPOINT + 'Votacion';
+    let dataGet = { InstId: instId.toString()};
+
+    let data = this.http.post(url, dataGet, {
+      headers: this.headers
+    });
+    return data;
+  }
+
 }

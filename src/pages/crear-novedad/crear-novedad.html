@@ -14,14 +14,7 @@
 
 
 <ion-content padding>
-  <button ion-button full class="bg-red-200 fg-white" (click)="closeModal()">Cerrar</button>
-  <!--
-  <ion-item>
-
-
-  </ion-item>
-
-  -->
+  
 
   <ion-card>
     <ion-card-header>
@@ -78,7 +71,17 @@
       </ion-label>
     </ion-card-content>
   </ion-card>
-
-  <button ion-button full class="bg-red-300 fg-white" (click)="enviarComentario()">Guardar</button>
+  <ion-grid>
+    <ion-row>
+      <ion-col text-right>
+          <button ion-button clear (click)="closeModal()">Cerrar</button>
+      </ion-col>
+      <ion-col text-right>
+          <button ion-button  (click)="enviarComentario()">Guardar</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
+  
 
 </ion-content>

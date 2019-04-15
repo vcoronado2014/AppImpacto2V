@@ -7,7 +7,19 @@
 <ion-header class="mui--bg-color-red-300 fg-light">
 
     <ion-navbar>
-      <ion-title>Rendiciones</ion-title>
+          
+        <ion-title>
+            <ion-grid>
+              <ion-row>
+                  <ion-col col-10>
+                      Rendiciones
+                    </ion-col>
+                    <ion-col col-2 text-right>
+                      <ion-icon name="close" (click)="logout()"></ion-icon>
+                    </ion-col>
+              </ion-row>
+            </ion-grid>
+        </ion-title>
     </ion-navbar>
   
   </ion-header>
@@ -32,19 +44,13 @@
     -->
     <!-- lista-->
     <ion-list *ngIf="esAdministrador">
-      
-        <button ion-button full icon-right color="light" (click)="presentModal(null)" *ngIf="permisos.CreaRendicion == '1'">
-          Nueva Rendición
-          <ion-icon name="dolar"></ion-icon>
-        </button>
-      
         <ion-item-sliding *ngFor="let clie of rendicionesArr">
           <ion-item>
             <ion-avatar item-start>
               <!--salida-->
                 <ion-icon name="arrow-back" item-left *ngIf="clie.OtroUno == 'Egreso'" style="color: red; font-size: 3em;"></ion-icon>
                 <!--entrada-->
-                <ion-icon name="arrow-forward" item-left  *ngIf="clie.OtroUno == 'Ingreso'" style="font-size: 3em;"></ion-icon>
+                <ion-icon name="arrow-forward" item-left  *ngIf="clie.OtroUno == 'Ingreso'" style="color: #488aff; font-size: 3em;"></ion-icon>
             </ion-avatar>
             <h2>{{clie.NombreCompleto}}</h2>
             <ion-row>
@@ -100,8 +106,8 @@
 
 
 </ion-content>
-<ion-fab top right right>
-  <button ion-fab mini (click)="logout()" class="btn-color">
-    <ion-icon name="close"></ion-icon>
-  </button>
-</ion-fab>
+<ion-fab bottom right *ngIf="permisos.CreaRendicion == 1" style ="bottom: 10%;">
+    <button ion-fab  (click)="presentModal(null)" class="mui--bg-color-red-300 fg-light">
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
