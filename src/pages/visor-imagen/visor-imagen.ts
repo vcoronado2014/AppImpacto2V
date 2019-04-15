@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, LoadingController, ToastController, ActionSheetController, ViewController  } from 'ionic-angular';
 //agregado ahora para las fotos
-import { PhotoViewer, PhotoViewerOptions } from '@ionic-native/photo-viewer';
+//import { PhotoViewer, PhotoViewerOptions } from '@ionic-native/photo-viewer';
 
 /**
  * Generated class for the VisorImagenPage page.
@@ -20,12 +20,13 @@ export class VisorImagenPage {
   idImagen: any;
   mroId: any;
   rutaImagen: any;
+  permisos: any;
   constructor(    public navCtrl: NavController,
                   public navParams: NavParams,
                   public loading: LoadingController,
                   public toastCtrl: ToastController,
                   private viewCtrl: ViewController,
-                  private photoViewer: PhotoViewer,
+                  //private photoViewer: PhotoViewer,
                   public actionSheetCtrl: ActionSheetController) {
 
     this.rutaImagen = this.navParams.get('item');
@@ -37,7 +38,7 @@ export class VisorImagenPage {
     this.viewCtrl.dismiss();
       //this.navCtrl.pop();
   }
-  
+  /*
   viewImage(){
     const option: PhotoViewerOptions = {
       share: true
@@ -45,8 +46,10 @@ export class VisorImagenPage {
     alert(this.rutaImagen);
     this.photoViewer.show(this.rutaImagen, "titulo");
   }
+  */
   
   ionViewDidLoad() {
+    this.permisos = JSON.parse(sessionStorage.getItem("PERMISOS"));
     console.log('ionViewDidLoad VisorImagenPage');
   }
   presentActionSheet() {

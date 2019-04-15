@@ -32,10 +32,12 @@
     -->
     <!-- lista-->
     <ion-list *ngIf="esAdministrador">
-        <button ion-button full icon-right color="light" (click)="presentModal(null)">
-            Nueva Rendición
-              <ion-icon name="dolar"></ion-icon>
-            </button>
+      
+        <button ion-button full icon-right color="light" (click)="presentModal(null)" *ngIf="permisos.CreaRendicion == '1'">
+          Nueva Rendición
+          <ion-icon name="dolar"></ion-icon>
+        </button>
+      
         <ion-item-sliding *ngFor="let clie of rendicionesArr">
           <ion-item>
             <ion-avatar item-start>
@@ -46,44 +48,37 @@
             </ion-avatar>
             <h2>{{clie.NombreCompleto}}</h2>
             <ion-row>
-                <ion-col>
-                    <div text-wrap  *ngIf="clie.OtroUno == 'Egreso'" style="color: red;">{{clie.OtroUno}}</div>
-                    <div text-wrap  *ngIf="clie.OtroUno == 'Ingreso'">{{clie.OtroUno}}</div>
-                </ion-col>
-                <ion-col>
-
-                    <div>{{clie.OtroCuatro}}</div>
-
-                </ion-col>
-                <ion-col center text-center>
-                  <ion-note>
-                      {{clie.NombreUsuario}}
-                  </ion-note>
-                </ion-col>
-              </ion-row>
+              <ion-col>
+                <div text-wrap *ngIf="clie.OtroUno == 'Egreso'" style="color: red;">{{clie.OtroUno}}</div>
+                <div text-wrap *ngIf="clie.OtroUno == 'Ingreso'">{{clie.OtroUno}}</div>
+              </ion-col>
+              <ion-col>
+            
+            
+                <ion-badge color="danger" *ngIf="clie.OtroUno == 'Egreso'">{{clie.OtroCuatro}}</ion-badge>
+                <ion-badge *ngIf="clie.OtroUno == 'Ingreso'">{{clie.OtroCuatro}}</ion-badge>
+            
+              </ion-col>
+              <ion-col center text-center>
+                <ion-note style="font-size: small;">
+                  {{clie.NombreUsuario}}
+                </ion-note>
+              </ion-col>
+              <!-- archivo a descargar -->
+              <ion-col center text-center *ngIf="clie.Rol != '#'">
+                <button ion-button icon-only (click)="openUrl(clie.Rol)" small color="secondary">
+                  <ion-icon name="cloud-download"></ion-icon>
+                </button>
+              </ion-col>
+            </ion-row>
+            <span style="font-size: 0.6em;font-style: italic;">Deslice a la izquierda para ver opciones</span>
           </ion-item>
-          <!--
-          <ion-item-options side="left">
-            <button ion-button color="primary" *ngIf="prof.Activo == 1" (click)="asociarComunas(prof)">
-              <ion-icon name="globe"></ion-icon>
-              Comunas
-            </button>
-          </ion-item-options>
           <ion-item-options side="right">
-            <button ion-button color="primary" *ngIf="prof.Activo == 1" (click)="editarProfesor(prof)">
+            <button ion-button color="primary" (click)="presentModal(clie)" *ngIf="permisos.ModificaRendicion == '1'">
               <ion-icon name="create"></ion-icon>
               Editar
             </button>
-            <button ion-button color="danger" *ngIf="prof.Activo == 1"  (click)="desactivarProfesor(prof)">
-              <ion-icon name="trash"></ion-icon>
-              Eliminar
-            </button>
-            <button ion-button color="secondary" *ngIf="prof.Activo == 0"  (click)="activarProfesor(prof)">
-              <ion-icon name="checkmark-circle"></ion-icon>
-              Activar
-            </button>
           </ion-item-options>
-        -->
         </ion-item-sliding>
       </ion-list>
 

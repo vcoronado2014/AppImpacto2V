@@ -6,13 +6,13 @@ webpackJsonp([0],{
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ClientePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__novedades_novedades__ = __webpack_require__(206);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__usuarios_usuarios__ = __webpack_require__(210);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__rendicion_rendicion__ = __webpack_require__(211);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__documentos_documentos__ = __webpack_require__(212);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__calendario_calendario__ = __webpack_require__(213);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__proyectos_proyectos__ = __webpack_require__(215);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__novedades_novedades__ = __webpack_require__(207);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__usuarios_usuarios__ = __webpack_require__(211);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__rendicion_rendicion__ = __webpack_require__(212);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__documentos_documentos__ = __webpack_require__(341);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__calendario_calendario__ = __webpack_require__(342);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__proyectos_proyectos__ = __webpack_require__(343);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -30,16 +30,62 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var ClientePage = (function () {
-    /*
-  
-  tab2Root = PacksPage;
-  tab3Root = ProfesoresPage;
-  tab4Root = PlanillaProfesoresPage;
-*/
+var ClientePage = /** @class */ (function () {
     function ClientePage(navCtrl, navParams) {
+        //this.permisos = JSON.parse(sessionStorage.getItem("PERMISOS"));
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        /*
+      permisos = {
+        CreaCalendario: 0,
+        CreaDocumento: 0,
+        CreaInstitucion: 0,
+        CreaMailing: 0,
+        CreaMroSolicitud: 0,
+        CreaMuro: 0,
+        CreaProyecto: 0,
+        CreaRendicion: 0,
+        CreaRol: 0,
+        CreaSolicitud: 0,
+        CreaTricel: 0,
+        CreaUsuario: 0,
+        EliminaCalendario: 0,
+        EliminaDocumento: 0,
+        EliminaInstitucion: 0,
+        EliminaMroSolicitud: 0,
+        EliminaMuro: 0,
+        EliminaProyecto: 0,
+        EliminaRendicion: 0,
+        EliminaRol: 0,
+        EliminaTricel: 0,
+        EliminaUsuario: 0,
+        ModificaCalendario: 0,
+        ModificaInstitucion: 0,
+        ModificaMroSolicitud: 0,
+        ModificaMuro: 0,
+        ModificaProyecto: 0,
+        ModificaRendicion: 0,
+        ModificaRol: 0,
+        ModificaTricel: 0,
+        ModificaUsuario: 0,
+        PuedeVotarProyecto: 0,
+        PuedeVotarTricel: 0,
+        VerCalendario: 0,
+        VerDocumento: 0,
+        VerInstitucion: 0,
+        VerMailing: 0,
+        VerMroSolicitud: 0,
+        VerMuro: 0,
+        VerProyecto: 0,
+        VerRendicion: 0,
+        VerReporteAsistencia: 0,
+        VerReportes: 0,
+        VerRol: 0,
+        VerTricel: 0,
+        VerUsuario: 0
+      };
+      */
+        this.permisos = JSON.parse(sessionStorage.getItem("PERMISOS"));
         this.tab1Root = __WEBPACK_IMPORTED_MODULE_2__novedades_novedades__["a" /* NovedadesPage */];
         this.tab2Root = __WEBPACK_IMPORTED_MODULE_3__usuarios_usuarios__["a" /* UsuariosPage */];
         this.tab3Root = __WEBPACK_IMPORTED_MODULE_4__rendicion_rendicion__["a" /* RendicionPage */];
@@ -50,14 +96,17 @@ var ClientePage = (function () {
     ClientePage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad ClientePage');
     };
+    ClientePage.prototype.ionViewWillEnter = function () {
+        //this.permisos = JSON.parse(sessionStorage.getItem("PERMISOS"));
+    };
+    ClientePage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-cliente',template:/*ion-inline-start:"C:\AppImpacto\AppImpacto\AppImpacto\src\pages\cliente\cliente.html"*/'<ion-content padding>\n\n\n\n    <ion-tabs id="tabCliente">\n\n        <ion-tab [root]="tab1Root" tabTitle="Novedades" tabIcon="chatbubbles" id="tabNovedades">\n\n        </ion-tab>\n\n        <ion-tab [root]="tab2Root" tabTitle="Usuarios" tabIcon="people" id="tabUsuarios">\n\n        </ion-tab>\n\n        <ion-tab [root]="tab3Root" tabTitle="Rendiciones" tabIcon="logo-usd" id="tabRendiciones">\n\n        </ion-tab>\n\n        <ion-tab [root]="tab4Root" tabTitle="Documentos" tabIcon="document" id="tabDocumentos">\n\n        </ion-tab>\n\n        <ion-tab [root]="tab5Root" tabTitle="Calendario" tabIcon="calendar" id="tabCalendario">\n\n        </ion-tab>        \n\n        <ion-tab [root]="tab6Root" tabTitle="Proyectos" tabIcon="book" id="tabProyectos">\n\n        </ion-tab>\n\n        <!--\n\n        <ion-tab [root]="tab1Root" tabTitle="Clientes" tabIcon="people" id="tabClientes">\n\n        </ion-tab>\n\n        <ion-tab [root]="tab2Root"  tabTitle="Packs" tabIcon="barcode" id="tabPacks">\n\n        </ion-tab>\n\n        <ion-tab [root]="tab3Root" tabTitle="Profesores" tabIcon="body" id="tabProfesores">\n\n        </ion-tab>\n\n        <ion-tab [root]="tab4Root" tabTitle="Reporte" tabIcon="clipboard" id="tabPlanilla">\n\n        </ion-tab>\n\n    -->\n\n    </ion-tabs>\n\n\n\n</ion-content>'/*ion-inline-end:"C:\AppImpacto\AppImpacto\AppImpacto\src\pages\cliente\cliente.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]])
+    ], ClientePage);
     return ClientePage;
 }());
-ClientePage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-cliente',template:/*ion-inline-start:"W:\impacto2v\AppImpacto2V_new\src\pages\cliente\cliente.html"*/'<ion-content padding>\n\n\n\n    <ion-tabs id="tabCliente">\n\n        <ion-tab [root]="tab1Root" tabTitle="Novedades" tabIcon="chatbubbles" id="tabNovedades">\n\n        </ion-tab>\n\n        <ion-tab [root]="tab2Root" tabTitle="Usuarios" tabIcon="people" id="tabUsuarios">\n\n        </ion-tab>\n\n        <ion-tab [root]="tab3Root" tabTitle="Rendiciones" tabIcon="logo-usd" id="tabRendiciones">\n\n        </ion-tab>\n\n        <ion-tab [root]="tab4Root" tabTitle="Documentos" tabIcon="document" id="tabDocumentos">\n\n        </ion-tab>\n\n        <ion-tab [root]="tab5Root" tabTitle="Calendario" tabIcon="calendar" id="tabCalendario">\n\n        </ion-tab>\n\n        <ion-tab [root]="tab6Root" tabTitle="Proyectos" tabIcon="book" id="tabProyectos">\n\n        </ion-tab>\n\n        <!--\n\n        <ion-tab [root]="tab1Root" tabTitle="Clientes" tabIcon="people" id="tabClientes">\n\n        </ion-tab>\n\n        <ion-tab [root]="tab2Root"  tabTitle="Packs" tabIcon="barcode" id="tabPacks">\n\n        </ion-tab>\n\n        <ion-tab [root]="tab3Root" tabTitle="Profesores" tabIcon="body" id="tabProfesores">\n\n        </ion-tab>\n\n        <ion-tab [root]="tab4Root" tabTitle="Reporte" tabIcon="clipboard" id="tabPlanilla">\n\n        </ion-tab>\n\n    -->\n\n    </ion-tabs>\n\n\n\n</ion-content>'/*ion-inline-end:"W:\impacto2v\AppImpacto2V_new\src\pages\cliente\cliente.html"*/,
-    }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]])
-], ClientePage);
 
 //# sourceMappingURL=cliente.js.map
 
@@ -69,8 +118,7 @@ ClientePage = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return VisorImagenPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_photo_viewer__ = __webpack_require__(205);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -83,21 +131,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 //agregado ahora para las fotos
-
+//import { PhotoViewer, PhotoViewerOptions } from '@ionic-native/photo-viewer';
 /**
  * Generated class for the VisorImagenPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var VisorImagenPage = (function () {
-    function VisorImagenPage(navCtrl, navParams, loading, toastCtrl, viewCtrl, photoViewer, actionSheetCtrl) {
+var VisorImagenPage = /** @class */ (function () {
+    function VisorImagenPage(navCtrl, navParams, loading, toastCtrl, viewCtrl, 
+        //private photoViewer: PhotoViewer,
+        actionSheetCtrl) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.loading = loading;
         this.toastCtrl = toastCtrl;
         this.viewCtrl = viewCtrl;
-        this.photoViewer = photoViewer;
         this.actionSheetCtrl = actionSheetCtrl;
         this.rutaImagen = this.navParams.get('item');
         this.idImagen = this.navParams.get('idImagen');
@@ -107,14 +156,17 @@ var VisorImagenPage = (function () {
         this.viewCtrl.dismiss();
         //this.navCtrl.pop();
     };
-    VisorImagenPage.prototype.viewImage = function () {
-        var option = {
-            share: true
-        };
-        alert(this.rutaImagen);
-        this.photoViewer.show(this.rutaImagen, "titulo");
-    };
+    /*
+    viewImage(){
+      const option: PhotoViewerOptions = {
+        share: true
+      }
+      alert(this.rutaImagen);
+      this.photoViewer.show(this.rutaImagen, "titulo");
+    }
+    */
     VisorImagenPage.prototype.ionViewDidLoad = function () {
+        this.permisos = JSON.parse(sessionStorage.getItem("PERMISOS"));
         console.log('ionViewDidLoad VisorImagenPage');
     };
     VisorImagenPage.prototype.presentActionSheet = function () {
@@ -140,26 +192,25 @@ var VisorImagenPage = (function () {
         });
         actionSheet.present();
     };
+    VisorImagenPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-visor-imagen',template:/*ion-inline-start:"C:\AppImpacto\AppImpacto\AppImpacto\src\pages\visor-imagen\visor-imagen.html"*/'<!--\n\n  Generated template for the VisorImagenPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header class="mui--bg-color-red-400 fg-light">\n\n\n\n  <ion-navbar>\n\n    <ion-title>Imágen</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <button ion-button full class="bg-red-200 fg-white" (click)="closeModal()">Cerrar</button>\n\n  <img [src]="rutaImagen" style="width: 100%;" (click)="viewImage()" />\n\n  <ion-fab bottom right>\n\n    <button ion-fab class="bg-teal-800" (click)="presentActionSheet()"><ion-icon name="trash"></ion-icon></button>\n\n  </ion-fab>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\AppImpacto\AppImpacto\AppImpacto\src\pages\visor-imagen\visor-imagen.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* ToastController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ViewController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* ActionSheetController */]])
+    ], VisorImagenPage);
     return VisorImagenPage;
 }());
-VisorImagenPage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-visor-imagen',template:/*ion-inline-start:"W:\impacto2v\AppImpacto2V_new\src\pages\visor-imagen\visor-imagen.html"*/'<!--\n\n  Generated template for the VisorImagenPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header class="mui--bg-color-red-400 fg-light">\n\n\n\n  <ion-navbar>\n\n    <ion-title>Imágen</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <button ion-button full class="bg-red-200 fg-white" (click)="closeModal()">Cerrar</button>\n\n  <img [src]="rutaImagen" style="width: 100%;" (click)="viewImage()" />\n\n  <ion-fab bottom right>\n\n    <button ion-fab class="bg-teal-800" (click)="presentActionSheet()"><ion-icon name="trash"></ion-icon></button>\n\n  </ion-fab>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"W:\impacto2v\AppImpacto2V_new\src\pages\visor-imagen\visor-imagen.html"*/,
-    }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* ToastController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ViewController */],
-        __WEBPACK_IMPORTED_MODULE_2__ionic_native_photo_viewer__["a" /* PhotoViewer */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* ActionSheetController */]])
-], VisorImagenPage);
 
 //# sourceMappingURL=visor-imagen.js.map
 
 /***/ }),
 
-/***/ 122:
+/***/ 124:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -172,7 +223,7 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 122;
+webpackEmptyAsyncContext.id = 124;
 
 /***/ }),
 
@@ -183,9 +234,9 @@ webpackEmptyAsyncContext.id = 122;
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AuthService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(46);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__AppSettings__ = __webpack_require__(38);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_platform_browser__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__ = __webpack_require__(58);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__AppSettings__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_platform_browser__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__ = __webpack_require__(59);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -201,7 +252,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var AuthService = (function () {
+var AuthService = /** @class */ (function () {
     function AuthService(http, sanitized) {
         this.http = http;
         this.sanitized = sanitized;
@@ -237,6 +288,7 @@ var AuthService = (function () {
                 sessionStorage.setItem('COM_NOMBRE', retorno.Comuna.Nombre);
                 sessionStorage.setItem('ROL_NOMBRE_INSTITUCION', retorno.RolInstitucion.Nombre);
                 sessionStorage.setItem('ROL_ID_INSTITUCION', retorno.RolInstitucion.IdOriginal);
+                sessionStorage.setItem('PERMISOS', JSON.stringify(retorno.PermisoRol));
                 _this.username = userInfo.usuario;
                 _this.loggedIn = true;
             }
@@ -251,19 +303,19 @@ var AuthService = (function () {
     AuthService.prototype.isLoggedId = function () {
         return this.loggedIn;
     };
+    AuthService = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */],
+            __WEBPACK_IMPORTED_MODULE_3__angular_platform_browser__["c" /* DomSanitizer */]])
+    ], AuthService);
     return AuthService;
 }());
-AuthService = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */],
-        __WEBPACK_IMPORTED_MODULE_3__angular_platform_browser__["c" /* DomSanitizer */]])
-], AuthService);
 
 //# sourceMappingURL=AuthService.js.map
 
 /***/ }),
 
-/***/ 164:
+/***/ 166:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -276,26 +328,26 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 164;
+webpackEmptyAsyncContext.id = 166;
 
 /***/ }),
 
-/***/ 206:
+/***/ 207:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NovedadesPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login_login__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__detail_novedad_detail_novedad__ = __webpack_require__(207);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__detail_novedad_detail_novedad__ = __webpack_require__(208);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__visor_imagen_visor_imagen__ = __webpack_require__(114);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__crear_novedad_crear_novedad__ = __webpack_require__(208);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__editar_novedad_editar_novedad__ = __webpack_require__(209);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__crear_novedad_crear_novedad__ = __webpack_require__(209);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__editar_novedad_editar_novedad__ = __webpack_require__(210);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_services_AuthService__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__app_services_InicioService__ = __webpack_require__(60);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__app_services_novedadService__ = __webpack_require__(59);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__app_AppSettings__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__app_services_InicioService__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__app_services_novedadService__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__app_AppSettings__ = __webpack_require__(39);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -323,7 +375,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var NovedadesPage = (function () {
+var NovedadesPage = /** @class */ (function () {
     function NovedadesPage(navCtrl, navParams, loading, app, acceso, modalCtrl, ini, nov, viewCtrl, toastCtrl, actionSheetCtrl) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
@@ -336,6 +388,54 @@ var NovedadesPage = (function () {
         this.viewCtrl = viewCtrl;
         this.toastCtrl = toastCtrl;
         this.actionSheetCtrl = actionSheetCtrl;
+        this.permisos = {
+            CreaCalendario: 0,
+            CreaDocumento: 0,
+            CreaInstitucion: 0,
+            CreaMailing: 0,
+            CreaMroSolicitud: 0,
+            CreaMuro: 0,
+            CreaProyecto: 0,
+            CreaRendicion: 0,
+            CreaRol: 0,
+            CreaSolicitud: 0,
+            CreaTricel: 0,
+            CreaUsuario: 0,
+            EliminaCalendario: 0,
+            EliminaDocumento: 0,
+            EliminaInstitucion: 0,
+            EliminaMroSolicitud: 0,
+            EliminaMuro: 0,
+            EliminaProyecto: 0,
+            EliminaRendicion: 0,
+            EliminaRol: 0,
+            EliminaTricel: 0,
+            EliminaUsuario: 0,
+            ModificaCalendario: 0,
+            ModificaInstitucion: 0,
+            ModificaMroSolicitud: 0,
+            ModificaMuro: 0,
+            ModificaProyecto: 0,
+            ModificaRendicion: 0,
+            ModificaRol: 0,
+            ModificaTricel: 0,
+            ModificaUsuario: 0,
+            PuedeVotarProyecto: 0,
+            PuedeVotarTricel: 0,
+            VerCalendario: 0,
+            VerDocumento: 0,
+            VerInstitucion: 0,
+            VerMailing: 0,
+            VerMroSolicitud: 0,
+            VerMuro: 0,
+            VerProyecto: 0,
+            VerRendicion: 0,
+            VerReporteAsistencia: 0,
+            VerReportes: 0,
+            VerRol: 0,
+            VerTricel: 0,
+            VerUsuario: 0
+        };
         this.image = null;
     }
     NovedadesPage.prototype.cargar = function () {
@@ -476,6 +576,7 @@ var NovedadesPage = (function () {
         }, 2000);
     };
     NovedadesPage.prototype.ionViewWillEnter = function () {
+        this.permisos = JSON.parse(sessionStorage.getItem("PERMISOS"));
         this.cargar();
     };
     NovedadesPage.prototype.ionViewDidLoad = function () {
@@ -644,38 +745,38 @@ var NovedadesPage = (function () {
     NovedadesPage.prototype.cancel = function () {
         this.viewCtrl.dismiss();
     };
+    NovedadesPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-novedades',template:/*ion-inline-start:"C:\AppImpacto\AppImpacto\AppImpacto\src\pages\novedades\novedades.html"*/'<!--\n\n  Generated template for the NovedadesPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header class="mui--bg-color-red-500 fg-light">\n\n\n\n  <ion-navbar>\n\n    <ion-title>Novedades</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n    <!-- refresh-->\n\n    <ion-refresher (ionRefresh)="doRefresh($event)">\n\n        <ion-refresher-content></ion-refresher-content>\n\n      </ion-refresher>\n\n      <ion-label no-padding no-margin text-center style="font-style: italic;\n\n      font-size: 0.9rem;">\n\n          Deslize hacia abajo para actualizar\n\n      </ion-label>\n\n\n\n  <button ion-button full icon-right color="light" (click)="presentModalCrearNovedad(null)"  *ngIf="permisos.CreaMuro == 1">\n\n  Nueva Novedad\n\n    <ion-icon name="chatbubbles"></ion-icon>\n\n  </button>\n\n  <!-- solo para pruebas de carga de archivos -->\n\n\n\n\n\n  <div *ngFor="let item of solicitudes">\n\n    <ion-card>\n\n      <ion-card-content>\n\n        <!-- lo comentamos por mientra\n\n          <img [src]="image" *ngIf="image" />\n\n          <ion-item>\n\n            <label>Carga de Archivos</label>\n\n            <input type="file" accept="image/*" (change)="changeListener($event, item)" style="opacity: 0" #fileInp>\n\n\n\n          </ion-item>\n\n        -->\n\n        <ion-grid *ngIf="item.MuestraAdjuntos">\n\n          <ion-row>\n\n            <div [class]="item.ClaseUno" *ngIf="item.MuestraImagenUno">\n\n              <img [src]="item.ImgUno" (click)="presentModalImagen(item.ImgUno, item.IdUno, item.Id)" />\n\n            </div>\n\n            <div [class]="item.ClaseDos" *ngIf="item.MuestraImagenDos">\n\n              <img [src]="item.ImgDos" (click)="presentModalImagen(item.ImgDos, item.IdDos, item.Id)" />\n\n            </div>\n\n            <div [class]="item.ClaseTres" *ngIf="item.MuestraImagenTres">\n\n              <img [src]="item.ImgTres" (click)="presentModalImagen(item.ImgTres, item.IdTres, item.Id)" />\n\n            </div>\n\n            <div [class]="item.ClaseCuatro" *ngIf="item.MuestraImagenCuatro">\n\n              <img [src]="item.ImgCuatro" (click)="presentModalImagen(item.ImgCuatro, item.IdCuatro, item.Id)" />\n\n            </div>\n\n          </ion-row>\n\n\n\n        </ion-grid>\n\n        <ion-card-title>\n\n          <ion-icon name="create" style="float: left;" *ngIf="item.VisibleEditar" class="fg-teal-800"  (click)="presentModalEditarNovedad(item)"></ion-icon>&nbsp;\n\n          {{item.NombreUsuario}}\n\n          <ion-icon name="{{item.UrlImagen}}" style="float: right;" *ngIf="item.VisibleEliminar" class="fg-teal-800"  (click)="presentActionSheetMuro(item)"></ion-icon>\n\n\n\n        </ion-card-title>\n\n        <span class="icono-fecha fg-teal-800"><ion-icon name="clock"></ion-icon> {{item.FechaString}}</span>\n\n        <button style="float: right; font-size: 0.8rem;" ion-button small class="bg-red-300 fg-white" (click)="presentModal(item)" >Comentar</button>\n\n        <p text-wrap>\n\n          <strong>\n\n            {{item.Texto}}\n\n          </strong>\n\n        </p>\n\n        <!-- comentarios -->\n\n        <ion-list *ngFor="let comen of item.RespuestaMuro">\n\n          <ion-item>\n\n            <ion-icon name="chatbubbles" item-start style="font-size: 1.8rem;" class="fg-teal-800"></ion-icon>\n\n            <h2><strong>{{comen.NombreUsuario}}</strong></h2>\n\n            <h3 style="font-size: 1.2rem;" class="fg-teal-800"><ion-icon name="clock"></ion-icon> {{comen.FechaString}}</h3>\n\n            <p text-wrap style="text-align: justify;">{{comen.Texto}}</p>\n\n            <ion-icon class="fg-teal-800" name="trash" *ngIf="comen.VisibleEliminar" item-end (click)="presentActionSheet(comen)"></ion-icon>\n\n          </ion-item>\n\n        </ion-list>\n\n      </ion-card-content>\n\n    </ion-card>\n\n  </div>\n\n\n\n</ion-content>\n\n\n\n<ion-fab top right right>\n\n  <button ion-fab mini (click)="logout()" class="btn-color">\n\n    <ion-icon name="close"></ion-icon>\n\n  </button>\n\n</ion-fab>\n\n'/*ion-inline-end:"C:\AppImpacto\AppImpacto\AppImpacto\src\pages\novedades\novedades.html"*/,
+            providers: [__WEBPACK_IMPORTED_MODULE_7__app_services_AuthService__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_8__app_services_InicioService__["a" /* InicioService */], __WEBPACK_IMPORTED_MODULE_9__app_services_novedadService__["a" /* NovedadService */]]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* App */],
+            __WEBPACK_IMPORTED_MODULE_7__app_services_AuthService__["a" /* AuthService */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */],
+            __WEBPACK_IMPORTED_MODULE_8__app_services_InicioService__["a" /* InicioService */],
+            __WEBPACK_IMPORTED_MODULE_9__app_services_novedadService__["a" /* NovedadService */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ViewController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* ToastController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* ActionSheetController */]])
+    ], NovedadesPage);
     return NovedadesPage;
 }());
-NovedadesPage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-novedades',template:/*ion-inline-start:"W:\impacto2v\AppImpacto2V_new\src\pages\novedades\novedades.html"*/'<!--\n\n  Generated template for the NovedadesPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header class="mui--bg-color-red-500 fg-light">\n\n\n\n  <ion-navbar>\n\n    <ion-title>Novedades</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n    <!-- refresh-->\n\n    <ion-refresher (ionRefresh)="doRefresh($event)">\n\n        <ion-refresher-content></ion-refresher-content>\n\n      </ion-refresher>\n\n      <ion-label no-padding no-margin text-center style="font-style: italic;\n\n      font-size: 0.9rem;">\n\n          Deslize hacia abajo para actualizar\n\n      </ion-label>\n\n\n\n  <button ion-button full icon-right color="light" (click)="presentModalCrearNovedad(null)">\n\n  Nueva Novedad\n\n    <ion-icon name="chatbubbles"></ion-icon>\n\n  </button>\n\n  <!-- solo para pruebas de carga de archivos -->\n\n\n\n\n\n  <div *ngFor="let item of solicitudes">\n\n    <ion-card>\n\n      <ion-card-content>\n\n        <!-- lo comentamos por mientra\n\n          <img [src]="image" *ngIf="image" />\n\n          <ion-item>\n\n            <label>Carga de Archivos</label>\n\n            <input type="file" accept="image/*" (change)="changeListener($event, item)" style="opacity: 0" #fileInp>\n\n\n\n          </ion-item>\n\n        -->\n\n        <ion-grid *ngIf="item.MuestraAdjuntos">\n\n          <ion-row>\n\n            <div [class]="item.ClaseUno" *ngIf="item.MuestraImagenUno">\n\n              <img [src]="item.ImgUno" (click)="presentModalImagen(item.ImgUno, item.IdUno, item.Id)" />\n\n            </div>\n\n            <div [class]="item.ClaseDos" *ngIf="item.MuestraImagenDos">\n\n              <img [src]="item.ImgDos" (click)="presentModalImagen(item.ImgDos, item.IdDos, item.Id)" />\n\n            </div>\n\n            <div [class]="item.ClaseTres" *ngIf="item.MuestraImagenTres">\n\n              <img [src]="item.ImgTres" (click)="presentModalImagen(item.ImgTres, item.IdTres, item.Id)" />\n\n            </div>\n\n            <div [class]="item.ClaseCuatro" *ngIf="item.MuestraImagenCuatro">\n\n              <img [src]="item.ImgCuatro" (click)="presentModalImagen(item.ImgCuatro, item.IdCuatro, item.Id)" />\n\n            </div>\n\n          </ion-row>\n\n\n\n        </ion-grid>\n\n        <ion-card-title>\n\n          <ion-icon name="create" style="float: left;" *ngIf="item.VisibleEditar" class="fg-teal-800"  (click)="presentModalEditarNovedad(item)"></ion-icon>&nbsp;\n\n          {{item.NombreUsuario}}\n\n          <ion-icon name="{{item.UrlImagen}}" style="float: right;" *ngIf="item.VisibleEliminar" class="fg-teal-800"  (click)="presentActionSheetMuro(item)"></ion-icon>\n\n\n\n        </ion-card-title>\n\n        <span class="icono-fecha fg-teal-800"><ion-icon name="clock"></ion-icon> {{item.FechaString}}</span>\n\n        <button style="float: right; font-size: 0.8rem;" ion-button small class="bg-red-300 fg-white" (click)="presentModal(item)" >Comentar</button>\n\n        <p text-wrap>\n\n          <strong>\n\n            {{item.Texto}}\n\n          </strong>\n\n        </p>\n\n        <!-- comentarios -->\n\n        <ion-list *ngFor="let comen of item.RespuestaMuro">\n\n          <ion-item>\n\n            <ion-icon name="chatbubbles" item-start style="font-size: 1.8rem;" class="fg-teal-800"></ion-icon>\n\n            <h2><strong>{{comen.NombreUsuario}}</strong></h2>\n\n            <h3 style="font-size: 1.2rem;" class="fg-teal-800"><ion-icon name="clock"></ion-icon> {{comen.FechaString}}</h3>\n\n            <p text-wrap style="text-align: justify;">{{comen.Texto}}</p>\n\n            <ion-icon class="fg-teal-800" name="trash" *ngIf="comen.VisibleEliminar" item-end (click)="presentActionSheet(comen)"></ion-icon>\n\n          </ion-item>\n\n        </ion-list>\n\n      </ion-card-content>\n\n    </ion-card>\n\n  </div>\n\n\n\n</ion-content>\n\n\n\n<ion-fab top right right>\n\n  <button ion-fab mini (click)="logout()" class="btn-color">\n\n    <ion-icon name="close"></ion-icon>\n\n  </button>\n\n</ion-fab>\n\n'/*ion-inline-end:"W:\impacto2v\AppImpacto2V_new\src\pages\novedades\novedades.html"*/,
-        providers: [__WEBPACK_IMPORTED_MODULE_7__app_services_AuthService__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_8__app_services_InicioService__["a" /* InicioService */], __WEBPACK_IMPORTED_MODULE_9__app_services_novedadService__["a" /* NovedadService */]]
-    }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* App */],
-        __WEBPACK_IMPORTED_MODULE_7__app_services_AuthService__["a" /* AuthService */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */],
-        __WEBPACK_IMPORTED_MODULE_8__app_services_InicioService__["a" /* InicioService */],
-        __WEBPACK_IMPORTED_MODULE_9__app_services_novedadService__["a" /* NovedadService */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ViewController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* ToastController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* ActionSheetController */]])
-], NovedadesPage);
 
 //# sourceMappingURL=novedades.js.map
 
 /***/ }),
 
-/***/ 207:
+/***/ 208:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DetailNovedadPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_services_novedadService__ = __webpack_require__(59);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_services_novedadService__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__visor_imagen_visor_imagen__ = __webpack_require__(114);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -697,7 +798,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var DetailNovedadPage = (function () {
+var DetailNovedadPage = /** @class */ (function () {
     function DetailNovedadPage(navCtrl, navParams, nov, loading, toastCtrl, viewCtrl, modalCtrl, actionSheetCtrl) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
@@ -707,6 +808,54 @@ var DetailNovedadPage = (function () {
         this.viewCtrl = viewCtrl;
         this.modalCtrl = modalCtrl;
         this.actionSheetCtrl = actionSheetCtrl;
+        this.permisos = {
+            CreaCalendario: 0,
+            CreaDocumento: 0,
+            CreaInstitucion: 0,
+            CreaMailing: 0,
+            CreaMroSolicitud: 0,
+            CreaMuro: 0,
+            CreaProyecto: 0,
+            CreaRendicion: 0,
+            CreaRol: 0,
+            CreaSolicitud: 0,
+            CreaTricel: 0,
+            CreaUsuario: 0,
+            EliminaCalendario: 0,
+            EliminaDocumento: 0,
+            EliminaInstitucion: 0,
+            EliminaMroSolicitud: 0,
+            EliminaMuro: 0,
+            EliminaProyecto: 0,
+            EliminaRendicion: 0,
+            EliminaRol: 0,
+            EliminaTricel: 0,
+            EliminaUsuario: 0,
+            ModificaCalendario: 0,
+            ModificaInstitucion: 0,
+            ModificaMroSolicitud: 0,
+            ModificaMuro: 0,
+            ModificaProyecto: 0,
+            ModificaRendicion: 0,
+            ModificaRol: 0,
+            ModificaTricel: 0,
+            ModificaUsuario: 0,
+            PuedeVotarProyecto: 0,
+            PuedeVotarTricel: 0,
+            VerCalendario: 0,
+            VerDocumento: 0,
+            VerInstitucion: 0,
+            VerMailing: 0,
+            VerMroSolicitud: 0,
+            VerMuro: 0,
+            VerProyecto: 0,
+            VerRendicion: 0,
+            VerReporteAsistencia: 0,
+            VerReportes: 0,
+            VerRol: 0,
+            VerTricel: 0,
+            VerUsuario: 0
+        };
         this.solicitudes = [];
         this.novedad = this.navParams.get('novedad');
         if (this.novedad) {
@@ -716,6 +865,7 @@ var DetailNovedadPage = (function () {
     }
     DetailNovedadPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad DetailNovedadPage');
+        this.permisos = JSON.parse(sessionStorage.getItem("PERMISOS"));
     };
     DetailNovedadPage.prototype.presentModalImagen = function (item, idImagen, id) {
         var modal = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_3__visor_imagen_visor_imagen__["a" /* VisorImagenPage */], { item: item, idImagen: idImagen, MroId: id });
@@ -889,37 +1039,37 @@ var DetailNovedadPage = (function () {
         });
         actionSheet.present();
     };
+    DetailNovedadPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-detail-novedad',template:/*ion-inline-start:"C:\AppImpacto\AppImpacto\AppImpacto\src\pages\detail-novedad\detail-novedad.html"*/'<!--\n\n  Generated template for the DetailNovedadPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header class="mui--bg-color-red-400 fg-light">\n\n\n\n  <ion-navbar>\n\n    <ion-title>Detalle</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n<button ion-button full class="bg-red-200 fg-white" (click)="closeModal()">Cerrar</button>\n\n  <div *ngFor="let item of solicitudes">\n\n    <ion-card>\n\n      <ion-card-content>\n\n        <!-- imagenes -->\n\n        <ion-grid *ngIf="item.MuestraAdjuntos">\n\n          <ion-row>\n\n            <div [class]="item.ClaseUno" *ngIf="item.MuestraImagenUno">\n\n              <img [src]="item.ImgUno" (click)="presentModalImagen(item.ImgUno, item.IdUno, item.Id)" />\n\n            </div>\n\n            <div [class]="item.ClaseDos" *ngIf="item.MuestraImagenDos">\n\n              <img [src]="item.ImgDos" (click)="presentModalImagen(item.ImgDos, item.IdDos, item.Id)" />\n\n            </div>\n\n            <div [class]="item.ClaseTres" *ngIf="item.MuestraImagenTres">\n\n              <img [src]="item.ImgTres" (click)="presentModalImagen(item.ImgTres, item.IdTres, item.Id)" />\n\n            </div>\n\n            <div [class]="item.ClaseCuatro" *ngIf="item.MuestraImagenCuatro">\n\n              <img [src]="item.ImgCuatro" (click)="presentModalImagen(item.ImgCuatro, item.IdCuatro, item.Id)" />\n\n            </div>\n\n          </ion-row>\n\n\n\n        </ion-grid>\n\n\n\n        <ion-card-title>\n\n          {{item.NombreUsuario}}\n\n          <ion-icon name="{{item.UrlImagen}}" style="float: right;" *ngIf="item.VisibleEliminar" class="fg-teal-800" (click)="presentActionSheetMuro(item)"></ion-icon>\n\n        </ion-card-title>\n\n        <span class="icono-fecha fg-teal-800"><ion-icon name="clock"></ion-icon> {{item.FechaString}}</span>\n\n        <p text-wrap>\n\n          <strong>\n\n            {{item.Texto}}\n\n          </strong>\n\n        </p>\n\n        <ion-item>\n\n              <ion-label stacked>Ingrese Comentario</ion-label>\n\n              <ion-input type="text" [(ngModel)]="textoEnviar" required></ion-input>\n\n        </ion-item>\n\n        <button style="float: right; font-size: 0.8rem;" ion-button class="bg-red-300 fg-white" (click)="enviar(item)">Enviar</button>\n\n\n\n\n\n        <!-- comentarios -->\n\n        <ion-list *ngFor="let comen of item.RespuestaMuro">\n\n          <ion-item>\n\n            <ion-icon name="chatbubbles" item-start style="font-size: 1.8rem;" class="fg-teal-800"></ion-icon>\n\n            <h2><strong>{{comen.NombreUsuario}}</strong></h2>\n\n            <h3 style="font-size: 1.2rem;" class="fg-teal-800"><ion-icon name="clock"></ion-icon> {{comen.FechaString}}</h3>\n\n            <p text-wrap style="text-align: justify;">{{comen.Texto}}</p>\n\n            <ion-icon class="fg-teal-800" name="trash" *ngIf="comen.VisibleEliminar" item-end (click)="presentActionSheet(comen)"></ion-icon>\n\n          </ion-item>\n\n        </ion-list>\n\n      </ion-card-content>\n\n    </ion-card>\n\n  </div>\n\n\n\n<!--\n\n  <ion-grid>\n\n    <ion-row>\n\n      <ion-col col-6>\n\n        <button ion-button style="width: 100%;" class="bg-red-200 fg-white" (click)="closeModal()">Cancelar</button>\n\n      </ion-col>\n\n      <ion-col col-6>\n\n        <button ion-button style="width: 100%;" class="bg-red-400 fg-white" (click)="closeModal(\'actualizar\')">Aceptar</button>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-grid>\n\n-->\n\n</ion-content>\n\n'/*ion-inline-end:"C:\AppImpacto\AppImpacto\AppImpacto\src\pages\detail-novedad\detail-novedad.html"*/,
+            providers: [__WEBPACK_IMPORTED_MODULE_2__app_services_novedadService__["a" /* NovedadService */]]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_2__app_services_novedadService__["a" /* NovedadService */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* ToastController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ViewController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* ActionSheetController */]])
+    ], DetailNovedadPage);
     return DetailNovedadPage;
 }());
-DetailNovedadPage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-detail-novedad',template:/*ion-inline-start:"W:\impacto2v\AppImpacto2V_new\src\pages\detail-novedad\detail-novedad.html"*/'<!--\n\n  Generated template for the DetailNovedadPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header class="mui--bg-color-red-400 fg-light">\n\n\n\n  <ion-navbar>\n\n    <ion-title>Detalle</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n<button ion-button full class="bg-red-200 fg-white" (click)="closeModal()">Cerrar</button>\n\n  <div *ngFor="let item of solicitudes">\n\n    <ion-card>\n\n      <ion-card-content>\n\n        <!-- imagenes -->\n\n        <ion-grid *ngIf="item.MuestraAdjuntos">\n\n          <ion-row>\n\n            <div [class]="item.ClaseUno" *ngIf="item.MuestraImagenUno">\n\n              <img [src]="item.ImgUno" (click)="presentModalImagen(item.ImgUno, item.IdUno, item.Id)" />\n\n            </div>\n\n            <div [class]="item.ClaseDos" *ngIf="item.MuestraImagenDos">\n\n              <img [src]="item.ImgDos" (click)="presentModalImagen(item.ImgDos, item.IdDos, item.Id)" />\n\n            </div>\n\n            <div [class]="item.ClaseTres" *ngIf="item.MuestraImagenTres">\n\n              <img [src]="item.ImgTres" (click)="presentModalImagen(item.ImgTres, item.IdTres, item.Id)" />\n\n            </div>\n\n            <div [class]="item.ClaseCuatro" *ngIf="item.MuestraImagenCuatro">\n\n              <img [src]="item.ImgCuatro" (click)="presentModalImagen(item.ImgCuatro, item.IdCuatro, item.Id)" />\n\n            </div>\n\n          </ion-row>\n\n\n\n        </ion-grid>\n\n\n\n        <ion-card-title>\n\n          {{item.NombreUsuario}}\n\n          <ion-icon name="{{item.UrlImagen}}" style="float: right;" *ngIf="item.VisibleEliminar" class="fg-teal-800" (click)="presentActionSheetMuro(item)"></ion-icon>\n\n        </ion-card-title>\n\n        <span class="icono-fecha fg-teal-800"><ion-icon name="clock"></ion-icon> {{item.FechaString}}</span>\n\n        <p text-wrap>\n\n          <strong>\n\n            {{item.Texto}}\n\n          </strong>\n\n        </p>\n\n        <ion-item>\n\n              <ion-label stacked>Ingrese Comentario</ion-label>\n\n              <ion-input type="text" [(ngModel)]="textoEnviar" required></ion-input>\n\n        </ion-item>\n\n        <button style="float: right; font-size: 0.8rem;" ion-button class="bg-red-300 fg-white" (click)="enviar(item)">Enviar</button>\n\n\n\n\n\n        <!-- comentarios -->\n\n        <ion-list *ngFor="let comen of item.RespuestaMuro">\n\n          <ion-item>\n\n            <ion-icon name="chatbubbles" item-start style="font-size: 1.8rem;" class="fg-teal-800"></ion-icon>\n\n            <h2><strong>{{comen.NombreUsuario}}</strong></h2>\n\n            <h3 style="font-size: 1.2rem;" class="fg-teal-800"><ion-icon name="clock"></ion-icon> {{comen.FechaString}}</h3>\n\n            <p text-wrap style="text-align: justify;">{{comen.Texto}}</p>\n\n            <ion-icon class="fg-teal-800" name="trash" *ngIf="comen.VisibleEliminar" item-end (click)="presentActionSheet(comen)"></ion-icon>\n\n          </ion-item>\n\n        </ion-list>\n\n      </ion-card-content>\n\n    </ion-card>\n\n  </div>\n\n\n\n<!--\n\n  <ion-grid>\n\n    <ion-row>\n\n      <ion-col col-6>\n\n        <button ion-button style="width: 100%;" class="bg-red-200 fg-white" (click)="closeModal()">Cancelar</button>\n\n      </ion-col>\n\n      <ion-col col-6>\n\n        <button ion-button style="width: 100%;" class="bg-red-400 fg-white" (click)="closeModal(\'actualizar\')">Aceptar</button>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-grid>\n\n-->\n\n</ion-content>\n\n'/*ion-inline-end:"W:\impacto2v\AppImpacto2V_new\src\pages\detail-novedad\detail-novedad.html"*/,
-        providers: [__WEBPACK_IMPORTED_MODULE_2__app_services_novedadService__["a" /* NovedadService */]]
-    }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
-        __WEBPACK_IMPORTED_MODULE_2__app_services_novedadService__["a" /* NovedadService */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* ToastController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ViewController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* ActionSheetController */]])
-], DetailNovedadPage);
 
 //# sourceMappingURL=detail-novedad.js.map
 
 /***/ }),
 
-/***/ 208:
+/***/ 209:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CrearNovedadPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_services_AuthService__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_services_InicioService__ = __webpack_require__(60);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_services_novedadService__ = __webpack_require__(59);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_services_InicioService__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_services_novedadService__ = __webpack_require__(47);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -940,7 +1090,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var CrearNovedadPage = (function () {
+var CrearNovedadPage = /** @class */ (function () {
     function CrearNovedadPage(navCtrl, navParams, loading, acceso, modalCtrl, ini, nov, toastCtrl, viewCtrl, actionSheetCtrl) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
@@ -952,6 +1102,54 @@ var CrearNovedadPage = (function () {
         this.toastCtrl = toastCtrl;
         this.viewCtrl = viewCtrl;
         this.actionSheetCtrl = actionSheetCtrl;
+        this.permisos = {
+            CreaCalendario: 0,
+            CreaDocumento: 0,
+            CreaInstitucion: 0,
+            CreaMailing: 0,
+            CreaMroSolicitud: 0,
+            CreaMuro: 0,
+            CreaProyecto: 0,
+            CreaRendicion: 0,
+            CreaRol: 0,
+            CreaSolicitud: 0,
+            CreaTricel: 0,
+            CreaUsuario: 0,
+            EliminaCalendario: 0,
+            EliminaDocumento: 0,
+            EliminaInstitucion: 0,
+            EliminaMroSolicitud: 0,
+            EliminaMuro: 0,
+            EliminaProyecto: 0,
+            EliminaRendicion: 0,
+            EliminaRol: 0,
+            EliminaTricel: 0,
+            EliminaUsuario: 0,
+            ModificaCalendario: 0,
+            ModificaInstitucion: 0,
+            ModificaMroSolicitud: 0,
+            ModificaMuro: 0,
+            ModificaProyecto: 0,
+            ModificaRendicion: 0,
+            ModificaRol: 0,
+            ModificaTricel: 0,
+            ModificaUsuario: 0,
+            PuedeVotarProyecto: 0,
+            PuedeVotarTricel: 0,
+            VerCalendario: 0,
+            VerDocumento: 0,
+            VerInstitucion: 0,
+            VerMailing: 0,
+            VerMroSolicitud: 0,
+            VerMuro: 0,
+            VerProyecto: 0,
+            VerRendicion: 0,
+            VerReporteAsistencia: 0,
+            VerReportes: 0,
+            VerRol: 0,
+            VerTricel: 0,
+            VerUsuario: 0
+        };
         this.novedad = this.navParams.get('item');
         if (this.novedad) {
             if (this.novedad.Id > 0) {
@@ -963,6 +1161,7 @@ var CrearNovedadPage = (function () {
         }
     }
     CrearNovedadPage.prototype.ionViewDidLoad = function () {
+        this.permisos = JSON.parse(sessionStorage.getItem("PERMISOS"));
         console.log('ionViewDidLoad CrearNovedadPage');
     };
     CrearNovedadPage.prototype.closeModal = function (param) {
@@ -1298,39 +1497,137 @@ var CrearNovedadPage = (function () {
         });
         toast.present();
     };
+    CrearNovedadPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-crear-novedad',template:/*ion-inline-start:"C:\AppImpacto\AppImpacto\AppImpacto\src\pages\crear-novedad\crear-novedad.html"*/'<!--\n\n  Generated template for the CrearNovedadPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header class="mui--bg-color-red-400 fg-light">\n\n\n\n  <ion-navbar>\n\n    <ion-title>Crear Novedad</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <button ion-button full class="bg-red-200 fg-white" (click)="closeModal()">Cerrar</button>\n\n  <!--\n\n  <ion-item>\n\n\n\n\n\n  </ion-item>\n\n\n\n  -->\n\n\n\n  <ion-card>\n\n    <ion-card-header>\n\n      Archivos\n\n    </ion-card-header>\n\n    <ion-card-content>\n\n      <ion-grid>\n\n        <ion-row>\n\n          <ion-col col-12>\n\n            <ion-icon name="document"></ion-icon> Archivo 1:\n\n          </ion-col>\n\n          <ion-col col-12>\n\n            <input type="file" accept="image/*" (change)="changeListener($event)"  #fileInput>\n\n          </ion-col>\n\n        </ion-row>\n\n        <ion-row>\n\n          <ion-col col-12>\n\n            <ion-icon name="document"></ion-icon> Archivo 2:\n\n          </ion-col>\n\n          <ion-col col-12>\n\n\n\n              <input type="file" accept="image/*" (change)="changeListenerDos($event)" #fileInput2>\n\n\n\n          </ion-col>\n\n        </ion-row>\n\n        <ion-row>\n\n          <ion-col col-12>\n\n            <ion-icon name="document"></ion-icon> Archivo 3:\n\n          </ion-col>\n\n          <ion-col col-12>\n\n            <input type="file"  accept="image/*"  (change)="changeListenerTres($event)"  #fileInput3>\n\n          </ion-col>\n\n        </ion-row>\n\n        <ion-row>\n\n          <ion-col col-12>\n\n            <ion-icon name="document"></ion-icon> Archivo 4:\n\n          </ion-col>\n\n          <ion-col col-12>\n\n            <input type="file" accept="image/*" (change)="changeListenerCuatro($event)"  #fileInput4>\n\n          </ion-col>\n\n        </ion-row>\n\n      </ion-grid>\n\n\n\n    </ion-card-content>\n\n  </ion-card>\n\n\n\n  <ion-card>\n\n    <ion-card-header>\n\n      Novedad\n\n    </ion-card-header>\n\n    <ion-card-content>\n\n      <ion-label stacked>Ingrese Novedad\n\n        <ion-input type="text" [(ngModel)]="textoEnviar"></ion-input>\n\n      </ion-label>\n\n    </ion-card-content>\n\n  </ion-card>\n\n\n\n  <button ion-button full class="bg-red-300 fg-white" (click)="enviarComentario()">Guardar</button>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\AppImpacto\AppImpacto\AppImpacto\src\pages\crear-novedad\crear-novedad.html"*/,
+            providers: [__WEBPACK_IMPORTED_MODULE_2__app_services_AuthService__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_3__app_services_InicioService__["a" /* InicioService */], __WEBPACK_IMPORTED_MODULE_4__app_services_novedadService__["a" /* NovedadService */]]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */],
+            __WEBPACK_IMPORTED_MODULE_2__app_services_AuthService__["a" /* AuthService */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */],
+            __WEBPACK_IMPORTED_MODULE_3__app_services_InicioService__["a" /* InicioService */],
+            __WEBPACK_IMPORTED_MODULE_4__app_services_novedadService__["a" /* NovedadService */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* ToastController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ViewController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* ActionSheetController */]])
+    ], CrearNovedadPage);
     return CrearNovedadPage;
 }());
-CrearNovedadPage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-crear-novedad',template:/*ion-inline-start:"W:\impacto2v\AppImpacto2V_new\src\pages\crear-novedad\crear-novedad.html"*/'<!--\n\n  Generated template for the CrearNovedadPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header class="mui--bg-color-red-400 fg-light">\n\n\n\n  <ion-navbar>\n\n    <ion-title>Crear Novedad</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <button ion-button full class="bg-red-200 fg-white" (click)="closeModal()">Cerrar</button>\n\n  <!--\n\n  <ion-item>\n\n\n\n\n\n  </ion-item>\n\n\n\n  -->\n\n\n\n  <ion-card>\n\n    <ion-card-header>\n\n      Archivos\n\n    </ion-card-header>\n\n    <ion-card-content>\n\n      <ion-grid>\n\n        <ion-row>\n\n          <ion-col col-12>\n\n            <ion-icon name="document"></ion-icon> Archivo 1:\n\n          </ion-col>\n\n          <ion-col col-12>\n\n            <input type="file" accept="image/*" (change)="changeListener($event)"  #fileInput>\n\n          </ion-col>\n\n        </ion-row>\n\n        <ion-row>\n\n          <ion-col col-12>\n\n            <ion-icon name="document"></ion-icon> Archivo 2:\n\n          </ion-col>\n\n          <ion-col col-12>\n\n\n\n              <input type="file" accept="image/*" (change)="changeListenerDos($event)" #fileInput2>\n\n\n\n          </ion-col>\n\n        </ion-row>\n\n        <ion-row>\n\n          <ion-col col-12>\n\n            <ion-icon name="document"></ion-icon> Archivo 3:\n\n          </ion-col>\n\n          <ion-col col-12>\n\n            <input type="file"  accept="image/*"  (change)="changeListenerTres($event)"  #fileInput3>\n\n          </ion-col>\n\n        </ion-row>\n\n        <ion-row>\n\n          <ion-col col-12>\n\n            <ion-icon name="document"></ion-icon> Archivo 4:\n\n          </ion-col>\n\n          <ion-col col-12>\n\n            <input type="file" accept="image/*" (change)="changeListenerCuatro($event)"  #fileInput4>\n\n          </ion-col>\n\n        </ion-row>\n\n      </ion-grid>\n\n\n\n    </ion-card-content>\n\n  </ion-card>\n\n\n\n  <ion-card>\n\n    <ion-card-header>\n\n      Novedad\n\n    </ion-card-header>\n\n    <ion-card-content>\n\n      <ion-label stacked>Ingrese Novedad\n\n        <ion-input type="text" [(ngModel)]="textoEnviar"></ion-input>\n\n      </ion-label>\n\n    </ion-card-content>\n\n  </ion-card>\n\n\n\n  <button ion-button full class="bg-red-300 fg-white" (click)="enviarComentario()">Guardar</button>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"W:\impacto2v\AppImpacto2V_new\src\pages\crear-novedad\crear-novedad.html"*/,
-        providers: [__WEBPACK_IMPORTED_MODULE_2__app_services_AuthService__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_3__app_services_InicioService__["a" /* InicioService */], __WEBPACK_IMPORTED_MODULE_4__app_services_novedadService__["a" /* NovedadService */]]
-    }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */],
-        __WEBPACK_IMPORTED_MODULE_2__app_services_AuthService__["a" /* AuthService */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */],
-        __WEBPACK_IMPORTED_MODULE_3__app_services_InicioService__["a" /* InicioService */],
-        __WEBPACK_IMPORTED_MODULE_4__app_services_novedadService__["a" /* NovedadService */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* ToastController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ViewController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* ActionSheetController */]])
-], CrearNovedadPage);
 
 //# sourceMappingURL=crear-novedad.js.map
 
 /***/ }),
 
-/***/ 209:
+/***/ 21:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_services_AuthService__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__cliente_cliente__ = __webpack_require__(113);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+//import {MatIconModule} from '@angular/material/icon';
+/**
+ * Generated class for the LoginPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var LoginPage = /** @class */ (function () {
+    function LoginPage(nav, auth, toastCtrl) {
+        this.nav = nav;
+        this.auth = auth;
+        this.toastCtrl = toastCtrl;
+        this.presentToast = function (mensaje, posicion, duracion) {
+            var toast = this.toastCtrl.create({
+                message: mensaje,
+                duration: duracion,
+                position: posicion
+            });
+            toast.onDidDismiss(function () {
+                console.log('Dismissed toast');
+            });
+            toast.present();
+        };
+    }
+    LoginPage.prototype.Signup = function () {
+        var _this = this;
+        //validaciones
+        if (!this.usuario) {
+            var mi = this.presentToast('Nombre de usuario requerido', 'bottom', 4000);
+            return;
+        }
+        if (!this.password) {
+            var mi = this.presentToast('Password requerida', 'bottom', 4000);
+            return;
+        }
+        var f = { usuario: this.usuario, password: this.password };
+        this.auth.login(f)
+            .subscribe(function (rs) { return _this.isLogged = rs; }, function (er) {
+            //console.log(error)
+            var mi = _this.presentToast('Usuario no exite', 'bottom', 4000);
+        }, function () {
+            if (_this.isLogged) {
+                //this.nav.push(InicioPage)
+                _this.nav.push(__WEBPACK_IMPORTED_MODULE_3__cliente_cliente__["a" /* ClientePage */])
+                    .then(function (data) { return console.log(data); }, function (error) {
+                    //console.log(error)
+                    var mi = _this.presentToast(error, 'bottom', 4000);
+                });
+            }
+            else {
+                //incorrecto
+                console.log('Acceso denegado');
+                var mi = _this.presentToast('Usuario no exite', 'bottom', 4000);
+            }
+        });
+    };
+    LoginPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad LoginPage');
+    };
+    LoginPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-login',template:/*ion-inline-start:"C:\AppImpacto\AppImpacto\AppImpacto\src\pages\login\login.html"*/'<!--\n\n  Generated template for the LoginPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Ingreso</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding class="color-fixed">\n\n<div >\n\n  <ion-row class="encabezado">\n\n    <h2 class="titulo">Bienvenido a la Aplicación de Asambleas</h2>\n\n  </ion-row>\n\n    <ion-row class="bg-transparente">\n\n      <ion-col class="bg-transparente">\n\n        <ion-list inset class="bg-transparente fg-blanco">\n\n\n\n          <ion-item class="bg-transparente fg-blanco">\n\n            <ion-label  class="bg-transparente fg-blanco" floating>Nombre de Usuario</ion-label>\n\n            <ion-input type="text" [(ngModel)]="usuario" required class="bg-transparente fg-blanco"></ion-input>\n\n          </ion-item>\n\n\n\n          <ion-item  class="bg-transparente fg-blanco">\n\n            <ion-label floating  class="bg-transparente fg-blanco">Password</ion-label>\n\n            <ion-input  class="bg-transparente fg-blanco" type="password" [(ngModel)]="password" required></ion-input>\n\n          </ion-item>\n\n\n\n        </ion-list>\n\n      </ion-col>\n\n    </ion-row>\n\n\n\n    <ion-row>\n\n      <ion-col class="signup-col">\n\n        <button ion-button class="btn-color" block (click)="Signup()">Ingresar</button>\n\n\n\n      </ion-col>\n\n    </ion-row>\n\n</div>\n\n<!-- fav -->\n\n  <ion-fab top right>\n\n    <button ion-fab mini class="btn-color"><ion-icon name="add"></ion-icon></button>\n\n    <ion-fab-list>\n\n      <button ion-fab><ion-icon name="logo-facebook"></ion-icon></button>\n\n      <button ion-fab><ion-icon name="logo-twitter"></ion-icon></button>\n\n      <button ion-fab><ion-icon name="logo-vimeo"></ion-icon></button>\n\n      <button ion-fab><ion-icon name="logo-googleplus"></ion-icon></button>\n\n    </ion-fab-list>\n\n  </ion-fab>\n\n</ion-content>\n\n<ion-footer>\n\n  <ion-toolbar>\n\n    <ion-title text-wrap>@Copyright 2018 Impacto 2V SPA</ion-title>\n\n  </ion-toolbar>\n\n</ion-footer>\n\n'/*ion-inline-end:"C:\AppImpacto\AppImpacto\AppImpacto\src\pages\login\login.html"*/,
+            providers: [__WEBPACK_IMPORTED_MODULE_2__app_services_AuthService__["a" /* AuthService */]]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_2__app_services_AuthService__["a" /* AuthService */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* ToastController */]])
+    ], LoginPage);
+    return LoginPage;
+}());
+
+//# sourceMappingURL=login.js.map
+
+/***/ }),
+
+/***/ 210:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EditarNovedadPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_services_AuthService__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_services_InicioService__ = __webpack_require__(60);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_services_novedadService__ = __webpack_require__(59);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_services_InicioService__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_services_novedadService__ = __webpack_require__(47);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1351,7 +1648,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var EditarNovedadPage = (function () {
+var EditarNovedadPage = /** @class */ (function () {
     function EditarNovedadPage(navCtrl, navParams, loading, acceso, modalCtrl, ini, viewCtrl, nov, toastCtrl, actionSheetCtrl) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
@@ -1363,6 +1660,54 @@ var EditarNovedadPage = (function () {
         this.nov = nov;
         this.toastCtrl = toastCtrl;
         this.actionSheetCtrl = actionSheetCtrl;
+        this.permisos = {
+            CreaCalendario: 0,
+            CreaDocumento: 0,
+            CreaInstitucion: 0,
+            CreaMailing: 0,
+            CreaMroSolicitud: 0,
+            CreaMuro: 0,
+            CreaProyecto: 0,
+            CreaRendicion: 0,
+            CreaRol: 0,
+            CreaSolicitud: 0,
+            CreaTricel: 0,
+            CreaUsuario: 0,
+            EliminaCalendario: 0,
+            EliminaDocumento: 0,
+            EliminaInstitucion: 0,
+            EliminaMroSolicitud: 0,
+            EliminaMuro: 0,
+            EliminaProyecto: 0,
+            EliminaRendicion: 0,
+            EliminaRol: 0,
+            EliminaTricel: 0,
+            EliminaUsuario: 0,
+            ModificaCalendario: 0,
+            ModificaInstitucion: 0,
+            ModificaMroSolicitud: 0,
+            ModificaMuro: 0,
+            ModificaProyecto: 0,
+            ModificaRendicion: 0,
+            ModificaRol: 0,
+            ModificaTricel: 0,
+            ModificaUsuario: 0,
+            PuedeVotarProyecto: 0,
+            PuedeVotarTricel: 0,
+            VerCalendario: 0,
+            VerDocumento: 0,
+            VerInstitucion: 0,
+            VerMailing: 0,
+            VerMroSolicitud: 0,
+            VerMuro: 0,
+            VerProyecto: 0,
+            VerRendicion: 0,
+            VerReporteAsistencia: 0,
+            VerReportes: 0,
+            VerRol: 0,
+            VerTricel: 0,
+            VerUsuario: 0
+        };
         this.novedad = this.navParams.get('item');
         if (this.novedad) {
             this.textoEnviar = this.novedad.Texto;
@@ -1375,6 +1720,7 @@ var EditarNovedadPage = (function () {
         }
     }
     EditarNovedadPage.prototype.ionViewDidLoad = function () {
+        this.permisos = JSON.parse(sessionStorage.getItem("PERMISOS"));
         console.log('ionViewDidLoad EditarNovedadPage');
     };
     EditarNovedadPage.prototype.closeModal = function (param) {
@@ -1713,136 +2059,39 @@ var EditarNovedadPage = (function () {
         });
         toast.present();
     };
+    EditarNovedadPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-editar-novedad',template:/*ion-inline-start:"C:\AppImpacto\AppImpacto\AppImpacto\src\pages\editar-novedad\editar-novedad.html"*/'<!--\n\n  Generated template for the EditarNovedadPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header class="mui--bg-color-red-400 fg-light">\n\n\n\n  <ion-navbar>\n\n    <ion-buttons style="float: right;">\n\n      <button (click)="cancel()">\n\n        <ion-icon name="close"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n    <ion-title>Editar Novedad</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <button ion-button full class="bg-red-200 fg-white" (click)="closeModal()">Cerrar</button>\n\n\n\n  <ion-card>\n\n    <ion-card-header>\n\n      Novedad\n\n    </ion-card-header>\n\n    <ion-card-content>\n\n      <ion-label stacked>Ingrese Novedad\n\n        <ion-input type="text" [(ngModel)]="textoEnviar"></ion-input>\n\n      </ion-label>\n\n    </ion-card-content>\n\n  </ion-card>\n\n  <ion-card>\n\n    <ion-card-header>\n\n      Imágenes\n\n    </ion-card-header>\n\n    <ion-card-content>\n\n      <ion-grid>\n\n        <ion-row>\n\n          <div [class]="novedad.ClaseUno" *ngIf="novedad.MuestraImagenUno">\n\n            <img [src]="novedad.ImgUno"/>\n\n          </div>\n\n          <ion-col col-12 *ngIf="novedad.MuestraImagenUno == false">\n\n            <ion-icon name="document"></ion-icon> Archivo 1:\n\n          </ion-col>\n\n          <ion-col col-12 *ngIf="novedad.MuestraImagenUno == false">\n\n            <input type="file" accept="image/*" (change)="changeListener($event)"  #fileInput>\n\n          </ion-col>\n\n        </ion-row>\n\n        <ion-row>\n\n          <ion-col col-12>\n\n            <ion-icon name="document"></ion-icon> Archivo 2:\n\n          </ion-col>\n\n          <ion-col col-12>\n\n\n\n            <input type="file" accept="image/*" (change)="changeListenerDos($event)" #fileInput2>\n\n\n\n          </ion-col>\n\n        </ion-row>\n\n        <ion-row>\n\n          <ion-col col-12>\n\n            <ion-icon name="document"></ion-icon> Archivo 3:\n\n          </ion-col>\n\n          <ion-col col-12>\n\n            <input type="file"  accept="image/*"  (change)="changeListenerTres($event)"  #fileInput3>\n\n          </ion-col>\n\n        </ion-row>\n\n        <ion-row>\n\n          <ion-col col-12>\n\n            <ion-icon name="document"></ion-icon> Archivo 4:\n\n          </ion-col>\n\n          <ion-col col-12>\n\n            <input type="file" accept="image/*" (change)="changeListenerCuatro($event)"  #fileInput4>\n\n          </ion-col>\n\n        </ion-row>\n\n      </ion-grid>\n\n\n\n    </ion-card-content>\n\n  </ion-card>\n\n\n\n  <button ion-button full class="bg-red-300 fg-white" (click)="enviarComentario()">Guardar</button>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\AppImpacto\AppImpacto\AppImpacto\src\pages\editar-novedad\editar-novedad.html"*/,
+            providers: [__WEBPACK_IMPORTED_MODULE_2__app_services_AuthService__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_3__app_services_InicioService__["a" /* InicioService */], __WEBPACK_IMPORTED_MODULE_4__app_services_novedadService__["a" /* NovedadService */]]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */],
+            __WEBPACK_IMPORTED_MODULE_2__app_services_AuthService__["a" /* AuthService */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */],
+            __WEBPACK_IMPORTED_MODULE_3__app_services_InicioService__["a" /* InicioService */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ViewController */],
+            __WEBPACK_IMPORTED_MODULE_4__app_services_novedadService__["a" /* NovedadService */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* ToastController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* ActionSheetController */]])
+    ], EditarNovedadPage);
     return EditarNovedadPage;
 }());
-EditarNovedadPage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-editar-novedad',template:/*ion-inline-start:"W:\impacto2v\AppImpacto2V_new\src\pages\editar-novedad\editar-novedad.html"*/'<!--\n\n  Generated template for the EditarNovedadPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header class="mui--bg-color-red-400 fg-light">\n\n\n\n  <ion-navbar>\n\n    <ion-buttons style="float: right;">\n\n      <button (click)="cancel()">\n\n        <ion-icon name="close"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n    <ion-title>Editar Novedad</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <button ion-button full class="bg-red-200 fg-white" (click)="closeModal()">Cerrar</button>\n\n\n\n  <ion-card>\n\n    <ion-card-header>\n\n      Novedad\n\n    </ion-card-header>\n\n    <ion-card-content>\n\n      <ion-label stacked>Ingrese Novedad\n\n        <ion-input type="text" [(ngModel)]="textoEnviar"></ion-input>\n\n      </ion-label>\n\n    </ion-card-content>\n\n  </ion-card>\n\n  <ion-card>\n\n    <ion-card-header>\n\n      Imágenes\n\n    </ion-card-header>\n\n    <ion-card-content>\n\n      <ion-grid>\n\n        <ion-row>\n\n          <div [class]="novedad.ClaseUno" *ngIf="novedad.MuestraImagenUno">\n\n            <img [src]="novedad.ImgUno"/>\n\n          </div>\n\n          <ion-col col-12 *ngIf="novedad.MuestraImagenUno == false">\n\n            <ion-icon name="document"></ion-icon> Archivo 1:\n\n          </ion-col>\n\n          <ion-col col-12 *ngIf="novedad.MuestraImagenUno == false">\n\n            <input type="file" accept="image/*" (change)="changeListener($event)"  #fileInput>\n\n          </ion-col>\n\n        </ion-row>\n\n        <ion-row>\n\n          <ion-col col-12>\n\n            <ion-icon name="document"></ion-icon> Archivo 2:\n\n          </ion-col>\n\n          <ion-col col-12>\n\n\n\n            <input type="file" accept="image/*" (change)="changeListenerDos($event)" #fileInput2>\n\n\n\n          </ion-col>\n\n        </ion-row>\n\n        <ion-row>\n\n          <ion-col col-12>\n\n            <ion-icon name="document"></ion-icon> Archivo 3:\n\n          </ion-col>\n\n          <ion-col col-12>\n\n            <input type="file"  accept="image/*"  (change)="changeListenerTres($event)"  #fileInput3>\n\n          </ion-col>\n\n        </ion-row>\n\n        <ion-row>\n\n          <ion-col col-12>\n\n            <ion-icon name="document"></ion-icon> Archivo 4:\n\n          </ion-col>\n\n          <ion-col col-12>\n\n            <input type="file" accept="image/*" (change)="changeListenerCuatro($event)"  #fileInput4>\n\n          </ion-col>\n\n        </ion-row>\n\n      </ion-grid>\n\n\n\n    </ion-card-content>\n\n  </ion-card>\n\n\n\n  <button ion-button full class="bg-red-300 fg-white" (click)="enviarComentario()">Guardar</button>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"W:\impacto2v\AppImpacto2V_new\src\pages\editar-novedad\editar-novedad.html"*/,
-        providers: [__WEBPACK_IMPORTED_MODULE_2__app_services_AuthService__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_3__app_services_InicioService__["a" /* InicioService */], __WEBPACK_IMPORTED_MODULE_4__app_services_novedadService__["a" /* NovedadService */]]
-    }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */],
-        __WEBPACK_IMPORTED_MODULE_2__app_services_AuthService__["a" /* AuthService */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */],
-        __WEBPACK_IMPORTED_MODULE_3__app_services_InicioService__["a" /* InicioService */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ViewController */],
-        __WEBPACK_IMPORTED_MODULE_4__app_services_novedadService__["a" /* NovedadService */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* ToastController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* ActionSheetController */]])
-], EditarNovedadPage);
 
 //# sourceMappingURL=editar-novedad.js.map
 
 /***/ }),
 
-/***/ 21:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_services_AuthService__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__cliente_cliente__ = __webpack_require__(113);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-/**
- * Generated class for the LoginPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var LoginPage = (function () {
-    function LoginPage(nav, auth, toastCtrl) {
-        this.nav = nav;
-        this.auth = auth;
-        this.toastCtrl = toastCtrl;
-        this.presentToast = function (mensaje, posicion, duracion) {
-            var toast = this.toastCtrl.create({
-                message: mensaje,
-                duration: duracion,
-                position: posicion
-            });
-            toast.onDidDismiss(function () {
-                console.log('Dismissed toast');
-            });
-            toast.present();
-        };
-    }
-    LoginPage.prototype.Signup = function () {
-        var _this = this;
-        //validaciones
-        if (!this.usuario) {
-            var mi = this.presentToast('Nombre de usuario requerido', 'bottom', 4000);
-            return;
-        }
-        if (!this.password) {
-            var mi = this.presentToast('Password requerida', 'bottom', 4000);
-            return;
-        }
-        var f = { usuario: this.usuario, password: this.password };
-        this.auth.login(f)
-            .subscribe(function (rs) { return _this.isLogged = rs; }, function (er) {
-            //console.log(error)
-            var mi = _this.presentToast('Usuario no exite', 'bottom', 4000);
-        }, function () {
-            if (_this.isLogged) {
-                //this.nav.push(InicioPage)
-                _this.nav.push(__WEBPACK_IMPORTED_MODULE_3__cliente_cliente__["a" /* ClientePage */])
-                    .then(function (data) { return console.log(data); }, function (error) {
-                    //console.log(error)
-                    var mi = _this.presentToast(error, 'bottom', 4000);
-                });
-            }
-            else {
-                //incorrecto
-                console.log('Acceso denegado');
-                var mi = _this.presentToast('Usuario no exite', 'bottom', 4000);
-            }
-        });
-    };
-    LoginPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad LoginPage');
-    };
-    return LoginPage;
-}());
-LoginPage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-login',template:/*ion-inline-start:"W:\impacto2v\AppImpacto2V_new\src\pages\login\login.html"*/'<!--\n\n  Generated template for the LoginPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Ingreso</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding class="color-fixed">\n\n<div >\n\n  <ion-row class="encabezado">\n\n    <h2 class="titulo">Bienvenido a la Aplicación de Asambleas</h2>\n\n  </ion-row>\n\n    <ion-row class="bg-transparente">\n\n      <ion-col class="bg-transparente">\n\n        <ion-list inset class="bg-transparente fg-blanco">\n\n\n\n          <ion-item class="bg-transparente fg-blanco">\n\n            <ion-label  class="bg-transparente fg-blanco" floating>Nombre de Usuario</ion-label>\n\n            <ion-input type="text" [(ngModel)]="usuario" required class="bg-transparente fg-blanco"></ion-input>\n\n          </ion-item>\n\n\n\n          <ion-item  class="bg-transparente fg-blanco">\n\n            <ion-label floating  class="bg-transparente fg-blanco">Password</ion-label>\n\n            <ion-input  class="bg-transparente fg-blanco" type="password" [(ngModel)]="password" required></ion-input>\n\n          </ion-item>\n\n\n\n        </ion-list>\n\n      </ion-col>\n\n    </ion-row>\n\n\n\n    <ion-row>\n\n      <ion-col class="signup-col">\n\n        <button ion-button class="btn-color" block (click)="Signup()">Ingresar</button>\n\n\n\n      </ion-col>\n\n    </ion-row>\n\n</div>\n\n<!-- fav -->\n\n  <ion-fab top right>\n\n    <button ion-fab mini class="btn-color"><ion-icon name="add"></ion-icon></button>\n\n    <ion-fab-list>\n\n      <button ion-fab><ion-icon name="logo-facebook"></ion-icon></button>\n\n      <button ion-fab><ion-icon name="logo-twitter"></ion-icon></button>\n\n      <button ion-fab><ion-icon name="logo-vimeo"></ion-icon></button>\n\n      <button ion-fab><ion-icon name="logo-googleplus"></ion-icon></button>\n\n    </ion-fab-list>\n\n  </ion-fab>\n\n</ion-content>\n\n<ion-footer>\n\n  <ion-toolbar>\n\n    <ion-title text-wrap>@Copyright 2018 Impacto 2V SPA</ion-title>\n\n  </ion-toolbar>\n\n</ion-footer>\n\n'/*ion-inline-end:"W:\impacto2v\AppImpacto2V_new\src\pages\login\login.html"*/,
-        providers: [__WEBPACK_IMPORTED_MODULE_2__app_services_AuthService__["a" /* AuthService */]]
-    }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
-        __WEBPACK_IMPORTED_MODULE_2__app_services_AuthService__["a" /* AuthService */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* ToastController */]])
-], LoginPage);
-
-//# sourceMappingURL=login.js.map
-
-/***/ }),
-
-/***/ 210:
+/***/ 211:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UsuariosPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login_login__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_services_AuthService__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_services_GlobalService__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_services_GlobalService__ = __webpack_require__(30);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1865,7 +2114,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var UsuariosPage = (function () {
+var UsuariosPage = /** @class */ (function () {
     function UsuariosPage(app, navCtrl, navParams, loading, global, acceso) {
         this.app = app;
         this.navCtrl = navCtrl;
@@ -1880,6 +2129,54 @@ var UsuariosPage = (function () {
         this.filtrados = [];
         this.usuariosOriginal = [];
         this.cantidadUsuarios = 0;
+        this.permisos = {
+            CreaCalendario: 0,
+            CreaDocumento: 0,
+            CreaInstitucion: 0,
+            CreaMailing: 0,
+            CreaMroSolicitud: 0,
+            CreaMuro: 0,
+            CreaProyecto: 0,
+            CreaRendicion: 0,
+            CreaRol: 0,
+            CreaSolicitud: 0,
+            CreaTricel: 0,
+            CreaUsuario: 0,
+            EliminaCalendario: 0,
+            EliminaDocumento: 0,
+            EliminaInstitucion: 0,
+            EliminaMroSolicitud: 0,
+            EliminaMuro: 0,
+            EliminaProyecto: 0,
+            EliminaRendicion: 0,
+            EliminaRol: 0,
+            EliminaTricel: 0,
+            EliminaUsuario: 0,
+            ModificaCalendario: 0,
+            ModificaInstitucion: 0,
+            ModificaMroSolicitud: 0,
+            ModificaMuro: 0,
+            ModificaProyecto: 0,
+            ModificaRendicion: 0,
+            ModificaRol: 0,
+            ModificaTricel: 0,
+            ModificaUsuario: 0,
+            PuedeVotarProyecto: 0,
+            PuedeVotarTricel: 0,
+            VerCalendario: 0,
+            VerDocumento: 0,
+            VerInstitucion: 0,
+            VerMailing: 0,
+            VerMroSolicitud: 0,
+            VerMuro: 0,
+            VerProyecto: 0,
+            VerRendicion: 0,
+            VerReporteAsistencia: 0,
+            VerReportes: 0,
+            VerRol: 0,
+            VerTricel: 0,
+            VerUsuario: 0
+        };
     }
     UsuariosPage.prototype.ionViewWillEnter = function () {
         var rolId = sessionStorage.getItem("ROL_ID");
@@ -1891,6 +2188,7 @@ var UsuariosPage = (function () {
         this.cargar();
     };
     UsuariosPage.prototype.ionViewDidLoad = function () {
+        this.permisos = JSON.parse(sessionStorage.getItem("PERMISOS"));
         console.log('ionViewDidLoad SolicitudesPage');
     };
     UsuariosPage.prototype.logout = function () {
@@ -1986,34 +2284,36 @@ var UsuariosPage = (function () {
             });
         });
     };
+    UsuariosPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-usuarios',template:/*ion-inline-start:"C:\AppImpacto\AppImpacto\AppImpacto\src\pages\usuarios\usuarios.html"*/'<!--\n\n  Generated template for the SolicitudesPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header class="mui--bg-color-red-400 fg-light">\n\n\n\n    <ion-navbar>\n\n      <ion-title>Usuarios</ion-title>\n\n    </ion-navbar>\n\n  \n\n  </ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <!-- refresh-->\n\n  <ion-refresher (ionRefresh)="doRefresh($event)">\n\n      <ion-refresher-content></ion-refresher-content>\n\n    </ion-refresher>\n\n    <ion-label no-padding no-margin text-center style="font-style: italic;\n\n    font-size: 0.9rem;">\n\n        Deslize hacia abajo para actualizar\n\n    </ion-label>\n\n    <ion-item *ngIf="esAdministrador">\n\n        <ion-label>Seleccione Institución</ion-label>\n\n        <ion-select [(ngModel)]="nombreFiltrar">\n\n          <ion-option *ngFor="let filt of filtrosInstitucion" (ionSelect)="cambioFiltros(filt)">{{filt.NombreCompleto}}</ion-option>\n\n        </ion-select>\n\n      </ion-item>\n\n    <!-- lista-->\n\n    <ion-list *ngIf="esAdministrador">\n\n        <ion-item-sliding *ngFor="let clie of usuariosArr">\n\n          <ion-item>\n\n            <ion-avatar item-start>\n\n              <text-avatar [text]="clie.NombreCompleto" item-left></text-avatar>\n\n            </ion-avatar>\n\n            <h2>{{clie.NombreCompleto}}</h2>\n\n            <p>\n\n              {{clie.OtroUno}}\n\n              <!--\n\n              <ion-icon *ngIf="prof.Activo == 1" name="checkmark"> Activo</ion-icon>\n\n              <ion-icon *ngIf="prof.Activo == 0" name="close"> Inactivo</ion-icon>\n\n              -->\n\n            </p>\n\n          </ion-item>\n\n          <!--\n\n          <ion-item-options side="left">\n\n            <button ion-button color="primary" *ngIf="prof.Activo == 1" (click)="asociarComunas(prof)">\n\n              <ion-icon name="globe"></ion-icon>\n\n              Comunas\n\n            </button>\n\n          </ion-item-options>\n\n          <ion-item-options side="right">\n\n            <button ion-button color="primary" *ngIf="prof.Activo == 1" (click)="editarProfesor(prof)">\n\n              <ion-icon name="create"></ion-icon>\n\n              Editar\n\n            </button>\n\n            <button ion-button color="danger" *ngIf="prof.Activo == 1"  (click)="desactivarProfesor(prof)">\n\n              <ion-icon name="trash"></ion-icon>\n\n              Eliminar\n\n            </button>\n\n            <button ion-button color="secondary" *ngIf="prof.Activo == 0"  (click)="activarProfesor(prof)">\n\n              <ion-icon name="checkmark-circle"></ion-icon>\n\n              Activar\n\n            </button>\n\n          </ion-item-options>\n\n        -->\n\n        </ion-item-sliding>\n\n      </ion-list>\n\n\n\n      <ion-card *ngIf="esAdministrador == false">\n\n        <ion-card-content>\n\n          <ion-card-title>\n\n            Usuarios del Sistema\n\n          </ion-card-title>\n\n          <ion-item>\n\n            <ion-avatar item-start>\n\n              <ion-icon name="people" style="font-size: 3em;"></ion-icon>\n\n            </ion-avatar>\n\n            <p text-wrap>Actualmente existen <strong>{{cantidadUsuarios}}</strong> usuarios para tu asamblea.</p>\n\n          </ion-item>\n\n      \n\n        </ion-card-content>\n\n      </ion-card>\n\n\n\n\n\n\n\n</ion-content>\n\n<ion-fab top right right>\n\n    <button ion-fab mini (click)="logout()" class="btn-color">\n\n      <ion-icon name="close"></ion-icon>\n\n    </button>\n\n  </ion-fab>\n\n'/*ion-inline-end:"C:\AppImpacto\AppImpacto\AppImpacto\src\pages\usuarios\usuarios.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* App */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */],
+            __WEBPACK_IMPORTED_MODULE_4__app_services_GlobalService__["a" /* GlobalService */],
+            __WEBPACK_IMPORTED_MODULE_3__app_services_AuthService__["a" /* AuthService */]])
+    ], UsuariosPage);
     return UsuariosPage;
 }());
-UsuariosPage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-usuarios',template:/*ion-inline-start:"W:\impacto2v\AppImpacto2V_new\src\pages\usuarios\usuarios.html"*/'<!--\n\n  Generated template for the SolicitudesPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header class="mui--bg-color-red-400 fg-light">\n\n\n\n    <ion-navbar>\n\n      <ion-title>Usuarios</ion-title>\n\n    </ion-navbar>\n\n  \n\n  </ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <!-- refresh-->\n\n  <ion-refresher (ionRefresh)="doRefresh($event)">\n\n      <ion-refresher-content></ion-refresher-content>\n\n    </ion-refresher>\n\n    <ion-label no-padding no-margin text-center style="font-style: italic;\n\n    font-size: 0.9rem;">\n\n        Deslize hacia abajo para actualizar\n\n    </ion-label>\n\n    <ion-item *ngIf="esAdministrador">\n\n        <ion-label>Seleccione Institución</ion-label>\n\n        <ion-select [(ngModel)]="nombreFiltrar">\n\n          <ion-option *ngFor="let filt of filtrosInstitucion" (ionSelect)="cambioFiltros(filt)">{{filt.NombreCompleto}}</ion-option>\n\n        </ion-select>\n\n      </ion-item>\n\n    <!-- lista-->\n\n    <ion-list *ngIf="esAdministrador">\n\n        <ion-item-sliding *ngFor="let clie of usuariosArr">\n\n          <ion-item>\n\n            <ion-avatar item-start>\n\n              <text-avatar [text]="clie.NombreCompleto" item-left></text-avatar>\n\n            </ion-avatar>\n\n            <h2>{{clie.NombreCompleto}}</h2>\n\n            <p>\n\n              {{clie.OtroUno}}\n\n              <!--\n\n              <ion-icon *ngIf="prof.Activo == 1" name="checkmark"> Activo</ion-icon>\n\n              <ion-icon *ngIf="prof.Activo == 0" name="close"> Inactivo</ion-icon>\n\n              -->\n\n            </p>\n\n          </ion-item>\n\n          <!--\n\n          <ion-item-options side="left">\n\n            <button ion-button color="primary" *ngIf="prof.Activo == 1" (click)="asociarComunas(prof)">\n\n              <ion-icon name="globe"></ion-icon>\n\n              Comunas\n\n            </button>\n\n          </ion-item-options>\n\n          <ion-item-options side="right">\n\n            <button ion-button color="primary" *ngIf="prof.Activo == 1" (click)="editarProfesor(prof)">\n\n              <ion-icon name="create"></ion-icon>\n\n              Editar\n\n            </button>\n\n            <button ion-button color="danger" *ngIf="prof.Activo == 1"  (click)="desactivarProfesor(prof)">\n\n              <ion-icon name="trash"></ion-icon>\n\n              Eliminar\n\n            </button>\n\n            <button ion-button color="secondary" *ngIf="prof.Activo == 0"  (click)="activarProfesor(prof)">\n\n              <ion-icon name="checkmark-circle"></ion-icon>\n\n              Activar\n\n            </button>\n\n          </ion-item-options>\n\n        -->\n\n        </ion-item-sliding>\n\n      </ion-list>\n\n\n\n      <ion-card *ngIf="esAdministrador == false">\n\n        <ion-card-content>\n\n          <ion-card-title>\n\n            Usuarios del Sistema\n\n          </ion-card-title>\n\n          <ion-item>\n\n            <ion-avatar item-start>\n\n              <ion-icon name="people" style="font-size: 3em;"></ion-icon>\n\n            </ion-avatar>\n\n            <p text-wrap>Actualmente existen <strong>{{cantidadUsuarios}}</strong> usuarios para tu asamblea.</p>\n\n          </ion-item>\n\n      \n\n        </ion-card-content>\n\n      </ion-card>\n\n\n\n\n\n\n\n</ion-content>\n\n<ion-fab top right right>\n\n    <button ion-fab mini (click)="logout()" class="btn-color">\n\n      <ion-icon name="close"></ion-icon>\n\n    </button>\n\n  </ion-fab>\n\n'/*ion-inline-end:"W:\impacto2v\AppImpacto2V_new\src\pages\usuarios\usuarios.html"*/,
-    }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* App */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */],
-        __WEBPACK_IMPORTED_MODULE_4__app_services_GlobalService__["a" /* GlobalService */],
-        __WEBPACK_IMPORTED_MODULE_3__app_services_AuthService__["a" /* AuthService */]])
-], UsuariosPage);
 
 //# sourceMappingURL=usuarios.js.map
 
 /***/ }),
 
-/***/ 211:
+/***/ 212:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RendicionPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login_login__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_services_AuthService__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_services_GlobalService__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__crear_rendicion_crear_rendicion__ = __webpack_require__(213);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_services_AuthService__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_services_GlobalService__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_in_app_browser__ = __webpack_require__(115);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2027,7 +2327,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 //pages
 
+
 //servicios
+
 
 
 /**
@@ -2036,13 +2338,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var RendicionPage = (function () {
-    function RendicionPage(app, navCtrl, navParams, loading, global, acceso) {
+var RendicionPage = /** @class */ (function () {
+    function RendicionPage(app, navCtrl, navParams, loading, global, modalCtrl, acceso) {
         this.app = app;
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.loading = loading;
         this.global = global;
+        this.modalCtrl = modalCtrl;
         this.acceso = acceso;
         //usuariosArr = [];
         this.rendicionesArr = [];
@@ -2051,9 +2354,58 @@ var RendicionPage = (function () {
         this.filtrados = [];
         this.rendicionesOriginal = [];
         this.cantidadRendiciones = 0;
+        this.permisos = {
+            CreaCalendario: 0,
+            CreaDocumento: 0,
+            CreaInstitucion: 0,
+            CreaMailing: 0,
+            CreaMroSolicitud: 0,
+            CreaMuro: 0,
+            CreaProyecto: 0,
+            CreaRendicion: 0,
+            CreaRol: 0,
+            CreaSolicitud: 0,
+            CreaTricel: 0,
+            CreaUsuario: 0,
+            EliminaCalendario: 0,
+            EliminaDocumento: 0,
+            EliminaInstitucion: 0,
+            EliminaMroSolicitud: 0,
+            EliminaMuro: 0,
+            EliminaProyecto: 0,
+            EliminaRendicion: 0,
+            EliminaRol: 0,
+            EliminaTricel: 0,
+            EliminaUsuario: 0,
+            ModificaCalendario: 0,
+            ModificaInstitucion: 0,
+            ModificaMroSolicitud: 0,
+            ModificaMuro: 0,
+            ModificaProyecto: 0,
+            ModificaRendicion: 0,
+            ModificaRol: 0,
+            ModificaTricel: 0,
+            ModificaUsuario: 0,
+            PuedeVotarProyecto: 0,
+            PuedeVotarTricel: 0,
+            VerCalendario: 0,
+            VerDocumento: 0,
+            VerInstitucion: 0,
+            VerMailing: 0,
+            VerMroSolicitud: 0,
+            VerMuro: 0,
+            VerProyecto: 0,
+            VerRendicion: 0,
+            VerReporteAsistencia: 0,
+            VerReportes: 0,
+            VerRol: 0,
+            VerTricel: 0,
+            VerUsuario: 0
+        };
     }
     RendicionPage.prototype.ionViewWillEnter = function () {
         var rolId = sessionStorage.getItem("ROL_ID");
+        this.permisos = JSON.parse(sessionStorage.getItem("PERMISOS"));
         if (rolId == '1') {
             this.esAdministrador = true;
             this.nombreFiltrar = 'Todos';
@@ -2167,6 +2519,31 @@ var RendicionPage = (function () {
         });
         return this.filtrados;
     };
+    RendicionPage.prototype.transformarFecha = function (fechaStr) {
+        var retorno = fechaStr;
+        var arrFecha = fechaStr.split('-');
+        if (arrFecha && arrFecha.length == 3) {
+            var mes = parseInt(arrFecha[0]);
+            var dia = parseInt(arrFecha[1]);
+            var anio = parseInt(arrFecha[2]);
+            var mesStr = '';
+            var diaStr = '';
+            if (mes < 10) {
+                mesStr = '0' + mes.toString();
+            }
+            else {
+                mesStr = mes.toString();
+            }
+            if (dia < 10) {
+                diaStr = '0' + dia.toString();
+            }
+            else {
+                diaStr = dia.toString();
+            }
+            retorno = diaStr + '-' + mesStr + '-' + anio.toString();
+        }
+        return retorno;
+    };
     RendicionPage.prototype.cargar = function () {
         var _this = this;
         this.rendicionesArr = [];
@@ -2182,7 +2559,14 @@ var RendicionPage = (function () {
                 //otrosiete = id institucion
                 //otrodos = eliminado
                 var datos = data.json();
-                _this.rendicionesArr = datos.proposals;
+                var procesar = datos.proposals;
+                procesar.forEach(function (rendicion) {
+                    //hay que transformar la fecha ya que viene en un formato inválido
+                    //m-dd-yyyy
+                    rendicion.NombreUsuario = _this.transformarFecha(rendicion.NombreUsuario);
+                    _this.rendicionesArr.push(rendicion);
+                });
+                //this.rendicionesArr = datos.proposals;
                 _this.rendicionesOriginal = _this.rendicionesArr;
                 _this.cantidadRendiciones = _this.rendicionesArr.length;
             }, function (err) {
@@ -2194,40 +2578,382 @@ var RendicionPage = (function () {
             });
         });
     };
+    //abrir la pagina de creaciòn de rendicion
+    RendicionPage.prototype.presentModal = function (item) {
+        var _this = this;
+        var modal = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_3__crear_rendicion_crear_rendicion__["a" /* CrearRendicionPage */], { rendicion: item });
+        modal.onDidDismiss(function (data) {
+            // Data is your data from the modal
+            if (data != undefined) {
+                _this.cargar();
+            }
+        });
+        modal.present();
+    };
+    RendicionPage.prototype.openUrl = function (url) {
+        var browser = new __WEBPACK_IMPORTED_MODULE_6__ionic_native_in_app_browser__["a" /* InAppBrowser */]();
+        browser.create(url, '_blank');
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])('pieChart'),
+        __metadata("design:type", Object)
+    ], RendicionPage.prototype, "pieChart", void 0);
+    RendicionPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-rendicion',template:/*ion-inline-start:"C:\AppImpacto\AppImpacto\AppImpacto\src\pages\rendicion\rendicion.html"*/'<!--\n\n  Generated template for the SolicitudesPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header class="mui--bg-color-red-300 fg-light">\n\n\n\n    <ion-navbar>\n\n      <ion-title>Rendiciones</ion-title>\n\n    </ion-navbar>\n\n  \n\n  </ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <!-- refresh-->\n\n  <ion-refresher (ionRefresh)="doRefresh($event)">\n\n      <ion-refresher-content></ion-refresher-content>\n\n      </ion-refresher>\n\n      <ion-label no-padding no-margin text-center style="font-style: italic;\n\n          font-size: 0.9rem;">\n\n        Deslize hacia abajo para actualizar\n\n      </ion-label>\n\n    <!--\n\n    <ion-item *ngIf="esAdministrador">\n\n        <ion-label>Seleccione Institución</ion-label>\n\n        <ion-select [(ngModel)]="nombreFiltrar">\n\n          <ion-option *ngFor="let filt of filtrosInstitucion" (ionSelect)="cambioFiltros(filt)">{{filt.NombreCompleto}}</ion-option>\n\n        </ion-select>\n\n      </ion-item>\n\n    -->\n\n    <!-- lista-->\n\n    <ion-list *ngIf="esAdministrador">\n\n      \n\n        <button ion-button full icon-right color="light" (click)="presentModal(null)" *ngIf="permisos.CreaRendicion == \'1\'">\n\n          Nueva Rendición\n\n          <ion-icon name="dolar"></ion-icon>\n\n        </button>\n\n      \n\n        <ion-item-sliding *ngFor="let clie of rendicionesArr">\n\n          <ion-item>\n\n            <ion-avatar item-start>\n\n              <!--salida-->\n\n                <ion-icon name="arrow-back" item-left *ngIf="clie.OtroUno == \'Egreso\'" style="color: red; font-size: 3em;"></ion-icon>\n\n                <!--entrada-->\n\n                <ion-icon name="arrow-forward" item-left  *ngIf="clie.OtroUno == \'Ingreso\'" style="font-size: 3em;"></ion-icon>\n\n            </ion-avatar>\n\n            <h2>{{clie.NombreCompleto}}</h2>\n\n            <ion-row>\n\n              <ion-col>\n\n                <div text-wrap *ngIf="clie.OtroUno == \'Egreso\'" style="color: red;">{{clie.OtroUno}}</div>\n\n                <div text-wrap *ngIf="clie.OtroUno == \'Ingreso\'">{{clie.OtroUno}}</div>\n\n              </ion-col>\n\n              <ion-col>\n\n            \n\n            \n\n                <ion-badge color="danger" *ngIf="clie.OtroUno == \'Egreso\'">{{clie.OtroCuatro}}</ion-badge>\n\n                <ion-badge *ngIf="clie.OtroUno == \'Ingreso\'">{{clie.OtroCuatro}}</ion-badge>\n\n            \n\n              </ion-col>\n\n              <ion-col center text-center>\n\n                <ion-note style="font-size: small;">\n\n                  {{clie.NombreUsuario}}\n\n                </ion-note>\n\n              </ion-col>\n\n              <!-- archivo a descargar -->\n\n              <ion-col center text-center *ngIf="clie.Rol != \'#\'">\n\n                <button ion-button icon-only (click)="openUrl(clie.Rol)" small color="secondary">\n\n                  <ion-icon name="cloud-download"></ion-icon>\n\n                </button>\n\n              </ion-col>\n\n            </ion-row>\n\n            <span style="font-size: 0.6em;font-style: italic;">Deslice a la izquierda para ver opciones</span>\n\n          </ion-item>\n\n          <ion-item-options side="right">\n\n            <button ion-button color="primary" (click)="presentModal(clie)" *ngIf="permisos.ModificaRendicion == \'1\'">\n\n              <ion-icon name="create"></ion-icon>\n\n              Editar\n\n            </button>\n\n          </ion-item-options>\n\n        </ion-item-sliding>\n\n      </ion-list>\n\n\n\n      <ion-card *ngIf="esAdministrador == false">\n\n        <ion-card-content>\n\n          <ion-card-title>\n\n            Usuarios del Sistema\n\n          </ion-card-title>\n\n          <ion-item>\n\n            <ion-avatar item-start>\n\n              <ion-icon name="people" style="font-size: 3em;"></ion-icon>\n\n            </ion-avatar>\n\n            <p text-wrap>Actualmente existen <strong>{{cantidadUsuarios}}</strong> usuarios para tu asamblea.</p>\n\n          </ion-item>\n\n      \n\n        </ion-card-content>\n\n      </ion-card>\n\n\n\n\n\n\n\n</ion-content>\n\n<ion-fab top right right>\n\n  <button ion-fab mini (click)="logout()" class="btn-color">\n\n    <ion-icon name="close"></ion-icon>\n\n  </button>\n\n</ion-fab>\n\n'/*ion-inline-end:"C:\AppImpacto\AppImpacto\AppImpacto\src\pages\rendicion\rendicion.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* App */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */],
+            __WEBPACK_IMPORTED_MODULE_5__app_services_GlobalService__["a" /* GlobalService */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */],
+            __WEBPACK_IMPORTED_MODULE_4__app_services_AuthService__["a" /* AuthService */]])
+    ], RendicionPage);
     return RendicionPage;
 }());
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewChild */])('pieChart'),
-    __metadata("design:type", Object)
-], RendicionPage.prototype, "pieChart", void 0);
-RendicionPage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-rendicion',template:/*ion-inline-start:"W:\impacto2v\AppImpacto2V_new\src\pages\rendicion\rendicion.html"*/'<!--\n\n  Generated template for the SolicitudesPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header class="mui--bg-color-red-300 fg-light">\n\n\n\n    <ion-navbar>\n\n      <ion-title>Rendiciones</ion-title>\n\n    </ion-navbar>\n\n  \n\n  </ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <!-- refresh-->\n\n  <ion-refresher (ionRefresh)="doRefresh($event)">\n\n      <ion-refresher-content></ion-refresher-content>\n\n      </ion-refresher>\n\n      <ion-label no-padding no-margin text-center style="font-style: italic;\n\n          font-size: 0.9rem;">\n\n        Deslize hacia abajo para actualizar\n\n      </ion-label>\n\n    <!--\n\n    <ion-item *ngIf="esAdministrador">\n\n        <ion-label>Seleccione Institución</ion-label>\n\n        <ion-select [(ngModel)]="nombreFiltrar">\n\n          <ion-option *ngFor="let filt of filtrosInstitucion" (ionSelect)="cambioFiltros(filt)">{{filt.NombreCompleto}}</ion-option>\n\n        </ion-select>\n\n      </ion-item>\n\n    -->\n\n    <!-- lista-->\n\n    <ion-list *ngIf="esAdministrador">\n\n        <ion-item-sliding *ngFor="let clie of rendicionesArr">\n\n          <ion-item>\n\n            <ion-avatar item-start>\n\n              <!--salida-->\n\n                <ion-icon name="arrow-back" item-left *ngIf="clie.OtroUno == \'Egreso\'" style="color: red; font-size: 3em;"></ion-icon>\n\n                <!--entrada-->\n\n                <ion-icon name="arrow-forward" item-left  *ngIf="clie.OtroUno == \'Ingreso\'" style="font-size: 3em;"></ion-icon>\n\n            </ion-avatar>\n\n            <h2>{{clie.NombreCompleto}}</h2>\n\n            <ion-row>\n\n                <ion-col>\n\n                    <div text-wrap  *ngIf="clie.OtroUno == \'Egreso\'" style="color: red;">{{clie.OtroUno}}</div>\n\n                    <div text-wrap  *ngIf="clie.OtroUno == \'Ingreso\'">{{clie.OtroUno}}</div>\n\n                </ion-col>\n\n                <ion-col>\n\n\n\n                    <div>{{clie.OtroCuatro}}</div>\n\n\n\n                </ion-col>\n\n                <ion-col center text-center>\n\n                  <ion-note>\n\n                      {{clie.NombreUsuario}}\n\n                  </ion-note>\n\n                </ion-col>\n\n              </ion-row>\n\n          </ion-item>\n\n          <!--\n\n          <ion-item-options side="left">\n\n            <button ion-button color="primary" *ngIf="prof.Activo == 1" (click)="asociarComunas(prof)">\n\n              <ion-icon name="globe"></ion-icon>\n\n              Comunas\n\n            </button>\n\n          </ion-item-options>\n\n          <ion-item-options side="right">\n\n            <button ion-button color="primary" *ngIf="prof.Activo == 1" (click)="editarProfesor(prof)">\n\n              <ion-icon name="create"></ion-icon>\n\n              Editar\n\n            </button>\n\n            <button ion-button color="danger" *ngIf="prof.Activo == 1"  (click)="desactivarProfesor(prof)">\n\n              <ion-icon name="trash"></ion-icon>\n\n              Eliminar\n\n            </button>\n\n            <button ion-button color="secondary" *ngIf="prof.Activo == 0"  (click)="activarProfesor(prof)">\n\n              <ion-icon name="checkmark-circle"></ion-icon>\n\n              Activar\n\n            </button>\n\n          </ion-item-options>\n\n        -->\n\n        </ion-item-sliding>\n\n      </ion-list>\n\n\n\n      <ion-card *ngIf="esAdministrador == false">\n\n        <ion-card-content>\n\n          <ion-card-title>\n\n            Usuarios del Sistema\n\n          </ion-card-title>\n\n          <ion-item>\n\n            <ion-avatar item-start>\n\n              <ion-icon name="people" style="font-size: 3em;"></ion-icon>\n\n            </ion-avatar>\n\n            <p text-wrap>Actualmente existen <strong>{{cantidadUsuarios}}</strong> usuarios para tu asamblea.</p>\n\n          </ion-item>\n\n      \n\n        </ion-card-content>\n\n      </ion-card>\n\n\n\n\n\n\n\n</ion-content>\n\n<ion-fab top right right>\n\n  <button ion-fab mini (click)="logout()" class="btn-color">\n\n    <ion-icon name="close"></ion-icon>\n\n  </button>\n\n</ion-fab>\n\n'/*ion-inline-end:"W:\impacto2v\AppImpacto2V_new\src\pages\rendicion\rendicion.html"*/,
-    }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* App */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */],
-        __WEBPACK_IMPORTED_MODULE_4__app_services_GlobalService__["a" /* GlobalService */],
-        __WEBPACK_IMPORTED_MODULE_3__app_services_AuthService__["a" /* AuthService */]])
-], RendicionPage);
 
 //# sourceMappingURL=rendicion.js.map
 
 /***/ }),
 
-/***/ 212:
+/***/ 213:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CrearRendicionPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_services_GlobalService__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_in_app_browser__ = __webpack_require__(115);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_moment__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_moment__);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+/**
+ * Generated class for the CrearRendicionPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var CrearRendicionPage = /** @class */ (function () {
+    function CrearRendicionPage(navCtrl, navParams, loading, modalCtrl, toastCtrl, viewCtrl, global, actionSheetCtrl) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.loading = loading;
+        this.modalCtrl = modalCtrl;
+        this.toastCtrl = toastCtrl;
+        this.viewCtrl = viewCtrl;
+        this.global = global;
+        this.actionSheetCtrl = actionSheetCtrl;
+        this.permisos = {
+            CreaCalendario: 0,
+            CreaDocumento: 0,
+            CreaInstitucion: 0,
+            CreaMailing: 0,
+            CreaMroSolicitud: 0,
+            CreaMuro: 0,
+            CreaProyecto: 0,
+            CreaRendicion: 0,
+            CreaRol: 0,
+            CreaSolicitud: 0,
+            CreaTricel: 0,
+            CreaUsuario: 0,
+            EliminaCalendario: 0,
+            EliminaDocumento: 0,
+            EliminaInstitucion: 0,
+            EliminaMroSolicitud: 0,
+            EliminaMuro: 0,
+            EliminaProyecto: 0,
+            EliminaRendicion: 0,
+            EliminaRol: 0,
+            EliminaTricel: 0,
+            EliminaUsuario: 0,
+            ModificaCalendario: 0,
+            ModificaInstitucion: 0,
+            ModificaMroSolicitud: 0,
+            ModificaMuro: 0,
+            ModificaProyecto: 0,
+            ModificaRendicion: 0,
+            ModificaRol: 0,
+            ModificaTricel: 0,
+            ModificaUsuario: 0,
+            PuedeVotarProyecto: 0,
+            PuedeVotarTricel: 0,
+            VerCalendario: 0,
+            VerDocumento: 0,
+            VerInstitucion: 0,
+            VerMailing: 0,
+            VerMroSolicitud: 0,
+            VerMuro: 0,
+            VerProyecto: 0,
+            VerRendicion: 0,
+            VerReporteAsistencia: 0,
+            VerReportes: 0,
+            VerRol: 0,
+            VerTricel: 0,
+            VerUsuario: 0
+        };
+        __WEBPACK_IMPORTED_MODULE_4_moment__["locale"]('es');
+        //capturamos el elemento
+        this.rendicion = this.navParams.get('rendicion');
+        if (this.rendicion) {
+            if (this.rendicion.Id > 0) {
+                this.esNuevo = false;
+                this.idRendicion = this.rendicion.Id;
+                this.frmDetalle = this.rendicion.NombreCompleto;
+                this.frmFecha = this.rendicion.NombreUsuario;
+                this.frmTipoMovimiento = this.rendicion.OtroCinco;
+                this.frmMonto = this.rendicion.OtroTres;
+                this.frmNumeroComprobante = this.rendicion.OtroDos;
+                this.urlDescarga = this.rendicion.Rol;
+                this.nombreDocumento = this.rendicion.UrlDocumento;
+            }
+            else {
+                this.esNuevo = true;
+                this.idRendicion = 0;
+                this.frmFecha = __WEBPACK_IMPORTED_MODULE_4_moment__().format("DD-MM-YYYY");
+            }
+        }
+        else {
+            this.esNuevo = true;
+            this.idRendicion = 0;
+            this.frmFecha = __WEBPACK_IMPORTED_MODULE_4_moment__().format("DD-MM-YYYY");
+        }
+    }
+    CrearRendicionPage.prototype.ionViewDidLoad = function () {
+        this.permisos = JSON.parse(sessionStorage.getItem("PERMISOS"));
+        console.log('ionViewDidLoad CrearRendicionPage');
+    };
+    CrearRendicionPage.prototype.closeModal = function (param) {
+        this.viewCtrl.dismiss();
+    };
+    CrearRendicionPage.prototype.changeListener = function ($event) {
+        var _this = this;
+        var loader = this.loading.create({
+            content: 'Verificando...',
+        });
+        loader.present().then(function () {
+            _this.fileUno = $event.target.files[0];
+            _this.fileUnoName = _this.fileUno.name;
+            loader.dismiss();
+        });
+    };
+    CrearRendicionPage.prototype.openUrl = function () {
+        var url = this.urlDescarga;
+        var browser = new __WEBPACK_IMPORTED_MODULE_3__ionic_native_in_app_browser__["a" /* InAppBrowser */]();
+        browser.create(url, '_blank');
+    };
+    CrearRendicionPage.prototype.enviarRendicion = function () {
+        var _this = this;
+        //validaciones
+        if (this.frmDetalle == '' || this.frmDetalle == null || this.frmDetalle == undefined) {
+            var toast = this.presentToast('El detalle es obligatorio.');
+            return;
+        }
+        if (this.frmNumeroComprobante == '' || this.frmNumeroComprobante == null || this.frmNumeroComprobante == undefined) {
+            var toast = this.presentToast('El nùmero de comprobante es obligatorio.');
+            return;
+        }
+        if (this.frmMonto == '' || this.frmMonto == null || this.frmMonto == undefined) {
+            var toast = this.presentToast('El monto es obligatorio.');
+            return;
+        }
+        if (this.frmTipoMovimiento == '' || this.frmTipoMovimiento == null || this.frmTipoMovimiento == undefined) {
+            var toast = this.presentToast('El tipo de movimiento es obligatorio.');
+            return;
+        }
+        var loader = this.loading.create({
+            content: 'Guardando...',
+        });
+        loader.present().then(function () {
+            if (!_this.fileUno) {
+                _this.fileUnoName = '';
+            }
+            var instId = sessionStorage.getItem("INST_ID");
+            var rolId = sessionStorage.getItem("ROL_ID");
+            var usuId = sessionStorage.getItem("USU_ID");
+            _this.rendicion = {
+                Id: _this.idRendicion,
+                Detalle: _this.frmDetalle,
+                NumeroComprobante: _this.frmNumeroComprobante,
+                Monto: _this.frmMonto,
+                IdTipoMovimiento: _this.frmTipoMovimiento,
+                IdUsuario: usuId,
+                InstId: instId,
+                NombreArchivo: _this.fileUnoName
+            };
+            _this.global.sendRendicion(_this.fileUno, _this.rendicion).subscribe(function (dataArchivo1) {
+                var datos = dataArchivo1.json();
+                //loader.dismiss();
+                var sms = _this.presentToast('La Rendicion ha sido creada con éxito.');
+                _this.viewCtrl.dismiss(datos);
+            }, function (err) {
+                console.error(err);
+                loader.dismiss();
+            }, function () {
+                console.log('Archivo 1 cargado');
+                loader.dismiss();
+            });
+        });
+    };
+    CrearRendicionPage.prototype.presentToast = function (mensaje) {
+        var toast = this.toastCtrl.create({
+            message: mensaje,
+            duration: 3000,
+            position: 'top'
+        });
+        toast.present();
+    };
+    CrearRendicionPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-crear-rendicion',template:/*ion-inline-start:"C:\AppImpacto\AppImpacto\AppImpacto\src\pages\crear-rendicion\crear-rendicion.html"*/'<!--\n  Generated template for the CrearRendicionPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header class="mui--bg-color-teal-600 fg-light">\n\n  <ion-navbar>\n    <ion-title>Crear Rendición</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n    <button ion-button full class="bg-red-200 fg-white" (click)="closeModal()">Cerrar</button>\n    <ion-list>\n        <ion-item>\n            <ion-label floating>Fecha</ion-label>\n            <ion-input type="text" [(ngModel)]="frmFecha" [disabled]="true"></ion-input>\n        </ion-item>\n        <ion-item>\n          <ion-label floating>Detalle (*)</ion-label>\n          <ion-input type="text" [(ngModel)]="frmDetalle" required></ion-input>\n        </ion-item>\n      \n        <ion-item>\n          <ion-label>Tipo Movimiento</ion-label>\n          <ion-select [(ngModel)]="frmTipoMovimiento">\n            <ion-option value="1">Ingreso</ion-option>\n            <ion-option value="2">Egreso</ion-option>\n          </ion-select>\n        </ion-item>\n\n        <ion-item>\n          <ion-label floating>Número Comprobante (*)</ion-label>\n          <ion-input type="text" required [(ngModel)]="frmNumeroComprobante"></ion-input>\n        </ion-item>\n\n        <ion-item>\n          <ion-label floating>Monto (*)</ion-label>\n          <ion-input type="number" required [(ngModel)]="frmMonto"></ion-input>\n        </ion-item>\n\n        \n          <ion-label *ngIf="urlDescarga != \'#\'" text-center style="font-style: italic;">{{nombreDocumento}}</ion-label>\n          <button ion-button full clear (click)="openUrl()" color="secondary" *ngIf="urlDescarga != \'#\'">\n            <ion-icon name="cloud-download"></ion-icon>&nbsp;Descargar\n          </button>\n        \n\n\n        <ion-item>\n          <ion-row>\n            <ion-col col-12>\n              <ion-icon name="document"></ion-icon> Archivo:\n            </ion-col>\n            <ion-col col-12>\n              <input type="file" accept="image/*" (change)="changeListener($event)" #fileInput>\n            </ion-col>\n          </ion-row>\n        </ion-item>\n      \n      </ion-list>\n      <!--\n    <ion-card>\n      <ion-card-header>\n        Rendición\n      </ion-card-header>\n      <ion-card-content>\n        <ion-label floating>Detalle\n          \n        </ion-label>\n        <ion-input type="text" [(ngModel)]="textoEnviar"></ion-input>\n      </ion-card-content>\n    </ion-card>\n  -->\n  <button ion-button full class="bg-red-300 fg-white" (click)="enviarRendicion()">Guardar</button>\n\n</ion-content>\n'/*ion-inline-end:"C:\AppImpacto\AppImpacto\AppImpacto\src\pages\crear-rendicion\crear-rendicion.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* ToastController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ViewController */],
+            __WEBPACK_IMPORTED_MODULE_2__app_services_GlobalService__["a" /* GlobalService */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* ActionSheetController */]])
+    ], CrearRendicionPage);
+    return CrearRendicionPage;
+}());
+
+//# sourceMappingURL=crear-rendicion.js.map
+
+/***/ }),
+
+/***/ 30:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GlobalService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__AppSettings__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__(59);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var GlobalService = /** @class */ (function () {
+    function GlobalService(http) {
+        this.http = http;
+        this.headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]({ 'Content-Type': 'application/json',
+            'Accept': 'q=0.8;application/json;q=0.9' });
+        this.options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: this.headers });
+    }
+    GlobalService.prototype.postSolicitudes = function (instId) {
+        var url = __WEBPACK_IMPORTED_MODULE_2__AppSettings__["a" /* AppSettings */].API_ENDPOINT + 'Solicitudes';
+        var dataGet = { InstId: instId };
+        var data = this.http.post(url, dataGet, {
+            headers: this.headers
+        });
+        return data;
+    };
+    GlobalService.prototype.getUsuarios = function (instId, rolId) {
+        var url = __WEBPACK_IMPORTED_MODULE_2__AppSettings__["a" /* AppSettings */].API_ENDPOINT + 'ListarUsuarios?instId=' + instId + '&rolId=' + rolId;
+        var dataGet = { InstId: instId };
+        var data = this.http.get(url);
+        return data;
+    };
+    GlobalService.prototype.postInstituciones = function (buscarId, idUsuario) {
+        var url = __WEBPACK_IMPORTED_MODULE_2__AppSettings__["a" /* AppSettings */].API_ENDPOINT + 'Institucion';
+        var dataGet = { IdUsuario: idUsuario.toString() };
+        var data = this.http.post(url, dataGet, {
+            headers: this.headers
+        });
+        return data;
+    };
+    GlobalService.prototype.postRendiciones = function (instId) {
+        var url = __WEBPACK_IMPORTED_MODULE_2__AppSettings__["a" /* AppSettings */].API_ENDPOINT + 'Rendicion';
+        var dataGet = { InstId: instId };
+        var data = this.http.post(url, dataGet, {
+            headers: this.headers
+        });
+        return data;
+    };
+    GlobalService.prototype.postDocumentosUsuario = function (instId, usuId) {
+        var url = __WEBPACK_IMPORTED_MODULE_2__AppSettings__["a" /* AppSettings */].API_ENDPOINT + 'FileDocumento';
+        var dataGet = { InstId: instId.toString(), UsuId: usuId.toString() };
+        var data = this.http.post(url, dataGet, {
+            headers: this.headers
+        });
+        return data;
+    };
+    GlobalService.prototype.postCalendario = function (instId, tipo) {
+        var url = __WEBPACK_IMPORTED_MODULE_2__AppSettings__["a" /* AppSettings */].API_ENDPOINT + 'Calendario';
+        var dataGet = { InstId: instId.toString(), Tipo: tipo.toString() };
+        var data = this.http.post(url, dataGet, {
+            headers: this.headers
+        });
+        return data;
+    };
+    GlobalService.prototype.postProyectos = function (instId) {
+        var url = __WEBPACK_IMPORTED_MODULE_2__AppSettings__["a" /* AppSettings */].API_ENDPOINT + 'Proyecto';
+        var dataGet = { InstId: instId.toString() };
+        var data = this.http.post(url, dataGet, {
+            headers: this.headers
+        });
+        return data;
+    };
+    GlobalService.prototype.sendRendicion = function (File, rendicion) {
+        var model = new FormData();
+        model.append("UploadedImage", File);
+        model.append("rendicion", JSON.stringify(rendicion));
+        var url = __WEBPACK_IMPORTED_MODULE_2__AppSettings__["a" /* AppSettings */].API_ENDPOINT + 'File';
+        var data = this.http.post(url, model, {
+            headers: new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]({})
+        });
+        return data;
+    };
+    GlobalService = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]])
+    ], GlobalService);
+    return GlobalService;
+}());
+
+//# sourceMappingURL=GlobalService.js.map
+
+/***/ }),
+
+/***/ 341:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DocumentosPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login_login__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_services_AuthService__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_services_GlobalService__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_in_app_browser__ = __webpack_require__(410);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_AppSettings__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_services_GlobalService__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_in_app_browser__ = __webpack_require__(115);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_AppSettings__ = __webpack_require__(39);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2252,7 +2978,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var DocumentosPage = (function () {
+var DocumentosPage = /** @class */ (function () {
     function DocumentosPage(app, navCtrl, navParams, loading, global, acceso) {
         this.app = app;
         this.navCtrl = navCtrl;
@@ -2261,8 +2987,57 @@ var DocumentosPage = (function () {
         this.global = global;
         this.acceso = acceso;
         this.documentosArr = [];
+        this.permisos = {
+            CreaCalendario: 0,
+            CreaDocumento: 0,
+            CreaInstitucion: 0,
+            CreaMailing: 0,
+            CreaMroSolicitud: 0,
+            CreaMuro: 0,
+            CreaProyecto: 0,
+            CreaRendicion: 0,
+            CreaRol: 0,
+            CreaSolicitud: 0,
+            CreaTricel: 0,
+            CreaUsuario: 0,
+            EliminaCalendario: 0,
+            EliminaDocumento: 0,
+            EliminaInstitucion: 0,
+            EliminaMroSolicitud: 0,
+            EliminaMuro: 0,
+            EliminaProyecto: 0,
+            EliminaRendicion: 0,
+            EliminaRol: 0,
+            EliminaTricel: 0,
+            EliminaUsuario: 0,
+            ModificaCalendario: 0,
+            ModificaInstitucion: 0,
+            ModificaMroSolicitud: 0,
+            ModificaMuro: 0,
+            ModificaProyecto: 0,
+            ModificaRendicion: 0,
+            ModificaRol: 0,
+            ModificaTricel: 0,
+            ModificaUsuario: 0,
+            PuedeVotarProyecto: 0,
+            PuedeVotarTricel: 0,
+            VerCalendario: 0,
+            VerDocumento: 0,
+            VerInstitucion: 0,
+            VerMailing: 0,
+            VerMroSolicitud: 0,
+            VerMuro: 0,
+            VerProyecto: 0,
+            VerRendicion: 0,
+            VerReporteAsistencia: 0,
+            VerReportes: 0,
+            VerRol: 0,
+            VerTricel: 0,
+            VerUsuario: 0
+        };
     }
     DocumentosPage.prototype.ionViewWillEnter = function () {
+        this.permisos = JSON.parse(sessionStorage.getItem("PERMISOS"));
         var rolId = sessionStorage.getItem("ROL_ID");
         this.cargar();
         //this.openUrl();
@@ -2319,35 +3094,38 @@ var DocumentosPage = (function () {
             refresher.complete();
         }, 2000);
     };
+    DocumentosPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-documentos',template:/*ion-inline-start:"C:\AppImpacto\AppImpacto\AppImpacto\src\pages\documentos\documentos.html"*/'<!--\n  Generated template for the DocumentosPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header class="mui--bg-color-red-500 fg-light">\n\n  <ion-navbar>\n    <ion-title>Documentos</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n    <!-- refresh-->\n    <ion-refresher (ionRefresh)="doRefresh($event)">\n      <ion-refresher-content></ion-refresher-content>\n    </ion-refresher>\n    <ion-label no-padding no-margin text-center style="font-style: italic;\n                font-size: 0.9rem;">\n      Deslize hacia abajo para actualizar\n    </ion-label>\n    <!--contenido de la pagina -->\n    <!-- lista-->\n    <ion-list>\n        <ion-item-sliding *ngFor="let clie of documentosArr">\n          <ion-item>\n            <ion-avatar item-start>\n              <!--descargar-->\n                <ion-icon name="cloud-download" item-left style="font-size: 3em;" (click)="openUrl(clie.UrlMostrar)"></ion-icon>\n                \n                \n            </ion-avatar>\n            <h2 text-wrap>{{clie.NombreCompleto}}</h2>\n            <ion-badge slot="end">{{clie.OtroUno}}</ion-badge>\n            <ion-row>\n                <ion-col>\n\n                    <div text-wrap>{{clie.OtroCinco}}</div>\n\n                </ion-col>\n                <ion-col center text-center>\n                  <ion-note>\n                      {{clie.NombreUsuario}}\n                  </ion-note>\n                </ion-col>\n              </ion-row>\n          </ion-item>\n        </ion-item-sliding>\n      </ion-list>    \n\n</ion-content>\n<ion-fab top right right>\n  <button ion-fab mini (click)="logout()" class="btn-color">\n    <ion-icon name="close"></ion-icon>\n  </button>\n</ion-fab>\n'/*ion-inline-end:"C:\AppImpacto\AppImpacto\AppImpacto\src\pages\documentos\documentos.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* App */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */],
+            __WEBPACK_IMPORTED_MODULE_4__app_services_GlobalService__["a" /* GlobalService */],
+            __WEBPACK_IMPORTED_MODULE_3__app_services_AuthService__["a" /* AuthService */]])
+    ], DocumentosPage);
     return DocumentosPage;
 }());
-DocumentosPage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-documentos',template:/*ion-inline-start:"W:\impacto2v\AppImpacto2V_new\src\pages\documentos\documentos.html"*/'<!--\n  Generated template for the DocumentosPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header class="mui--bg-color-red-500 fg-light">\n\n  <ion-navbar>\n    <ion-title>Documentos</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n    <!-- refresh-->\n    <ion-refresher (ionRefresh)="doRefresh($event)">\n      <ion-refresher-content></ion-refresher-content>\n    </ion-refresher>\n    <ion-label no-padding no-margin text-center style="font-style: italic;\n                font-size: 0.9rem;">\n      Deslize hacia abajo para actualizar\n    </ion-label>\n    <!--contenido de la pagina -->\n    <!-- lista-->\n    <ion-list>\n        <ion-item-sliding *ngFor="let clie of documentosArr">\n          <ion-item>\n            <ion-avatar item-start>\n              <!--descargar-->\n                <ion-icon name="cloud-download" item-left style="font-size: 3em;" (click)="openUrl(clie.UrlMostrar)"></ion-icon>\n                \n                \n            </ion-avatar>\n            <h2 text-wrap>{{clie.NombreCompleto}}</h2>\n            <ion-badge slot="end">{{clie.OtroUno}}</ion-badge>\n            <ion-row>\n                <ion-col>\n\n                    <div text-wrap>{{clie.OtroCinco}}</div>\n\n                </ion-col>\n                <ion-col center text-center>\n                  <ion-note>\n                      {{clie.NombreUsuario}}\n                  </ion-note>\n                </ion-col>\n              </ion-row>\n          </ion-item>\n        </ion-item-sliding>\n      </ion-list>    \n\n</ion-content>\n<ion-fab top right right>\n  <button ion-fab mini (click)="logout()" class="btn-color">\n    <ion-icon name="close"></ion-icon>\n  </button>\n</ion-fab>\n'/*ion-inline-end:"W:\impacto2v\AppImpacto2V_new\src\pages\documentos\documentos.html"*/,
-    }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* App */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */],
-        __WEBPACK_IMPORTED_MODULE_4__app_services_GlobalService__["a" /* GlobalService */],
-        __WEBPACK_IMPORTED_MODULE_3__app_services_AuthService__["a" /* AuthService */]])
-], DocumentosPage);
 
 //# sourceMappingURL=documentos.js.map
 
 /***/ }),
 
-/***/ 213:
+/***/ 342:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CalendarioPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login_login__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_services_AuthService__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_services_GlobalService__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ionic2_calendar__ = __webpack_require__(214);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_services_InicioService__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_services_novedadService__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_services_GlobalService__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_common__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__angular_common_locales_es_CL__ = __webpack_require__(421);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2359,30 +3137,93 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-//pages
-
-//servicios
+//import { } from 'ionic-nati'
 
 
 
+
+
+
+
+
+Object(__WEBPACK_IMPORTED_MODULE_7__angular_common__["j" /* registerLocaleData */])(__WEBPACK_IMPORTED_MODULE_8__angular_common_locales_es_CL__["a" /* default */]);
 /**
  * Generated class for the CalendarioPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var CalendarioPage = (function () {
-    function CalendarioPage(app, navCtrl, navParams, loading, global, acceso, cal) {
-        this.app = app;
+var CalendarioPage = /** @class */ (function () {
+    function CalendarioPage(navCtrl, navParams, loading, app, acceso, modalCtrl, ini, nov, global, viewCtrl, toastCtrl, actionSheetCtrl) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.loading = loading;
-        this.global = global;
+        this.app = app;
         this.acceso = acceso;
-        this.cal = cal;
+        this.modalCtrl = modalCtrl;
+        this.ini = ini;
+        this.nov = nov;
+        this.global = global;
+        this.viewCtrl = viewCtrl;
+        this.toastCtrl = toastCtrl;
+        this.actionSheetCtrl = actionSheetCtrl;
+        //registerLocaleData(localeFr);
+        this.permisos = {
+            CreaCalendario: 0,
+            CreaDocumento: 0,
+            CreaInstitucion: 0,
+            CreaMailing: 0,
+            CreaMroSolicitud: 0,
+            CreaMuro: 0,
+            CreaProyecto: 0,
+            CreaRendicion: 0,
+            CreaRol: 0,
+            CreaSolicitud: 0,
+            CreaTricel: 0,
+            CreaUsuario: 0,
+            EliminaCalendario: 0,
+            EliminaDocumento: 0,
+            EliminaInstitucion: 0,
+            EliminaMroSolicitud: 0,
+            EliminaMuro: 0,
+            EliminaProyecto: 0,
+            EliminaRendicion: 0,
+            EliminaRol: 0,
+            EliminaTricel: 0,
+            EliminaUsuario: 0,
+            ModificaCalendario: 0,
+            ModificaInstitucion: 0,
+            ModificaMroSolicitud: 0,
+            ModificaMuro: 0,
+            ModificaProyecto: 0,
+            ModificaRendicion: 0,
+            ModificaRol: 0,
+            ModificaTricel: 0,
+            ModificaUsuario: 0,
+            PuedeVotarProyecto: 0,
+            PuedeVotarTricel: 0,
+            VerCalendario: 0,
+            VerDocumento: 0,
+            VerInstitucion: 0,
+            VerMailing: 0,
+            VerMroSolicitud: 0,
+            VerMuro: 0,
+            VerProyecto: 0,
+            VerRendicion: 0,
+            VerReporteAsistencia: 0,
+            VerReportes: 0,
+            VerRol: 0,
+            VerTricel: 0,
+            VerUsuario: 0
+        };
         this.calendar = {
             mode: 'month',
-            locale: 'es-ES',
+            locale: 'es-CL',
+            dateFormatter: {
+                formatMonthViewDay: function (date) {
+                    return date.getDate().toString();
+                }
+            },
             currentDate: new Date()
         }; // these are the variable used by the calendar.
         this.markDisabled = function (date) {
@@ -2455,6 +3296,7 @@ var CalendarioPage = (function () {
     };
     CalendarioPage.prototype.createEvents = function () {
         var _this = this;
+        //registerLocaleData(localeFr);
         this.eventSource = [];
         var instId = sessionStorage.getItem("INST_ID");
         var tipo = '1';
@@ -2496,16 +3338,8 @@ var CalendarioPage = (function () {
     CalendarioPage.prototype.onRangeChanged = function (ev) {
         console.log('range changed: startTime: ' + ev.startTime + ', endTime: ' + ev.endTime);
     };
-    CalendarioPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad CalendarioPage');
-    };
-    CalendarioPage.prototype.logout = function () {
-        this.acceso.logout();
-        //esto lo comentamos
-        //this.navCtrl.setRoot(LoginPage);
-        this.app.getRootNav().setRoot(__WEBPACK_IMPORTED_MODULE_2__login_login__["a" /* LoginPage */]);
-    };
     CalendarioPage.prototype.ionViewWillEnter = function () {
+        this.permisos = JSON.parse(sessionStorage.getItem("PERMISOS"));
         this.createEvents();
         //this.openUrl();
     };
@@ -2518,35 +3352,48 @@ var CalendarioPage = (function () {
             refresher.complete();
         }, 2000);
     };
+    CalendarioPage.prototype.logout = function () {
+        this.acceso.logout();
+        //esto lo comentamos
+        //this.navCtrl.setRoot(LoginPage);
+        this.app.getRootNav().setRoot(__WEBPACK_IMPORTED_MODULE_2__login_login__["a" /* LoginPage */]);
+    };
+    CalendarioPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-calendario',template:/*ion-inline-start:"C:\AppImpacto\AppImpacto\AppImpacto\src\pages\calendario\calendario.html"*/'<!--\n  Generated template for the CalendarioPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header class="mui--bg-color-red-500 fg-light">\n\n  <ion-navbar>\n    <ion-title>Calendario</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n    <!-- refresh-->\n    <ion-refresher (ionRefresh)="doRefresh($event)">\n      <ion-refresher-content></ion-refresher-content>\n    </ion-refresher>\n    <ion-label no-padding no-margin text-center style="font-style: italic;\n          font-size: 0.9rem;">\n      Deslize hacia abajo para actualizar\n    </ion-label>\n\n    <h1 text-center>{{viewTitle}}</h1>\n  <ion-row>\n      <ion-buttons end>\n          <button ion-button small [disabled]="isToday" (click)="today()">Hoy</button>\n          <button ion-button small (click)="changeMode(\'month\')">Mensual</button>\n          <button ion-button small (click)="changeMode(\'week\')">Semanal</button>\n          <button ion-button small (click)="changeMode(\'day\')">Diario</button>\n          <!-- comentado \n          <button ion-button (click)="loadEvents()">Load Events</button>-->\n      </ion-buttons>\n  </ion-row>\n  <!--\n    <calendar \n              [monthviewEventDetailTemplate]="template"\n              [eventSource]="eventSource"\n              [calendarMode]="calendar.mode"\n              [currentDate]="calendar.currentDate"\n              [locale]="calendar.locale"\n              (onCurrentDateChanged)="onCurrentDateChanged($event)"\n              (onEventSelected)="onEventSelected($event)"\n              (onTitleChanged)="onViewTitleChanged($event)"\n              (onTimeSelected)="onTimeSelected($event)"\n              step="30">\n    </calendar>\n-->\n<calendar [monthviewEventDetailTemplate]="template" [eventSource]="eventSource" [calendarMode]="calendar.mode"\n  [currentDate]="calendar.currentDate"  (onCurrentDateChanged)="onCurrentDateChanged($event)"\n  (onEventSelected)="onEventSelected($event)" (onTitleChanged)="onViewTitleChanged($event)"\n  (onTimeSelected)="onTimeSelected($event)" step="30">\n</calendar>\n    <ng-template #template let-showEventDetail="showEventDetail" let-selectedDate="selectedDate" let-noEventsLabel="noEventsLabel">\n        <!--\n        <h5 class="noEvents" *ngIf="selectedDate.events.length == 0">No Events</h5>\n        -->\n        <ion-list>\n          <ion-item class="noEvents" *ngIf="selectedDate.events.length == 0">\n            <ion-avatar item-start>\n              <ion-icon name="calendar" item-start style="font-size: 2.5em;"></ion-icon>\n            </ion-avatar>\n            <h1 text-wrap>No hay eventos</h1>\n          </ion-item>\n        \n        </ion-list>\n        <ion-list>\n          <ion-item (click)="onEventSelected(event)" *ngFor="let event of selectedDate.events">\n              \n              <ion-avatar item-start>\n                <ion-icon name="calendar" item-start style="font-size: 2.5em;"></ion-icon>\n              </ion-avatar>\n                <h1 text-wrap>{{event.startTime | dateFormat: \'dddd DD\'}}</h1>\n                <h2 text-wrap>{{event.title}}</h2>\n                <ion-badge>{{event.startTime | dateFormat: \'DD-MM-YYYY HH:mm\'}} - {{event.endTime | dateFormat: \'DD-MM-YYYY HH:mm\'}}</ion-badge>\n              <!--\n            <p text-wrap>Start: {{event.startTime}}</p>\n            <p text-wrap>end: {{event.endTime}}</p>-->\n          </ion-item>\n        </ion-list>\n    </ng-template>\n  \n\n</ion-content>\n\n<ion-fab top right right>\n  <button ion-fab mini (click)="logout()" class="btn-color">\n    <ion-icon name="close"></ion-icon>\n  </button>\n</ion-fab>\n'/*ion-inline-end:"C:\AppImpacto\AppImpacto\AppImpacto\src\pages\calendario\calendario.html"*/,
+            providers: [__WEBPACK_IMPORTED_MODULE_3__app_services_AuthService__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_4__app_services_InicioService__["a" /* InicioService */], __WEBPACK_IMPORTED_MODULE_5__app_services_novedadService__["a" /* NovedadService */], __WEBPACK_IMPORTED_MODULE_6__app_services_GlobalService__["a" /* GlobalService */],
+                { provide: __WEBPACK_IMPORTED_MODULE_0__angular_core__["G" /* LOCALE_ID */], useValue: 'es-CL' }]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* App */],
+            __WEBPACK_IMPORTED_MODULE_3__app_services_AuthService__["a" /* AuthService */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */],
+            __WEBPACK_IMPORTED_MODULE_4__app_services_InicioService__["a" /* InicioService */],
+            __WEBPACK_IMPORTED_MODULE_5__app_services_novedadService__["a" /* NovedadService */],
+            __WEBPACK_IMPORTED_MODULE_6__app_services_GlobalService__["a" /* GlobalService */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ViewController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* ToastController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* ActionSheetController */]])
+    ], CalendarioPage);
     return CalendarioPage;
 }());
-CalendarioPage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-calendario',template:/*ion-inline-start:"W:\impacto2v\AppImpacto2V_new\src\pages\calendario\calendario.html"*/'<!--\n  Generated template for the CalendarioPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header class="mui--bg-color-red-500 fg-light">\n\n    <ion-navbar>\n      <ion-title>Calendario</ion-title>\n\n    </ion-navbar>\n  \n  </ion-header>\n\n\n<ion-content padding>\n  <!-- refresh-->\n  <ion-refresher (ionRefresh)="doRefresh($event)">\n    <ion-refresher-content></ion-refresher-content>\n  </ion-refresher>\n  <ion-label no-padding no-margin text-center style="font-style: italic;\n                      font-size: 0.9rem;">\n    Deslize hacia abajo para actualizar\n  </ion-label>\n  <h1 text-center>{{viewTitle}}</h1>\n  <ion-row>\n      <ion-buttons end>\n          <button ion-button small [disabled]="isToday" (click)="today()">Hoy</button>\n          <button ion-button small (click)="changeMode(\'month\')">Mensual</button>\n          <button ion-button small (click)="changeMode(\'week\')">Semanal</button>\n          <button ion-button small (click)="changeMode(\'day\')">Diario</button>\n          <!-- comentado \n          <button ion-button (click)="loadEvents()">Load Events</button>-->\n      </ion-buttons>\n  </ion-row>\n    <calendar \n              [monthviewEventDetailTemplate]="template"\n              [eventSource]="eventSource"\n              [calendarMode]="calendar.mode"\n              [currentDate]="calendar.currentDate"\n              [locale]="calendar.locale"\n              (onCurrentDateChanged)="onCurrentDateChanged($event)"\n              (onEventSelected)="onEventSelected($event)"\n              (onTitleChanged)="onViewTitleChanged($event)"\n              (onTimeSelected)="onTimeSelected($event)"\n              step="30">\n    </calendar>\n\n    <ng-template #template let-showEventDetail="showEventDetail" let-selectedDate="selectedDate" let-noEventsLabel="noEventsLabel">\n        <!--\n        <h5 class="noEvents" *ngIf="selectedDate.events.length == 0">No Events</h5>\n        -->\n        <ion-list>\n          <ion-item class="noEvents" *ngIf="selectedDate.events.length == 0">\n            <ion-avatar item-start>\n              <ion-icon name="calendar" item-start style="font-size: 2.5em;"></ion-icon>\n            </ion-avatar>\n            <h1 text-wrap>No hay eventos</h1>\n          </ion-item>\n        \n        </ion-list>\n        <ion-list>\n          <ion-item (click)="onEventSelected(event)" *ngFor="let event of selectedDate.events">\n              \n              <ion-avatar item-start>\n                <ion-icon name="calendar" item-start style="font-size: 2.5em;"></ion-icon>\n              </ion-avatar>\n                <h1 text-wrap>{{event.startTime | dateFormat: \'dddd DD\'}}</h1>\n                <h2 text-wrap>{{event.title}}</h2>\n                <ion-badge>{{event.startTime | dateFormat: \'DD-MM-YYYY HH:mm\'}} - {{event.endTime | dateFormat: \'DD-MM-YYYY HH:mm\'}}</ion-badge>\n              <!--\n            <p text-wrap>Start: {{event.startTime}}</p>\n            <p text-wrap>end: {{event.endTime}}</p>-->\n          </ion-item>\n        </ion-list>\n    </ng-template>\n\n\n\n\n</ion-content>\n<ion-fab top right right>\n<button ion-fab mini (click)="logout()" class="btn-color">\n  <ion-icon name="close"></ion-icon>\n</button>\n</ion-fab>\n'/*ion-inline-end:"W:\impacto2v\AppImpacto2V_new\src\pages\calendario\calendario.html"*/,
-    }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* App */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */],
-        __WEBPACK_IMPORTED_MODULE_4__app_services_GlobalService__["a" /* GlobalService */],
-        __WEBPACK_IMPORTED_MODULE_3__app_services_AuthService__["a" /* AuthService */],
-        __WEBPACK_IMPORTED_MODULE_5_ionic2_calendar__["a" /* NgCalendarModule */]])
-], CalendarioPage);
 
 //# sourceMappingURL=calendario.js.map
 
 /***/ }),
 
-/***/ 215:
+/***/ 343:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProyectosPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login_login__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_services_AuthService__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_services_GlobalService__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_services_GlobalService__ = __webpack_require__(30);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2569,7 +3416,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var ProyectosPage = (function () {
+var ProyectosPage = /** @class */ (function () {
     function ProyectosPage(app, navCtrl, navParams, loading, global, acceso) {
         this.app = app;
         this.navCtrl = navCtrl;
@@ -2578,9 +3425,58 @@ var ProyectosPage = (function () {
         this.global = global;
         this.acceso = acceso;
         this.proyectosArr = [];
+        this.permisos = {
+            CreaCalendario: 0,
+            CreaDocumento: 0,
+            CreaInstitucion: 0,
+            CreaMailing: 0,
+            CreaMroSolicitud: 0,
+            CreaMuro: 0,
+            CreaProyecto: 0,
+            CreaRendicion: 0,
+            CreaRol: 0,
+            CreaSolicitud: 0,
+            CreaTricel: 0,
+            CreaUsuario: 0,
+            EliminaCalendario: 0,
+            EliminaDocumento: 0,
+            EliminaInstitucion: 0,
+            EliminaMroSolicitud: 0,
+            EliminaMuro: 0,
+            EliminaProyecto: 0,
+            EliminaRendicion: 0,
+            EliminaRol: 0,
+            EliminaTricel: 0,
+            EliminaUsuario: 0,
+            ModificaCalendario: 0,
+            ModificaInstitucion: 0,
+            ModificaMroSolicitud: 0,
+            ModificaMuro: 0,
+            ModificaProyecto: 0,
+            ModificaRendicion: 0,
+            ModificaRol: 0,
+            ModificaTricel: 0,
+            ModificaUsuario: 0,
+            PuedeVotarProyecto: 0,
+            PuedeVotarTricel: 0,
+            VerCalendario: 0,
+            VerDocumento: 0,
+            VerInstitucion: 0,
+            VerMailing: 0,
+            VerMroSolicitud: 0,
+            VerMuro: 0,
+            VerProyecto: 0,
+            VerRendicion: 0,
+            VerReporteAsistencia: 0,
+            VerReportes: 0,
+            VerRol: 0,
+            VerTricel: 0,
+            VerUsuario: 0
+        };
     }
     ProyectosPage.prototype.ionViewWillEnter = function () {
         var rolId = sessionStorage.getItem("ROL_ID");
+        this.permisos = JSON.parse(sessionStorage.getItem("PERMISOS"));
         this.cargar();
     };
     ProyectosPage.prototype.ionViewDidLoad = function () {
@@ -2621,170 +3517,71 @@ var ProyectosPage = (function () {
             });
         });
     };
+    ProyectosPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-proyectos',template:/*ion-inline-start:"C:\AppImpacto\AppImpacto\AppImpacto\src\pages\proyectos\proyectos.html"*/'<!--\n  Generated template for the ProyectosPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header class="mui--bg-color-red-500 fg-light">\n\n    <ion-navbar>\n      <ion-title>Proyectos</ion-title>\n    </ion-navbar>\n  \n  </ion-header>\n\n\n<ion-content padding>\n    <!-- refresh-->\n    <ion-refresher (ionRefresh)="doRefresh($event)">\n      <ion-refresher-content></ion-refresher-content>\n    </ion-refresher>\n    <ion-label no-padding no-margin text-center style="font-style: italic;\n                font-size: 0.9rem;">\n      Deslize hacia abajo para actualizar\n    </ion-label>\n<!-- Listado -->\n<ion-list>\n    <ion-item *ngFor="let clie of proyectosArr">\n      <h2 text-wrap>{{clie.NombreUsuario}}</h2>\n      <h3 text-wrap>{{clie.NombreCompleto}}</h3>\n      <p>\n          <ion-badge item-start>{{clie.OtroOcho}}</ion-badge>\n          <ion-badge item-end color="secondary" style="float: right;">{{clie.OtroDiez}}</ion-badge>\n      </p>\n\n    </ion-item>\n  </ion-list>\n\n</ion-content>\n<ion-fab top right right>\n  <button ion-fab mini (click)="logout()" class="btn-color">\n    <ion-icon name="close"></ion-icon>\n  </button>\n</ion-fab>\n'/*ion-inline-end:"C:\AppImpacto\AppImpacto\AppImpacto\src\pages\proyectos\proyectos.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* App */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */],
+            __WEBPACK_IMPORTED_MODULE_4__app_services_GlobalService__["a" /* GlobalService */],
+            __WEBPACK_IMPORTED_MODULE_3__app_services_AuthService__["a" /* AuthService */]])
+    ], ProyectosPage);
     return ProyectosPage;
 }());
-ProyectosPage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-proyectos',template:/*ion-inline-start:"W:\impacto2v\AppImpacto2V_new\src\pages\proyectos\proyectos.html"*/'<!--\n  Generated template for the ProyectosPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header class="mui--bg-color-red-500 fg-light">\n\n    <ion-navbar>\n      <ion-title>Proyectos</ion-title>\n    </ion-navbar>\n  \n  </ion-header>\n\n\n<ion-content padding>\n    <!-- refresh-->\n    <ion-refresher (ionRefresh)="doRefresh($event)">\n      <ion-refresher-content></ion-refresher-content>\n    </ion-refresher>\n    <ion-label no-padding no-margin text-center style="font-style: italic;\n                font-size: 0.9rem;">\n      Deslize hacia abajo para actualizar\n    </ion-label>\n<!-- Listado -->\n<ion-list>\n    <ion-item *ngFor="let clie of proyectosArr">\n      <h2 text-wrap>{{clie.NombreUsuario}}</h2>\n      <h3 text-wrap>{{clie.NombreCompleto}}</h3>\n      <p>\n          <ion-badge item-start>{{clie.OtroOcho}}</ion-badge>\n          <ion-badge item-end color="secondary" style="float: right;">{{clie.OtroDiez}}</ion-badge>\n      </p>\n\n    </ion-item>\n  </ion-list>\n\n</ion-content>\n<ion-fab top right right>\n  <button ion-fab mini (click)="logout()" class="btn-color">\n    <ion-icon name="close"></ion-icon>\n  </button>\n</ion-fab>\n'/*ion-inline-end:"W:\impacto2v\AppImpacto2V_new\src\pages\proyectos\proyectos.html"*/,
-    }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* App */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */],
-        __WEBPACK_IMPORTED_MODULE_4__app_services_GlobalService__["a" /* GlobalService */],
-        __WEBPACK_IMPORTED_MODULE_3__app_services_AuthService__["a" /* AuthService */]])
-], ProyectosPage);
 
 //# sourceMappingURL=proyectos.js.map
 
 /***/ }),
 
-/***/ 33:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GlobalService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(46);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__AppSettings__ = __webpack_require__(38);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__(58);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-var GlobalService = (function () {
-    function GlobalService(http) {
-        this.http = http;
-        this.headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]({ 'Content-Type': 'application/json',
-            'Accept': 'q=0.8;application/json;q=0.9' });
-        this.options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: this.headers });
-    }
-    GlobalService.prototype.postSolicitudes = function (instId) {
-        var url = __WEBPACK_IMPORTED_MODULE_2__AppSettings__["a" /* AppSettings */].API_ENDPOINT + 'Solicitudes';
-        var dataGet = { InstId: instId };
-        var data = this.http.post(url, dataGet, {
-            headers: this.headers
-        });
-        return data;
-    };
-    GlobalService.prototype.getUsuarios = function (instId, rolId) {
-        var url = __WEBPACK_IMPORTED_MODULE_2__AppSettings__["a" /* AppSettings */].API_ENDPOINT + 'ListarUsuarios?instId=' + instId + '&rolId=' + rolId;
-        var dataGet = { InstId: instId };
-        var data = this.http.get(url);
-        return data;
-    };
-    GlobalService.prototype.postInstituciones = function (buscarId, idUsuario) {
-        var url = __WEBPACK_IMPORTED_MODULE_2__AppSettings__["a" /* AppSettings */].API_ENDPOINT + 'Institucion';
-        var dataGet = { IdUsuario: idUsuario.toString() };
-        var data = this.http.post(url, dataGet, {
-            headers: this.headers
-        });
-        return data;
-    };
-    GlobalService.prototype.postRendiciones = function (instId) {
-        var url = __WEBPACK_IMPORTED_MODULE_2__AppSettings__["a" /* AppSettings */].API_ENDPOINT + 'Rendicion';
-        var dataGet = { InstId: instId };
-        var data = this.http.post(url, dataGet, {
-            headers: this.headers
-        });
-        return data;
-    };
-    GlobalService.prototype.postDocumentosUsuario = function (instId, usuId) {
-        var url = __WEBPACK_IMPORTED_MODULE_2__AppSettings__["a" /* AppSettings */].API_ENDPOINT + 'FileDocumento';
-        var dataGet = { InstId: instId.toString(), UsuId: usuId.toString() };
-        var data = this.http.post(url, dataGet, {
-            headers: this.headers
-        });
-        return data;
-    };
-    GlobalService.prototype.postCalendario = function (instId, tipo) {
-        var url = __WEBPACK_IMPORTED_MODULE_2__AppSettings__["a" /* AppSettings */].API_ENDPOINT + 'Calendario';
-        var dataGet = { InstId: instId.toString(), Tipo: tipo.toString() };
-        var data = this.http.post(url, dataGet, {
-            headers: this.headers
-        });
-        return data;
-    };
-    GlobalService.prototype.postProyectos = function (instId) {
-        var url = __WEBPACK_IMPORTED_MODULE_2__AppSettings__["a" /* AppSettings */].API_ENDPOINT + 'Proyecto';
-        var dataGet = { InstId: instId.toString() };
-        var data = this.http.post(url, dataGet, {
-            headers: this.headers
-        });
-        return data;
-    };
-    return GlobalService;
-}());
-GlobalService = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]])
-], GlobalService);
-
-//# sourceMappingURL=GlobalService.js.map
-
-/***/ }),
-
-/***/ 340:
+/***/ 344:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(341);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(359);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_hammerjs__ = __webpack_require__(427);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_hammerjs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_hammerjs__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(345);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(367);
 
-
-//hammer
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
 //# sourceMappingURL=main.js.map
 
 /***/ }),
 
-/***/ 359:
+/***/ 367:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(25);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(110);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(109);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(112);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_http__ = __webpack_require__(46);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_photo_viewer__ = __webpack_require__(205);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__directives_text_avatar_text_avatar__ = __webpack_require__(407);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__app_component__ = __webpack_require__(409);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_cliente_cliente__ = __webpack_require__(113);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_home_home__ = __webpack_require__(421);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_login_login__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_solicitudes_solicitudes__ = __webpack_require__(422);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_novedades_novedades__ = __webpack_require__(206);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_inicio_inicio__ = __webpack_require__(423);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_detail_novedad_detail_novedad__ = __webpack_require__(207);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_visor_imagen_visor_imagen__ = __webpack_require__(114);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_crear_novedad_crear_novedad__ = __webpack_require__(208);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_editar_novedad_editar_novedad__ = __webpack_require__(209);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_usuarios_usuarios__ = __webpack_require__(210);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_rendicion_rendicion__ = __webpack_require__(211);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_documentos_documentos__ = __webpack_require__(212);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_calendario_calendario__ = __webpack_require__(213);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_proyectos_proyectos__ = __webpack_require__(215);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__directives_text_avatar_text_avatar__ = __webpack_require__(416);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_component__ = __webpack_require__(418);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_cliente_cliente__ = __webpack_require__(113);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_home_home__ = __webpack_require__(422);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_login_login__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_solicitudes_solicitudes__ = __webpack_require__(423);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_novedades_novedades__ = __webpack_require__(207);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_inicio_inicio__ = __webpack_require__(424);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_detail_novedad_detail_novedad__ = __webpack_require__(208);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_visor_imagen_visor_imagen__ = __webpack_require__(114);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_crear_novedad_crear_novedad__ = __webpack_require__(209);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_editar_novedad_editar_novedad__ = __webpack_require__(210);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_usuarios_usuarios__ = __webpack_require__(211);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_rendicion_rendicion__ = __webpack_require__(212);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_documentos_documentos__ = __webpack_require__(341);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_calendario_calendario__ = __webpack_require__(342);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_proyectos_proyectos__ = __webpack_require__(343);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_crear_rendicion_crear_rendicion__ = __webpack_require__(213);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__app_services_AuthService__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__app_services_GlobalService__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26_ionic2_calendar__ = __webpack_require__(214);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__pipes_MomentPipe__ = __webpack_require__(424);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__app_services_GlobalService__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26_ionic2_calendar__ = __webpack_require__(425);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__pipes_MomentPipe__ = __webpack_require__(436);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2796,8 +3593,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-
-//agregado ahora para ver el album de fotos en las novedades
 
 //directivas
 
@@ -2818,104 +3613,110 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+//servicios
 
+
+//import { CalendarComponent } from 'ap-angular2-fullcalendar/src/calendar/calendar';
 
 //pipes
 
-var AppModule = (function () {
+
+var AppModule = /** @class */ (function () {
     function AppModule() {
     }
+    AppModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["I" /* NgModule */])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* MyApp */],
+                __WEBPACK_IMPORTED_MODULE_8__pages_cliente_cliente__["a" /* ClientePage */],
+                __WEBPACK_IMPORTED_MODULE_9__pages_home_home__["a" /* HomePage */],
+                __WEBPACK_IMPORTED_MODULE_10__pages_login_login__["a" /* LoginPage */],
+                __WEBPACK_IMPORTED_MODULE_11__pages_solicitudes_solicitudes__["a" /* SolicitudesPage */],
+                __WEBPACK_IMPORTED_MODULE_12__pages_novedades_novedades__["a" /* NovedadesPage */],
+                __WEBPACK_IMPORTED_MODULE_14__pages_detail_novedad_detail_novedad__["a" /* DetailNovedadPage */],
+                __WEBPACK_IMPORTED_MODULE_15__pages_visor_imagen_visor_imagen__["a" /* VisorImagenPage */],
+                __WEBPACK_IMPORTED_MODULE_16__pages_crear_novedad_crear_novedad__["a" /* CrearNovedadPage */],
+                __WEBPACK_IMPORTED_MODULE_17__pages_editar_novedad_editar_novedad__["a" /* EditarNovedadPage */],
+                __WEBPACK_IMPORTED_MODULE_18__pages_usuarios_usuarios__["a" /* UsuariosPage */],
+                __WEBPACK_IMPORTED_MODULE_13__pages_inicio_inicio__["a" /* InicioPage */],
+                __WEBPACK_IMPORTED_MODULE_19__pages_rendicion_rendicion__["a" /* RendicionPage */],
+                __WEBPACK_IMPORTED_MODULE_20__pages_documentos_documentos__["a" /* DocumentosPage */],
+                __WEBPACK_IMPORTED_MODULE_21__pages_calendario_calendario__["a" /* CalendarioPage */],
+                __WEBPACK_IMPORTED_MODULE_22__pages_proyectos_proyectos__["a" /* ProyectosPage */],
+                __WEBPACK_IMPORTED_MODULE_23__pages_crear_rendicion_crear_rendicion__["a" /* CrearRendicionPage */],
+                __WEBPACK_IMPORTED_MODULE_27__pipes_MomentPipe__["a" /* MomentPipe */],
+                __WEBPACK_IMPORTED_MODULE_6__directives_text_avatar_text_avatar__["a" /* TextAvatarDirective */]
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
+                __WEBPACK_IMPORTED_MODULE_5__angular_http__["c" /* HttpModule */],
+                __WEBPACK_IMPORTED_MODULE_26_ionic2_calendar__["a" /* NgCalendarModule */],
+                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["e" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* MyApp */], {}, {
+                    links: []
+                })
+            ],
+            bootstrap: [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicApp */]],
+            entryComponents: [
+                __WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* MyApp */],
+                __WEBPACK_IMPORTED_MODULE_8__pages_cliente_cliente__["a" /* ClientePage */],
+                __WEBPACK_IMPORTED_MODULE_9__pages_home_home__["a" /* HomePage */],
+                __WEBPACK_IMPORTED_MODULE_10__pages_login_login__["a" /* LoginPage */],
+                __WEBPACK_IMPORTED_MODULE_11__pages_solicitudes_solicitudes__["a" /* SolicitudesPage */],
+                __WEBPACK_IMPORTED_MODULE_12__pages_novedades_novedades__["a" /* NovedadesPage */],
+                __WEBPACK_IMPORTED_MODULE_14__pages_detail_novedad_detail_novedad__["a" /* DetailNovedadPage */],
+                __WEBPACK_IMPORTED_MODULE_15__pages_visor_imagen_visor_imagen__["a" /* VisorImagenPage */],
+                __WEBPACK_IMPORTED_MODULE_16__pages_crear_novedad_crear_novedad__["a" /* CrearNovedadPage */],
+                __WEBPACK_IMPORTED_MODULE_17__pages_editar_novedad_editar_novedad__["a" /* EditarNovedadPage */],
+                __WEBPACK_IMPORTED_MODULE_18__pages_usuarios_usuarios__["a" /* UsuariosPage */],
+                __WEBPACK_IMPORTED_MODULE_19__pages_rendicion_rendicion__["a" /* RendicionPage */],
+                __WEBPACK_IMPORTED_MODULE_20__pages_documentos_documentos__["a" /* DocumentosPage */],
+                __WEBPACK_IMPORTED_MODULE_21__pages_calendario_calendario__["a" /* CalendarioPage */],
+                __WEBPACK_IMPORTED_MODULE_22__pages_proyectos_proyectos__["a" /* ProyectosPage */],
+                __WEBPACK_IMPORTED_MODULE_23__pages_crear_rendicion_crear_rendicion__["a" /* CrearRendicionPage */],
+                __WEBPACK_IMPORTED_MODULE_13__pages_inicio_inicio__["a" /* InicioPage */]
+            ],
+            providers: [
+                __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__["a" /* StatusBar */],
+                __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */],
+                __WEBPACK_IMPORTED_MODULE_24__app_services_AuthService__["a" /* AuthService */],
+                __WEBPACK_IMPORTED_MODULE_25__app_services_GlobalService__["a" /* GlobalService */],
+                { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["u" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["d" /* IonicErrorHandler */] },
+                { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["G" /* LOCALE_ID */], useValue: 'es-CL' }
+            ]
+        })
+    ], AppModule);
     return AppModule;
 }());
-AppModule = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["L" /* NgModule */])({
-        declarations: [
-            __WEBPACK_IMPORTED_MODULE_8__app_component__["a" /* MyApp */],
-            __WEBPACK_IMPORTED_MODULE_9__pages_cliente_cliente__["a" /* ClientePage */],
-            __WEBPACK_IMPORTED_MODULE_10__pages_home_home__["a" /* HomePage */],
-            __WEBPACK_IMPORTED_MODULE_11__pages_login_login__["a" /* LoginPage */],
-            __WEBPACK_IMPORTED_MODULE_12__pages_solicitudes_solicitudes__["a" /* SolicitudesPage */],
-            __WEBPACK_IMPORTED_MODULE_13__pages_novedades_novedades__["a" /* NovedadesPage */],
-            __WEBPACK_IMPORTED_MODULE_15__pages_detail_novedad_detail_novedad__["a" /* DetailNovedadPage */],
-            __WEBPACK_IMPORTED_MODULE_16__pages_visor_imagen_visor_imagen__["a" /* VisorImagenPage */],
-            __WEBPACK_IMPORTED_MODULE_17__pages_crear_novedad_crear_novedad__["a" /* CrearNovedadPage */],
-            __WEBPACK_IMPORTED_MODULE_18__pages_editar_novedad_editar_novedad__["a" /* EditarNovedadPage */],
-            __WEBPACK_IMPORTED_MODULE_19__pages_usuarios_usuarios__["a" /* UsuariosPage */],
-            __WEBPACK_IMPORTED_MODULE_14__pages_inicio_inicio__["a" /* InicioPage */],
-            __WEBPACK_IMPORTED_MODULE_20__pages_rendicion_rendicion__["a" /* RendicionPage */],
-            __WEBPACK_IMPORTED_MODULE_21__pages_documentos_documentos__["a" /* DocumentosPage */],
-            __WEBPACK_IMPORTED_MODULE_22__pages_calendario_calendario__["a" /* CalendarioPage */],
-            __WEBPACK_IMPORTED_MODULE_23__pages_proyectos_proyectos__["a" /* ProyectosPage */],
-            __WEBPACK_IMPORTED_MODULE_27__pipes_MomentPipe__["a" /* MomentPipe */],
-            __WEBPACK_IMPORTED_MODULE_7__directives_text_avatar_text_avatar__["a" /* TextAvatarDirective */]
-        ],
-        imports: [
-            __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
-            __WEBPACK_IMPORTED_MODULE_5__angular_http__["c" /* HttpModule */],
-            __WEBPACK_IMPORTED_MODULE_26_ionic2_calendar__["a" /* NgCalendarModule */],
-            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["e" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_8__app_component__["a" /* MyApp */], {}, {
-                links: []
-            })
-        ],
-        bootstrap: [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicApp */]],
-        entryComponents: [
-            __WEBPACK_IMPORTED_MODULE_8__app_component__["a" /* MyApp */],
-            __WEBPACK_IMPORTED_MODULE_9__pages_cliente_cliente__["a" /* ClientePage */],
-            __WEBPACK_IMPORTED_MODULE_10__pages_home_home__["a" /* HomePage */],
-            __WEBPACK_IMPORTED_MODULE_11__pages_login_login__["a" /* LoginPage */],
-            __WEBPACK_IMPORTED_MODULE_12__pages_solicitudes_solicitudes__["a" /* SolicitudesPage */],
-            __WEBPACK_IMPORTED_MODULE_13__pages_novedades_novedades__["a" /* NovedadesPage */],
-            __WEBPACK_IMPORTED_MODULE_15__pages_detail_novedad_detail_novedad__["a" /* DetailNovedadPage */],
-            __WEBPACK_IMPORTED_MODULE_16__pages_visor_imagen_visor_imagen__["a" /* VisorImagenPage */],
-            __WEBPACK_IMPORTED_MODULE_17__pages_crear_novedad_crear_novedad__["a" /* CrearNovedadPage */],
-            __WEBPACK_IMPORTED_MODULE_18__pages_editar_novedad_editar_novedad__["a" /* EditarNovedadPage */],
-            __WEBPACK_IMPORTED_MODULE_19__pages_usuarios_usuarios__["a" /* UsuariosPage */],
-            __WEBPACK_IMPORTED_MODULE_20__pages_rendicion_rendicion__["a" /* RendicionPage */],
-            __WEBPACK_IMPORTED_MODULE_21__pages_documentos_documentos__["a" /* DocumentosPage */],
-            __WEBPACK_IMPORTED_MODULE_22__pages_calendario_calendario__["a" /* CalendarioPage */],
-            __WEBPACK_IMPORTED_MODULE_23__pages_proyectos_proyectos__["a" /* ProyectosPage */],
-            __WEBPACK_IMPORTED_MODULE_14__pages_inicio_inicio__["a" /* InicioPage */]
-        ],
-        providers: [
-            __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__["a" /* StatusBar */],
-            __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */],
-            __WEBPACK_IMPORTED_MODULE_24__app_services_AuthService__["a" /* AuthService */],
-            __WEBPACK_IMPORTED_MODULE_25__app_services_GlobalService__["a" /* GlobalService */],
-            __WEBPACK_IMPORTED_MODULE_6__ionic_native_photo_viewer__["a" /* PhotoViewer */],
-            { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["v" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["d" /* IonicErrorHandler */] }
-        ]
-    })
-], AppModule);
 
 //# sourceMappingURL=app.module.js.map
 
 /***/ }),
 
-/***/ 38:
+/***/ 39:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppSettings; });
-var AppSettings = (function () {
+var AppSettings = /** @class */ (function () {
     function AppSettings() {
     }
+    AppSettings.API_ENDPOINT = 'http://apps.asambleas.cl/api/';
+    AppSettings.URL_FOTOS = 'http://apps.asambleas.cl/Repositorio/';
+    AppSettings.URL_RAIZ = 'http://apps.asambleas.cl/';
     return AppSettings;
 }());
 
-AppSettings.API_ENDPOINT = 'http://apps.asambleas.cl/api/';
-AppSettings.URL_FOTOS = 'http://apps.asambleas.cl/Repositorio/';
-AppSettings.URL_RAIZ = 'http://apps.asambleas.cl/';
 //# sourceMappingURL=AppSettings.js.map
 
 /***/ }),
 
-/***/ 407:
+/***/ 416:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TextAvatarDirective; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__color_generator__ = __webpack_require__(408);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__color_generator__ = __webpack_require__(417);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2927,7 +3728,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-var TextAvatarDirective = (function () {
+var TextAvatarDirective = /** @class */ (function () {
     function TextAvatarDirective(element, colorGenerator) {
         this.element = element;
         this.colorGenerator = colorGenerator;
@@ -2944,34 +3745,34 @@ var TextAvatarDirective = (function () {
     TextAvatarDirective.prototype.backgroundColorHexString = function (color, text) {
         return color || this.colorGenerator.getColor(this.extractFirstCharacter(text));
     };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Input */])(),
+        __metadata("design:type", String)
+    ], TextAvatarDirective.prototype, "text", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Input */])(),
+        __metadata("design:type", String)
+    ], TextAvatarDirective.prototype, "color", void 0);
+    TextAvatarDirective = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["s" /* Directive */])({
+            selector: 'text-avatar',
+            providers: [__WEBPACK_IMPORTED_MODULE_1__color_generator__["a" /* ColorGenerator */]]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* ElementRef */], __WEBPACK_IMPORTED_MODULE_1__color_generator__["a" /* ColorGenerator */]])
+    ], TextAvatarDirective);
     return TextAvatarDirective;
 }());
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */])(),
-    __metadata("design:type", String)
-], TextAvatarDirective.prototype, "text", void 0);
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */])(),
-    __metadata("design:type", String)
-], TextAvatarDirective.prototype, "color", void 0);
-TextAvatarDirective = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* Directive */])({
-        selector: 'text-avatar',
-        providers: [__WEBPACK_IMPORTED_MODULE_1__color_generator__["a" /* ColorGenerator */]]
-    }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ElementRef */], __WEBPACK_IMPORTED_MODULE_1__color_generator__["a" /* ColorGenerator */]])
-], TextAvatarDirective);
 
 //# sourceMappingURL=text-avatar.js.map
 
 /***/ }),
 
-/***/ 408:
+/***/ 417:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ColorGenerator; });
-var ColorGenerator = (function () {
+var ColorGenerator = /** @class */ (function () {
     function ColorGenerator() {
         this.COLORS = ['#e57373', '#f06292', '#ba68c8', '#9575cd', '#7986cb', '#64b5f6',
             '#4fc3f7', '#4dd0e1', '#4db6ac', '#81c784', '#aed581', '#ff8a65', '#d4e157', '#673ab7',
@@ -2996,15 +3797,15 @@ var ColorGenerator = (function () {
 
 /***/ }),
 
-/***/ 409:
+/***/ 418:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(112);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(110);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(109);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_login_login__ = __webpack_require__(21);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -3020,7 +3821,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var MyApp = (function () {
+var MyApp = /** @class */ (function () {
     function MyApp(platform, statusBar, splashScreen) {
         this.rootPage = __WEBPACK_IMPORTED_MODULE_4__pages_login_login__["a" /* LoginPage */];
         platform.ready().then(function () {
@@ -3030,34 +3831,304 @@ var MyApp = (function () {
             splashScreen.hide();
         });
     }
+    MyApp = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"C:\AppImpacto\AppImpacto\AppImpacto\src\app\app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"C:\AppImpacto\AppImpacto\AppImpacto\src\app\app.html"*/
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
+    ], MyApp);
     return MyApp;
 }());
-MyApp = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"W:\impacto2v\AppImpacto2V_new\src\app\app.html"*/'<ion-nav [root]="rootPage" #content swipeBackEnabled="true"></ion-nav>\n\n'/*ion-inline-end:"W:\impacto2v\AppImpacto2V_new\src\app\app.html"*/
-    }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
-], MyApp);
 
 //# sourceMappingURL=app.component.js.map
 
 /***/ }),
 
-/***/ 414:
-/***/ (function(module, exports) {
+/***/ 420:
+/***/ (function(module, exports, __webpack_require__) {
 
-/* (ignored) */
+var map = {
+	"./af": 214,
+	"./af.js": 214,
+	"./ar": 215,
+	"./ar-dz": 216,
+	"./ar-dz.js": 216,
+	"./ar-kw": 217,
+	"./ar-kw.js": 217,
+	"./ar-ly": 218,
+	"./ar-ly.js": 218,
+	"./ar-ma": 219,
+	"./ar-ma.js": 219,
+	"./ar-sa": 220,
+	"./ar-sa.js": 220,
+	"./ar-tn": 221,
+	"./ar-tn.js": 221,
+	"./ar.js": 215,
+	"./az": 222,
+	"./az.js": 222,
+	"./be": 223,
+	"./be.js": 223,
+	"./bg": 224,
+	"./bg.js": 224,
+	"./bm": 225,
+	"./bm.js": 225,
+	"./bn": 226,
+	"./bn.js": 226,
+	"./bo": 227,
+	"./bo.js": 227,
+	"./br": 228,
+	"./br.js": 228,
+	"./bs": 229,
+	"./bs.js": 229,
+	"./ca": 230,
+	"./ca.js": 230,
+	"./cs": 231,
+	"./cs.js": 231,
+	"./cv": 232,
+	"./cv.js": 232,
+	"./cy": 233,
+	"./cy.js": 233,
+	"./da": 234,
+	"./da.js": 234,
+	"./de": 235,
+	"./de-at": 236,
+	"./de-at.js": 236,
+	"./de-ch": 237,
+	"./de-ch.js": 237,
+	"./de.js": 235,
+	"./dv": 238,
+	"./dv.js": 238,
+	"./el": 239,
+	"./el.js": 239,
+	"./en-SG": 240,
+	"./en-SG.js": 240,
+	"./en-au": 241,
+	"./en-au.js": 241,
+	"./en-ca": 242,
+	"./en-ca.js": 242,
+	"./en-gb": 243,
+	"./en-gb.js": 243,
+	"./en-ie": 244,
+	"./en-ie.js": 244,
+	"./en-il": 245,
+	"./en-il.js": 245,
+	"./en-nz": 246,
+	"./en-nz.js": 246,
+	"./eo": 247,
+	"./eo.js": 247,
+	"./es": 248,
+	"./es-do": 249,
+	"./es-do.js": 249,
+	"./es-us": 250,
+	"./es-us.js": 250,
+	"./es.js": 248,
+	"./et": 251,
+	"./et.js": 251,
+	"./eu": 252,
+	"./eu.js": 252,
+	"./fa": 253,
+	"./fa.js": 253,
+	"./fi": 254,
+	"./fi.js": 254,
+	"./fo": 255,
+	"./fo.js": 255,
+	"./fr": 256,
+	"./fr-ca": 257,
+	"./fr-ca.js": 257,
+	"./fr-ch": 258,
+	"./fr-ch.js": 258,
+	"./fr.js": 256,
+	"./fy": 259,
+	"./fy.js": 259,
+	"./ga": 260,
+	"./ga.js": 260,
+	"./gd": 261,
+	"./gd.js": 261,
+	"./gl": 262,
+	"./gl.js": 262,
+	"./gom-latn": 263,
+	"./gom-latn.js": 263,
+	"./gu": 264,
+	"./gu.js": 264,
+	"./he": 265,
+	"./he.js": 265,
+	"./hi": 266,
+	"./hi.js": 266,
+	"./hr": 267,
+	"./hr.js": 267,
+	"./hu": 268,
+	"./hu.js": 268,
+	"./hy-am": 269,
+	"./hy-am.js": 269,
+	"./id": 270,
+	"./id.js": 270,
+	"./is": 271,
+	"./is.js": 271,
+	"./it": 272,
+	"./it-ch": 273,
+	"./it-ch.js": 273,
+	"./it.js": 272,
+	"./ja": 274,
+	"./ja.js": 274,
+	"./jv": 275,
+	"./jv.js": 275,
+	"./ka": 276,
+	"./ka.js": 276,
+	"./kk": 277,
+	"./kk.js": 277,
+	"./km": 278,
+	"./km.js": 278,
+	"./kn": 279,
+	"./kn.js": 279,
+	"./ko": 280,
+	"./ko.js": 280,
+	"./ku": 281,
+	"./ku.js": 281,
+	"./ky": 282,
+	"./ky.js": 282,
+	"./lb": 283,
+	"./lb.js": 283,
+	"./lo": 284,
+	"./lo.js": 284,
+	"./lt": 285,
+	"./lt.js": 285,
+	"./lv": 286,
+	"./lv.js": 286,
+	"./me": 287,
+	"./me.js": 287,
+	"./mi": 288,
+	"./mi.js": 288,
+	"./mk": 289,
+	"./mk.js": 289,
+	"./ml": 290,
+	"./ml.js": 290,
+	"./mn": 291,
+	"./mn.js": 291,
+	"./mr": 292,
+	"./mr.js": 292,
+	"./ms": 293,
+	"./ms-my": 294,
+	"./ms-my.js": 294,
+	"./ms.js": 293,
+	"./mt": 295,
+	"./mt.js": 295,
+	"./my": 296,
+	"./my.js": 296,
+	"./nb": 297,
+	"./nb.js": 297,
+	"./ne": 298,
+	"./ne.js": 298,
+	"./nl": 299,
+	"./nl-be": 300,
+	"./nl-be.js": 300,
+	"./nl.js": 299,
+	"./nn": 301,
+	"./nn.js": 301,
+	"./pa-in": 302,
+	"./pa-in.js": 302,
+	"./pl": 303,
+	"./pl.js": 303,
+	"./pt": 304,
+	"./pt-br": 305,
+	"./pt-br.js": 305,
+	"./pt.js": 304,
+	"./ro": 306,
+	"./ro.js": 306,
+	"./ru": 307,
+	"./ru.js": 307,
+	"./sd": 308,
+	"./sd.js": 308,
+	"./se": 309,
+	"./se.js": 309,
+	"./si": 310,
+	"./si.js": 310,
+	"./sk": 311,
+	"./sk.js": 311,
+	"./sl": 312,
+	"./sl.js": 312,
+	"./sq": 313,
+	"./sq.js": 313,
+	"./sr": 314,
+	"./sr-cyrl": 315,
+	"./sr-cyrl.js": 315,
+	"./sr.js": 314,
+	"./ss": 316,
+	"./ss.js": 316,
+	"./sv": 317,
+	"./sv.js": 317,
+	"./sw": 318,
+	"./sw.js": 318,
+	"./ta": 319,
+	"./ta.js": 319,
+	"./te": 320,
+	"./te.js": 320,
+	"./tet": 321,
+	"./tet.js": 321,
+	"./tg": 322,
+	"./tg.js": 322,
+	"./th": 323,
+	"./th.js": 323,
+	"./tl-ph": 324,
+	"./tl-ph.js": 324,
+	"./tlh": 325,
+	"./tlh.js": 325,
+	"./tr": 326,
+	"./tr.js": 326,
+	"./tzl": 327,
+	"./tzl.js": 327,
+	"./tzm": 328,
+	"./tzm-latn": 329,
+	"./tzm-latn.js": 329,
+	"./tzm.js": 328,
+	"./ug-cn": 330,
+	"./ug-cn.js": 330,
+	"./uk": 331,
+	"./uk.js": 331,
+	"./ur": 332,
+	"./ur.js": 332,
+	"./uz": 333,
+	"./uz-latn": 334,
+	"./uz-latn.js": 334,
+	"./uz.js": 333,
+	"./vi": 335,
+	"./vi.js": 335,
+	"./x-pseudo": 336,
+	"./x-pseudo.js": 336,
+	"./yo": 337,
+	"./yo.js": 337,
+	"./zh-cn": 338,
+	"./zh-cn.js": 338,
+	"./zh-hk": 339,
+	"./zh-hk.js": 339,
+	"./zh-tw": 340,
+	"./zh-tw.js": 340
+};
+function webpackContext(req) {
+	return __webpack_require__(webpackContextResolve(req));
+};
+function webpackContextResolve(req) {
+	var id = map[req];
+	if(!(id + 1)) // check for number or string
+		throw new Error("Cannot find module '" + req + "'.");
+	return id;
+};
+webpackContext.keys = function webpackContextKeys() {
+	return Object.keys(map);
+};
+webpackContext.resolve = webpackContextResolve;
+module.exports = webpackContext;
+webpackContext.id = 420;
 
 /***/ }),
 
-/***/ 421:
+/***/ 422:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(112);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(110);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(109);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3071,60 +4142,51 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var HomePage = HomePage_1 = (function () {
+var HomePage = /** @class */ (function () {
     function HomePage(navCtrl, navigation, platform, statusBar, splashScreen) {
         this.navCtrl = navCtrl;
         this.navigation = navigation;
         var paginaUno = { title: 'Inicio', component: HomePage_1, visible: true, icon: 'home' };
-        /*
-        var paginaDos = {title: 'Ajustes', component: AjustesPage, visible: true, icon: 'construct'};
-        var paginaTres = {title: 'Acerca de',component: AyudaPage, visible: true, icon: 'warning'};
-        var paginaCuatro = {title: 'Antecedentes', component: AntecedentesPage, visible: true, icon: 'list-box'};
-        var paginaCinco = {title: 'Calendario', component: CalendarioPage, segment:'calendario/:this.usuarioAps', visible: true, icon: 'calendar'};
-        var paginaSeis = {title: 'Familia', component: FamiliaPage, visible: true, icon: 'people'};
-        var paginaSiete = {title:'Detalle-usuario', component: DetailUsuarioPage, defaultHistory: [AntecedentesPage], visible:true, icon:'contact'};
-        var paginaOcho = {title:'Detalle-citas', component: DetailCitasPage, defaultHistory: [CalendarioPage], visible:true, icon:'create'};
-        var paginaNueve = {title:'Ordenes', component: OrdenesPage, visible:true, icon:'create'};
-        */
         this.pages = [paginaUno];
     }
+    HomePage_1 = HomePage;
     HomePage.prototype.openPage = function (pages) {
         // Reset the content nav to have just this page
         // we wouldn't want the back button to show in this scenario
         this.navCtrl.push(pages.component);
     };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Nav */]),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Nav */])
+    ], HomePage.prototype, "nav", void 0);
+    HomePage = HomePage_1 = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-home',template:/*ion-inline-start:"C:\AppImpacto\AppImpacto\AppImpacto\src\pages\home\home.html"*/'<ion-menu side="left" [content]="content" persistent="true">\n  <ion-header>\n    <ion-toolbar color="blanco">\n      <ion-title>Menu</ion-title>\n    </ion-toolbar>\n  </ion-header>\n  <ion-content>\n    <ion-col width-67>\n     <!-- <img src="{{usuarioAps.UrlImagen}}" style="max-width: 97%;"/>-->\n     <!-- <h2  text-wrap>{{usuarioAps.Nombres + \' \' + usuarioAps.ApellidoPaterno + \' \' + usuarioAps.ApellidoMaterno}}</h2>-->\n     <h2  text-wrap>nombre completo</h2>\n    </ion-col>\n    <div class="position-menu-bottom border-superior-menu-bottom">\n      <ion-row *ngFor="let p of pages" (click)="openPage(p)">\n        <ion-list ion-item style="padding: 0; margin: 0; padding-left: 10px;">\n          <button menu-toggle  style="background-color: transparent; width: 100%; text-align: left;">\n            <ion-icon name={{p.icon}} style="padding-right:5px;"></ion-icon>\n            {{p.title}}\n          </button>\n        </ion-list>\n      </ion-row>\n    </div>\n  </ion-content>\n</ion-menu>\n<ion-nav [root]="rootPage" #content swipeBackEnabled="true"></ion-nav>\n<!--Fin SideNav-->\n\n<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Ionic Blank\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  The world is your oyster.\n  <p>\n    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.\n  </p>\n</ion-content>\n'/*ion-inline-end:"C:\AppImpacto\AppImpacto\AppImpacto\src\pages\home\home.html"*/
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Nav */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* Platform */],
+            __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */],
+            __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
+    ], HomePage);
     return HomePage;
+    var HomePage_1;
 }());
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Nav */]),
-    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Nav */])
-], HomePage.prototype, "nav", void 0);
-HomePage = HomePage_1 = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-home',template:/*ion-inline-start:"W:\impacto2v\AppImpacto2V_new\src\pages\home\home.html"*/'\n\n<!--SideNav-->\n\n<ion-menu side="left" [content]="content" persistent="true">\n\n  <ion-header>\n\n    <ion-toolbar color="blanco">\n\n      <ion-title>Menu</ion-title>\n\n    </ion-toolbar>\n\n  </ion-header>\n\n  <ion-content>\n\n    <ion-col width-67>\n\n     <!-- <img src="{{usuarioAps.UrlImagen}}" style="max-width: 97%;"/>-->\n\n     <!-- <h2  text-wrap>{{usuarioAps.Nombres + \' \' + usuarioAps.ApellidoPaterno + \' \' + usuarioAps.ApellidoMaterno}}</h2>-->\n\n     <h2  text-wrap>nombre completo</h2>\n\n    </ion-col>\n\n    <div class="position-menu-bottom border-superior-menu-bottom">\n\n      <ion-row *ngFor="let p of pages" (click)="openPage(p)">\n\n        <ion-list ion-item style="padding: 0; margin: 0; padding-left: 10px;">\n\n          <button menu-toggle  style="background-color: transparent; width: 100%; text-align: left;">\n\n            <ion-icon name={{p.icon}} style="padding-right:5px;"></ion-icon>\n\n            {{p.title}}\n\n          </button>\n\n        </ion-list>\n\n      </ion-row>\n\n    </div>\n\n  </ion-content>\n\n</ion-menu>\n\n<ion-nav [root]="rootPage" #content swipeBackEnabled="true"></ion-nav>\n\n<!--Fin SideNav-->\n\n\n\n<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>\n\n      Ionic Blank\n\n    </ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  The world is your oyster.\n\n  <p>\n\n    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.\n\n  </p>\n\n</ion-content>\n\n'/*ion-inline-end:"W:\impacto2v\AppImpacto2V_new\src\pages\home\home.html"*/
-    }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Nav */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* Platform */],
-        __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */],
-        __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
-], HomePage);
 
-var HomePage_1;
 //# sourceMappingURL=home.js.map
 
 /***/ }),
 
-/***/ 422:
+/***/ 423:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SolicitudesPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login_login__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_services_AuthService__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_services_GlobalService__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_services_GlobalService__ = __webpack_require__(30);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3147,7 +4209,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var SolicitudesPage = (function () {
+var SolicitudesPage = /** @class */ (function () {
     function SolicitudesPage(app, navCtrl, navParams, loading, global, acceso) {
         this.app = app;
         this.navCtrl = navCtrl;
@@ -3156,8 +4218,57 @@ var SolicitudesPage = (function () {
         this.global = global;
         this.acceso = acceso;
         this.solicitudesArr = [];
+        this.permisos = {
+            CreaCalendario: 0,
+            CreaDocumento: 0,
+            CreaInstitucion: 0,
+            CreaMailing: 0,
+            CreaMroSolicitud: 0,
+            CreaMuro: 0,
+            CreaProyecto: 0,
+            CreaRendicion: 0,
+            CreaRol: 0,
+            CreaSolicitud: 0,
+            CreaTricel: 0,
+            CreaUsuario: 0,
+            EliminaCalendario: 0,
+            EliminaDocumento: 0,
+            EliminaInstitucion: 0,
+            EliminaMroSolicitud: 0,
+            EliminaMuro: 0,
+            EliminaProyecto: 0,
+            EliminaRendicion: 0,
+            EliminaRol: 0,
+            EliminaTricel: 0,
+            EliminaUsuario: 0,
+            ModificaCalendario: 0,
+            ModificaInstitucion: 0,
+            ModificaMroSolicitud: 0,
+            ModificaMuro: 0,
+            ModificaProyecto: 0,
+            ModificaRendicion: 0,
+            ModificaRol: 0,
+            ModificaTricel: 0,
+            ModificaUsuario: 0,
+            PuedeVotarProyecto: 0,
+            PuedeVotarTricel: 0,
+            VerCalendario: 0,
+            VerDocumento: 0,
+            VerInstitucion: 0,
+            VerMailing: 0,
+            VerMroSolicitud: 0,
+            VerMuro: 0,
+            VerProyecto: 0,
+            VerRendicion: 0,
+            VerReporteAsistencia: 0,
+            VerReportes: 0,
+            VerRol: 0,
+            VerTricel: 0,
+            VerUsuario: 0
+        };
     }
     SolicitudesPage.prototype.ionViewWillEnter = function () {
+        this.permisos = JSON.parse(sessionStorage.getItem("PERMISOS"));
         this.cargarSolicitudes();
     };
     SolicitudesPage.prototype.ionViewDidLoad = function () {
@@ -3187,35 +4298,35 @@ var SolicitudesPage = (function () {
             });
         });
     };
+    SolicitudesPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-solicitudes',template:/*ion-inline-start:"C:\AppImpacto\AppImpacto\AppImpacto\src\pages\solicitudes\solicitudes.html"*/'<!--\n\n  Generated template for the SolicitudesPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header class="mui--bg-color-red-500 fg-light">\n\n\n\n    <ion-navbar>\n\n      <ion-title>Solicitudes</ion-title>\n\n    </ion-navbar>\n\n  \n\n  </ion-header>\n\n\n\n\n\n<ion-content padding>\n\n\n\n</ion-content>\n\n<ion-fab top right right>\n\n    <button ion-fab mini (click)="logout()" class="btn-color">\n\n      <ion-icon name="close"></ion-icon>\n\n    </button>\n\n  </ion-fab>\n\n'/*ion-inline-end:"C:\AppImpacto\AppImpacto\AppImpacto\src\pages\solicitudes\solicitudes.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* App */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */],
+            __WEBPACK_IMPORTED_MODULE_4__app_services_GlobalService__["a" /* GlobalService */],
+            __WEBPACK_IMPORTED_MODULE_3__app_services_AuthService__["a" /* AuthService */]])
+    ], SolicitudesPage);
     return SolicitudesPage;
 }());
-SolicitudesPage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-solicitudes',template:/*ion-inline-start:"W:\impacto2v\AppImpacto2V_new\src\pages\solicitudes\solicitudes.html"*/'<!--\n\n  Generated template for the SolicitudesPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header class="mui--bg-color-red-500 fg-light">\n\n\n\n    <ion-navbar>\n\n      <ion-title>Solicitudes</ion-title>\n\n    </ion-navbar>\n\n  \n\n  </ion-header>\n\n\n\n\n\n<ion-content padding>\n\n\n\n</ion-content>\n\n<ion-fab top right right>\n\n    <button ion-fab mini (click)="logout()" class="btn-color">\n\n      <ion-icon name="close"></ion-icon>\n\n    </button>\n\n  </ion-fab>\n\n'/*ion-inline-end:"W:\impacto2v\AppImpacto2V_new\src\pages\solicitudes\solicitudes.html"*/,
-    }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* App */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */],
-        __WEBPACK_IMPORTED_MODULE_4__app_services_GlobalService__["a" /* GlobalService */],
-        __WEBPACK_IMPORTED_MODULE_3__app_services_AuthService__["a" /* AuthService */]])
-], SolicitudesPage);
 
 //# sourceMappingURL=solicitudes.js.map
 
 /***/ }),
 
-/***/ 423:
+/***/ 424:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return InicioPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login_login__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__cliente_cliente__ = __webpack_require__(113);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_services_AuthService__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_services_InicioService__ = __webpack_require__(60);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_services_InicioService__ = __webpack_require__(48);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3237,7 +4348,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var InicioPage = (function () {
+var InicioPage = /** @class */ (function () {
     function InicioPage(navCtrl, navParams, loading, acceso, ini) {
         var _this = this;
         this.navCtrl = navCtrl;
@@ -3245,6 +4356,54 @@ var InicioPage = (function () {
         this.loading = loading;
         this.acceso = acceso;
         this.ini = ini;
+        this.permisos = {
+            CreaCalendario: 0,
+            CreaDocumento: 0,
+            CreaInstitucion: 0,
+            CreaMailing: 0,
+            CreaMroSolicitud: 0,
+            CreaMuro: 0,
+            CreaProyecto: 0,
+            CreaRendicion: 0,
+            CreaRol: 0,
+            CreaSolicitud: 0,
+            CreaTricel: 0,
+            CreaUsuario: 0,
+            EliminaCalendario: 0,
+            EliminaDocumento: 0,
+            EliminaInstitucion: 0,
+            EliminaMroSolicitud: 0,
+            EliminaMuro: 0,
+            EliminaProyecto: 0,
+            EliminaRendicion: 0,
+            EliminaRol: 0,
+            EliminaTricel: 0,
+            EliminaUsuario: 0,
+            ModificaCalendario: 0,
+            ModificaInstitucion: 0,
+            ModificaMroSolicitud: 0,
+            ModificaMuro: 0,
+            ModificaProyecto: 0,
+            ModificaRendicion: 0,
+            ModificaRol: 0,
+            ModificaTricel: 0,
+            ModificaUsuario: 0,
+            PuedeVotarProyecto: 0,
+            PuedeVotarTricel: 0,
+            VerCalendario: 0,
+            VerDocumento: 0,
+            VerInstitucion: 0,
+            VerMailing: 0,
+            VerMroSolicitud: 0,
+            VerMuro: 0,
+            VerProyecto: 0,
+            VerRendicion: 0,
+            VerReporteAsistencia: 0,
+            VerReportes: 0,
+            VerRol: 0,
+            VerTricel: 0,
+            VerUsuario: 0
+        };
         //seteamos las variables
         this.dataGeneral = [];
         this.eventos = [];
@@ -3385,6 +4544,7 @@ var InicioPage = (function () {
         });
     }
     InicioPage.prototype.ionViewDidLoad = function () {
+        this.permisos = JSON.parse(sessionStorage.getItem("PERMISOS"));
         console.log('ionViewDidLoad InicioPage');
     };
     //logout
@@ -3416,25 +4576,32 @@ var InicioPage = (function () {
                 break;
         }
     };
+    InicioPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-inicio',template:/*ion-inline-start:"C:\AppImpacto\AppImpacto\AppImpacto\src\pages\inicio\inicio.html"*/'<!--\n\n  Generated template for the InicioPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header class="mui--bg-color-red-500 fg-light">\n\n  <ion-navbar>\n\n    <ion-title>Inicio</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n<div *ngFor="let item of tarjetas">\n\n  <ion-card>\n\n    <ion-card-content>\n\n      <ion-card-title>\n\n        {{item.Titulo}}\n\n        <ion-icon name="{{item.IconoGeneral}}" style="float: right;"></ion-icon>\n\n        </ion-card-title>\n\n      <p>\n\n        {{item.Texto}}\n\n      </p>\n\n    </ion-card-content>\n\n      <ion-row>\n\n    <ion-col>\n\n      <button ion-button icon-left clear (click)="openPage(item)" style="float:right;">\n\n        <ion-icon name="{{item.IconoBoton}}"></ion-icon>\n\n        <div>Ir...</div>\n\n      </button>\n\n    </ion-col>\n\n\n\n  </ion-row>\n\n  </ion-card>\n\n</div>\n\n</ion-content>\n\n<ion-fab top right right>\n\n  <button ion-fab mini (click)="logout()" class="btn-color">\n\n    <ion-icon name="close"></ion-icon>\n\n  </button>\n\n</ion-fab>\n\n'/*ion-inline-end:"C:\AppImpacto\AppImpacto\AppImpacto\src\pages\inicio\inicio.html"*/,
+            providers: [__WEBPACK_IMPORTED_MODULE_4__app_services_AuthService__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_5__app_services_InicioService__["a" /* InicioService */]]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */],
+            __WEBPACK_IMPORTED_MODULE_4__app_services_AuthService__["a" /* AuthService */],
+            __WEBPACK_IMPORTED_MODULE_5__app_services_InicioService__["a" /* InicioService */]])
+    ], InicioPage);
     return InicioPage;
 }());
-InicioPage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-inicio',template:/*ion-inline-start:"W:\impacto2v\AppImpacto2V_new\src\pages\inicio\inicio.html"*/'<!--\n\n  Generated template for the InicioPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header class="mui--bg-color-red-500 fg-light">\n\n  <ion-navbar>\n\n    <ion-title>Inicio</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n<div *ngFor="let item of tarjetas">\n\n  <ion-card>\n\n    <ion-card-content>\n\n      <ion-card-title>\n\n        {{item.Titulo}}\n\n        <ion-icon name="{{item.IconoGeneral}}" style="float: right;"></ion-icon>\n\n        </ion-card-title>\n\n      <p>\n\n        {{item.Texto}}\n\n      </p>\n\n    </ion-card-content>\n\n      <ion-row>\n\n    <ion-col>\n\n      <button ion-button icon-left clear (click)="openPage(item)" style="float:right;">\n\n        <ion-icon name="{{item.IconoBoton}}"></ion-icon>\n\n        <div>Ir...</div>\n\n      </button>\n\n    </ion-col>\n\n\n\n  </ion-row>\n\n  </ion-card>\n\n</div>\n\n</ion-content>\n\n<ion-fab top right right>\n\n  <button ion-fab mini (click)="logout()" class="btn-color">\n\n    <ion-icon name="close"></ion-icon>\n\n  </button>\n\n</ion-fab>\n\n'/*ion-inline-end:"W:\impacto2v\AppImpacto2V_new\src\pages\inicio\inicio.html"*/,
-        providers: [__WEBPACK_IMPORTED_MODULE_4__app_services_AuthService__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_5__app_services_InicioService__["a" /* InicioService */]]
-    }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */],
-        __WEBPACK_IMPORTED_MODULE_4__app_services_AuthService__["a" /* AuthService */],
-        __WEBPACK_IMPORTED_MODULE_5__app_services_InicioService__["a" /* InicioService */]])
-], InicioPage);
 
 //# sourceMappingURL=inicio.js.map
 
 /***/ }),
 
-/***/ 424:
+/***/ 429:
+/***/ (function(module, exports) {
+
+/* (ignored) */
+
+/***/ }),
+
+/***/ 436:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3450,303 +4617,32 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 
 
-var MomentPipe = (function () {
+var MomentPipe = /** @class */ (function () {
     function MomentPipe() {
     }
     MomentPipe.prototype.transform = function (value, dateFormat) {
         __WEBPACK_IMPORTED_MODULE_1_moment__["locale"]('es');
         return __WEBPACK_IMPORTED_MODULE_1_moment__(value).format(dateFormat);
     };
+    MomentPipe = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["S" /* Pipe */])({ name: 'dateFormat' })
+    ], MomentPipe);
     return MomentPipe;
 }());
-MomentPipe = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["W" /* Pipe */])({ name: 'dateFormat' })
-], MomentPipe);
 
 //# sourceMappingURL=MomentPipe.js.map
 
 /***/ }),
 
-/***/ 426:
-/***/ (function(module, exports, __webpack_require__) {
-
-var map = {
-	"./af": 216,
-	"./af.js": 216,
-	"./ar": 217,
-	"./ar-dz": 218,
-	"./ar-dz.js": 218,
-	"./ar-kw": 219,
-	"./ar-kw.js": 219,
-	"./ar-ly": 220,
-	"./ar-ly.js": 220,
-	"./ar-ma": 221,
-	"./ar-ma.js": 221,
-	"./ar-sa": 222,
-	"./ar-sa.js": 222,
-	"./ar-tn": 223,
-	"./ar-tn.js": 223,
-	"./ar.js": 217,
-	"./az": 224,
-	"./az.js": 224,
-	"./be": 225,
-	"./be.js": 225,
-	"./bg": 226,
-	"./bg.js": 226,
-	"./bm": 227,
-	"./bm.js": 227,
-	"./bn": 228,
-	"./bn.js": 228,
-	"./bo": 229,
-	"./bo.js": 229,
-	"./br": 230,
-	"./br.js": 230,
-	"./bs": 231,
-	"./bs.js": 231,
-	"./ca": 232,
-	"./ca.js": 232,
-	"./cs": 233,
-	"./cs.js": 233,
-	"./cv": 234,
-	"./cv.js": 234,
-	"./cy": 235,
-	"./cy.js": 235,
-	"./da": 236,
-	"./da.js": 236,
-	"./de": 237,
-	"./de-at": 238,
-	"./de-at.js": 238,
-	"./de-ch": 239,
-	"./de-ch.js": 239,
-	"./de.js": 237,
-	"./dv": 240,
-	"./dv.js": 240,
-	"./el": 241,
-	"./el.js": 241,
-	"./en-au": 242,
-	"./en-au.js": 242,
-	"./en-ca": 243,
-	"./en-ca.js": 243,
-	"./en-gb": 244,
-	"./en-gb.js": 244,
-	"./en-ie": 245,
-	"./en-ie.js": 245,
-	"./en-il": 246,
-	"./en-il.js": 246,
-	"./en-nz": 247,
-	"./en-nz.js": 247,
-	"./eo": 248,
-	"./eo.js": 248,
-	"./es": 249,
-	"./es-do": 250,
-	"./es-do.js": 250,
-	"./es-us": 251,
-	"./es-us.js": 251,
-	"./es.js": 249,
-	"./et": 252,
-	"./et.js": 252,
-	"./eu": 253,
-	"./eu.js": 253,
-	"./fa": 254,
-	"./fa.js": 254,
-	"./fi": 255,
-	"./fi.js": 255,
-	"./fo": 256,
-	"./fo.js": 256,
-	"./fr": 257,
-	"./fr-ca": 258,
-	"./fr-ca.js": 258,
-	"./fr-ch": 259,
-	"./fr-ch.js": 259,
-	"./fr.js": 257,
-	"./fy": 260,
-	"./fy.js": 260,
-	"./gd": 261,
-	"./gd.js": 261,
-	"./gl": 262,
-	"./gl.js": 262,
-	"./gom-latn": 263,
-	"./gom-latn.js": 263,
-	"./gu": 264,
-	"./gu.js": 264,
-	"./he": 265,
-	"./he.js": 265,
-	"./hi": 266,
-	"./hi.js": 266,
-	"./hr": 267,
-	"./hr.js": 267,
-	"./hu": 268,
-	"./hu.js": 268,
-	"./hy-am": 269,
-	"./hy-am.js": 269,
-	"./id": 270,
-	"./id.js": 270,
-	"./is": 271,
-	"./is.js": 271,
-	"./it": 272,
-	"./it.js": 272,
-	"./ja": 273,
-	"./ja.js": 273,
-	"./jv": 274,
-	"./jv.js": 274,
-	"./ka": 275,
-	"./ka.js": 275,
-	"./kk": 276,
-	"./kk.js": 276,
-	"./km": 277,
-	"./km.js": 277,
-	"./kn": 278,
-	"./kn.js": 278,
-	"./ko": 279,
-	"./ko.js": 279,
-	"./ku": 280,
-	"./ku.js": 280,
-	"./ky": 281,
-	"./ky.js": 281,
-	"./lb": 282,
-	"./lb.js": 282,
-	"./lo": 283,
-	"./lo.js": 283,
-	"./lt": 284,
-	"./lt.js": 284,
-	"./lv": 285,
-	"./lv.js": 285,
-	"./me": 286,
-	"./me.js": 286,
-	"./mi": 287,
-	"./mi.js": 287,
-	"./mk": 288,
-	"./mk.js": 288,
-	"./ml": 289,
-	"./ml.js": 289,
-	"./mn": 290,
-	"./mn.js": 290,
-	"./mr": 291,
-	"./mr.js": 291,
-	"./ms": 292,
-	"./ms-my": 293,
-	"./ms-my.js": 293,
-	"./ms.js": 292,
-	"./mt": 294,
-	"./mt.js": 294,
-	"./my": 295,
-	"./my.js": 295,
-	"./nb": 296,
-	"./nb.js": 296,
-	"./ne": 297,
-	"./ne.js": 297,
-	"./nl": 298,
-	"./nl-be": 299,
-	"./nl-be.js": 299,
-	"./nl.js": 298,
-	"./nn": 300,
-	"./nn.js": 300,
-	"./pa-in": 301,
-	"./pa-in.js": 301,
-	"./pl": 302,
-	"./pl.js": 302,
-	"./pt": 303,
-	"./pt-br": 304,
-	"./pt-br.js": 304,
-	"./pt.js": 303,
-	"./ro": 305,
-	"./ro.js": 305,
-	"./ru": 306,
-	"./ru.js": 306,
-	"./sd": 307,
-	"./sd.js": 307,
-	"./se": 308,
-	"./se.js": 308,
-	"./si": 309,
-	"./si.js": 309,
-	"./sk": 310,
-	"./sk.js": 310,
-	"./sl": 311,
-	"./sl.js": 311,
-	"./sq": 312,
-	"./sq.js": 312,
-	"./sr": 313,
-	"./sr-cyrl": 314,
-	"./sr-cyrl.js": 314,
-	"./sr.js": 313,
-	"./ss": 315,
-	"./ss.js": 315,
-	"./sv": 316,
-	"./sv.js": 316,
-	"./sw": 317,
-	"./sw.js": 317,
-	"./ta": 318,
-	"./ta.js": 318,
-	"./te": 319,
-	"./te.js": 319,
-	"./tet": 320,
-	"./tet.js": 320,
-	"./tg": 321,
-	"./tg.js": 321,
-	"./th": 322,
-	"./th.js": 322,
-	"./tl-ph": 323,
-	"./tl-ph.js": 323,
-	"./tlh": 324,
-	"./tlh.js": 324,
-	"./tr": 325,
-	"./tr.js": 325,
-	"./tzl": 326,
-	"./tzl.js": 326,
-	"./tzm": 327,
-	"./tzm-latn": 328,
-	"./tzm-latn.js": 328,
-	"./tzm.js": 327,
-	"./ug-cn": 329,
-	"./ug-cn.js": 329,
-	"./uk": 330,
-	"./uk.js": 330,
-	"./ur": 331,
-	"./ur.js": 331,
-	"./uz": 332,
-	"./uz-latn": 333,
-	"./uz-latn.js": 333,
-	"./uz.js": 332,
-	"./vi": 334,
-	"./vi.js": 334,
-	"./x-pseudo": 335,
-	"./x-pseudo.js": 335,
-	"./yo": 336,
-	"./yo.js": 336,
-	"./zh-cn": 337,
-	"./zh-cn.js": 337,
-	"./zh-hk": 338,
-	"./zh-hk.js": 338,
-	"./zh-tw": 339,
-	"./zh-tw.js": 339
-};
-function webpackContext(req) {
-	return __webpack_require__(webpackContextResolve(req));
-};
-function webpackContextResolve(req) {
-	var id = map[req];
-	if(!(id + 1)) // check for number or string
-		throw new Error("Cannot find module '" + req + "'.");
-	return id;
-};
-webpackContext.keys = function webpackContextKeys() {
-	return Object.keys(map);
-};
-webpackContext.resolve = webpackContextResolve;
-module.exports = webpackContext;
-webpackContext.id = 426;
-
-/***/ }),
-
-/***/ 59:
+/***/ 47:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NovedadService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(46);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__AppSettings__ = __webpack_require__(38);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__(58);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__AppSettings__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__(59);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -3761,7 +4657,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var NovedadService = (function () {
+var NovedadService = /** @class */ (function () {
     function NovedadService(http) {
         this.http = http;
         this.headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]({ 'Content-Type': 'application/json',
@@ -3835,26 +4731,26 @@ var NovedadService = (function () {
         var data = this.http.delete(url, { params: { Id: id.toString(), EsCpas: false } });
         return data;
     };
+    NovedadService = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]])
+    ], NovedadService);
     return NovedadService;
 }());
-NovedadService = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]])
-], NovedadService);
 
 //# sourceMappingURL=novedadService.js.map
 
 /***/ }),
 
-/***/ 60:
+/***/ 48:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return InicioService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(46);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__AppSettings__ = __webpack_require__(38);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__(58);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__AppSettings__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__(59);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -3869,7 +4765,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var InicioService = (function () {
+var InicioService = /** @class */ (function () {
     function InicioService(http) {
         this.http = http;
     }
@@ -3889,16 +4785,16 @@ var InicioService = (function () {
         });
         return data;
     };
+    InicioService = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]])
+    ], InicioService);
     return InicioService;
 }());
-InicioService = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]])
-], InicioService);
 
 //# sourceMappingURL=InicioService.js.map
 
 /***/ })
 
-},[340]);
+},[344]);
 //# sourceMappingURL=main.js.map

@@ -7,11 +7,11 @@ import {InicioPage} from "../inicio/inicio";
 import {ClientePage} from "../cliente/cliente";
 
 
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
+//import {MatFormFieldModule} from '@angular/material/form-field';
+//import {MatInputModule} from '@angular/material/input';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
-import {MatIconModule} from '@angular/material/icon';
+//import {MatIconModule} from '@angular/material/icon';
 
 
 /**

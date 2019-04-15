@@ -78,4 +78,19 @@ export class GlobalService{
     return data;
   }
 
+  sendRendicion(File, rendicion){
+    let model = new FormData();
+    model.append("UploadedImage", File);
+    model.append("rendicion", JSON.stringify(rendicion));
+
+
+    let url = AppSettings.API_ENDPOINT + 'File';
+
+    let data = this.http.post(url, model, {
+      headers: new Headers({})
+    });
+    return data;
+
+  }
+
 }

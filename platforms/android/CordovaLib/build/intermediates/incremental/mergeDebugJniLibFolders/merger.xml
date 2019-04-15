@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="W:\impacto2v\AppImpacto2V_new\platforms\android\CordovaLib\src\main\jniLibs"/></dataSet><dataSet config="debug"><source path="W:\impacto2v\AppImpacto2V_new\platforms\android\CordovaLib\src\debug\jniLibs"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="C:\AppImpacto\AppImpacto\AppImpacto\platforms\android\CordovaLib\src\main\jniLibs"/></dataSet><dataSet config="debug"><source path="C:\AppImpacto\AppImpacto\AppImpacto\platforms\android\CordovaLib\src\debug\jniLibs"/></dataSet></merger>

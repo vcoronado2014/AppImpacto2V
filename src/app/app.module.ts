@@ -4,8 +4,6 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { HttpModule } from '@angular/http';
-//agregado ahora para ver el album de fotos en las novedades
-import { PhotoViewer } from '@ionic-native/photo-viewer';
 //directivas
 import { TextAvatarDirective } from '../directives/text-avatar/text-avatar';
 
@@ -27,15 +25,14 @@ import { CalendarioPage } from '../pages/calendario/calendario';
 import { ProyectosPage } from '../pages/proyectos/proyectos';
 import { CrearRendicionPage } from '../pages/crear-rendicion/crear-rendicion';
 
+//servicios
 import { AuthService } from '../app/services/AuthService';
 import { GlobalService } from '../app/services/GlobalService';
-//import { NgxChartsModule } from '@swimlane/ngx-charts';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+//import { CalendarComponent } from 'ap-angular2-fullcalendar/src/calendar/calendar';
 import { NgCalendarModule } from 'ionic2-calendar';
 //pipes
 import { MomentPipe } from '../pipes/MomentPipe';
-
-
+import { LOCALE_ID } from '@angular/core';
 
 @NgModule({
   declarations: [
@@ -90,9 +87,8 @@ import { MomentPipe } from '../pipes/MomentPipe';
     SplashScreen,
     AuthService,
     GlobalService,
-    PhotoViewer,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
-    
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    {provide: LOCALE_ID, useValue: 'es-CL' }
   ]
 })
 export class AppModule {}

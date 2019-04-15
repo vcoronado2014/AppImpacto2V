@@ -1,19 +1,25 @@
-import { Component, ViewChild } from '@angular/core';
-import { NavController, NavParams, LoadingController, App } from 'ionic-angular';
-//pages
+import { Component } from '@angular/core';
+import { NavController, NavParams, LoadingController, ModalController, ToastController, ActionSheetController, ViewController, App } from 'ionic-angular';
+//import { } from 'ionic-nati'
+
 import { LoginPage } from '../login/login';
-import { NovedadesPage } from '../novedades/novedades';
-//servicios
+import { DetailNovedadPage } from '../detail-novedad/detail-novedad';
+import { VisorImagenPage } from '../visor-imagen/visor-imagen';
+import { CrearNovedadPage } from '../crear-novedad/crear-novedad';
+import { EditarNovedadPage } from '../editar-novedad/editar-novedad';
+
 import { AuthService } from '../../app/services/AuthService';
+import { InicioService } from '../../app/services/InicioService';
+import { NovedadService } from '../../app/services/novedadService';
 import { GlobalService } from '../../app/services/GlobalService';
-//prueba
-//import { Chart } from '../../node_modules/chart.js';
-import { Chart } from 'chart.js';
-import { InAppBrowser } from '@ionic-native/in-app-browser';
 import {AppSettings } from '../../app/AppSettings';
-import { NgCalendarModule  } from 'ionic2-calendar';
-//moment
-import moment from 'moment';
+import { NgCalendarModule } from 'ionic2-calendar';
+import { LOCALE_ID } from '@angular/core';
+import { registerLocaleData } from '@angular/common';
+import localeFr from '@angular/common/locales/es-CL';
+
+registerLocaleData(localeFr);
+
 
 /**
  * Generated class for the CalendarioPage page.
@@ -25,15 +31,71 @@ import moment from 'moment';
 @Component({
   selector: 'page-calendario',
   templateUrl: 'calendario.html',
+  providers: [AuthService, InicioService, NovedadService, GlobalService,
+    {provide: LOCALE_ID, useValue: 'es-CL' }]
 })
 export class CalendarioPage {
+  //registerLocaleData(localeFr);
+  permisos = {
+    CreaCalendario: 0,
+    CreaDocumento: 0,
+    CreaInstitucion: 0,
+    CreaMailing: 0,
+    CreaMroSolicitud: 0,
+    CreaMuro: 0,
+    CreaProyecto: 0,
+    CreaRendicion: 0,
+    CreaRol: 0,
+    CreaSolicitud: 0,
+    CreaTricel: 0,
+    CreaUsuario: 0,
+    EliminaCalendario: 0,
+    EliminaDocumento: 0,
+    EliminaInstitucion: 0,
+    EliminaMroSolicitud: 0,
+    EliminaMuro: 0,
+    EliminaProyecto: 0,
+    EliminaRendicion: 0,
+    EliminaRol: 0,
+    EliminaTricel: 0,
+    EliminaUsuario: 0,
+    ModificaCalendario: 0,
+    ModificaInstitucion: 0,
+    ModificaMroSolicitud: 0,
+    ModificaMuro: 0,
+    ModificaProyecto: 0,
+    ModificaRendicion: 0,
+    ModificaRol: 0,
+    ModificaTricel: 0,
+    ModificaUsuario: 0,
+    PuedeVotarProyecto: 0,
+    PuedeVotarTricel: 0,
+    VerCalendario: 0,
+    VerDocumento: 0,
+    VerInstitucion: 0,
+    VerMailing: 0,
+    VerMroSolicitud: 0,
+    VerMuro: 0,
+    VerProyecto: 0,
+    VerRendicion: 0,
+    VerReporteAsistencia: 0,
+    VerReportes: 0,
+    VerRol: 0,
+    VerTricel: 0,
+    VerUsuario: 0
+  }
   eventSource;
   viewTitle;
   isToday: boolean;
   calendar = {
       mode: 'month',
-      locale: 'es-ES',
-      currentDate: new Date()
+      locale: 'es-CL',
+      dateFormatter: {
+        formatMonthViewDay: function(date:Date) {
+            return date.getDate().toString();
+        }            
+    },
+    currentDate: new Date()
   }; // these are the variable used by the calendar.
   loadEvents() {
       this.eventSource = this.createRandomEvents();
@@ -97,7 +159,8 @@ export class CalendarioPage {
       return events;
   }
   createEvents(){
-      this.eventSource = [];
+    //registerLocaleData(localeFr);
+    this.eventSource = [];
     var instId = sessionStorage.getItem("INST_ID");
     var tipo = '1';
     //var events = [];
@@ -155,27 +218,24 @@ export class CalendarioPage {
   };
 
   constructor(
-    private app: App,
     public navCtrl: NavController,
     public navParams: NavParams,
     public loading: LoadingController,
-    public global: GlobalService,
+    private app: App,
     public acceso: AuthService,
-    public cal: NgCalendarModule
+    public modalCtrl: ModalController,
+    public ini: InicioService,
+    public nov: NovedadService,
+    public global: GlobalService,
+    private viewCtrl: ViewController,
+    public toastCtrl: ToastController,
+    public actionSheetCtrl: ActionSheetController
   ) {
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad CalendarioPage');
-  }
-  logout(){
-    this.acceso.logout();
-    //esto lo comentamos
-    //this.navCtrl.setRoot(LoginPage);
-    this.app.getRootNav().setRoot(LoginPage);
 
   }
+  
   ionViewWillEnter() {
+    this.permisos = JSON.parse(sessionStorage.getItem("PERMISOS"));
     this.createEvents();
     //this.openUrl();
   }
@@ -187,6 +247,14 @@ export class CalendarioPage {
       this.today();
       refresher.complete();
     }, 2000);
+  }
+
+  logout(){
+    this.acceso.logout();
+    //esto lo comentamos
+    //this.navCtrl.setRoot(LoginPage);
+    this.app.getRootNav().setRoot(LoginPage);
+
   }
 
 }

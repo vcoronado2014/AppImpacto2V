@@ -17,11 +17,12 @@
     <button ion-button full class="bg-red-200 fg-white" (click)="closeModal()">Cerrar</button>
     <ion-list>
         <ion-item>
-          Fecha automatica a guardar
+            <ion-label floating>Fecha</ion-label>
+            <ion-input type="text" [(ngModel)]="frmFecha" [disabled]="true"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label floating>Detalle</ion-label>
-          <ion-input type="text" [(ngModel)]="frmDetalle"></ion-input>
+          <ion-label floating>Detalle (*)</ion-label>
+          <ion-input type="text" [(ngModel)]="frmDetalle" required></ion-input>
         </ion-item>
       
         <ion-item>
@@ -33,17 +34,32 @@
         </ion-item>
 
         <ion-item>
-          <ion-label floating>Número Comprobante</ion-label>
-          <ion-input type="text" [(ngModel)]="frmNumeroComprobante"></ion-input>
+          <ion-label floating>Número Comprobante (*)</ion-label>
+          <ion-input type="text" required [(ngModel)]="frmNumeroComprobante"></ion-input>
         </ion-item>
 
         <ion-item>
-          <ion-label floating>Monto</ion-label>
-          <ion-input type="number" [(ngModel)]="frmMonto"></ion-input>
+          <ion-label floating>Monto (*)</ion-label>
+          <ion-input type="number" required [(ngModel)]="frmMonto"></ion-input>
         </ion-item>
 
+        
+          <ion-label *ngIf="urlDescarga != '#'" text-center style="font-style: italic;">{{nombreDocumento}}</ion-label>
+          <button ion-button full clear (click)="openUrl()" color="secondary" *ngIf="urlDescarga != '#'">
+            <ion-icon name="cloud-download"></ion-icon>&nbsp;Descargar
+          </button>
+        
+
+
         <ion-item>
-          Selección archivo
+          <ion-row>
+            <ion-col col-12>
+              <ion-icon name="document"></ion-icon> Archivo:
+            </ion-col>
+            <ion-col col-12>
+              <input type="file" accept="image/*" (change)="changeListener($event)" #fileInput>
+            </ion-col>
+          </ion-row>
         </ion-item>
       
       </ion-list>
@@ -60,5 +76,6 @@
       </ion-card-content>
     </ion-card>
   -->
+  <button ion-button full class="bg-red-300 fg-white" (click)="enviarRendicion()">Guardar</button>
 
 </ion-content>

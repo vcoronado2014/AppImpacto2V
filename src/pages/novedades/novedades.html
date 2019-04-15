@@ -23,7 +23,7 @@
           Deslize hacia abajo para actualizar
       </ion-label>
 
-  <button ion-button full icon-right color="light" (click)="presentModalCrearNovedad(null)">
+  <button ion-button full icon-right color="light" (click)="presentModalCrearNovedad(null)"  *ngIf="permisos.CreaMuro == 1">
   Nueva Novedad
     <ion-icon name="chatbubbles"></ion-icon>
   </button>

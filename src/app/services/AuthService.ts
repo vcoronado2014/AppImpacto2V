@@ -51,6 +51,7 @@ export class AuthService{
             sessionStorage.setItem('COM_NOMBRE', retorno.Comuna.Nombre);
             sessionStorage.setItem('ROL_NOMBRE_INSTITUCION', retorno.RolInstitucion.Nombre);
             sessionStorage.setItem('ROL_ID_INSTITUCION', retorno.RolInstitucion.IdOriginal);
+            sessionStorage.setItem('PERMISOS', JSON.stringify(retorno.PermisoRol));
 
             this.username = userInfo.usuario;
             this.loggedIn = true;
