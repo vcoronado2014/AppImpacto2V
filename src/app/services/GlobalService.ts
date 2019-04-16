@@ -103,4 +103,21 @@ export class GlobalService{
     return data;
   }
 
+  sendDocumento(File, usuId, instId, descripcion){
+    let model = new FormData();
+    model.append("UploadedImage", File);
+    model.append("UsuId", usuId);
+    model.append("InstId", instId);
+    model.append("Descripcion", descripcion);
+
+
+    let url = AppSettings.API_ENDPOINT + 'FileNuevo';
+
+    let data = this.http.post(url, model, {
+      headers: new Headers({})
+    });
+    return data;
+
+  }
+
 }

@@ -1,8 +1,9 @@
 import { Component, ViewChild } from '@angular/core';
-import { NavController, NavParams, LoadingController, App } from 'ionic-angular';
+import { NavController, NavParams, LoadingController, App, ModalController } from 'ionic-angular';
 //pages
 import { LoginPage } from '../login/login';
 import { NovedadesPage } from '../novedades/novedades';
+import { CrearDocumentoPage } from '../crear-documento/crear-documento';
 //servicios
 import { AuthService } from '../../app/services/AuthService';
 import { GlobalService } from '../../app/services/GlobalService';
@@ -81,6 +82,7 @@ export class DocumentosPage {
     public navParams: NavParams,
     public loading: LoadingController,
     public global: GlobalService,
+    public modalCtrl: ModalController,
     public acceso: AuthService) {
   }
   ionViewWillEnter() {
@@ -148,5 +150,18 @@ export class DocumentosPage {
       refresher.complete();
     }, 2000);
   }
+
+    //abrir la pagina de creaciòn de rendicion
+    presentModal(item) {
+
+      let modal = this.modalCtrl.create(CrearDocumentoPage, { documento: item });
+      modal.onDidDismiss(data => {
+        // Data is your data from the modal
+        if (data != undefined){
+          this.cargar();
+        }
+      });
+      modal.present();
+    }
 
 }

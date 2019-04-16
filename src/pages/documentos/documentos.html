@@ -57,14 +57,18 @@
                 </ion-col>
               </ion-row>
           </ion-item>
+          <ion-item-options side="right">
+              <button ion-button color="primary" (click)="presentModal(clie)" *ngIf="permisos.CreaDocumento == '1'">
+                <ion-icon name="create"></ion-icon>
+                Editar
+              </button>
+            </ion-item-options>
         </ion-item-sliding>
       </ion-list>    
 
 </ion-content>
-<!--
-<ion-fab top right right>
-  <button ion-fab mini (click)="logout()" class="btn-color">
-    <ion-icon name="close"></ion-icon>
+<ion-fab bottom right *ngIf="permisos.CreaDocumento == 1" style ="bottom: 10%;">
+  <button ion-fab  (click)="presentModal(null)" class="mui--bg-color-red-500 fg-light">
+    <ion-icon name="add"></ion-icon>
   </button>
 </ion-fab>
--->
