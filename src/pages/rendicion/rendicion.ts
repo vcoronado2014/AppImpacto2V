@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { NavController, NavParams, LoadingController, App, ModalController } from 'ionic-angular';
+import { NavController, NavParams, LoadingController, App, ModalController, ActionSheetController } from 'ionic-angular';
 //pages
 import { LoginPage } from '../login/login';
 import { NovedadesPage } from '../novedades/novedades';
@@ -11,6 +11,7 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
 //prueba
 //import { Chart } from '../../node_modules/chart.js';
 import { Chart } from 'chart.js';
+import { AppSettings } from '../../app/AppSettings';
 
 /**
  * Generated class for the SolicitudesPage page.
@@ -92,7 +93,8 @@ permisos = {
     public loading: LoadingController,
     public global: GlobalService,
     public modalCtrl: ModalController,
-    public acceso: AuthService
+    public acceso: AuthService,
+    public actionSheetCtrl: ActionSheetController
   ) {
 
 
@@ -264,6 +266,7 @@ permisos = {
             //hay que transformar la fecha ya que viene en un formato inválido
             //m-dd-yyyy
             rendicion.NombreUsuario = this.transformarFecha(rendicion.NombreUsuario);
+            rendicion.Rol = AppSettings.URL_FOTOS + rendicion.UrlDocumento;
             this.rendicionesArr.push(rendicion);
 
           });
@@ -298,6 +301,61 @@ permisos = {
   openUrl(url){
     let browser = new InAppBrowser();
     browser.create(url, '_blank');
+  }
+
+  delete(item){
+    if (item){
+
+      let loader = this.loading.create({
+        content: 'eliminando...',
+      });
+
+      loader.present().then(() => {
+        var id = item.Id;
+        this.global.deleteRendicion(id).subscribe(
+          data => {
+            //actualizar el contenido
+            var ret = data.json();
+            //por mientras
+            this.cargar();
+          },
+          err => {
+            console.error(err);
+            loader.dismiss();
+          },
+          () => {
+            console.log('delete completed');
+            //terminamos;
+            loader.dismiss();
+          }
+        );
+
+      });
+
+    }
+  }  
+  presentActionSheet(item) {
+    let actionSheet = this.actionSheetCtrl.create({
+      title: '¿Está seguro de eliminar?',
+      buttons: [
+        {
+          text: 'Eliminar',
+          role: 'destructive',
+          handler: () => {
+            //console.log('Destructive clicked');
+            this.delete(item);
+          }
+        },{
+          text: 'Cancelar',
+          role: 'cancel',
+          handler: () => {
+            //console.log('Cancel clicked');
+
+          }
+        }
+      ]
+    });
+    actionSheet.present();
   }
 
 }

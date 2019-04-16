@@ -28,6 +28,7 @@ import { CrearDocumentoPage } from '../pages/crear-documento/crear-documento';
 //nueva
 import { TabTricelPage } from '../pages/tab-tricel/tab-tricel';
 import { TircelPage } from '../pages/tircel/tircel';
+import { CrearEventoPage } from '../pages/crear-evento/crear-evento';
 
 //servicios
 import { AuthService } from '../app/services/AuthService';
@@ -60,6 +61,7 @@ import { LOCALE_ID } from '@angular/core';
     TabTricelPage,
     TircelPage,
     CrearDocumentoPage,
+    CrearEventoPage,
     MomentPipe,
     TextAvatarDirective
   ],
@@ -89,6 +91,7 @@ import { LOCALE_ID } from '@angular/core';
     CrearRendicionPage,
     TabTricelPage,
     CrearDocumentoPage,
+    CrearEventoPage,
     TircelPage,
     InicioPage
   ],

@@ -7,6 +7,7 @@ import { DetailNovedadPage } from '../detail-novedad/detail-novedad';
 import { VisorImagenPage } from '../visor-imagen/visor-imagen';
 import { CrearNovedadPage } from '../crear-novedad/crear-novedad';
 import { EditarNovedadPage } from '../editar-novedad/editar-novedad';
+import { CrearEventoPage } from '../crear-evento/crear-evento';
 
 import { AuthService } from '../../app/services/AuthService';
 import { InicioService } from '../../app/services/InicioService';
@@ -255,6 +256,18 @@ export class CalendarioPage {
     //this.navCtrl.setRoot(LoginPage);
     this.app.getRootNav().setRoot(LoginPage);
 
+  }
+  presentModal(item) {
+
+    let modal = this.modalCtrl.create(CrearEventoPage, { evento: item });
+    modal.onDidDismiss(data => {
+      // Data is your data from the modal
+      if (data != undefined){
+        this.createEvents();
+        this.today();
+      }
+    });
+    modal.present();
   }
 
 }

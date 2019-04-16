@@ -71,7 +71,7 @@
                 </ion-note>
               </ion-col>
               <!-- archivo a descargar -->
-              <ion-col center text-center *ngIf="clie.Rol != '#'">
+              <ion-col center text-center *ngIf="clie.UrlDocumento != '#'">
                 <button ion-button icon-only (click)="openUrl(clie.Rol)" small color="secondary">
                   <ion-icon name="cloud-download"></ion-icon>
                 </button>
@@ -80,6 +80,10 @@
             <span style="font-size: 0.6em;font-style: italic;">Deslice a la izquierda para ver opciones</span>
           </ion-item>
           <ion-item-options side="right">
+            <button ion-button color="danger" (click)="presentActionSheet(clie)" *ngIf="permisos.EliminaRendicion == '1'">
+              <ion-icon name="trash"></ion-icon>
+              Borrar
+            </button>
             <button ion-button color="primary" (click)="presentModal(clie)" *ngIf="permisos.ModificaRendicion == '1'">
               <ion-icon name="create"></ion-icon>
               Editar

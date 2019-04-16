@@ -119,5 +119,31 @@ export class GlobalService{
     return data;
 
   }
+  deleteDocumento(id){
+    let url = AppSettings.API_ENDPOINT + 'FileNuevo?id=' + id;
+    let dataGet = { id: id};
+
+    let data = this.http.get(url);
+    return data;
+  }
+
+  deleteRendicion(id) {
+    var entidad = {
+      Id: id,
+      EsCpas: false
+    };
+
+    let url = AppSettings.API_ENDPOINT + 'Rendicion';
+    let dataGet = entidad;
+
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    let options = new RequestOptions({
+      headers: headers,
+      body: dataGet
+    });
+
+    let data = this.http.delete(url, options );
+    return data;
+  }  
 
 }

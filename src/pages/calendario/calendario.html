@@ -93,3 +93,8 @@
   
 
 </ion-content>
+<ion-fab bottom right *ngIf="permisos.CreaCalendario == 1" style ="bottom: 10%;">
+  <button ion-fab  (click)="presentModal(null)" class="mui--bg-color-red-500 fg-light">
+    <ion-icon name="add"></ion-icon>
+  </button>
+</ion-fab>

@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { NavController, NavParams, LoadingController, App, ModalController } from 'ionic-angular';
+import { NavController, NavParams, LoadingController, App, ModalController, ActionSheetController } from 'ionic-angular';
 //pages
 import { LoginPage } from '../login/login';
 import { NovedadesPage } from '../novedades/novedades';
@@ -83,6 +83,7 @@ export class DocumentosPage {
     public loading: LoadingController,
     public global: GlobalService,
     public modalCtrl: ModalController,
+    public actionSheetCtrl: ActionSheetController,
     public acceso: AuthService) {
   }
   ionViewWillEnter() {
@@ -162,6 +163,62 @@ export class DocumentosPage {
         }
       });
       modal.present();
+    }
+
+    delete(item){
+      if (item){
+  
+        let loader = this.loading.create({
+          content: 'eliminando...',
+        });
+  
+        loader.present().then(() => {
+          var id = item.Id;
+          this.global.deleteDocumento(id).subscribe(
+            data => {
+              //actualizar el contenido
+              var ret = data.json();
+              //por mientras
+              this.cargar();
+            },
+            err => {
+              console.error(err);
+              loader.dismiss();
+            },
+            () => {
+              console.log('delete completed');
+              //terminamos;
+              loader.dismiss();
+            }
+          );
+  
+        });
+  
+      }
+    }    
+
+    presentActionSheet(item) {
+      let actionSheet = this.actionSheetCtrl.create({
+        title: '¿Está seguro de eliminar?',
+        buttons: [
+          {
+            text: 'Eliminar',
+            role: 'destructive',
+            handler: () => {
+              //console.log('Destructive clicked');
+              this.delete(item);
+            }
+          },{
+            text: 'Cancelar',
+            role: 'cancel',
+            handler: () => {
+              //console.log('Cancel clicked');
+  
+            }
+          }
+        ]
+      });
+      actionSheet.present();
     }
 
 }

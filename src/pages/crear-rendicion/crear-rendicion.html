@@ -43,8 +43,8 @@
         </ion-item>
 
         
-          <ion-label *ngIf="urlDescarga != '#'" text-center style="font-style: italic;">{{nombreDocumento}}</ion-label>
-          <button ion-button full clear (click)="openUrl()" color="secondary" *ngIf="urlDescarga != '#'">
+          <ion-label *ngIf="rendicion.UrlDocumento != '#'" text-center style="font-style: italic;">{{nombreDocumento}}</ion-label>
+          <button ion-button full clear (click)="openUrl()" color="secondary" *ngIf="rendicion.UrlDocumento != '#'">
             <ion-icon name="cloud-download"></ion-icon>&nbsp;Descargar
           </button>
         

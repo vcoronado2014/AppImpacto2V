@@ -1,0 +1,63 @@
+<ion-header class="mui--bg-color-teal-600 fg-light">
+
+  <ion-navbar>
+    <ion-title>Crear Evento</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+        <ion-label floating>Titulo (*)</ion-label>
+        <ion-input type="text" [(ngModel)]="frmTitulo"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Inicio (*)</ion-label>
+      <ion-datetime displayFormat="DD-MM-YYYY HH:mm"
+      monthNames="Enero, Febrero, Marzo, Abril, Mayo, Junio, Julio, Agosto, Septiembre, Octubre, Noviembre, Diciembre"
+      monthShortNames="Ene, Feb, Mar, Abr, May, Jun, Jul, Ago, Sep, Oct, Nov, Dic"
+      dayNames="domingo, lunes, martes, miércoles, jueves, viernes, sábado"
+      dayShortNames="dom, lun, mar, mié, jue, vie, sáb"
+      [(ngModel)]="frmInicio"
+      ></ion-datetime>
+
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Término (*)</ion-label>
+      <ion-datetime displayFormat="DD-MM-YYYY HH:mm"
+      monthNames="Enero, Febrero, Marzo, Abril, Mayo, Junio, Julio, Agosto, Septiembre, Octubre, Noviembre, Diciembre"
+      monthShortNames="Ene, Feb, Mar, Abr, May, Jun, Jul, Ago, Sep, Oct, Nov, Dic"
+      dayNames="domingo, lunes, martes, miércoles, jueves, viernes, sábado"
+      dayShortNames="dom, lun, mar, mié, jue, vie, sáb"
+      [(ngModel)]="frmTermino"
+      ></ion-datetime>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label floating>Ubicación</ion-label>
+      <ion-input type="text" [(ngModel)]="frmUbicacion"></ion-input>
+
+    </ion-item>    
+
+    <ion-item>
+      <ion-label floating>Detalle</ion-label>
+      <ion-input type="text" [(ngModel)]="frmDetalle" required></ion-input>
+    </ion-item>
+  
+  </ion-list>
+
+<ion-grid>
+  <ion-row>
+    <ion-col text-right>
+        <button ion-button clear (click)="closeModal()">Cerrar</button>
+    </ion-col>
+    <ion-col text-right>
+        <button ion-button  (click)="enviarRendicion()">Guardar</button>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+</ion-content>
