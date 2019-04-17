@@ -99,7 +99,7 @@ export class CalendarioPage {
     currentDate: new Date()
   }; // these are the variable used by the calendar.
   loadEvents() {
-      this.eventSource = this.createRandomEvents();
+      this.eventSource = this.createEvents();
   }
   onViewTitleChanged(title) {
       this.viewTitle = title;
@@ -161,6 +161,7 @@ export class CalendarioPage {
   }
   createEvents(){
     //registerLocaleData(localeFr);
+    //var events = [];
     this.eventSource = [];
     var instId = sessionStorage.getItem("INST_ID");
     var tipo = '1';
@@ -177,12 +178,20 @@ export class CalendarioPage {
           if (datosProcesar && datosProcesar.length > 0){
             //ahora procesamos las rutas para mostrar los archivos
             datosProcesar.forEach(element => {
-                var mesIniC = parseInt(element.mesIni) + 1; 
-                var mesTerC = parseInt(element.mesTer) + 1; 
+                var mesIniC = parseInt(element.mesIni); 
+                if (element.mesIni == 0){
+                  mesIniC = parseInt(element.mesIni) + 1; 
+                }
+                var mesTerC = parseInt(element.mesTer); 
+                if (element.mesTer == 0){
+                  mesTerC = parseInt(element.mesTer) + 1; 
+                }
+                
                 var fechaIni = new Date(parseInt(element.annoIni), mesIniC, parseInt(element.diaIni), parseInt(element.horaIni), parseInt(element.minutosIni), 0, 0);
                 var fechaTer = new Date(parseInt(element.annoTer), mesTerC, parseInt(element.diaTer), parseInt(element.horaTer), parseInt(element.minutosTer), 0, 0);
                 //element.allDay, element.content, element.details, element.ubication
                 var title = element.content + '-' + element.details + ', ' + element.ubication;
+                
                 this.eventSource.push(
                     {
                         title: title,
@@ -191,11 +200,21 @@ export class CalendarioPage {
                         allDay: element.allDay
                     }
                 );
+                /*
+               events.push(
+                {
+                    title: title,
+                    startTime: fechaIni,
+                    endTime: fechaTer,
+                    allDay: element.allDay
+                }
+            );*/
 
             });
 
           }
           //this.documentosArr = datos.proposals;
+          //return events;
         },
         err =>{ 
           console.error(err);
@@ -238,6 +257,10 @@ export class CalendarioPage {
   ionViewWillEnter() {
     this.permisos = JSON.parse(sessionStorage.getItem("PERMISOS"));
     this.createEvents();
+    //this.loadEvents();
+    this.today();
+    this.changeMode('month');
+    //changeMode('month')
     //this.openUrl();
   }
   doRefresh(refresher) {
@@ -245,7 +268,9 @@ export class CalendarioPage {
 
     setTimeout(() => {
       this.createEvents();
+      //this.loadEvents();
       this.today();
+      this.changeMode('month');
       refresher.complete();
     }, 2000);
   }
