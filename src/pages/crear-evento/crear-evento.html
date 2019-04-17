@@ -16,25 +16,27 @@
 
     <ion-item>
       <ion-label>Inicio (*)</ion-label>
-      <ion-datetime displayFormat="DD-MM-YYYY HH:mm"
+      <ion-datetime displayFormat="DD-MM-YYYY"
       monthNames="Enero, Febrero, Marzo, Abril, Mayo, Junio, Julio, Agosto, Septiembre, Octubre, Noviembre, Diciembre"
       monthShortNames="Ene, Feb, Mar, Abr, May, Jun, Jul, Ago, Sep, Oct, Nov, Dic"
       dayNames="domingo, lunes, martes, miércoles, jueves, viernes, sábado"
       dayShortNames="dom, lun, mar, mié, jue, vie, sáb"
       [(ngModel)]="frmInicio"
       ></ion-datetime>
+      <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="frmHoraInicio"></ion-datetime>
 
     </ion-item>
 
     <ion-item>
       <ion-label>Término (*)</ion-label>
-      <ion-datetime displayFormat="DD-MM-YYYY HH:mm"
+      <ion-datetime displayFormat="DD-MM-YYYY"
       monthNames="Enero, Febrero, Marzo, Abril, Mayo, Junio, Julio, Agosto, Septiembre, Octubre, Noviembre, Diciembre"
       monthShortNames="Ene, Feb, Mar, Abr, May, Jun, Jul, Ago, Sep, Oct, Nov, Dic"
       dayNames="domingo, lunes, martes, miércoles, jueves, viernes, sábado"
       dayShortNames="dom, lun, mar, mié, jue, vie, sáb"
       [(ngModel)]="frmTermino"
       ></ion-datetime>
+      <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="frmHoraTermino"></ion-datetime>
     </ion-item>
     
     <ion-item>

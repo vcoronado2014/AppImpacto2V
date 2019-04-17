@@ -144,6 +144,31 @@ export class GlobalService{
 
     let data = this.http.delete(url, options );
     return data;
-  }  
+  } 
+  putCalendario(entidad){
+    let url = AppSettings.API_ENDPOINT + 'Calendario';
+    let dataGet = entidad;
+
+    let data = this.http.put(url, dataGet, {
+      headers: new Headers({'Content-Type': 'application/json'})
+    });
+    return data;
+  } 
+  deleteCalendario(id) {
+    var entidad = {
+      Id: id
+    };
+    let url = AppSettings.API_ENDPOINT + 'Calendario';
+    let dataGet = entidad;
+
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    let options = new RequestOptions({
+      headers: headers,
+      body: dataGet
+    });
+
+    let data = this.http.delete(url, options );
+    return data;
+  }   
 
 }

@@ -76,18 +76,29 @@
         
         </ion-list>
         <ion-list>
-          <ion-item (click)="onEventSelected(event)" *ngFor="let event of selectedDate.events">
-              
+          <ion-item-sliding  *ngFor="let event of selectedDate.events">
+            <ion-item (click)="onEventSelected(event)">
               <ion-avatar item-start>
                 <ion-icon name="calendar" item-start style="font-size: 2.5em;"></ion-icon>
               </ion-avatar>
                 <h1 text-wrap>{{event.startTime | dateFormat: 'dddd DD'}}</h1>
                 <h2 text-wrap>{{event.title}}</h2>
                 <ion-badge>{{event.startTime | dateFormat: 'DD-MM-YYYY HH:mm'}} - {{event.endTime | dateFormat: 'DD-MM-YYYY HH:mm'}}</ion-badge>
-              <!--
-            <p text-wrap>Start: {{event.startTime}}</p>
-            <p text-wrap>end: {{event.endTime}}</p>-->
-          </ion-item>
+                <!-- para eliminar un evento
+                <ion-icon name="trash" item-end style="font-size: 1.5em;"></ion-icon>-->
+                <span style="font-size: 0.6em;font-style: italic;">Deslice a la izquierda para ver opciones</span>
+            </ion-item>
+            <ion-item-options side="right">
+              <button ion-button color="danger" (click)="presentActionSheet(event)" *ngIf="permisos.EliminaCalendario == '1' && event.usuIdCreador == idUsuarioLogueado">
+                <ion-icon name="trash"></ion-icon>
+                Borrar
+              </button>
+              <button ion-button (click)="presentModal(event)" *ngIf="permisos.ModificaCalendario == '1' && event.usuIdCreador == idUsuarioLogueado">
+                <ion-icon name="add"></ion-icon>
+                Editar
+              </button>
+            </ion-item-options>
+          </ion-item-sliding>
         </ion-list>
     </ng-template>
   

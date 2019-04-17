@@ -84,7 +84,8 @@ export class CalendarioPage {
     VerRol: 0,
     VerTricel: 0,
     VerUsuario: 0
-  }
+  };
+  idUsuarioLogueado = sessionStorage.getItem("USU_ID");
   eventSource;
   viewTitle;
   isToday: boolean;
@@ -194,10 +195,15 @@ export class CalendarioPage {
                 
                 this.eventSource.push(
                     {
+                        id: element.clientId,
                         title: title,
                         startTime: fechaIni,
                         endTime: fechaTer,
-                        allDay: element.allDay
+                        allDay: element.allDay,
+                        usuIdCreador: element.usuIdCreador,
+                        titulo: element.content,
+                        detalle: element.details,
+                        ubicacion: element.ubication
                     }
                 );
                 /*
@@ -294,5 +300,64 @@ export class CalendarioPage {
     });
     modal.present();
   }
+  presentActionSheet(item) {
+    let actionSheet = this.actionSheetCtrl.create({
+      title: '¿Está seguro de eliminar?' + item.id,
+      buttons: [
+        {
+          text: 'Eliminar',
+          role: 'destructive',
+          handler: () => {
+            //console.log('Destructive clicked');
+            this.delete(item);
+          }
+        },{
+          text: 'Cancelar',
+          role: 'cancel',
+          handler: () => {
+            //console.log('Cancel clicked');
+
+          }
+        }
+      ]
+    });
+    actionSheet.present();
+  }
+
+  delete(item){
+    if (item){
+
+      let loader = this.loading.create({
+        content: 'eliminando...',
+      });
+
+      loader.present().then(() => {
+        var id = "'" + item.Id + "'";
+
+        this.global.deleteCalendario(id).subscribe(
+          data => {
+            //actualizar el contenido
+            var ret = data.json();
+            //por mientras
+            this.createEvents();
+            //this.loadEvents();
+            this.today();
+            this.changeMode('month');
+          },
+          err => {
+            console.error(err);
+            loader.dismiss();
+          },
+          () => {
+            console.log('delete completed');
+            //terminamos;
+            loader.dismiss();
+          }
+        );
+
+      });
+
+    }
+  }    
 
 }

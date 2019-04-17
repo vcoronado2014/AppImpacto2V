@@ -20,8 +20,8 @@ export class CrearEventoPage {
   idEvento: any;
   frmDetalle: any;
   frmTitulo: any;
-  frmInicio: any;
-  frmTermino: any;
+  frmInicio= moment().format("YYYY-MM-DD");
+  frmTermino = moment().format("YYYY-MM-DD");
   frmUbicacion: any;
   evento: any;
 
@@ -73,6 +73,11 @@ export class CrearEventoPage {
     VerTricel: 0,
     VerUsuario: 0
   }
+  
+  frmHoraInicio = moment().add(2,'h').format("HH:mm");
+  frmHoraTermino = moment().add(3,'h').format("HH:mm");
+
+
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
@@ -84,9 +89,45 @@ export class CrearEventoPage {
     public actionSheetCtrl: ActionSheetController
   ) {
     moment.locale('es-CL');
+    /*
     var ahora = moment().format("DD-MM-YYYY HH:mm");
-    this.frmInicio = moment().toISOString();
-    this.frmTermino = moment().add(2, 'h').toISOString();
+    var now = moment();
+    var inicio = moment().subtract(4, 'h');
+    var termino = moment(inicio).add(2, 'h');
+    this.frmInicio = inicio.toISOString();
+    this.frmTermino = termino.toISOString();
+    */
+         //capturamos el elemento
+         this.evento = this.navParams.get('evento');
+         if (this.evento){
+           if (this.evento.id > 0)
+           {
+              this.idEvento = this.evento.id;
+              this.esNuevo = false;
+              this.frmTitulo = this.evento.titulo;
+              this.frmDetalle = this.evento.detalle;
+              this.frmUbicacion = this.evento.ubicacion;
+              //setear las fechas y horas
+              var inicio = moment(this.evento.startTime).format("YYYY-MM-DD");
+              var termino = moment(this.evento.endTime).format("YYYY-MM-DD");
+              var hInicio = moment(this.evento.startTime).format("HH:mm");
+              var hTermino = moment(this.evento.endTime).format("HH:mm");
+              this.frmInicio = inicio;
+              this.frmTermino = termino;
+              this.frmHoraInicio = hInicio;
+              this.frmHoraTermino = hTermino;
+
+           }
+           else{
+             this.esNuevo = true;
+             this.idEvento = 0;
+           }
+     
+         }
+         else {
+           this.esNuevo = true;
+           this.idEvento = 0;
+         }
 
   }
 
@@ -98,23 +139,31 @@ export class CrearEventoPage {
     var retorno = true;
     var now = moment();
     var fechaIni = moment(this.frmInicio);
+    var horaIni = moment(this.frmHoraInicio);
     var fechaTer = moment(this.frmTermino);
+    var horaTer = moment(this.frmHoraTermino);
+    var fechaIniC = moment(this.frmInicio + ' ' + this.frmHoraInicio);
+    var fechaTerC = moment(this.frmTermino + ' ' + this.frmHoraTermino);
     //la primera validación fecha inicio mayor a fecha actual
-    if (fechaIni < now){
+    if (fechaIniC < now){
       let sms = this.presentToast("La fecha de inicio no puede ser menor a la fecha actual");
       retorno = false;
     }
     //fecha termino menor a la actual
-    if (fechaTer < now){
+    if (fechaTerC < now){
       let sms = this.presentToast("La fecha de término no puede ser menor a la fecha actual");
       retorno = false;
     }
     //fecha inicio mayor a la de termino
-    if (fechaTer < fechaIni){
+    if (fechaTerC < fechaIniC){
       let sms = this.presentToast("La fecha de inicio no puede ser mayor a la fecha término");
       retorno = false;
     }
-    
+    //ahora validamos los elementos vacios
+    if (this.frmTitulo == undefined || this.frmTitulo == null || this.frmTitulo == ''){
+      let sms = this.presentToast("El titulo del evento es requerido");
+      retorno = false;
+    }
     return retorno;
 
   }
@@ -144,21 +193,48 @@ export class CrearEventoPage {
         var instId = sessionStorage.getItem("INST_ID");
         var rolId = sessionStorage.getItem("ROL_ID");
         var usuId = sessionStorage.getItem("USU_ID");
-        var detalle = this.frmDetalle;
+        var detalle = '';
+        if (this.frmDetalle != undefined){
+          detalle = this.frmDetalle;
+        }
         var esCpas = false;
-        var esNuevo = true;
+        var esNuevo = this.esNuevo;
         var etiqueta = 1;
-        var fechaInicio = moment(this.frmInicio).format("YYYY-MM-DD HH:mm");
-        var fechaTermino = moment(this.frmTermino).format("YYYY-MM-DD HH:mm");
+        //moment(this.frmInicio + ' ' + this.frmHoraInicio);
+        var fechaInicio = moment(this.frmInicio + ' ' + this.frmHoraInicio).format("YYYY-MM-DD HH:mm");
+        var fechaTermino = moment(this.frmTermino + ' ' + this.frmHoraTermino).format("YYYY-MM-DD HH:mm");
         var titulo = this.frmTitulo;
-        var ubicacion = this.frmUbicacion;
+        var ubicacion = '';
+        if (this.frmUbicacion != undefined){
+          ubicacion = this.frmUbicacion;
+        }
+        var entidad = {
+          Id: this.idEvento,
+          Detalle: detalle,
+          EsCpas: "false",
+          EsNuevo: esNuevo,
+          Etiqueta: etiqueta,
+          FechaInicio: fechaInicio,
+          FechaTermino: fechaTermino,
+          IdUsuario: usuId,
+          InstId: instId,
+          Titulo: titulo,
+          Ubicacion: ubicacion,
+          UsuIdCreador: usuId
+        };
   
-        this.global.putCalendario(detalle, esCpas, esNuevo, etiqueta, fechaInicio, fechaTermino, usuId, instId, titulo, ubicacion, usuId).subscribe(
+        this.global.putCalendario(entidad).subscribe(
           dataArchivo1 => {
   
             var datos = dataArchivo1.json();
             //loader.dismiss();
-            let sms = this.presentToast('El evento ha sido creado con éxito.');
+            if (esNuevo) {
+              let sms = this.presentToast('El evento ha sido creado con éxito.');
+            }
+            else {
+              let sms = this.presentToast('El evento ha sido modificado con éxito.');
+            }
+
             this.viewCtrl.dismiss(datos);
           },
           err => {
