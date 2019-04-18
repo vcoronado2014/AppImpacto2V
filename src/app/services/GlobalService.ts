@@ -154,9 +154,10 @@ export class GlobalService{
     });
     return data;
   } 
-  deleteCalendario(id) {
+  deleteCalendario(id, instId) {
     var entidad = {
-      Id: id
+      Id: id,
+      InstId: instId
     };
     let url = AppSettings.API_ENDPOINT + 'Calendario';
     let dataGet = entidad;

@@ -302,7 +302,7 @@ export class CalendarioPage {
   }
   presentActionSheet(item) {
     let actionSheet = this.actionSheetCtrl.create({
-      title: '¿Está seguro de eliminar?' + item.id,
+      title: '¿Está seguro de eliminar?',
       buttons: [
         {
           text: 'Eliminar',
@@ -332,9 +332,12 @@ export class CalendarioPage {
       });
 
       loader.present().then(() => {
-        var id = "'" + item.Id + "'";
+        var id = item.id;
+        var instId = sessionStorage.getItem("INST_ID");
+        var rolId = sessionStorage.getItem("ROL_ID");
+        var usuId = sessionStorage.getItem("USU_ID");
 
-        this.global.deleteCalendario(id).subscribe(
+        this.global.deleteCalendario(id, instId).subscribe(
           data => {
             //actualizar el contenido
             var ret = data.json();
