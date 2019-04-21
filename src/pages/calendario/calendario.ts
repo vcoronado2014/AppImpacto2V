@@ -37,6 +37,8 @@ registerLocaleData(localeFr);
 })
 export class CalendarioPage {
   //registerLocaleData(localeFr);
+  eventoSeleccionado;
+  timeSeleccionado;
   permisos = {
     CreaCalendario: 0,
     CreaDocumento: 0,
@@ -90,6 +92,7 @@ export class CalendarioPage {
   viewTitle;
   isToday: boolean;
   calendar = {
+      //queryMode: 'remote',
       mode: 'month',
       locale: 'es-CL',
       dateFormatter: {
@@ -99,13 +102,19 @@ export class CalendarioPage {
     },
     currentDate: new Date()
   }; // these are the variable used by the calendar.
+
   loadEvents() {
-      this.eventSource = this.createEvents();
+      //this.eventSource = this.createEventsOut();
+      //this.eventSource = this.createRandomEvents();
+      var instId = sessionStorage.getItem("INST_ID");
+      var tipo = '1';
+      var eve = this.global.postCalendarioArr(instId, tipo);
   }
   onViewTitleChanged(title) {
       this.viewTitle = title;
   }
   onEventSelected(event) {
+      this.eventoSeleccionado = event;
       console.log('Event selected:' + event.startTime + '-' + event.endTime + ',' + event.title);
   }
   changeMode(mode) {
@@ -115,6 +124,7 @@ export class CalendarioPage {
       this.calendar.currentDate = new Date();
   }
   onTimeSelected(ev) {
+      this.timeSeleccionado = ev.selectedTime;
       console.log('Selected time: ' + ev.selectedTime + ', hasEvents: ' +
           (ev.events !== undefined && ev.events.length !== 0) + ', disabled: ' + ev.disabled);
   }
@@ -235,6 +245,7 @@ export class CalendarioPage {
     });
   }
   onRangeChanged(ev) {
+    //this.createEvents();
       console.log('range changed: startTime: ' + ev.startTime + ', endTime: ' + ev.endTime);
   }
   markDisabled = (date:Date) => {
@@ -257,10 +268,22 @@ export class CalendarioPage {
     public toastCtrl: ToastController,
     public actionSheetCtrl: ActionSheetController
   ) {
-
+      //this.loadEvents();
   }
   
+  /*
   ionViewWillEnter() {
+    this.permisos = JSON.parse(sessionStorage.getItem("PERMISOS"));
+    this.createEvents();
+    //this.loadEvents();
+    this.today();
+    this.changeMode('month');
+    //changeMode('month')
+    //this.openUrl();
+  }
+  */
+
+  ionViewDidEnter() {
     this.permisos = JSON.parse(sessionStorage.getItem("PERMISOS"));
     this.createEvents();
     //this.loadEvents();
@@ -289,6 +312,17 @@ export class CalendarioPage {
 
   }
   presentModal(item) {
+    if (item == null){
+      //esta creando uno nuevo, seteamos el evento seleccionado
+      if (this.timeSeleccionado){
+        //si hay un evento seleccionado seteamos los valores del evento
+        
+        item = {
+          startTime: this.timeSeleccionado
+        }
+      }
+
+    }
 
     let modal = this.modalCtrl.create(CrearEventoPage, { evento: item });
     modal.onDidDismiss(data => {

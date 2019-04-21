@@ -119,6 +119,15 @@ export class CrearEventoPage {
 
            }
            else{
+             var fecha = moment(this.evento.startTime);
+            var inicio = fecha.format("YYYY-MM-DD");
+            var termino = fecha.add(2, 'h').format("YYYY-MM-DD");
+            var hInicio = fecha.format("HH:00");
+            var hTermino = fecha.add(2, 'h').format("HH:00");
+            this.frmInicio = inicio;
+            this.frmTermino = termino;
+            this.frmHoraInicio = hInicio;
+            this.frmHoraTermino = hTermino;
              this.esNuevo = true;
              this.idEvento = 0;
            }

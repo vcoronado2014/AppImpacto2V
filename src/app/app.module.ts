@@ -4,6 +4,8 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { HttpModule } from '@angular/http';
+//import { CalendarOriginal } from '@ionic-native/calendar';
+import { CalendarComponent } from "ap-angular2-fullcalendar/src/calendar/calendar";
 //directivas
 import { TextAvatarDirective } from '../directives/text-avatar/text-avatar';
 
@@ -29,6 +31,7 @@ import { CrearDocumentoPage } from '../pages/crear-documento/crear-documento';
 import { TabTricelPage } from '../pages/tab-tricel/tab-tricel';
 import { TircelPage } from '../pages/tircel/tircel';
 import { CrearEventoPage } from '../pages/crear-evento/crear-evento';
+import { CalendarioFullPage } from '../pages/calendario-full/calendario-full';
 
 //servicios
 import { AuthService } from '../app/services/AuthService';
@@ -62,8 +65,10 @@ import { LOCALE_ID } from '@angular/core';
     TircelPage,
     CrearDocumentoPage,
     CrearEventoPage,
+    CalendarioFullPage,
     MomentPipe,
-    TextAvatarDirective
+    TextAvatarDirective,
+    CalendarComponent
   ],
   imports: [
     BrowserModule,
@@ -92,8 +97,10 @@ import { LOCALE_ID } from '@angular/core';
     TabTricelPage,
     CrearDocumentoPage,
     CrearEventoPage,
+    CalendarioFullPage,
     TircelPage,
-    InicioPage
+    InicioPage,
+    CalendarComponent
   ],
   providers: [
     StatusBar,
@@ -101,7 +108,8 @@ import { LOCALE_ID } from '@angular/core';
     AuthService,
     GlobalService,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    {provide: LOCALE_ID, useValue: 'es-CL' }
+    //CalendarOriginal,
+    {provide: LOCALE_ID, useValue: 'es-CL' },
   ]
 })
 export class AppModule {}

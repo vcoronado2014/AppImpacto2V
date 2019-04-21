@@ -170,6 +170,57 @@ export class GlobalService{
 
     let data = this.http.delete(url, options );
     return data;
-  }   
+  }
+  
+  postCalendarioArr(instId, tipo){
+    var arrCalendar = [];
+    let url = AppSettings.API_ENDPOINT + 'Calendario';
+    let dataGet = { InstId: instId.toString(), Tipo: tipo.toString() };
+
+    return this.http.post(url, dataGet, {
+      headers: this.headers
+    }).map((res)=>{
+      if (res){
+        var datos = res.json();
+        var datosProcesar = datos;
+        
+        if (datosProcesar && datosProcesar.length > 0){
+          //ahora procesamos las rutas para mostrar los archivos
+          datosProcesar.forEach(element => {
+              var mesIniC = parseInt(element.mesIni); 
+              if (element.mesIni == 0){
+                mesIniC = parseInt(element.mesIni) + 1; 
+              }
+              var mesTerC = parseInt(element.mesTer); 
+              if (element.mesTer == 0){
+                mesTerC = parseInt(element.mesTer) + 1; 
+              }
+              
+              var fechaIni = new Date(parseInt(element.annoIni), mesIniC, parseInt(element.diaIni), parseInt(element.horaIni), parseInt(element.minutosIni), 0, 0);
+              var fechaTer = new Date(parseInt(element.annoTer), mesTerC, parseInt(element.diaTer), parseInt(element.horaTer), parseInt(element.minutosTer), 0, 0);
+              //element.allDay, element.content, element.details, element.ubication
+              var title = element.content + '-' + element.details + ', ' + element.ubication;
+              
+              arrCalendar.push(
+                  {
+                      id: element.clientId,
+                      title: title,
+                      startTime: fechaIni,
+                      endTime: fechaTer,
+                      allDay: element.allDay,
+                      usuIdCreador: element.usuIdCreador,
+                      titulo: element.content,
+                      detalle: element.details,
+                      ubicacion: element.ubication
+                  }
+              );
+  
+          });
+  
+        }
+      }
+    });
+    //return arrCalendar;
+  }  
 
 }

@@ -40,32 +40,24 @@
           <button ion-button small (click)="changeMode('week')">Semanal</button>
           <button ion-button small (click)="changeMode('day')">Diario</button>
           <!-- comentado 
-          <button ion-button (click)="loadEvents()">Load Events</button>-->
+          <button ion-button small (click)="loadEvents()">Cargar</button>-->
       </ion-buttons>
   </ion-row>
-  <!--
-    <calendar 
-              [monthviewEventDetailTemplate]="template"
-              [eventSource]="eventSource"
-              [calendarMode]="calendar.mode"
-              [currentDate]="calendar.currentDate"
-              [locale]="calendar.locale"
-              (onCurrentDateChanged)="onCurrentDateChanged($event)"
-              (onEventSelected)="onEventSelected($event)"
-              (onTitleChanged)="onViewTitleChanged($event)"
-              (onTimeSelected)="onTimeSelected($event)"
-              step="30">
-    </calendar>
--->
-<calendar [monthviewEventDetailTemplate]="template" [eventSource]="eventSource" [calendarMode]="calendar.mode"
-  [currentDate]="calendar.currentDate"  (onCurrentDateChanged)="onCurrentDateChanged($event)"
-  (onEventSelected)="onEventSelected($event)" (onTitleChanged)="onViewTitleChanged($event)"
+<calendar
+  [monthviewEventDetailTemplate]="template" 
+  [eventSource]="eventSource" 
+  [calendarMode]="calendar.mode"
+  [currentDate]="calendar.currentDate"  
+  (onCurrentDateChanged)="onCurrentDateChanged($event)"
+  (onEventSelected)="onEventSelected($event)" 
+  (onTitleChanged)="onViewTitleChanged($event)"
   (onTimeSelected)="onTimeSelected($event)" step="30">
 </calendar>
     <ng-template #template let-showEventDetail="showEventDetail" let-selectedDate="selectedDate" let-noEventsLabel="noEventsLabel">
         <!--
         <h5 class="noEvents" *ngIf="selectedDate.events.length == 0">No Events</h5>
         -->
+        <h1 text-wrap style="padding-left: 2%;">{{timeSeleccionado | dateFormat: 'dddd DD'}}</h1>
         <ion-list>
           <ion-item class="noEvents" *ngIf="selectedDate.events.length == 0">
             <ion-avatar item-start>
@@ -76,17 +68,21 @@
         
         </ion-list>
         <ion-list>
+          
           <ion-item-sliding  *ngFor="let event of selectedDate.events">
             <ion-item (click)="onEventSelected(event)">
               <ion-avatar item-start>
                 <ion-icon name="calendar" item-start style="font-size: 2.5em;"></ion-icon>
               </ion-avatar>
-                <h1 text-wrap>{{event.startTime | dateFormat: 'dddd DD'}}</h1>
+                <!--<h1 text-wrap>{{event.startTime | dateFormat: 'dddd DD'}}</h1>-->
                 <h2 text-wrap>{{event.title}}</h2>
                 <ion-badge>{{event.startTime | dateFormat: 'DD-MM-YYYY HH:mm'}} - {{event.endTime | dateFormat: 'DD-MM-YYYY HH:mm'}}</ion-badge>
                 <!-- para eliminar un evento
                 <ion-icon name="trash" item-end style="font-size: 1.5em;"></ion-icon>-->
-                <span style="font-size: 0.6em;font-style: italic;">Deslice a la izquierda para ver opciones</span>
+                <ion-row>
+                  <span style="font-size: 0.6em;font-style: italic;">Deslice a la izquierda para ver opciones</span>
+                </ion-row>
+                
             </ion-item>
             <ion-item-options side="right">
               <button ion-button color="danger" (click)="presentActionSheet(event)" *ngIf="permisos.EliminaCalendario == '1' && event.usuIdCreador == idUsuarioLogueado">
