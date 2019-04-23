@@ -74,8 +74,8 @@ import { InicioService } from '../../app/services/InicioService';
     tab2Root = UsuariosPage;
     tab3Root = RendicionPage;
     tab4Root = DocumentosPage;
-    //tab5Root = CalendarioPage;
-    tab5Root = CalendarioFullPage;
+    tab5Root = CalendarioPage;
+    //tab5Root = CalendarioFullPage;
     tab6Root = TabTricelPage;
 
 

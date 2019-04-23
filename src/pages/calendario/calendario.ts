@@ -21,14 +21,6 @@ import localeFr from '@angular/common/locales/es-CL';
 
 registerLocaleData(localeFr);
 
-
-/**
- * Generated class for the CalendarioPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @Component({
   selector: 'page-calendario',
   templateUrl: 'calendario.html',
@@ -37,6 +29,11 @@ registerLocaleData(localeFr);
 })
 export class CalendarioPage {
   //registerLocaleData(localeFr);
+  //nuevos arreglos para probar
+  public citas;
+  public calendarioData = [];
+
+  //---------------------------------
   eventoSeleccionado;
   timeSeleccionado;
   permisos = {
@@ -92,7 +89,6 @@ export class CalendarioPage {
   viewTitle;
   isToday: boolean;
   calendar = {
-      //queryMode: 'remote',
       mode: 'month',
       locale: 'es-CL',
       dateFormatter: {
@@ -105,10 +101,6 @@ export class CalendarioPage {
 
   loadEvents() {
       //this.eventSource = this.createEventsOut();
-      //this.eventSource = this.createRandomEvents();
-      var instId = sessionStorage.getItem("INST_ID");
-      var tipo = '1';
-      var eve = this.global.postCalendarioArr(instId, tipo);
   }
   onViewTitleChanged(title) {
       this.viewTitle = title;
@@ -216,21 +208,9 @@ export class CalendarioPage {
                         ubicacion: element.ubication
                     }
                 );
-                /*
-               events.push(
-                {
-                    title: title,
-                    startTime: fechaIni,
-                    endTime: fechaTer,
-                    allDay: element.allDay
-                }
-            );*/
-
             });
 
           }
-          //this.documentosArr = datos.proposals;
-          //return events;
         },
         err =>{ 
           console.error(err);
@@ -245,7 +225,6 @@ export class CalendarioPage {
     });
   }
   onRangeChanged(ev) {
-    //this.createEvents();
       console.log('range changed: startTime: ' + ev.startTime + ', endTime: ' + ev.endTime);
   }
   markDisabled = (date:Date) => {
@@ -268,38 +247,72 @@ export class CalendarioPage {
     public toastCtrl: ToastController,
     public actionSheetCtrl: ActionSheetController
   ) {
-      //this.loadEvents();
+    //para probar
+    //this.cargarEventos();
+    //************************************************** */
   }
-  
-  /*
+  //nuevos metodos para probar
+  cargarEventos() {
+    //para probar
+    var instId = sessionStorage.getItem("INST_ID");
+    var tipo = '1';
+    this.global.postCalendarioArr(instId, tipo);
+    this.citas = this.global.arregloGeneral;
+    this.eventSource = this.createEventsCalendario();
+    
+  }
+  createEventsCalendario(){
+    this.calendarioData = this.citas;
+    return this.calendarioData;
+  }
+  recargar(){
+    let loader = this.loading.create({
+      content: '<ion-content style="background-color:black;">'+
+                  '<div>'+
+                  '<p style="color:black; font-weight:bold; text-align: center; margin-bottom: -29px;padding-bottom: 0px;">Espera mientras se cargan </p>'+
+                    '<img src="./assets/imgs/loading.gif">'+ 
+                    '<p style="color:black; font-weight:bold;text-align: center;margin-top:-36px;padding-left: 30px; padding-right: 30px;">los eventos </p>'+
+                  '</div>'+
+               '</ion-content>',
+      spinner:'hide'
+    });
+    this.changeMode('week');
+    loader.present().then(() => {
+      setTimeout(() => {
+        this.createEventsCalendario();
+        this.changeMode('month');
+        loader.dismiss();
+      }, 2000);
+    });
+  }
   ionViewWillEnter() {
-    this.permisos = JSON.parse(sessionStorage.getItem("PERMISOS"));
-    this.createEvents();
-    //this.loadEvents();
-    this.today();
-    this.changeMode('month');
-    //changeMode('month')
-    //this.openUrl();
+    this.recargar();
   }
-  */
+  ngAfterViewInit(){
+      this.cargarEventos();
+  }
+  //************************************************** */
 
   ionViewDidEnter() {
     this.permisos = JSON.parse(sessionStorage.getItem("PERMISOS"));
+    //lo comentamos por mientras
+    /*
     this.createEvents();
-    //this.loadEvents();
     this.today();
     this.changeMode('month');
-    //changeMode('month')
-    //this.openUrl();
+    */
   }
   doRefresh(refresher) {
     console.log('Begin async operation', refresher);
 
     setTimeout(() => {
-      this.createEvents();
-      //this.loadEvents();
+      /*
+      this.cargarEventos();
       this.today();
       this.changeMode('month');
+      */
+     this.cargarEventos();
+     this.recargar();
       refresher.complete();
     }, 2000);
   }
@@ -328,8 +341,12 @@ export class CalendarioPage {
     modal.onDidDismiss(data => {
       // Data is your data from the modal
       if (data != undefined){
+        /*
         this.createEvents();
         this.today();
+        */
+       this.cargarEventos();
+       this.recargar();
       }
     });
     modal.present();
@@ -376,10 +393,13 @@ export class CalendarioPage {
             //actualizar el contenido
             var ret = data.json();
             //por mientras
+            /*
             this.createEvents();
-            //this.loadEvents();
             this.today();
             this.changeMode('month');
+            */
+           this.cargarEventos();
+           this.recargar();
           },
           err => {
             console.error(err);
