@@ -8,7 +8,7 @@ import { RendicionPage } from '../rendicion/rendicion';
 import { SolicitudesPage } from '../solicitudes/solicitudes';
 import { DocumentosPage } from '../documentos/documentos';
 import { CalendarioPage } from '../calendario/calendario';
-import { CalendarioFullPage } from '../calendario-full/calendario-full';
+//import { CalendarioFullPage } from '../calendario-full/calendario-full';
 import { ProyectosPage } from '../proyectos/proyectos';
 import { InicioService } from '../../app/services/InicioService';
 

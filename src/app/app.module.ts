@@ -32,7 +32,7 @@ import { CrearDocumentoPage } from '../pages/crear-documento/crear-documento';
 import { TabTricelPage } from '../pages/tab-tricel/tab-tricel';
 import { TircelPage } from '../pages/tircel/tircel';
 import { CrearEventoPage } from '../pages/crear-evento/crear-evento';
-import { CalendarioFullPage } from '../pages/calendario-full/calendario-full';
+//import { CalendarioFullPage } from '../pages/calendario-full/calendario-full';
 
 //servicios
 import { AuthService } from '../app/services/AuthService';
@@ -66,7 +66,7 @@ import { LOCALE_ID } from '@angular/core';
     TircelPage,
     CrearDocumentoPage,
     CrearEventoPage,
-    CalendarioFullPage,
+    //CalendarioFullPage,
     MomentPipe,
     TextAvatarDirective,
     CalendarComponent
@@ -99,7 +99,7 @@ import { LOCALE_ID } from '@angular/core';
     TabTricelPage,
     CrearDocumentoPage,
     CrearEventoPage,
-    CalendarioFullPage,
+    //CalendarioFullPage,
     TircelPage,
     InicioPage,
     CalendarComponent
