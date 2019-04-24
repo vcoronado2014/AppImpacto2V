@@ -14,30 +14,35 @@
         <ion-input type="text" [(ngModel)]="frmTitulo"></ion-input>
     </ion-item>
 
+    <h6 style="color: #999;padding-left: 2%;">Fecha Inicio (*)</h6>
     <ion-item>
-      <ion-label>Inicio (*)</ion-label>
+      <ion-label>Fecha</ion-label>
       <ion-datetime displayFormat="DD-MM-YYYY"
-      monthNames="Enero, Febrero, Marzo, Abril, Mayo, Junio, Julio, Agosto, Septiembre, Octubre, Noviembre, Diciembre"
-      monthShortNames="Ene, Feb, Mar, Abr, May, Jun, Jul, Ago, Sep, Oct, Nov, Dic"
-      dayNames="domingo, lunes, martes, miércoles, jueves, viernes, sábado"
-      dayShortNames="dom, lun, mar, mié, jue, vie, sáb"
-      [(ngModel)]="frmInicio"
-      ></ion-datetime>
+        monthNames="Enero, Febrero, Marzo, Abril, Mayo, Junio, Julio, Agosto, Septiembre, Octubre, Noviembre, Diciembre"
+        monthShortNames="Ene, Feb, Mar, Abr, May, Jun, Jul, Ago, Sep, Oct, Nov, Dic"
+        dayNames="domingo, lunes, martes, miércoles, jueves, viernes, sábado"
+        dayShortNames="dom, lun, mar, mié, jue, vie, sáb" [(ngModel)]="frmInicio"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label>Hora</ion-label>
       <ion-datetime displayFormat="HH:mm" pickerFormat="HH mm" [(ngModel)]="frmHoraInicio"></ion-datetime>
-
+    
     </ion-item>
 
+    <h6 style="color: #999;padding-left: 2%;">Fecha Término (*)</h6>
     <ion-item>
-      <ion-label>Término (*)</ion-label>
+      <ion-label>Fecha</ion-label>
       <ion-datetime displayFormat="DD-MM-YYYY"
-      monthNames="Enero, Febrero, Marzo, Abril, Mayo, Junio, Julio, Agosto, Septiembre, Octubre, Noviembre, Diciembre"
-      monthShortNames="Ene, Feb, Mar, Abr, May, Jun, Jul, Ago, Sep, Oct, Nov, Dic"
-      dayNames="domingo, lunes, martes, miércoles, jueves, viernes, sábado"
-      dayShortNames="dom, lun, mar, mié, jue, vie, sáb"
-      [(ngModel)]="frmTermino"
-      ></ion-datetime>
+        monthNames="Enero, Febrero, Marzo, Abril, Mayo, Junio, Julio, Agosto, Septiembre, Octubre, Noviembre, Diciembre"
+        monthShortNames="Ene, Feb, Mar, Abr, May, Jun, Jul, Ago, Sep, Oct, Nov, Dic"
+        dayNames="domingo, lunes, martes, miércoles, jueves, viernes, sábado"
+        dayShortNames="dom, lun, mar, mié, jue, vie, sáb" [(ngModel)]="frmTermino"></ion-datetime>
+    </ion-item>
+    <ion-item>
+        <ion-label>Hora</ion-label>
       <ion-datetime displayFormat="HH:mm" pickerFormat="HH mm" [(ngModel)]="frmHoraTermino"></ion-datetime>
     </ion-item>
+    
     
     <ion-item>
       <ion-label floating>Ubicación</ion-label>

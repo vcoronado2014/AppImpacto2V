@@ -6,7 +6,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 //import { CalendarOriginal } from '@ionic-native/calendar';
-import { CalendarComponent } from "ap-angular2-fullcalendar/src/calendar/calendar";
+//import { CalendarComponent } from "ap-angular2-fullcalendar/src/calendar/calendar";
 //directivas
 import { TextAvatarDirective } from '../directives/text-avatar/text-avatar';
 
@@ -68,8 +68,7 @@ import { LOCALE_ID } from '@angular/core';
     CrearEventoPage,
     //CalendarioFullPage,
     MomentPipe,
-    TextAvatarDirective,
-    CalendarComponent
+    TextAvatarDirective
   ],
   imports: [
     BrowserModule,
@@ -101,8 +100,7 @@ import { LOCALE_ID } from '@angular/core';
     CrearEventoPage,
     //CalendarioFullPage,
     TircelPage,
-    InicioPage,
-    CalendarComponent
+    InicioPage
   ],
   providers: [
     StatusBar,
