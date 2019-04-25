@@ -17,6 +17,10 @@ frmNombre: any;
 frmObjetivo: any;
 frmMonto: any;
 frmBeneficios: any;
+frmDescripcion: any;
+frmInicio= moment().format("YYYY-MM-DD");
+frmTermino = moment().format("YYYY-MM-DD");
+frmQuorum: any;
 /*
 frmDetalle: any;
 frmTipoMovimiento: any;
@@ -100,6 +104,12 @@ permisos = {
           this.frmObjetivo = this.proyecto.NombreCompleto;
           this.frmMonto = this.proyecto.OtroCuatro;
           this.frmBeneficios = this.proyecto.Rol;
+          this.frmDescripcion = this.proyecto.OtroSeis;
+          var inicio = this.proyecto.OtroUno;
+          var termino = this.proyecto.OtroDos;
+          this.frmInicio = this.invertirFecha(inicio);
+          this.frmTermino = this.invertirFecha(termino);
+          this.frmQuorum = this.proyecto.QuorumMinimo;
 
           /*
           this.frmDetalle = this.proyecto.NombreCompleto;
@@ -140,6 +150,12 @@ permisos = {
           this.esNuevo = true;
           this.idProyecto = 0;
           this.frmFecha = moment().format("DD-MM-YYYY");
+          var fecha = moment();
+          var inic = fecha.format("YYYY-MM-DD");
+          var term = fecha.add(1, 'd').format("YYYY-MM-DD");
+          this.frmInicio = inic;
+          this.frmTermino = term;
+          this.frmQuorum = "0";
         }
   
       }
@@ -147,7 +163,22 @@ permisos = {
         this.esNuevo = true;
         this.idProyecto = 0;
         this.frmFecha = moment().format("DD-MM-YYYY");
+        var fecha = moment();
+        var inic = fecha.format("YYYY-MM-DD");
+        var term = fecha.add(1, 'd').format("YYYY-MM-DD");
+        this.frmInicio = inic;
+        this.frmTermino = term;
+        this.frmQuorum = "0";
       }
+  }
+  invertirFecha(fechaStr){
+    //viene el formato DD-MM-YYYY y debemos devolver YYYY-MM-DD
+    var retorno = fechaStr;
+
+    var partes = fechaStr.split('-');
+    retorno = partes[2] + '-' + partes[1] + '-' + partes[0];
+
+    return retorno;
   }
 
   ionViewDidLoad() {

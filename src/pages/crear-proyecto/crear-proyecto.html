@@ -32,13 +32,49 @@
 
       <ion-item>
         <ion-label floating>Monto (*)</ion-label>
-        <ion-input type="text" [(ngModel)]="frmMonto"></ion-input>
+        <ion-input type="number" [(ngModel)]="frmMonto"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label floating>Beneficios (*)</ion-label>
         <ion-input type="text" [(ngModel)]="frmBeneficios"></ion-input>
       </ion-item>
+
+      <ion-item>
+        <ion-label floating>Descripción (*)</ion-label>
+        <ion-input type="text" [(ngModel)]="frmDescripcion"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Fecha Inicio (*)</ion-label>
+        <ion-datetime displayFormat="DD-MM-YYYY" monthNames="Enero, Febrero, Marzo, Abril, Mayo, Junio, Julio, Agosto, Septiembre, Octubre, Noviembre, Diciembre"
+          monthShortNames="Ene, Feb, Mar, Abr, May, Jun, Jul, Ago, Sep, Oct, Nov, Dic" dayNames="domingo, lunes, martes, miércoles, jueves, viernes, sábado"
+          dayShortNames="dom, lun, mar, mié, jue, vie, sáb" [(ngModel)]="frmInicio"></ion-datetime>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label>Fecha Término (*)</ion-label>
+        <ion-datetime displayFormat="DD-MM-YYYY" monthNames="Enero, Febrero, Marzo, Abril, Mayo, Junio, Julio, Agosto, Septiembre, Octubre, Noviembre, Diciembre"
+          monthShortNames="Ene, Feb, Mar, Abr, May, Jun, Jul, Ago, Sep, Oct, Nov, Dic" dayNames="domingo, lunes, martes, miércoles, jueves, viernes, sábado"
+          dayShortNames="dom, lun, mar, mié, jue, vie, sáb" [(ngModel)]="frmTermino"></ion-datetime>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Quórum Mínimo</ion-label>
+        <ion-select [(ngModel)]="frmQuorum">
+          <ion-option value="0">0</ion-option>
+          <ion-option value="10">10</ion-option>
+          <ion-option value="20">20</ion-option>
+          <ion-option value="30">30</ion-option>
+          <ion-option value="40">40</ion-option>
+          <ion-option value="50">50</ion-option>
+          <ion-option value="60">60</ion-option>
+          <ion-option value="70">70</ion-option>
+          <ion-option value="80">80</ion-option>
+          <ion-option value="90">90</ion-option>
+          <ion-option value="100">100</ion-option>
+        </ion-select>
+      </ion-item>      
 
     </ion-list>
 
