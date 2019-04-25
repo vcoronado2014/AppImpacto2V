@@ -18,7 +18,7 @@ import { TircelPage } from '../tircel/tircel';
 })
 export class TabTricelPage {
   tab1Root = ProyectosPage;
-  tab2Root = TircelPage;
+  //tab2Root = TircelPage;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
