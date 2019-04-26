@@ -7,7 +7,7 @@
 <ion-header class="mui--bg-color-teal-600 fg-light">
 
     <ion-navbar>
-      <ion-title>Crear Proyecto</ion-title>
+      <ion-title>{{frmTitulo}}</ion-title>
     </ion-navbar>
   
   </ion-header>
@@ -77,6 +77,60 @@
       </ion-item>      
 
     </ion-list>
+    <ion-card *ngIf="esNuevo">
+      <ion-card-header>
+        Archivos
+      </ion-card-header>
+      <ion-card-content>
+        <ion-grid>
+          <ion-row>
+            <ion-col col-12>
+              <ion-icon name="document"></ion-icon> Archivo 1:
+            </ion-col>
+            <ion-col col-12>
+              <input type="file" accept="image/*" (change)="changeListener($event)" #fileInput>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-12>
+              <ion-icon name="document"></ion-icon> Archivo 2:
+            </ion-col>
+            <ion-col col-12>
+    
+              <input type="file" accept="image/*" (change)="changeListenerDos($event)" #fileInput2>
+    
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-12>
+              <ion-icon name="document"></ion-icon> Archivo 3:
+            </ion-col>
+            <ion-col col-12>
+              <input type="file" accept="image/*" (change)="changeListenerTres($event)" #fileInput3>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-12>
+              <ion-icon name="document"></ion-icon> Archivo 4:
+            </ion-col>
+            <ion-col col-12>
+              <input type="file" accept="image/*" (change)="changeListenerCuatro($event)" #fileInput4>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+    
+      </ion-card-content>
+    </ion-card>
+      <ion-list *ngIf="esNuevo == false">
+        <ion-list-header>
+          Archivos
+        </ion-list-header>
+        <ion-item *ngFor="let arc of archivosProyecto">
+          <ion-icon name="cloud-download" item-start></ion-icon>
+          {{arc.NombreCompleto}}
+          <ion-icon name="trash" item-end></ion-icon>
+        </ion-item>
+      </ion-list>
 
 
   <ion-grid>

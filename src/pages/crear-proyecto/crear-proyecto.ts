@@ -21,6 +21,9 @@ frmDescripcion: any;
 frmInicio= moment().format("YYYY-MM-DD");
 frmTermino = moment().format("YYYY-MM-DD");
 frmQuorum: any;
+//titulo
+frmTitulo: any;
+archivosProyecto: any;
 /*
 frmDetalle: any;
 frmTipoMovimiento: any;
@@ -93,10 +96,12 @@ permisos = {
     public actionSheetCtrl: ActionSheetController) {
       moment.locale('es');
       //capturamos el elemento
+      this.frmTitulo = 'Crear Proyecto';
       this.proyecto = this.navParams.get('proyecto');
       if (this.proyecto){
         if (this.proyecto.Id > 0)
         {
+          this.frmTitulo = 'Editar Proyecto';
           this.esNuevo = false;
           this.idProyecto = this.proyecto.Id;
           this.frmFecha = this.proyecto.OtroUno;
@@ -110,16 +115,32 @@ permisos = {
           this.frmInicio = this.invertirFecha(inicio);
           this.frmTermino = this.invertirFecha(termino);
           this.frmQuorum = this.proyecto.QuorumMinimo;
+          //ahora cargamos los proyectos
+          
+            this.archivosProyecto = [];
 
-          /*
-          this.frmDetalle = this.proyecto.NombreCompleto;
-          this.frmFecha = this.proyecto.NombreUsuario;
-          this.frmTipoMovimiento = this.proyecto.OtroCinco;
-          this.frmMonto = this.proyecto.OtroTres;
-          this.frmNumeroComprobante = this.proyecto.OtroDos;
-          this.urlDescarga = this.proyecto.Rol;
-          this.nombreDocumento = this.proyecto.UrlDocumento;
-          */
+            let loader = this.loading.create({
+              content: 'Cargando...',
+            });
+            loader.present().then(() => {
+              this.global.getArchivosProyectos(this.proyecto.Id).subscribe(
+                data => {
+                  var datos = data.json();
+                  this.archivosProyecto = datos.proposals;
+                },
+                err =>{ 
+                  console.error(err);
+                  loader.dismiss();
+                },
+                () => {
+                  console.log('get rendciones completed');
+                  loader.dismiss();
+                }
+              );
+              
+            });
+         
+
          /*
           FechaVotacion: null
           HaVotado: false

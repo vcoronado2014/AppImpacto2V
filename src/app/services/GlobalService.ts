@@ -299,4 +299,10 @@ export class GlobalService{
     });
     return data;
   }
+  getArchivosProyectos(proyectoId){
+    let url = AppSettings.API_ENDPOINT + 'ArchivoProyecto?ProyectoId=' + proyectoId;
+
+    let data = this.http.get(url);
+    return data;
+  }
 }
