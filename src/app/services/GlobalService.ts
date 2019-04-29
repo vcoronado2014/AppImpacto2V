@@ -305,4 +305,14 @@ export class GlobalService{
     let data = this.http.get(url);
     return data;
   }
+
+  postGraficos(id, grafico){
+    let url = AppSettings.API_ENDPOINT + 'Grafico';
+    let dataGet = { InstId: id.toString(), NombreGrafico: grafico };
+
+    let data = this.http.post(url, dataGet, {
+      headers: this.headers
+    });
+    return data;
+  }  
 }

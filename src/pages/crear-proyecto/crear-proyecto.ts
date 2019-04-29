@@ -3,6 +3,7 @@ import { NavController, NavParams, LoadingController, ModalController, ToastCont
 import { GlobalService } from '../../app/services/GlobalService';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import * as moment from 'moment';
+import {AppSettings } from '../../app/AppSettings';
 
 @Component({
   selector: 'page-crear-proyecto',
@@ -126,7 +127,12 @@ permisos = {
               this.global.getArchivosProyectos(this.proyecto.Id).subscribe(
                 data => {
                   var datos = data.json();
-                  this.archivosProyecto = datos.proposals;
+                  var urlPrevia = AppSettings.URL_RAIZ + 'RepositorioProyecto/';
+                  //this.archivosProyecto = datos.proposals;
+                  datos.proposals.forEach(file => {
+                    file.UrlDescarga = urlPrevia + file.NombreCompleto;
+                    this.archivosProyecto.push(file);
+                  });
                 },
                 err =>{ 
                   console.error(err);
@@ -275,6 +281,10 @@ permisos = {
     });
     */
 
+  }
+  openUrl(url){
+    let browser = new InAppBrowser();
+    browser.create(url, '_blank');
   }
 
   presentToast(mensaje) {

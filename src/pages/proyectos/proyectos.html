@@ -40,10 +40,17 @@
           <p>
             <ion-badge item-start>{{clie.OtroOcho}}</ion-badge>
             <ion-badge item-end color="secondary" style="float: right;">{{clie.OtroDiez}}</ion-badge>
+            <ion-badge item-end color="secondary" *ngIf="clie.MostrarVotar" style="float: right;">
+                <ion-icon name="hammer"></ion-icon>
+            </ion-badge>
           </p>
           <span style="font-size: 0.6em;font-style: italic;">Deslice a la izquierda para ver opciones</span>
         </ion-item>
         <ion-item-options side="right">
+          <button ion-button color="primary" (click)="presentModalVotar(clie)" *ngIf="clie.MostrarVotar">
+            <ion-icon name="hammer"></ion-icon>
+            Votar
+          </button>
           <button ion-button color="danger" (click)="presentActionSheet(clie)" *ngIf="permisos.EliminaProyecto == '1'">
             <ion-icon name="trash"></ion-icon>
             Borrar
@@ -57,7 +64,7 @@
   </ion-list>
 
 </ion-content>
-<ion-fab bottom right *ngIf="permisos.CreaProyecto == 1" style="bottom: 10%;">
+<ion-fab bottom right *ngIf="permisos.CreaProyecto == 1" style="bottom: 5%;">
   <button ion-fab (click)="presentModal(null)" class="mui--bg-color-red-300 fg-light">
     <ion-icon name="add"></ion-icon>
   </button>

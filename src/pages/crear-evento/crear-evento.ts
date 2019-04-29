@@ -3,6 +3,7 @@ import { NavController, NavParams, LoadingController, ModalController, ToastCont
 import { GlobalService } from '../../app/services/GlobalService';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import * as moment from 'moment';
+import {AppSettings } from '../../app/AppSettings';
 
 /**
  * Generated class for the CrearEventoPage page.

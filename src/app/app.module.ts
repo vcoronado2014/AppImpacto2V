@@ -33,6 +33,7 @@ import { CrearProyectoPage } from '../pages/crear-proyecto/crear-proyecto';
 import { TabTricelPage } from '../pages/tab-tricel/tab-tricel';
 import { TircelPage } from '../pages/tircel/tircel';
 import { CrearEventoPage } from '../pages/crear-evento/crear-evento';
+import { VotarProyectoPage } from '../pages/votar-proyecto/votar-proyecto';
 //import { CalendarioFullPage } from '../pages/calendario-full/calendario-full';
 
 //servicios
@@ -68,6 +69,7 @@ import { LOCALE_ID } from '@angular/core';
     CrearDocumentoPage,
     CrearEventoPage,
     CrearProyectoPage,
+    VotarProyectoPage,
     MomentPipe,
     TextAvatarDirective
   ],
@@ -100,6 +102,7 @@ import { LOCALE_ID } from '@angular/core';
     CrearDocumentoPage,
     CrearEventoPage,
     CrearProyectoPage,
+    VotarProyectoPage,
     TircelPage,
     InicioPage
   ],

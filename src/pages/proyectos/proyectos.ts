@@ -4,9 +4,11 @@ import { NavController, NavParams, LoadingController, App, ModalController, Acti
 import { LoginPage } from '../login/login';
 import { NovedadesPage } from '../novedades/novedades';
 import { CrearProyectoPage } from '../crear-proyecto/crear-proyecto';
+import { VotarProyectoPage } from '../votar-proyecto/votar-proyecto';
 //servicios
 import { AuthService } from '../../app/services/AuthService';
 import { GlobalService } from '../../app/services/GlobalService';
+import * as moment from 'moment';
 
 /**
  * Generated class for the ProyectosPage page.
@@ -104,6 +106,37 @@ export class ProyectosPage {
       refresher.complete();
     }, 2000);
   }
+
+  transformarFecha(fechaStr) {
+    //en este formato DD-MM-YYYY
+    var retorno = moment();
+    var arrFecha = fechaStr.split('-');
+    if (arrFecha && arrFecha.length == 3) {
+      var mes = parseInt(arrFecha[1]);
+      var dia = parseInt(arrFecha[0]);
+      var anio = parseInt(arrFecha[2]);
+      var mesStr = '';
+      var diaStr = '';
+      if (mes < 10) {
+        mesStr = '0' + mes.toString();
+      }
+      else {
+        mesStr = mes.toString();
+      }
+      if (dia < 10) {
+        diaStr = '0' + dia.toString();
+      }
+      else {
+        diaStr = dia.toString();
+      }
+      retorno = moment(anio +'-' + mesStr + '-' + diaStr);
+
+      //retorno = diaStr + '-' + mesStr + '-' + anio.toString();
+    }
+
+    return retorno;
+  }
+
   cargar() {
     this.proyectosArr=[];
     //this.filtrosInstitucion = [];
@@ -115,7 +148,22 @@ export class ProyectosPage {
       this.global.postProyectos(instId).subscribe(
         data => {
           var datos = data.json();
-          this.proyectosArr = datos.proposals;
+          //verificaciones para votar el proyecto
+          datos.proposals.forEach(proy => {
+            proy.MostrarVotar = false;
+            //primero validar si voto o no
+            if (proy.HaVotado == false){
+              var fechaHoy = moment();
+              var termino = this.transformarFecha(proy.OtroDos);
+              var inicio = this.transformarFecha(proy.OtroUno);
+              //la fecha de inicio
+              if (fechaHoy <= termino){
+                proy.MostrarVotar = true;
+              }
+            }
+            this.proyectosArr.push(proy);
+          });
+          //this.proyectosArr = datos.proposals;
         },
         err =>{ 
           console.error(err);
@@ -140,7 +188,18 @@ export class ProyectosPage {
       }
     });
     modal.present();
-  }  
+  }
+  presentModalVotar(item) {
+
+    let modal = this.modalCtrl.create(VotarProyectoPage, { proyecto: item });
+    modal.onDidDismiss(data => {
+      // Data is your data from the modal
+      if (data != undefined){
+        this.cargar();
+      }
+    });
+    modal.present();
+  }    
 
   delete(item){
     /*
