@@ -69,11 +69,12 @@
         <button ion-button clear (click)="closeModal()">Cerrar</button>
       </ion-col>
       <ion-col text-right>
-          <button ion-button (click)="enviarProyecto()" color="danger" *ngIf="proyecto.MostrarVotar">Votar NO</button>
-        </ion-col>
-      <ion-col text-right>
         <button ion-button (click)="enviarProyecto()" *ngIf="proyecto.MostrarVotar">Votar SI</button>
       </ion-col>
+      <ion-col text-right>
+        <button ion-button (click)="enviarProyecto()" color="danger" *ngIf="proyecto.MostrarVotar">Votar NO</button>
+      </ion-col>
+
     </ion-row>
   </ion-grid>
 

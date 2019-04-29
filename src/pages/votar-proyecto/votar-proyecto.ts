@@ -203,12 +203,18 @@ export class VotarProyectoPage {
           }
           */
         }]
+      },
+      legend: {
+        display: false,
+        labels: {
+          fontColor: 'rgb(255, 99, 132)'
+        }
       }
     };
     var densityData = {
       label: this.labels,
       display: false,
-      backgroundColor:['#f53d3d','#488aff'],
+      backgroundColor:['#488aff', '#f53d3d'],
       data: this.datosLabels
     };
     this.chart = new Chart('realtime', {
