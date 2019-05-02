@@ -40,9 +40,15 @@
           <p>
             <ion-badge item-start>{{clie.OtroOcho}}</ion-badge>
             <ion-badge item-end color="secondary" style="float: right;">{{clie.OtroDiez}}</ion-badge>
-            <ion-badge item-end color="secondary" *ngIf="clie.MostrarVotar" style="float: right;">
+            <ion-badge item-end color="primary" *ngIf="clie.HaVotado">
+              <ion-icon name="done-all"></ion-icon>
+          </ion-badge><!--
+          <ion-icon name="hammer" color="dark" *ngIf="clie.MostrarVotar" style="float: right;"></ion-icon>
+          -->
+            <ion-badge item-end color="dark" *ngIf="clie.MostrarVotar" style="float: right;">
                 <ion-icon name="hammer"></ion-icon>
             </ion-badge>
+
           </p>
           <span style="font-size: 0.6em;font-style: italic;">Deslice a la izquierda para ver opciones</span>
         </ion-item>
@@ -51,11 +57,11 @@
             <ion-icon name="information-circle"></ion-icon>
             Info
           </button>
-          <button ion-button color="primary" (click)="presentModalVotar(clie)" *ngIf="clie.MostrarVotar">
+          <button ion-button color="pastel1" (click)="presentModalVotar(clie)" *ngIf="clie.MostrarVotar">
             <ion-icon name="hammer"></ion-icon>
             Votar
           </button>
-          <button ion-button color="danger" (click)="presentActionSheet(clie)" *ngIf="permisos.EliminaProyecto == '1'">
+          <button ion-button color="danger" (click)="presentActionSheet(clie)" *ngIf="permisos.EliminaProyecto == '1' && clie.MostrarEditar && clie.OtroOnce == '0'">
             <ion-icon name="trash"></ion-icon>
             Borrar
           </button>

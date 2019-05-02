@@ -25,11 +25,11 @@
           <ion-item>
               <ion-badge color="secondary">Periodo: {{proyecto.OtroCinco}}</ion-badge>
           </ion-item>
-          <!--
-          <ion-item>
-              <h1 text-wrap>{{tituloInformativo}}</h1>
+
+          <ion-item *ngIf="proyecto.HaVotado">
+              <h2 text-wrap>{{tituloInformativo}}</h2>
             </ion-item>
-          -->
+
           <ion-list *ngIf="esNuevo == false && archivosProyecto.length > 0">
               <ion-list-header>
                 Archivos
@@ -74,10 +74,10 @@
         <button ion-button clear (click)="closeModal()">Cerrar</button>
       </ion-col>
       <ion-col text-right>
-        <button ion-button (click)="enviarProyecto()" *ngIf="proyecto.MostrarVotar">Votar SI</button>
+        <button ion-button (click)="presentActionSheetSi()" *ngIf="proyecto.MostrarVotar">Votar SI</button>
       </ion-col>
       <ion-col text-right>
-        <button ion-button (click)="enviarProyecto()" color="danger" *ngIf="proyecto.MostrarVotar">Votar NO</button>
+        <button ion-button (click)="presentActionSheetNo()" color="danger" *ngIf="proyecto.MostrarVotar">Votar NO</button>
       </ion-col>
 
     </ion-row>

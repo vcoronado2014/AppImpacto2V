@@ -109,7 +109,7 @@ export class VotarProyectoPage {
         var terminoN = this.transformarFecha(this.proyecto.OtroDos);
         if (fechaHoy <= terminoN){
           if (this.proyecto.HaVotado){
-            this.tituloInformativo = "Ya votaste por este proyecto";
+            this.tituloInformativo = this.proyecto.OtroNueve;
           }
           else {
             this.tituloInformativo = "Todavía no votas por el proyecto";
@@ -117,7 +117,7 @@ export class VotarProyectoPage {
         }
         else {
           if (this.proyecto.HaVotado){
-            this.tituloInformativo = "Ya votaste por este proyecto";
+            this.tituloInformativo = this.proyecto.OtroNueve;
           }
           else {
             this.tituloInformativo = "Ya no puedes votar por el proyecto";
@@ -204,6 +204,87 @@ export class VotarProyectoPage {
       var inic = fecha.format("YYYY-MM-DD");
       var term = fecha.add(1, 'd').format("YYYY-MM-DD");
     }
+  }
+  presentActionSheetSi() {
+    let actionSheet = this.actionSheetCtrl.create({
+      title: '¿Está seguro de Votar SI?',
+      buttons: [
+        {
+          text: 'VOTAR SI',
+          role: 'destructive',
+          handler: () => {
+            this.votarProyecto(1);
+          }
+        },{
+          text: 'Cancelar',
+          role: 'cancel',
+          handler: () => {
+            //console.log('Cancel clicked');
+
+          }
+        }
+      ]
+    });
+    actionSheet.present();
+  }
+
+  presentActionSheetNo() {
+    let actionSheet = this.actionSheetCtrl.create({
+      title: '¿Está seguro de Votar NO?',
+      buttons: [
+        {
+          text: 'VOTAR NO',
+          role: 'destructive',
+          handler: () => {
+            this.votarProyecto(0);
+          }
+        },{
+          text: 'Cancelar',
+          role: 'cancel',
+          handler: () => {
+            //console.log('Cancel clicked');
+
+          }
+        }
+      ]
+    });
+    actionSheet.present();
+  }
+
+  votarProyecto(valor){
+    //validaciones
+    let loader = this.loading.create({
+      content: 'Votando...',
+    });
+
+    loader.present().then(() => {
+
+      var instId = sessionStorage.getItem("INST_ID");
+      var usuId = sessionStorage.getItem("USU_ID");
+      var proId = this.idProyecto;
+
+
+      this.global.votarProyecto(proId, usuId, instId, valor).subscribe(
+        data => {
+
+          var datos = data.json();
+          //loader.dismiss();
+          let sms = this.presentToast('Ha votado con éxito.');
+          this.viewCtrl.dismiss(datos);
+        },
+        err => {
+          console.error(err);
+          loader.dismiss();
+        },
+        () => {
+          console.log('votación exitosa');
+          loader.dismiss();
+        }
+      );
+
+
+    });
+
   }
   transformarFecha(fechaStr) {
     //en este formato DD-MM-YYYY

@@ -339,5 +339,24 @@ export class GlobalService{
     });
     return data;
 
-  }  
+  }
+  postProyectoId(buscarId, usuId, instId){
+    let url = AppSettings.API_ENDPOINT + 'Proyecto';
+    let dataGet = { BuscarId: buscarId, UsuId: usuId, InstId: instId.toString()};
+
+    let data = this.http.post(url, dataGet, {
+      headers: this.headers
+    });
+    return data;
+  }
+  
+  votarProyecto(proId, usuId, instId, valor){
+    let url = AppSettings.API_ENDPOINT + 'VotarProyecto';
+    let dataGet = { ProId: proId.toString(), UsuId: usuId.toString(), InstId: instId.toString(), Valor: valor.toString()};
+
+    let data = this.http.post(url, dataGet, {
+      headers: this.headers
+    });
+    return data;
+  }
 }

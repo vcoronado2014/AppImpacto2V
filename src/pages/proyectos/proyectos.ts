@@ -138,6 +138,7 @@ export class ProyectosPage {
   }
 
   cargar() {
+    var usuId = sessionStorage.getItem("USU_ID");
     this.proyectosArr=[];
     //this.filtrosInstitucion = [];
     var instId = sessionStorage.getItem("INST_ID");
@@ -150,6 +151,77 @@ export class ProyectosPage {
           var datos = data.json();
           //verificaciones para votar el proyecto
           datos.proposals.forEach(proy => {
+            //debemos consultar por cada uno de los elementos
+            this.global.postProyectoId(proy.Id, usuId, instId).subscribe(
+              dataId => {
+                var entidad = dataId.json();
+                if (entidad.proposals && entidad.proposals.length == 1){
+                  proy = entidad.proposals[0];
+                  //ahora procesamos
+                  proy.MostrarVotar = false;
+                  proy.MostrarEditar = false;
+                  //primero validar si voto o no
+                  var fechaHoy = moment();
+                  var termino = this.transformarFecha(proy.OtroDos);
+                  var inicio = this.transformarFecha(proy.OtroUno);
+                  if (proy.HaVotado == false){
+      
+                    //la fecha de inicio
+                    if (fechaHoy <= termino){
+                      proy.MostrarVotar = true;
+                      proy.MostrarInfo = false;
+                      proy.MostrarEditar = true;
+                    }
+                    if (parseInt(proy.OtroOnce) >= 0 && fechaHoy > termino){
+                      proy.MostrarVotar = false;
+                      proy.MostrarInfo = true;
+                    }
+                  }
+                  else{
+                    if (fechaHoy <= termino && fechaHoy >= inicio){
+                      proy.MostrarEditar = true;
+                    }
+                    proy.MostrarVotar = false;
+                    proy.MostrarInfo = true;
+                  }
+                  this.proyectosArr.push(proy);
+
+                }
+                else{
+                  //no cumple asi que dejamos como está
+                  proy.MostrarVotar = false;
+                  proy.MostrarEditar = false;
+                  //primero validar si voto o no
+                  var fechaHoy = moment();
+                  var termino = this.transformarFecha(proy.OtroDos);
+                  var inicio = this.transformarFecha(proy.OtroUno);
+                  if (proy.HaVotado == false){
+      
+                    //la fecha de inicio
+                    if (fechaHoy <= termino){
+                      proy.MostrarVotar = true;
+                      proy.MostrarInfo = false;
+                      proy.MostrarEditar = true;
+                    }
+                    if (parseInt(proy.OtroOnce) >= 0 && fechaHoy > termino){
+                      proy.MostrarVotar = false;
+                      proy.MostrarInfo = true;
+                    }
+                  }
+                  else{
+                    if (fechaHoy <= termino && fechaHoy >= inicio){
+                      proy.MostrarEditar = true;
+                    }
+                    proy.MostrarVotar = false;
+                    proy.MostrarInfo = true;
+                  }
+                  this.proyectosArr.push(proy);
+                }
+
+              }
+            );
+
+            /*
             proy.MostrarVotar = false;
             proy.MostrarEditar = false;
             //primero validar si voto o no
@@ -170,13 +242,15 @@ export class ProyectosPage {
               }
             }
             else{
-              if (fechaHoy <= termino){
+              if (fechaHoy <= termino && fechaHoy >= inicio){
                 proy.MostrarEditar = true;
               }
               proy.MostrarVotar = false;
               proy.MostrarInfo = true;
             }
             this.proyectosArr.push(proy);
+            */
+
           });
           //this.proyectosArr = datos.proposals;
         },
