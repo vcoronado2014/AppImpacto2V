@@ -12,19 +12,24 @@
 
         <ion-item>
           <ion-avatar item-start>
-              <ion-icon name="hammer"></ion-icon>
+              <ion-icon name="hammer" style="font-size: 2em;"></ion-icon>
           </ion-avatar>
           <h2 text-wrap>{{proyecto.NombreUsuario}}</h2>
           <p text-wrap>Objetivo: {{proyecto.NombreCompleto}}</p>
           <p text-wrap>Beneficios: {{proyecto.Rol}}</p>
           <ion-badge color="secondary">{{proyecto.OtroDiez}}</ion-badge>
         </ion-item>
-      
+
         <ion-card-content>
           <p>{{proyecto.OtroSeis}}</p>
           <ion-item>
               <ion-badge color="secondary">Periodo: {{proyecto.OtroCinco}}</ion-badge>
           </ion-item>
+          <!--
+          <ion-item>
+              <h1 text-wrap>{{tituloInformativo}}</h1>
+            </ion-item>
+          -->
           <ion-list *ngIf="esNuevo == false && archivosProyecto.length > 0">
               <ion-list-header>
                 Archivos
@@ -43,7 +48,7 @@
               <ion-icon name="checkbox-outline"></ion-icon>
               <div>Puede Votar</div>
             </button>
-            <button ion-button icon-start clear small *ngIf="proyecto.MostrarVotar == false">
+            <button ion-button icon-start clear small *ngIf="proyecto.MostrarVotar == false" color="danger">
                 <div>NO Puede Votar</div>
               </button>
           </ion-col>

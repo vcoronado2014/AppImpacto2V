@@ -25,18 +25,15 @@ frmQuorum: any;
 //titulo
 frmTitulo: any;
 archivosProyecto: any;
-/*
-frmDetalle: any;
-frmTipoMovimiento: any;
-frmNumeroComprobante: any;
-frmMonto: any;
-frmFecha: any;
-urlDescarga: any;
-nombreDocumento: any;
+
 //archivos
 fileUno: File;
 fileUnoName: any;
-*/
+fileDos: File;
+fileDosName: any;
+fileTres: File;
+fileTresName: any;
+
 permisos = {
   CreaCalendario: 0,
   CreaDocumento: 0,
@@ -145,32 +142,6 @@ permisos = {
               );
               
             });
-         
-
-         /*
-          FechaVotacion: null
-          HaVotado: false
-          Id: 2
-          MostrarItem1: false
-          NombreCompleto: "objetivo del proyecto"
-          NombreUsuario: "prueba de proyecto"
-          OtroCinco: "01-04-2018 - 22-05-2018"
-          OtroCuatro: "254000"
-          OtroDiez: "$ 254.000"
-          OtroDoce: "0"
-          OtroDos: "22-05-2018"
-          OtroNueve: "Usted aún no ha votado este Proyecto."
-          OtroOcho: "01-04-2018 - 22-05-2018"
-          OtroOnce: "1"
-          OtroSeis: "descripcion del proyecto"
-          OtroSiete: "0"
-          OtroTres: "4/1/2017"
-          OtroUno: "01-04-2018"
-          QuorumMinimo: "0"
-          Rol: "beneficios"
-          TotalUsuarios: "13"
-
-         */
 
         }
         else{
@@ -216,72 +187,256 @@ permisos = {
   closeModal(param) {
     this.viewCtrl.dismiss();
   }
+  validarFechas(){
+    var retorno = true;
+    var now = moment();
+    var fechaIni = moment(this.frmInicio);
+    var fechaTer = moment(this.frmTermino);
+
+    //la primera validación fecha inicio mayor a fecha actual
+    if (fechaIni < now){
+      let sms = this.presentToast("La fecha de inicio no puede ser menor a la fecha actual");
+      retorno = false;
+    }
+    //fecha termino menor a la actual
+    if (fechaTer < now){
+      let sms = this.presentToast("La fecha de término no puede ser menor a la fecha actual");
+      retorno = false;
+    }
+    //fecha inicio mayor a la de termino
+    if (fechaTer < fechaIni){
+      let sms = this.presentToast("La fecha de inicio no puede ser mayor a la fecha término");
+      retorno = false;
+    }
+
+    return retorno;
+
+  }
 
   enviarProyecto(){
-    /*
-    //validaciones
-    if (this.frmDetalle == '' || this.frmDetalle == null || this.frmDetalle == undefined) {
-      let toast = this.presentToast('El detalle es obligatorio.');
+    //validar fechas antes
+
+
+    if (this.frmNombre == '' || this.frmNombre == null || this.frmNombre == undefined) {
+      let toast = this.presentToast('El nombre es obligatorio.');
       return;
     }
-    if (this.frmNumeroComprobante == '' || this.frmNumeroComprobante == null || this.frmNumeroComprobante == undefined) {
-      let toast = this.presentToast('El nùmero de comprobante es obligatorio.');
+    if (this.frmObjetivo == '' || this.frmObjetivo == null || this.frmObjetivo == undefined) {
+      let toast = this.presentToast('El objetivo es obligatorio.');
       return;
     }
-    if (this.frmMonto == '' || this.frmMonto == null || this.frmMonto == undefined) {
+    if (this.frmMonto == '' || this.frmMonto == null || this.frmMonto == undefined || this.frmMonto == 0)  {
       let toast = this.presentToast('El monto es obligatorio.');
       return;
     }
-    if (this.frmTipoMovimiento == '' || this.frmTipoMovimiento == null || this.frmTipoMovimiento == undefined) {
-      let toast = this.presentToast('El tipo de movimiento es obligatorio.');
-      return;
+    if (this.frmDescripcion == null || this.frmDescripcion == undefined){
+      this.frmDescripcion = '';
     }
+    if (this.frmBeneficios == null || this.frmBeneficios == undefined){
+      this.frmBeneficios = '';
+    }
+
+    if (this.validarFechas()) {
+      let loader = this.loading.create({
+        content: 'Guardando...',
+      });
+
+      loader.present().then(() => {
+
+
+        if (!this.fileUno) {
+          this.fileUnoName = '';
+        }
+        if (!this.fileDos) {
+          this.fileDosName = '';
+        }
+        if (!this.fileTres) {
+          this.fileTresName = '';
+        }
+
+        var instId = sessionStorage.getItem("INST_ID");
+        var rolId = sessionStorage.getItem("ROL_ID");
+        var usuId = sessionStorage.getItem("USU_ID");
+        var inicio = moment(this.frmInicio).format("DD-MM-YYYY");
+        var termino = moment(this.frmTermino).format("DD-MM-YYYY");
+
+        var proyecto = {
+          Id: this.idProyecto.toString(),
+          Beneficios: this.frmBeneficios,
+          Costo: this.frmMonto.toString(),
+          Descripcion: this.frmDescripcion,
+          EsCpas: "false",
+          FechaInicio: inicio,
+          FechaTermino: termino,
+          IdUsuario: usuId.toString(),
+          InstId: instId.toString(),
+          Nombre: this.frmNombre,
+          Objetivo: this.frmObjetivo
+        };
+        var cantidadArchivos = 0;
+        this.global.putProyecto(proyecto).subscribe(
+          dataArchivo1 => {
+
+            var datos = dataArchivo1.json();
+            //recuperamos el nuevo ID
+            var nuevoId = datos.Id;
+            if (nuevoId) {
+              //ahora procedemos a cargar los archivos
+              var files = [];
+              //aca hay que mandar a guardar los archivos del proyecto y envolver esto en esos archivos
+              if (this.fileUno) {
+                files.push(this.fileUno);
+              }
+              if (this.fileDos) {
+                files.push(this.fileDos);
+              }
+              if (this.fileTres) {
+                files.push(this.fileTres);
+              }
+              if (files.length > 0) {
+                files.forEach(arch => {
+                  this.global.sendArchivoProyecto(arch, nuevoId.toString()).subscribe(
+                    retorno => {
+                      cantidadArchivos++;
+
+                    }
+                  );
+              });
+              }
+              let sms = this.presentToast('La Rendicion se ha guardado con éxito.');
+              this.viewCtrl.dismiss(datos);
+            }
+          },
+          err => {
+            console.error(err);
+            loader.dismiss();
+          },
+          () => {
+            console.log('Archivo 1 cargado');
+            loader.dismiss();
+          }
+        );
+
+
+      });
+    }
+
+  }
+
+  changeListener($event) : void {
+
+    this.fileUno  = $event.target.files[0];
+    this.fileUnoName = this.fileUno.name;
+
     let loader = this.loading.create({
-      content: 'Guardando...',
+      content: 'Verificando...',
     });
 
     loader.present().then(() => {
-
-      if (!this.fileUno){
-        this.fileUnoName = '';
-      }
-      var instId = sessionStorage.getItem("INST_ID");
-      var rolId = sessionStorage.getItem("ROL_ID");
-      var usuId = sessionStorage.getItem("USU_ID");
-      this.rendicion = {
-        Id: this.idRendicion,
-        Detalle: this.frmDetalle,
-        NumeroComprobante: this.frmNumeroComprobante,
-        Monto: this.frmMonto,
-        IdTipoMovimiento: this.frmTipoMovimiento,
-        IdUsuario: usuId,
-        InstId: instId,
-        NombreArchivo: this.fileUnoName
-      };
-
-      this.global.sendRendicion(this.fileUno, this.rendicion).subscribe(
-        dataArchivo1 => {
-
-          var datos = dataArchivo1.json();
-          //loader.dismiss();
-          let sms = this.presentToast('La Rendicion ha sido creada con éxito.');
-          this.viewCtrl.dismiss(datos);
-        },
-        err => {
-          console.error(err);
+      if (this.fileDosName){
+        if (this.fileDosName == this.fileUnoName){
+          //error
+          this.fileUno = null;
+          this.fileUnoName = '';
+          $event.target.value = null;
+          let toast = this.presentToast('Este archivo ya se encuentra seleccionado, elija otro');
           loader.dismiss();
-        },
-        () => {
-          console.log('Archivo 1 cargado');
-          loader.dismiss();
+
+          return;
         }
-      );
+      }
+      if (this.fileTresName){
+        if (this.fileTresName == this.fileUnoName){
+          //error
+          this.fileUno = null;
+          this.fileUnoName = '';
+          $event.target.value = null;
+          let toast = this.presentToast('Este archivo ya se encuentra seleccionado, elija otro');
+          loader.dismiss();
 
-
+          return;
+        }
+      }
+      loader.dismiss();
     });
-    */
-
   }
+
+  changeListenerDos($event) : void {
+
+    this.fileDos  = $event.target.files[0];
+    this.fileDosName = this.fileDos.name;
+
+    let loader = this.loading.create({
+      content: 'Verificando...',
+    });
+
+    loader.present().then(() => {
+      if (this.fileUnoName){
+        if (this.fileUnoName == this.fileDosName){
+          //error
+          this.fileDos = null;
+          this.fileDosName = '';
+          $event.target.value = null;
+          let toast = this.presentToast('Este archivo ya se encuentra seleccionado, elija otro');
+          loader.dismiss();
+          return;
+        }
+      }
+      if (this.fileTresName){
+        if (this.fileTresName == this.fileDosName){
+          //error
+          this.fileDos = null;
+          this.fileDosName = '';
+          $event.target.value = null;
+          let toast = this.presentToast('Este archivo ya se encuentra seleccionado, elija otro');
+          loader.dismiss();
+
+          return;
+        }
+      }
+
+      loader.dismiss();
+    });
+  }
+
+  changeListenerTres($event) : void {
+
+    this.fileTres  = $event.target.files[0];
+    this.fileTresName = this.fileTres.name;
+
+    let loader = this.loading.create({
+      content: 'Verificando...',
+    });
+
+    loader.present().then(() => {
+      if (this.fileUnoName){
+        if (this.fileUnoName == this.fileTresName){
+          //error
+          this.fileTres = null;
+          this.fileTresName = '';
+          $event.target.value = null;
+          let toast = this.presentToast('Este archivo ya se encuentra seleccionado, elija otro');
+          loader.dismiss();
+          return;
+        }
+      }
+      if (this.fileDosName){
+        if (this.fileDosName == this.fileTresName){
+          //error
+          this.fileTres = null;
+          this.fileTresName = '';
+          $event.target.value = null;
+          let toast = this.presentToast('Este archivo ya se encuentra seleccionado, elija otro');
+          loader.dismiss();
+
+          return;
+        }
+      }
+
+      loader.dismiss();
+    });
+  }
+
   openUrl(url){
     let browser = new InAppBrowser();
     browser.create(url, '_blank');

@@ -6,6 +6,7 @@ import * as moment from 'moment';
 import {AppSettings } from '../../app/AppSettings';
 //pruebas de chart
 import { Chart } from 'chart.js';
+import { ProyectosPage } from '../proyectos/proyectos';
 
 @Component({
   selector: 'page-votar-proyecto',
@@ -72,6 +73,7 @@ export class VotarProyectoPage {
   labels: any;
   datosLabels: any;
   cantidadVotaciones = 0;
+  tituloInformativo = '';
   public chart: any = null;
   //grafico
   @ViewChild('pieChart') barChart;
@@ -102,6 +104,25 @@ export class VotarProyectoPage {
         var inicio = this.proyecto.OtroUno;
         var termino = this.proyecto.OtroDos;
         this.cantidadVotaciones = parseInt(this.proyecto.OtroOnce);
+
+        var fechaHoy = moment();
+        var terminoN = this.transformarFecha(this.proyecto.OtroDos);
+        if (fechaHoy <= terminoN){
+          if (this.proyecto.HaVotado){
+            this.tituloInformativo = "Ya votaste por este proyecto";
+          }
+          else {
+            this.tituloInformativo = "Todavía no votas por el proyecto";
+          }
+        }
+        else {
+          if (this.proyecto.HaVotado){
+            this.tituloInformativo = "Ya votaste por este proyecto";
+          }
+          else {
+            this.tituloInformativo = "Ya no puedes votar por el proyecto";
+          }
+        }
 
         //ahora cargamos los proyectos
         
@@ -184,43 +205,74 @@ export class VotarProyectoPage {
       var term = fecha.add(1, 'd').format("YYYY-MM-DD");
     }
   }
+  transformarFecha(fechaStr) {
+    //en este formato DD-MM-YYYY
+    var retorno = moment();
+    var arrFecha = fechaStr.split('-');
+    if (arrFecha && arrFecha.length == 3) {
+      var mes = parseInt(arrFecha[1]);
+      var dia = parseInt(arrFecha[0]);
+      var anio = parseInt(arrFecha[2]);
+      var mesStr = '';
+      var diaStr = '';
+      if (mes < 10) {
+        mesStr = '0' + mes.toString();
+      }
+      else {
+        mesStr = mes.toString();
+      }
+      if (dia < 10) {
+        diaStr = '0' + dia.toString();
+      }
+      else {
+        diaStr = dia.toString();
+      }
+      retorno = moment(anio +'-' + mesStr + '-' + diaStr);
+
+      //retorno = diaStr + '-' + mesStr + '-' + anio.toString();
+    }
+
+    return retorno;
+  }
 
   cargarGrafico(datos){
+    var labels = [];
+    var values = [];
+    if (datos){
+      datos.forEach(element => {
+        labels.push(element.label);
+        values.push(element.value);
+      });
+    }
+
     var options = {
       title: {
-        display: true,
+        display: false,
         text: 'Votaciones'
       },
-      scales: {
-        xAxes: [{
-          barPercentage: 0.5,
-          /*
-          barThickness: 6,
-          maxBarThickness: 20,
-          minBarLength: 2,
-          gridLines: {
-            offsetGridLines: true
-          }
-          */
-        }]
+      tooltips:{
+        enabled: true
       },
       legend: {
-        display: false,
+        display: true,
         labels: {
           fontColor: 'rgb(255, 99, 132)'
         }
       }
     };
     var densityData = {
-      label: this.labels,
+      label: labels,
       display: false,
       backgroundColor:['#488aff', '#f53d3d'],
-      data: this.datosLabels
+      //data: this.datosLabels
+      data: values
     };
     this.chart = new Chart('realtime', {
-      type: 'bar',
+      type: 'pie',
       data: {
-        labels: this.labels,
+        //labels: this.labels,
+        //labels: ['Si', 'No'],
+        labels: labels,
         datasets: [densityData]
       },
       options: options

@@ -151,15 +151,30 @@ export class ProyectosPage {
           //verificaciones para votar el proyecto
           datos.proposals.forEach(proy => {
             proy.MostrarVotar = false;
+            proy.MostrarEditar = false;
             //primero validar si voto o no
+            var fechaHoy = moment();
+            var termino = this.transformarFecha(proy.OtroDos);
+            var inicio = this.transformarFecha(proy.OtroUno);
             if (proy.HaVotado == false){
-              var fechaHoy = moment();
-              var termino = this.transformarFecha(proy.OtroDos);
-              var inicio = this.transformarFecha(proy.OtroUno);
+
               //la fecha de inicio
               if (fechaHoy <= termino){
                 proy.MostrarVotar = true;
+                proy.MostrarInfo = false;
+                proy.MostrarEditar = true;
               }
+              if (parseInt(proy.OtroOnce) >= 0 && fechaHoy > termino){
+                proy.MostrarVotar = false;
+                proy.MostrarInfo = true;
+              }
+            }
+            else{
+              if (fechaHoy <= termino){
+                proy.MostrarEditar = true;
+              }
+              proy.MostrarVotar = false;
+              proy.MostrarInfo = true;
             }
             this.proyectosArr.push(proy);
           });

@@ -47,6 +47,10 @@
           <span style="font-size: 0.6em;font-style: italic;">Deslice a la izquierda para ver opciones</span>
         </ion-item>
         <ion-item-options side="right">
+          <button ion-button color="primary" (click)="presentModalVotar(clie)" *ngIf="clie.MostrarInfo">
+            <ion-icon name="information-circle"></ion-icon>
+            Info
+          </button>
           <button ion-button color="primary" (click)="presentModalVotar(clie)" *ngIf="clie.MostrarVotar">
             <ion-icon name="hammer"></ion-icon>
             Votar
@@ -55,7 +59,7 @@
             <ion-icon name="trash"></ion-icon>
             Borrar
           </button>
-          <button ion-button color="primary" (click)="presentModal(clie)" *ngIf="permisos.ModificaProyecto == '1'">
+          <button ion-button color="primary" (click)="presentModal(clie)" *ngIf="permisos.ModificaProyecto == '1' && clie.MostrarEditar">
             <ion-icon name="create"></ion-icon>
             Editar
           </button>

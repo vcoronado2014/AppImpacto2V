@@ -314,5 +314,30 @@ export class GlobalService{
       headers: this.headers
     });
     return data;
+  } 
+  
+  putProyecto(proyecto){
+    let url = AppSettings.API_ENDPOINT + 'Proyecto';
+    let dataGet = proyecto;
+
+    let data = this.http.put(url, dataGet, {
+      headers: new Headers({'Content-Type': 'application/json'})
+    });
+    return data;
+  }
+  
+  sendArchivoProyecto(File, proId){
+    let model = new FormData();
+    model.append("UploadedImage", File);
+    model.append("ProId", proId);
+
+
+    let url = AppSettings.API_ENDPOINT + 'ArchivoProyecto';
+
+    let data = this.http.post(url, model, {
+      headers: new Headers({})
+    });
+    return data;
+
   }  
 }
