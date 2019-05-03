@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, LoadingController, ToastController, ActionSheetController, ViewController  } from 'ionic-angular';
+import { InAppBrowser } from '@ionic-native/in-app-browser';
 //agregado ahora para las fotos
 //import { PhotoViewer, PhotoViewerOptions } from '@ionic-native/photo-viewer';
 
@@ -38,15 +39,19 @@ export class VisorImagenPage {
     this.viewCtrl.dismiss();
       //this.navCtrl.pop();
   }
-  /*
-  viewImage(){
+  
+  viewImage(url){
+    let browser = new InAppBrowser();
+    browser.create(url, '_blank');
+    /*
     const option: PhotoViewerOptions = {
       share: true
     }
     alert(this.rutaImagen);
     this.photoViewer.show(this.rutaImagen, "titulo");
+    */
   }
-  */
+  
   
   ionViewDidLoad() {
     this.permisos = JSON.parse(sessionStorage.getItem("PERMISOS"));

@@ -15,7 +15,7 @@
 
 <ion-content padding>
   <button ion-button full class="bg-red-200 fg-white" (click)="closeModal()">Cerrar</button>
-  <img [src]="rutaImagen" style="width: 100%;" (click)="viewImage()" />
+  <img [src]="rutaImagen" style="width: 100%;" (click)="viewImage(rutaImagen)" />
   <ion-fab bottom right>
     <button ion-fab class="bg-teal-800" (click)="presentActionSheet()"><ion-icon name="trash"></ion-icon></button>
   </ion-fab>
