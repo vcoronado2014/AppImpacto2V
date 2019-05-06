@@ -35,6 +35,7 @@ import { CrearEventoPage } from '../pages/crear-evento/crear-evento';
 import { VotarProyectoPage } from '../pages/votar-proyecto/votar-proyecto';
 import { MisSolicitudesPage } from '../pages/mis-solicitudes/mis-solicitudes';
 import { ComentariosSolicitudesPage } from '../pages/comentarios-solicitudes/comentarios-solicitudes';
+import { CrearSolicitudPage } from '../pages/crear-solicitud/crear-solicitud';
 //import { CalendarioFullPage } from '../pages/calendario-full/calendario-full';
 import { Camera } from '@ionic-native/camera';
 
@@ -75,6 +76,7 @@ import { Autosize } from '../component/autosize';
     VotarProyectoPage,
     MisSolicitudesPage,
     ComentariosSolicitudesPage,
+    CrearSolicitudPage,
     MomentPipe,
     Autosize,
     TextAvatarDirective
@@ -110,6 +112,7 @@ import { Autosize } from '../component/autosize';
     VotarProyectoPage,
     MisSolicitudesPage,
     ComentariosSolicitudesPage,
+    CrearSolicitudPage,
     TircelPage,
     InicioPage
   ],

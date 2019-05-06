@@ -388,5 +388,14 @@ export class GlobalService{
     });
     return data;
   }
+  postArchivos(instId, elementoId, tipoPadre){
+    let url = AppSettings.API_ENDPOINT + 'Archivo';
+    let dataGet = { InstId: instId.toString(), ElementoId: elementoId.toString(), TipoPadre: tipoPadre.toString()};
+
+    let data = this.http.post(url, dataGet, {
+      headers: this.headers
+    });
+    return data;
+  }
 
 }

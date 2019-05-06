@@ -5,10 +5,12 @@ import { NavController, NavParams, LoadingController, ModalController, ToastCont
 import { LoginPage } from '../login/login';
 //paginas
 import { ComentariosSolicitudesPage } from '../comentarios-solicitudes/comentarios-solicitudes';
+import { CrearSolicitudPage } from '../crear-solicitud/crear-solicitud';
 
 import { AuthService } from '../../app/services/AuthService';
 import { GlobalService } from '../../app/services/GlobalService';
 import {AppSettings } from '../../app/AppSettings';
+import { InAppBrowser } from '@ionic-native/in-app-browser';
 
 @Component({
   selector: 'page-mis-solicitudes',
@@ -107,6 +109,13 @@ export class MisSolicitudesPage {
                   else {
                     resp.clase = 'respuestaOtro item item-block item-md';
                   }
+                  this.global.postArchivos(resp.InstId, resp.Id, 3).subscribe(dataArc=>{
+                    resp.ArchivosAdjuntos = dataArc.json();
+                    resp.ArchivosAdjuntos.forEach(archivo => {
+                      var urlPrevia = AppSettings.URL_RAIZ + archivo.NombreCarpeta + '/' + archivo.NombreArchivo;
+                      archivo.Url = urlPrevia;
+                    });
+                  });
                 });
               }
               //debemos buscar correctamente al usuario de la solicitud ya que viene un nombre distinto
@@ -116,6 +125,19 @@ export class MisSolicitudesPage {
                   sol.UsuarioFuncional = dataUsu.json();
                   //sobrescribimos el nombre usuario
                   sol.NombreUsuario = sol.UsuarioFuncional.Persona.Nombres + ' ' + sol.UsuarioFuncional.Persona.ApellidoPaterno + ' ' + sol.UsuarioFuncional.Persona.ApellidoMaterno;
+                }
+              );
+              //ahora los archivos
+              this.global.postArchivos(instId, sol.Id, '2').subscribe(
+                dataArc => {
+                  //lo quitamos para que no sea tan grande el elemento
+                  sol.ArchivosAdjuntos = dataArc.json();
+                  sol.ArchivosAdjuntos.forEach(archivo => {
+                    var urlPrevia = AppSettings.URL_RAIZ + archivo.NombreCarpeta + '/' + archivo.NombreArchivo;
+                    archivo.Url = urlPrevia;
+                  });
+                  console.log(sol.ArchivosAdjuntos);
+
                 }
               );
             });
@@ -146,6 +168,23 @@ export class MisSolicitudesPage {
     });
     modal.present();
   }
+  openUrl(url){
+    //var url = this.urlDescarga;
+    let browser = new InAppBrowser();
+    browser.create(url, '_blank');
+  }
+
+  presentModalNuevo(item) {
+
+    let modal = this.modalCtrl.create(CrearSolicitudPage, { solicitud: item });
+    modal.onDidDismiss(data => {
+      // Data is your data from the modal
+      if (data != undefined){
+        this.cargar();
+      }
+    });
+    modal.present();
+  }  
 
   doRefresh(refresher) {
     console.log('Begin async operation', refresher);

@@ -30,6 +30,8 @@
         
           <ion-card-header>
             <ion-item>
+
+                
               <!-- prioridad baja = 0, media = 1, alta = 2-->
               <ion-avatar item-start>
                 <img *ngIf="item.PrioridadId == 0" src="../assets/imgs/green.png">
@@ -45,6 +47,9 @@
             <!-- texto completo -->
             <ion-item>
               <p text-wrap text-justify>{{item.Texto}}</p>
+            </ion-item>
+            <ion-item no-lines *ngFor="let arc of item.ArchivosAdjuntos">
+                <img [src]="arc.Url" (click)="openUrl(arc.Url)" />
             </ion-item>
             <!--cantidad comentarios 
             <ion-item *ngIf="item.RespuestaMuro.length > 0" (click)="presentModal(item)" style="cursor: pointer;">
@@ -75,3 +80,8 @@
     </ion-list>
 
 </ion-content>
+<ion-fab bottom right *ngIf="permisos.CreaMroSolicitud == 1" style ="bottom: 10%;">
+  <button ion-fab  (click)="presentModalNuevo(null)" class="mui--bg-color-red-300 fg-light">
+    <ion-icon name="add"></ion-icon>
+  </button>
+</ion-fab>

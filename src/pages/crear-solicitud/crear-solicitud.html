@@ -1,0 +1,64 @@
+<ion-header class="mui--bg-color-teal-600 fg-light">
+
+  <ion-navbar>
+      <ion-grid>
+          <ion-row>
+              <ion-col col-10>
+                  Crear Solicitud
+                </ion-col>
+                <ion-col col-2 text-right>
+                  <ion-icon name="close" (click)="closeModal()"></ion-icon>
+                </ion-col>
+          </ion-row>
+        </ion-grid>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-12>
+          <label class="custom-file-upload">
+            <input type="file" accept="image/*" (change)="changeListener($event)" #fileInput>
+            <ion-icon name="cloud-upload"></ion-icon>&nbsp;Selecciona un Archivo
+          </label>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-12>
+        <button ion-button block icon-start (click)="getPicture()">
+          <ion-icon name="camera"></ion-icon>
+          Toma una foto
+        </button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-12>
+        <img [src]="image" *ngIf="image" />
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-12>
+        <ion-item>
+          <ion-label stacked>Seleccione Prioridad</ion-label>
+          <ion-select [(ngModel)]="frmPrioridad">
+            <ion-option value="0">Baja</ion-option>
+            <ion-option value="1">Media</ion-option>
+            <ion-option value="2">Alta</ion-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-10>
+        <ion-textarea placeholder="Escribe un comentario" class="casilla" [(ngModel)]="frmTexto" autosize></ion-textarea>
+      </ion-col>
+      <ion-col col-2 (click)="enviarComentario()">
+        <ion-icon name="send" class="botonEnviar"></ion-icon>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

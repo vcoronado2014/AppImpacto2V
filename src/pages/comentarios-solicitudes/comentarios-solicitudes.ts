@@ -6,6 +6,7 @@ import * as moment from 'moment';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 
 
+
 @Component({
   selector: 'page-comentarios-solicitudes',
   templateUrl: 'comentarios-solicitudes.html',
@@ -42,11 +43,17 @@ export class ComentariosSolicitudesPage {
     }
 
   }
+  openUrl(url){
+    //var url = this.urlDescarga;
+    let browser = new InAppBrowser();
+    browser.create(url, '_blank');
+  }
   getPicture(){
     let options: CameraOptions = {
       destinationType: this.camera.DestinationType.DATA_URL,
       targetWidth: 1000,
       targetHeight: 1000,
+      correctOrientation: false,
       quality: 100
     }
     this.camera.getPicture( options )

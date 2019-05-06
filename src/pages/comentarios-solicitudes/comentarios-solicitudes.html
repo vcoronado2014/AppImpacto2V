@@ -37,23 +37,27 @@
           <ion-item>
             <p text-wrap text-justify>{{solicitud.Texto}}</p>
           </ion-item>
+          <ion-item no-lines *ngFor="let arc of solicitud.ArchivosAdjuntos">
+              <img [src]="arc.Url" (click)="openUrl(arc.Url)" />
+          </ion-item>
 
         </ion-card-content>
       
       </ion-card>
-      <ion-item>
-        <button ion-button block (click)="getPicture()">Toma una foto</button>
-        <img [src]="image" *ngIf="image" />
-      </ion-item>
+
 <!-- LISTA DE COMENTARIOS -->
 <ion-list *ngFor="let item of comentarios" no-lines>
   <ion-item [class]="item.clase">
      <!-- <ion-item class="respuesta">-->
     <h3 style="color: #385898;">{{item.NombreUsuario}} - ({{item.NombreRol}})</h3>
+    <ion-item no-lines *ngFor="let arc of item.ArchivosAdjuntos">
+        <img [src]="arc.Url" (click)="openUrl(arc.Url)" />
+    </ion-item>
     <p text-wrap text-justify>
       {{item.Texto}}
     </p>
   </ion-item>
+
   <p class="tiempo"><ion-icon name="calendar"></ion-icon>&nbsp;{{item.FechaString}}</p>
 </ion-list>
 
