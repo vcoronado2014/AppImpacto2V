@@ -1,0 +1,75 @@
+<ion-header class="mui--bg-color-teal-600 fg-light">
+
+    <ion-navbar>
+        <ion-grid>
+            <ion-row>
+                <ion-col col-10>
+                    Comentarios
+                  </ion-col>
+                  <ion-col col-2 text-right>
+                    <ion-icon name="close" (click)="closeModal()"></ion-icon>
+                  </ion-col>
+            </ion-row>
+          </ion-grid>
+    </ion-navbar>
+  
+  </ion-header>
+
+
+<ion-content padding>
+    <ion-card>
+        
+        <ion-card-header>
+          <ion-item>
+            <!-- prioridad baja = 0, media = 1, alta = 2-->
+            <ion-avatar item-start>
+              <img *ngIf="solicitud.PrioridadId == 0" src="../assets/imgs/green.png">
+              <img *ngIf="solicitud.PrioridadId == 1" src="../assets/imgs/blue.png">
+              <img *ngIf="solicitud.PrioridadId == 2" src="../assets/imgs/red.png">
+            </ion-avatar>
+            <h2>{{solicitud.NombreUsuario}}</h2>
+            <p style="font-size: 1rem;">{{solicitud.FechaString}}</p>
+          </ion-item>
+        </ion-card-header>
+      
+        <ion-card-content>
+          <!-- texto completo -->
+          <ion-item>
+            <p text-wrap text-justify>{{solicitud.Texto}}</p>
+          </ion-item>
+
+        </ion-card-content>
+      
+      </ion-card>
+      <ion-item>
+        <button ion-button block (click)="getPicture()">Toma una foto</button>
+        <img [src]="image" *ngIf="image" />
+      </ion-item>
+<!-- LISTA DE COMENTARIOS -->
+<ion-list *ngFor="let item of comentarios" no-lines>
+  <ion-item [class]="item.clase">
+     <!-- <ion-item class="respuesta">-->
+    <h3 style="color: #385898;">{{item.NombreUsuario}} - ({{item.NombreRol}})</h3>
+    <p text-wrap text-justify>
+      {{item.Texto}}
+    </p>
+  </ion-item>
+  <p class="tiempo"><ion-icon name="calendar"></ion-icon>&nbsp;{{item.FechaString}}</p>
+</ion-list>
+
+
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-10>
+            <ion-textarea placeholder="Escribe un comentario" class="casilla" [(ngModel)]="frmTexto"  autosize></ion-textarea>
+        </ion-col>
+        <ion-col col-2 (click)="enviarComentario()">
+            <ion-icon name="send" class="botonEnviar"></ion-icon>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-footer>

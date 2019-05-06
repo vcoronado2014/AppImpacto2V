@@ -14,7 +14,6 @@ import { MyApp } from './app.component';
 import { ClientePage } from '../pages/cliente/cliente';
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
-import { SolicitudesPage } from '../pages/solicitudes/solicitudes';
 import { NovedadesPage } from '../pages/novedades/novedades';
 import {InicioPage} from "../pages/inicio/inicio";
 import { DetailNovedadPage } from '../pages/detail-novedad/detail-novedad';
@@ -34,7 +33,10 @@ import { TabTricelPage } from '../pages/tab-tricel/tab-tricel';
 import { TircelPage } from '../pages/tircel/tircel';
 import { CrearEventoPage } from '../pages/crear-evento/crear-evento';
 import { VotarProyectoPage } from '../pages/votar-proyecto/votar-proyecto';
+import { MisSolicitudesPage } from '../pages/mis-solicitudes/mis-solicitudes';
+import { ComentariosSolicitudesPage } from '../pages/comentarios-solicitudes/comentarios-solicitudes';
 //import { CalendarioFullPage } from '../pages/calendario-full/calendario-full';
+import { Camera } from '@ionic-native/camera';
 
 //servicios
 import { AuthService } from '../app/services/AuthService';
@@ -44,6 +46,8 @@ import { NgCalendarModule } from 'ionic2-calendar';
 //pipes
 import { MomentPipe } from '../pipes/MomentPipe';
 import { LOCALE_ID } from '@angular/core';
+//componentes
+import { Autosize } from '../component/autosize';
 
 @NgModule({
   declarations: [
@@ -51,7 +55,6 @@ import { LOCALE_ID } from '@angular/core';
     ClientePage,
     HomePage,
     LoginPage,
-    SolicitudesPage,
     NovedadesPage,
     DetailNovedadPage,
     VisorImagenPage,
@@ -70,7 +73,10 @@ import { LOCALE_ID } from '@angular/core';
     CrearEventoPage,
     CrearProyectoPage,
     VotarProyectoPage,
+    MisSolicitudesPage,
+    ComentariosSolicitudesPage,
     MomentPipe,
+    Autosize,
     TextAvatarDirective
   ],
   imports: [
@@ -86,7 +92,6 @@ import { LOCALE_ID } from '@angular/core';
     ClientePage,
     HomePage,
     LoginPage,
-    SolicitudesPage,
     NovedadesPage,
     DetailNovedadPage,
     VisorImagenPage,
@@ -103,6 +108,8 @@ import { LOCALE_ID } from '@angular/core';
     CrearEventoPage,
     CrearProyectoPage,
     VotarProyectoPage,
+    MisSolicitudesPage,
+    ComentariosSolicitudesPage,
     TircelPage,
     InicioPage
   ],
@@ -111,6 +118,7 @@ import { LOCALE_ID } from '@angular/core';
     SplashScreen,
     AuthService,
     GlobalService,
+    Camera,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     //CalendarOriginal,
     {provide: LOCALE_ID, useValue: 'es-CL' },

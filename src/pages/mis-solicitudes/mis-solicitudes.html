@@ -1,0 +1,77 @@
+<ion-header class="mui--bg-color-red-500 fg-light">
+
+    <ion-navbar>
+        <ion-grid>
+            <ion-row>
+                <ion-col col-10>
+                    Mis Solicitudes
+                  </ion-col>
+                  <ion-col col-2 text-right>
+                    <ion-icon name="close" (click)="logout()"></ion-icon>
+                  </ion-col>
+            </ion-row>
+          </ion-grid>
+    </ion-navbar>
+  
+  </ion-header>
+
+
+<ion-content padding>
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+      <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+    <ion-label no-padding no-margin text-center style="font-style: italic;
+          font-size: 0.9rem;">
+      Deslize hacia abajo para actualizar
+    </ion-label>
+
+    <ion-list no-lines *ngFor="let item of solicitudes">
+        <ion-card>
+        
+          <ion-card-header>
+            <ion-item>
+              <!-- prioridad baja = 0, media = 1, alta = 2-->
+              <ion-avatar item-start>
+                <img *ngIf="item.PrioridadId == 0" src="../assets/imgs/green.png">
+                <img *ngIf="item.PrioridadId == 1" src="../assets/imgs/blue.png">
+                <img *ngIf="item.PrioridadId == 2" src="../assets/imgs/red.png">
+              </ion-avatar>
+              <h2>{{item.NombreUsuario}}</h2>
+              <p style="font-size: 1rem;">{{item.FechaString}}</p>
+            </ion-item>
+          </ion-card-header>
+        
+          <ion-card-content>
+            <!-- texto completo -->
+            <ion-item>
+              <p text-wrap text-justify>{{item.Texto}}</p>
+            </ion-item>
+            <!--cantidad comentarios 
+            <ion-item *ngIf="item.RespuestaMuro.length > 0" (click)="presentModal(item)" style="cursor: pointer;">
+              <p text-right *ngIf="item.RespuestaMuro.length == 1">{{item.RespuestaMuro.length}} comentario</p>
+              <p text-right *ngIf="item.RespuestaMuro.length > 1">{{item.RespuestaMuro.length}} comentarios</p>
+            </ion-item>-->
+            <ion-item  (click)="presentModal(item)" style="cursor: pointer;">
+                <ion-grid>
+                    <ion-row>
+                      <ion-col col-6>
+                          <button ion-button icon-start small clear>
+                              <ion-icon name="chatbubbles"></ion-icon>
+                              Comentar
+                            </button>
+                      </ion-col>
+                      <ion-col col-6 *ngIf="item.RespuestaMuro.length > 0" style="padding-top: 12px;">
+                          <p text-right *ngIf="item.RespuestaMuro.length == 1">{{item.RespuestaMuro.length}} comentario</p>
+                          <p text-right *ngIf="item.RespuestaMuro.length > 1">{{item.RespuestaMuro.length}} comentarios</p>
+                      </ion-col>
+                    </ion-row>
+                  </ion-grid>
+            </ion-item>
+          </ion-card-content>
+        
+        </ion-card>
+
+
+    </ion-list>
+
+</ion-content>

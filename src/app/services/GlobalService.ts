@@ -359,4 +359,34 @@ export class GlobalService{
     });
     return data;
   }
+
+  postSolMuro(usuId, instId){
+    let url = AppSettings.API_ENDPOINT + 'SolMuro';
+    let dataGet = { UsuId: usuId, InstId: instId.toString()};
+
+    let data = this.http.post(url, dataGet, {
+      headers: this.headers
+    });
+    return data;
+  }
+  postObtenerUsuario(idUsuario){
+    let url = AppSettings.API_ENDPOINT + 'ObtenerUsuario';
+    let dataGet = { IdUsuario: idUsuario.toString()};
+
+    let data = this.http.post(url, dataGet, {
+      headers: this.headers
+    });
+    return data;
+  }
+
+  putComentario(comentario){
+    let url = AppSettings.API_ENDPOINT + 'ResSolMuro';
+    let dataGet = comentario;
+
+    let data = this.http.put(url, dataGet, {
+      headers: new Headers({'Content-Type': 'application/json'})
+    });
+    return data;
+  }
+
 }
