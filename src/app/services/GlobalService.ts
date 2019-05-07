@@ -397,5 +397,31 @@ export class GlobalService{
     });
     return data;
   }
+  createComentario(comentario){
+    let url = AppSettings.API_ENDPOINT + 'SolMuro';
+    let dataGet = comentario;
+
+    let data = this.http.put(url, dataGet, {
+      headers: new Headers({'Content-Type': 'application/json'})
+    });
+    return data;
+  }
+  sendFile(File, mroId, instId, tipoPadre, nombreCarpeta, id){
+    let model = new FormData();
+    model.append("UploadedImage", File);
+    model.append("idElemento", mroId);
+    model.append("instId", instId);
+    model.append("tipoPadre", tipoPadre);
+    model.append("nombreCarpeta", nombreCarpeta);
+    model.append("id", id);
+
+    let url = AppSettings.API_ENDPOINT + 'ArchivoAdjunto';
+
+    let data = this.http.post(url, model, {
+      headers: new Headers({})
+    });
+    return data;
+
+  }
 
 }

@@ -6,8 +6,8 @@
                 <ion-col col-10>
                     Mis Solicitudes
                   </ion-col>
-                  <ion-col col-2 text-right>
-                    <ion-icon name="close" (click)="logout()"></ion-icon>
+                  <ion-col col-2 text-right (click)="logout()">
+                    <ion-icon name="close"></ion-icon>
                   </ion-col>
             </ion-row>
           </ion-grid>
@@ -49,7 +49,7 @@
               <p text-wrap text-justify>{{item.Texto}}</p>
             </ion-item>
             <ion-item no-lines *ngFor="let arc of item.ArchivosAdjuntos">
-                <img [src]="arc.Url" (click)="openUrl(arc.Url)" />
+                <img [src]="arc.Url" (click)="openUrl(arc.Url)" (load)="loaded($event)" id="img1" />
             </ion-item>
             <!--cantidad comentarios 
             <ion-item *ngIf="item.RespuestaMuro.length > 0" (click)="presentModal(item)" style="cursor: pointer;">

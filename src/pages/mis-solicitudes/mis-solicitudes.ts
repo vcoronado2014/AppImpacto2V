@@ -12,6 +12,9 @@ import { GlobalService } from '../../app/services/GlobalService';
 import {AppSettings } from '../../app/AppSettings';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 
+import * as exif from 'exif-js';
+import * as $ from 'jquery';
+
 @Component({
   selector: 'page-mis-solicitudes',
   templateUrl: 'mis-solicitudes.html',
@@ -65,7 +68,8 @@ export class MisSolicitudesPage {
     VerRol: 0,
     VerTricel: 0,
     VerUsuario: 0
-  }
+  };
+  metaData: any;
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
@@ -155,6 +159,31 @@ export class MisSolicitudesPage {
         }
       );
 
+    });
+  }
+    async loaded(e) {
+      this.metaData = await this.getGpsData(e.target);
+    }
+
+    getGpsData(image): Promise<any> {
+      return new Promise((resolve, reject) => {
+        exif.getData(image, function () {
+          var allMetaData = exif.getAllTags(this);
+          var orientation = exif.getTag(this, "Orientation");
+          if (orientation == 6){
+            $(this).css('transform', 'rotate(90deg)');
+          }
+          resolve(allMetaData);
+        });
+      });
+    }
+  evaluarImagen(img) {
+    exif.getData(img.currentTarget, function () {
+      var orientation = exif.getTag(this, "Orientation");
+      console.log(orientation);
+      if (orientation == 6)
+        //$(img).css('transform', 'rotate(90deg)')
+        console.log(orientation);
     });
   }
   presentModal(item) {

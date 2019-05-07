@@ -6,8 +6,8 @@
                 <ion-col col-10>
                     Comentarios
                   </ion-col>
-                  <ion-col col-2 text-right>
-                    <ion-icon name="close" (click)="closeModal()"></ion-icon>
+                  <ion-col col-2 text-right (click)="closeModal()">
+                    <ion-icon name="close"></ion-icon>
                   </ion-col>
             </ion-row>
           </ion-grid>
@@ -38,7 +38,7 @@
             <p text-wrap text-justify>{{solicitud.Texto}}</p>
           </ion-item>
           <ion-item no-lines *ngFor="let arc of solicitud.ArchivosAdjuntos">
-              <img [src]="arc.Url" (click)="openUrl(arc.Url)" />
+              <img [src]="arc.Url" (click)="openUrl(arc.Url)" (load)="loaded($event)" id="img2" />
           </ion-item>
 
         </ion-card-content>
@@ -51,7 +51,7 @@
      <!-- <ion-item class="respuesta">-->
     <h3 style="color: #385898;">{{item.NombreUsuario}} - ({{item.NombreRol}})</h3>
     <ion-item no-lines *ngFor="let arc of item.ArchivosAdjuntos">
-        <img [src]="arc.Url" (click)="openUrl(arc.Url)" />
+        <img [src]="arc.Url" (click)="openUrl(arc.Url)" (load)="loaded($event)" id="img1" />
     </ion-item>
     <p text-wrap text-justify>
       {{item.Texto}}
@@ -67,7 +67,10 @@
   <ion-toolbar>
     <ion-grid>
       <ion-row>
-        <ion-col col-10>
+        <ion-col col-1 (click)="presentModalNuevo()">
+            <ion-icon name="attach" style="font-size: 3em;color:grey;"></ion-icon>
+        </ion-col>
+        <ion-col col-9>
             <ion-textarea placeholder="Escribe un comentario" class="casilla" [(ngModel)]="frmTexto"  autosize></ion-textarea>
         </ion-col>
         <ion-col col-2 (click)="enviarComentario()">

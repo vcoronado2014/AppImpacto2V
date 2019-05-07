@@ -15,8 +15,12 @@ export class CrearSolicitudPage {
   frmPrioridad: any;
   fileUno: File;
   fileUnoName: any;
+  idSolicitud = 0;
+  solicitud: any;
   //probando camara
   image: string = null;
+  esComentario = false;
+  mroId: any;
 
   constructor(
     public navCtrl: NavController,
@@ -31,6 +35,22 @@ export class CrearSolicitudPage {
   ) {
     moment.locale('es');
     this.frmPrioridad = "0";
+    this.mroId = 0;
+    this.solicitud = this.navParams.get('solicitud');
+    if (this.solicitud){
+      //viene una a editar
+      this.idSolicitud = this.solicitud.Id;
+      this.esComentario = true;
+      this.mroId = this.solicitud.MroId;
+      //ojo con esto porque este caso se produce solo cuando esta creando un
+      //comentario a la solicitud
+      //el tipo padre es 3
+    }
+    else{
+      this.idSolicitud = 0;
+      this.esComentario = false;
+    }
+
   }
   changeListener($event) : void {
 
@@ -81,6 +101,148 @@ export class CrearSolicitudPage {
     })
     .catch(error =>{
       console.error( error );
+    });
+  }
+  enviarSolicitud(){
+    let loader = this.loading.create({
+      content: 'Guardando...',
+    });
+  
+    loader.present().then(() => {
+      var instId = sessionStorage.getItem("INST_ID");
+      var rolId = sessionStorage.getItem("ROL_ID");
+      var usuId = sessionStorage.getItem("USU_ID");
+      
+      var comentario = {
+        Id: this.idSolicitud.toString(),
+        InstId: instId.toString(),
+        PrioridadId: this.frmPrioridad,
+        RolId: rolId.toString(),
+        Texto: this.frmTexto,
+        UsuId: usuId.toString(),
+        Eliminado: '0'
+      };
+  
+      this.global.createComentario(comentario).subscribe(
+        dataArchivo1 => {
+  
+          var datos = dataArchivo1.json();
+          //loader.dismiss();
+          let sms = this.presentToast('Comentario Guardado con éxito.');
+          //this.viewCtrl.dismiss(datos);
+          this.modificado = true;
+          this.frmTexto = '';
+          //ahora recogemos los valores desde el retorno
+          var idElemento = datos.Id; //mroId
+          var tipoPadre = '2'; //para las imagenes de las solicitudes
+          var nombreCarpeta = 'Novedades';
+          var id = 0;//en este caso el id va cero por ser un elemento nuevo
+          //ahora se debería enviar la imagen obtenida
+          
+          if (this.fileUno) {
+            //guardar archivo 1
+            this.global.sendFile(this.fileUno, idElemento, instId, tipoPadre, nombreCarpeta, id).subscribe(
+              dataArchivo1 => {
+                var datos = dataArchivo1.json();
+              },
+              err => {
+                console.error(err);
+              },
+              () => {
+                console.log('Archivo 1 cargado');
+              }
+            );
+          }
+          //ahora el dismiss
+          this.viewCtrl.dismiss(datos);
+        },
+        err => {
+          console.error(err);
+          loader.dismiss();
+        },
+        () => {
+          console.log('Guardado');
+          loader.dismiss();
+        }
+      );
+  
+  
+    });
+  }
+  crear() {
+    if (this.frmTexto == null || this.frmTexto == undefined) {
+      let sms = this.presentToast('Debe ingresar texto para enviar');
+      return;
+    }
+    if (this.esComentario == false) {
+      this.enviarSolicitud();
+    }
+    else {
+      //aca guardar el comentario
+      this.enviarComentario();
+    }
+  }
+  enviarComentario(){
+    let loader = this.loading.create({
+      content: 'Guardando...',
+    });
+
+    loader.present().then(() => {
+      var instId = sessionStorage.getItem("INST_ID");
+      var rolId = sessionStorage.getItem("ROL_ID");
+      var usuId = sessionStorage.getItem("USU_ID");
+      var comentario = {
+        InstId: instId.toString(),
+        MroId: this.mroId.toString(),
+        PrioridadId: this.frmPrioridad,
+        RolId: rolId.toString(),
+        Texto: this.frmTexto,
+        UsuId: usuId.toString()
+      };
+
+      this.global.putComentario(comentario).subscribe(
+        dataArchivo1 => {
+
+          var datos = dataArchivo1.json();
+          //loader.dismiss();
+          let sms = this.presentToast('Comentario Guardado con éxito.');
+          this.modificado = true;
+          this.frmTexto = '';
+          //ahora recogemos los valores desde el retorno
+          var idElemento = datos.Id; //mroId
+          var tipoPadre = '3'; //para las imagenes de los comentarios solicitudes
+          var nombreCarpeta = 'Novedades';
+          var id = 0;//en este caso el id va cero
+          //ahora se debería enviar la imagen obtenida
+          
+          if (this.fileUno) {
+            //guardar archivo 1
+            this.global.sendFile(this.fileUno, idElemento, instId, tipoPadre, nombreCarpeta, id).subscribe(
+              dataArchivo1 => {
+                var datos = dataArchivo1.json();
+              },
+              err => {
+                console.error(err);
+              },
+              () => {
+                console.log('Archivo 1 cargado');
+              }
+            );
+          }
+          //ahora el dismiss
+          this.viewCtrl.dismiss(datos);
+        },
+        err => {
+          console.error(err);
+          loader.dismiss();
+        },
+        () => {
+          console.log('Archivo 1 cargado');
+          loader.dismiss();
+        }
+      );
+
+
     });
   }
 

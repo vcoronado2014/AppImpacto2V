@@ -4,6 +4,10 @@ import { GlobalService } from '../../app/services/GlobalService';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import * as moment from 'moment';
 import { Camera, CameraOptions } from '@ionic-native/camera';
+import * as exif from 'exif-js';
+import * as $ from 'jquery';
+
+import { CrearSolicitudPage } from '../crear-solicitud/crear-solicitud';
 
 
 
@@ -20,6 +24,7 @@ export class ComentariosSolicitudesPage {
   modificado = false;
   //probando camara
   image: string = null;
+  metaData: any;
 
   constructor(
     public navCtrl: NavController,
@@ -38,10 +43,27 @@ export class ComentariosSolicitudesPage {
       //seteamos la lista de comentarios
       this.comentarios = this.solicitud.RespuestaMuro;
       this.mroId = this.solicitud.Id;
-
-
     }
 
+  }
+  async loaded(e) {
+    this.metaData = await this.getGpsData(e.target);
+    console.log(this.metaData);
+  }
+
+  getGpsData(image): Promise<any> {
+    return new Promise((resolve, reject) => {
+      exif.getData(image, function () {
+        var allMetaData = exif.getAllTags(this);
+        console.log(allMetaData);
+        var orientation = exif.getTag(this, "Orientation");
+        if (orientation == 6){
+          $(this).css('transform', 'rotate(90deg)');
+        }
+          
+        resolve(allMetaData);
+      });
+    });
   }
   openUrl(url){
     //var url = this.urlDescarga;
@@ -155,5 +177,21 @@ UsuId: "54"
     }
       
   }
+  presentModalNuevo() {
+    var item = this.solicitud;
+    item.MroId = this.mroId;
+
+    let modal = this.modalCtrl.create(CrearSolicitudPage, { solicitud: item });
+    modal.onDidDismiss(data => {
+      // Data is your data from the modal
+      if (data != undefined){
+        this.modificado = true;
+        //this.cargar();
+        //aca cerrar y enviar dismiss a la anterior
+        this.closeModal(data);
+      }
+    });
+    modal.present();
+  }   
 
 }

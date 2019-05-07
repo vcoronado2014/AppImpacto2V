@@ -6,8 +6,8 @@
               <ion-col col-10>
                   Crear Solicitud
                 </ion-col>
-                <ion-col col-2 text-right>
-                  <ion-icon name="close" (click)="closeModal()"></ion-icon>
+                <ion-col col-2 text-right (click)="closeModal()">
+                  <ion-icon name="close"></ion-icon>
                 </ion-col>
           </ion-row>
         </ion-grid>
@@ -55,7 +55,7 @@
       <ion-col col-10>
         <ion-textarea placeholder="Escribe un comentario" class="casilla" [(ngModel)]="frmTexto" autosize></ion-textarea>
       </ion-col>
-      <ion-col col-2 (click)="enviarComentario()">
+      <ion-col col-2 (click)="crear()">
         <ion-icon name="send" class="botonEnviar"></ion-icon>
       </ion-col>
     </ion-row>
