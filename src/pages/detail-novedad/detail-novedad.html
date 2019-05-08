@@ -22,16 +22,16 @@
         <ion-grid *ngIf="item.MuestraAdjuntos">
           <ion-row>
             <div [class]="item.ClaseUno" *ngIf="item.MuestraImagenUno">
-              <img [src]="item.ImgUno" (click)="presentModalImagen(item.ImgUno, item.IdUno, item.Id)" />
+              <img [src]="item.ImgUno" (click)="presentModalImagen(item.ImgUno, item.IdUno, item.Id)"  (load)="loaded($event)" id="img1" />
             </div>
             <div [class]="item.ClaseDos" *ngIf="item.MuestraImagenDos">
-              <img [src]="item.ImgDos" (click)="presentModalImagen(item.ImgDos, item.IdDos, item.Id)" />
+              <img [src]="item.ImgDos" (click)="presentModalImagen(item.ImgDos, item.IdDos, item.Id)" (load)="loaded($event)" id="img2" />
             </div>
             <div [class]="item.ClaseTres" *ngIf="item.MuestraImagenTres">
-              <img [src]="item.ImgTres" (click)="presentModalImagen(item.ImgTres, item.IdTres, item.Id)" />
+              <img [src]="item.ImgTres" (click)="presentModalImagen(item.ImgTres, item.IdTres, item.Id)" (load)="loaded($event)" id="img3" />
             </div>
             <div [class]="item.ClaseCuatro" *ngIf="item.MuestraImagenCuatro">
-              <img [src]="item.ImgCuatro" (click)="presentModalImagen(item.ImgCuatro, item.IdCuatro, item.Id)" />
+              <img [src]="item.ImgCuatro" (click)="presentModalImagen(item.ImgCuatro, item.IdCuatro, item.Id)" (load)="loaded($event)" id="img4" />
             </div>
           </ion-row>
 

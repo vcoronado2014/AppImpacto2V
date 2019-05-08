@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, LoadingController, ToastController, ActionSheetController, ViewController  } from 'ionic-angular';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
+import * as exif from 'exif-js';
+import * as $ from 'jquery';
 //agregado ahora para las fotos
 //import { PhotoViewer, PhotoViewerOptions } from '@ionic-native/photo-viewer';
 
@@ -16,7 +18,7 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
   templateUrl: 'visor-imagen.html',
 })
 export class VisorImagenPage {
-
+  metaData: any;
   item: any;
   idImagen: any;
   mroId: any;
@@ -38,6 +40,25 @@ export class VisorImagenPage {
   closeModal(param) {
     this.viewCtrl.dismiss();
       //this.navCtrl.pop();
+  }
+  async loaded(e) {
+    this.metaData = await this.getGpsData(e.target);
+    console.log(this.metaData);
+  }
+
+  getGpsData(image): Promise<any> {
+    return new Promise((resolve, reject) => {
+      exif.getData(image, function () {
+        var allMetaData = exif.getAllTags(this);
+        console.log(allMetaData);
+        var orientation = exif.getTag(this, "Orientation");
+        if (orientation == 6){
+          $(this).css('transform', 'rotate(90deg)');
+        }
+          
+        resolve(allMetaData);
+      });
+    });
   }
   
   viewImage(url){

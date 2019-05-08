@@ -121,6 +121,8 @@ export class MisSolicitudesPage {
                     });
                   });
                 });
+                //aca la ultima respuesta
+                sol.UltimoComentario = sol.RespuestaMuro[0];
               }
               //debemos buscar correctamente al usuario de la solicitud ya que viene un nombre distinto
               this.global.postObtenerUsuario(sol.UsuId).subscribe(

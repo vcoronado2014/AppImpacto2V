@@ -72,6 +72,12 @@
                     </ion-row>
                   </ion-grid>
             </ion-item>
+            <ion-list *ngIf="item.UltimoComentario">
+              <ion-item>
+                {{item.UltimoComentario.Id}}
+              </ion-item>
+
+            </ion-list>
           </ion-card-content>
         
         </ion-card>

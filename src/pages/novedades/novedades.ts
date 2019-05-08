@@ -13,6 +13,9 @@ import { InicioService } from '../../app/services/InicioService';
 import { NovedadService } from '../../app/services/novedadService';
 import {AppSettings } from '../../app/AppSettings';
 
+import * as exif from 'exif-js';
+import * as $ from 'jquery';
+
 /**
  * Generated class for the NovedadesPage page.
  *
@@ -81,6 +84,7 @@ export class NovedadesPage {
 //archivos
 fileP: File;
 image: string = null;
+metaData: any;
 
 
   constructor(public navCtrl: NavController,
@@ -271,6 +275,25 @@ image: string = null;
 
     let modal = this.modalCtrl.create(VisorImagenPage, { item: item, idImagen: idImagen, MroId: id  });
     modal.present();
+  }
+  async loaded(e) {
+    this.metaData = await this.getGpsData(e.target);
+    console.log(this.metaData);
+  }
+
+  getGpsData(image): Promise<any> {
+    return new Promise((resolve, reject) => {
+      exif.getData(image, function () {
+        var allMetaData = exif.getAllTags(this);
+        console.log(allMetaData);
+        var orientation = exif.getTag(this, "Orientation");
+        if (orientation == 6){
+          $(this).css('transform', 'rotate(90deg)');
+        }
+          
+        resolve(allMetaData);
+      });
+    });
   }
   presentModalCrearNovedad(item) {
 

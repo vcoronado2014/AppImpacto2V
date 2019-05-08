@@ -37,7 +37,7 @@
       <ion-grid>
         <ion-row>
           <div [class]="novedad.ClaseUno" *ngIf="novedad.MuestraImagenUno">
-            <img [src]="novedad.ImgUno"/>
+            <img [src]="novedad.ImgUno" (load)="loaded($event)" id="img1" />
           </div>
           <ion-col col-12 *ngIf="novedad.MuestraImagenUno == false">
             <ion-icon name="document"></ion-icon> Archivo 1:

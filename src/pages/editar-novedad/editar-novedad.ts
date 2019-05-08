@@ -7,6 +7,8 @@ import { NovedadService } from '../../app/services/novedadService';
 import {AppSettings } from '../../app/AppSettings';
 
 import { NovedadesPage } from '../novedades/novedades';
+import * as exif from 'exif-js';
+import * as $ from 'jquery';
 
 /**
  * Generated class for the EditarNovedadPage page.
@@ -21,6 +23,7 @@ import { NovedadesPage } from '../novedades/novedades';
   providers: [AuthService, InicioService, NovedadService]
 })
 export class EditarNovedadPage {
+  metaData: any;
   novedad: any;
   esNuevo: any;
   textoEnviar: any;
@@ -106,7 +109,25 @@ export class EditarNovedadPage {
 
     }
   }
+  async loaded(e) {
+    this.metaData = await this.getGpsData(e.target);
+    console.log(this.metaData);
+  }
 
+  getGpsData(image): Promise<any> {
+    return new Promise((resolve, reject) => {
+      exif.getData(image, function () {
+        var allMetaData = exif.getAllTags(this);
+        console.log(allMetaData);
+        var orientation = exif.getTag(this, "Orientation");
+        if (orientation == 6){
+          $(this).css('transform', 'rotate(90deg)');
+        }
+          
+        resolve(allMetaData);
+      });
+    });
+  }
   ionViewDidLoad() {
     this.permisos = JSON.parse(sessionStorage.getItem("PERMISOS"));
     console.log('ionViewDidLoad EditarNovedadPage');

@@ -8,6 +8,7 @@ import * as exif from 'exif-js';
 import * as $ from 'jquery';
 
 import { CrearSolicitudPage } from '../crear-solicitud/crear-solicitud';
+import {AppSettings } from '../../app/AppSettings';
 
 
 
@@ -127,6 +128,13 @@ export class ComentariosSolicitudesPage {
               datos.clase = 'respuesta item item-block item-md';
             }
           );
+          this.global.postArchivos(instId, datos.Id, 3).subscribe(dataArc=>{
+            datos.ArchivosAdjuntos = dataArc.json();
+            datos.ArchivosAdjuntos.forEach(archivo => {
+              var urlPrevia = AppSettings.URL_RAIZ + archivo.NombreCarpeta + '/' + archivo.NombreArchivo;
+              archivo.Url = urlPrevia;
+            });
+          });
           this.comentarios.unshift(datos);
           //this.viewCtrl.dismiss(datos);
           this.modificado = true;

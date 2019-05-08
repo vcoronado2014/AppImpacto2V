@@ -7,6 +7,8 @@ import { NovedadService } from '../../app/services/novedadService';
 
 //pages
 import { VisorImagenPage } from '../visor-imagen/visor-imagen';
+import * as exif from 'exif-js';
+import * as $ from 'jquery';
 
 /**
  * Generated class for the DetailNovedadPage page.
@@ -21,6 +23,7 @@ import { VisorImagenPage } from '../visor-imagen/visor-imagen';
   providers: [NovedadService]
 })
 export class DetailNovedadPage {
+  metaData: any;
   novedad: any;
   solicitudes: any;
   textoEnviar: any;
@@ -90,7 +93,25 @@ export class DetailNovedadPage {
       this.solicitudes.push(this.novedad);
     }
   }
+  async loaded(e) {
+    this.metaData = await this.getGpsData(e.target);
+    console.log(this.metaData);
+  }
 
+  getGpsData(image): Promise<any> {
+    return new Promise((resolve, reject) => {
+      exif.getData(image, function () {
+        var allMetaData = exif.getAllTags(this);
+        console.log(allMetaData);
+        var orientation = exif.getTag(this, "Orientation");
+        if (orientation == 6){
+          $(this).css('transform', 'rotate(90deg)');
+        }
+          
+        resolve(allMetaData);
+      });
+    });
+  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad DetailNovedadPage');
     this.permisos = JSON.parse(sessionStorage.getItem("PERMISOS"));
