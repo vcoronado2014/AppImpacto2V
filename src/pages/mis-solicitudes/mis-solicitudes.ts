@@ -105,6 +105,7 @@ export class MisSolicitudesPage {
           if (this.solicitudes){
             
             this.solicitudes.forEach(sol => {
+              sol.PuedeEliminar = false;
               if (sol.RespuestaMuro && sol.RespuestaMuro.length > 0){
                 sol.RespuestaMuro.forEach(resp => {
                   if (usuId == resp.UsuId){
@@ -123,6 +124,11 @@ export class MisSolicitudesPage {
                 });
                 //aca la ultima respuesta
                 sol.UltimoComentario = sol.RespuestaMuro[0];
+              }
+              else{
+                if (sol.UsuId == usuId){
+                  sol.PuedeEliminar = true;
+                }
               }
               //debemos buscar correctamente al usuario de la solicitud ya que viene un nombre distinto
               this.global.postObtenerUsuario(sol.UsuId).subscribe(
