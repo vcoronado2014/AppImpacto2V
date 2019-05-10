@@ -423,5 +423,38 @@ export class GlobalService{
     return data;
 
   }
+  deleteRespuestaSolicitud(id) {
+    var entidad = {
+      Id: id
+    };
+    let url = AppSettings.API_ENDPOINT + 'ResSolMuro';
+    let dataGet = entidad;
+
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    let options = new RequestOptions({
+      headers: headers,
+      body: dataGet
+    });
+
+    let data = this.http.delete(url, options);
+    return data;
+  }
+
+  deleteSolicitud(id){
+    var entidad = {
+      Id: id
+    };
+    let url = AppSettings.API_ENDPOINT + 'SolMuro';
+    let dataGet = entidad;
+
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    let options = new RequestOptions({
+      headers: headers,
+      body: dataGet
+    });
+
+    let data = this.http.delete(url, options);
+    return data;
+  }
 
 }

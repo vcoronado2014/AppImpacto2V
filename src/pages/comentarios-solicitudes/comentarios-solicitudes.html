@@ -57,8 +57,20 @@
       {{item.Texto}}
     </p>
   </ion-item>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+          <p class="tiempo"><ion-icon name="calendar"></ion-icon>&nbsp;{{item.FechaString}}</p>
+      </ion-col>
+      <ion-col *ngIf="item.PuedeEliminar">
+        <button ion-button icon-start small clear color="danger" style="float: right;" (click)="presentActionSheet(item)">
+            <ion-icon name="trash"></ion-icon>
+            Eliminar
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
-  <p class="tiempo"><ion-icon name="calendar"></ion-icon>&nbsp;{{item.FechaString}}</p>
 </ion-list>
 
 

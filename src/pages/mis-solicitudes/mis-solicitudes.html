@@ -56,21 +56,21 @@
               <p text-right *ngIf="item.RespuestaMuro.length == 1">{{item.RespuestaMuro.length}} comentario</p>
               <p text-right *ngIf="item.RespuestaMuro.length > 1">{{item.RespuestaMuro.length}} comentarios</p>
             </ion-item>-->
-            <ion-item  (click)="presentModal(item)" style="cursor: pointer;">
+            <ion-item>
                 <ion-grid>
                     <ion-row>
-                      <ion-col>
+                      <ion-col (click)="presentModal(item)" style="cursor: pointer;">
                           <button ion-button icon-start small clear>
                               <ion-icon name="chatbubbles"></ion-icon>
                               Comentar
                             </button>
                       </ion-col>
-                      <ion-col *ngIf="item.RespuestaMuro.length > 0" style="padding-top: 12px;">
+                      <ion-col *ngIf="item.RespuestaMuro.length > 0" style="padding-top: 12px;" (click)="presentModal(item)" style="cursor: pointer;">
                           <p text-right *ngIf="item.RespuestaMuro.length == 1">{{item.RespuestaMuro.length}} comentario</p>
                           <p text-right *ngIf="item.RespuestaMuro.length > 1">{{item.RespuestaMuro.length}} comentarios</p>
                       </ion-col>
                       <ion-col *ngIf="item.PuedeEliminar">
-                          <button ion-button icon-start small clear>
+                          <button ion-button icon-start small clear color="danger"  (click)="presentActionSheetSol(item)">
                               <ion-icon name="trash"></ion-icon>
                               Eliminar
                             </button>

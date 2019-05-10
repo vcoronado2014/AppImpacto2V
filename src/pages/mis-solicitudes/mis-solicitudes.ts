@@ -110,9 +110,11 @@ export class MisSolicitudesPage {
                 sol.RespuestaMuro.forEach(resp => {
                   if (usuId == resp.UsuId){
                     resp.clase = 'respuesta item item-block item-md';
+                    resp.PuedeEliminar = true;
                   }
                   else {
                     resp.clase = 'respuestaOtro item item-block item-md';
+                    resp.PuedeEliminar = false;
                   }
                   this.global.postArchivos(resp.InstId, resp.Id, 3).subscribe(dataArc=>{
                     resp.ArchivosAdjuntos = dataArc.json();
@@ -246,5 +248,62 @@ export class MisSolicitudesPage {
     this.app.getRootNav().setRoot(LoginPage);
 
   }
+
+  deleteSol(item){
+    if (item){
+
+      let loader = this.loading.create({
+        content: 'eliminando...',
+      });
+
+      loader.present().then(() => {
+        var id = item.Id;
+        this.global.deleteSolicitud(id).subscribe(
+          data => {
+            //actualizar el contenido
+            var ret = data.json();
+            //this.modificado = true;
+            //ahora actualizamos la lista
+            //this.obtenerComentarios(id);
+            this.cargar();
+          },
+          err => {
+            console.error(err);
+            loader.dismiss();
+          },
+          () => {
+            console.log('delete completed');
+            //terminamos;
+            loader.dismiss();
+          }
+        );
+
+      });
+
+    }
+  }
+  presentActionSheetSol(item) {
+    let actionSheet = this.actionSheetCtrl.create({
+      title: '¿Está seguro de eliminar?',
+      buttons: [
+        {
+          text: 'Eliminar',
+          role: 'destructive',
+          handler: () => {
+            //console.log('Destructive clicked');
+            this.deleteSol(item);
+          }
+        },{
+          text: 'Cancelar',
+          role: 'cancel',
+          handler: () => {
+            //console.log('Cancel clicked');
+
+          }
+        }
+      ]
+    });
+    actionSheet.present();
+  }     
 
 }

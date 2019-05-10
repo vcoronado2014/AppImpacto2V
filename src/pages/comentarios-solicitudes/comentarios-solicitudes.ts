@@ -42,8 +42,9 @@ export class ComentariosSolicitudesPage {
     this.solicitud = this.navParams.get('solicitud');
     if (this.solicitud){
       //seteamos la lista de comentarios
-      this.comentarios = this.solicitud.RespuestaMuro;
+      //this.comentarios = this.solicitud.RespuestaMuro;
       this.mroId = this.solicitud.Id;
+      this.obtenerComentarios(this.solicitud.Id);
     }
 
   }
@@ -87,6 +88,96 @@ export class ComentariosSolicitudesPage {
       console.error( error );
     });
   }
+  obtenerComentarios(idSolicitud){
+    var instId = sessionStorage.getItem("INST_ID");
+    var rolId = sessionStorage.getItem("ROL_ID");
+    var usuId = sessionStorage.getItem("USU_ID");
+
+    let loader = this.loading.create({
+      content: 'Obteniendo Datos...',
+    });
+
+    loader.present().then(() => {
+    this.global.postSolMuro(usuId, instId).subscribe(
+      data => {
+        //datos
+        var solicitudes = data.json();
+        if (solicitudes){
+          
+          solicitudes.forEach(sol => {
+            sol.PuedeEliminar = false;
+            if (sol.RespuestaMuro && sol.RespuestaMuro.length > 0){
+              sol.RespuestaMuro.forEach(resp => {
+                if (usuId == resp.UsuId){
+                  resp.clase = 'respuesta item item-block item-md';
+                  resp.PuedeEliminar = true;
+                }
+                else {
+                  resp.clase = 'respuestaOtro item item-block item-md';
+                  resp.PuedeEliminar = false;
+                }
+                this.global.postArchivos(resp.InstId, resp.Id, 3).subscribe(dataArc=>{
+                  resp.ArchivosAdjuntos = dataArc.json();
+                  resp.ArchivosAdjuntos.forEach(archivo => {
+                    var urlPrevia = AppSettings.URL_RAIZ + archivo.NombreCarpeta + '/' + archivo.NombreArchivo;
+                    archivo.Url = urlPrevia;
+                  });
+                });
+              });
+              //aca la ultima respuesta
+              sol.UltimoComentario = sol.RespuestaMuro[0];
+            }
+            else{
+              if (sol.UsuId == usuId){
+                sol.PuedeEliminar = true;
+              }
+            }
+            //debemos buscar correctamente al usuario de la solicitud ya que viene un nombre distinto
+            this.global.postObtenerUsuario(sol.UsuId).subscribe(
+              dataUsu => {
+                //lo quitamos para que no sea tan grande el elemento
+                sol.UsuarioFuncional = dataUsu.json();
+                //sobrescribimos el nombre usuario
+                sol.NombreUsuario = sol.UsuarioFuncional.Persona.Nombres + ' ' + sol.UsuarioFuncional.Persona.ApellidoPaterno + ' ' + sol.UsuarioFuncional.Persona.ApellidoMaterno;
+              }
+            );
+            //ahora los archivos
+            this.global.postArchivos(instId, sol.Id, '2').subscribe(
+              dataArc => {
+                //lo quitamos para que no sea tan grande el elemento
+                sol.ArchivosAdjuntos = dataArc.json();
+                sol.ArchivosAdjuntos.forEach(archivo => {
+                  var urlPrevia = AppSettings.URL_RAIZ + archivo.NombreCarpeta + '/' + archivo.NombreArchivo;
+                  archivo.Url = urlPrevia;
+                });
+                console.log(sol.ArchivosAdjuntos);
+
+              }
+            );
+          });
+          console.log(solicitudes);
+        }
+        //ahora que tenemos las solicitudes vamos a asociar la que corresponde
+        if (solicitudes && solicitudes.length > 0){
+          solicitudes.forEach(solicitud => {
+            if (solicitud.Id == idSolicitud){
+              this.comentarios = solicitud.RespuestaMuro;
+            }
+          });
+        }
+      },
+      err =>{
+        console.error(err);
+        loader.dismiss();
+      },
+      () => {
+        console.log('post completed solicitudes');
+        //terminamos;
+        loader.dismiss();
+      }
+    );
+  });
+  }
   enviarComentario(){
     //validaciones
     if (this.frmTexto == null || this.frmTexto == undefined){
@@ -116,6 +207,9 @@ export class ComentariosSolicitudesPage {
           var datos = dataArchivo1.json();
           //loader.dismiss();
           let sms = this.presentToast('Comentario Guardado con éxito.');
+          //vamos a traer todos los elementos mejor y luego extraer la solicitud que corresponde
+          this.obtenerComentarios(this.solicitud.Id);
+          /*
           //hay que buscar la informacion del usuario
           this.global.postObtenerUsuario(datos.UsuId).subscribe(
             dataUsu => {
@@ -136,6 +230,8 @@ export class ComentariosSolicitudesPage {
             });
           });
           this.comentarios.unshift(datos);
+          */
+
           //this.viewCtrl.dismiss(datos);
           this.modificado = true;
           this.frmTexto = '';
@@ -194,12 +290,124 @@ UsuId: "54"
       // Data is your data from the modal
       if (data != undefined){
         this.modificado = true;
+        this.obtenerComentarios(this.solicitud.Id);
         //this.cargar();
         //aca cerrar y enviar dismiss a la anterior
-        this.closeModal(data);
+        //this.closeModal(data);
       }
     });
     modal.present();
+  }
+  delete(item){
+    if (item){
+
+      let loader = this.loading.create({
+        content: 'eliminando...',
+      });
+
+      loader.present().then(() => {
+        var id = item.Id;
+        this.global.deleteRespuestaSolicitud(id).subscribe(
+          data => {
+            //actualizar el contenido
+            var ret = data.json();
+            this.modificado = true;
+            //ahora actualizamos la lista
+            this.obtenerComentarios(this.solicitud.Id);
+          },
+          err => {
+            console.error(err);
+            loader.dismiss();
+          },
+          () => {
+            console.log('delete completed');
+            //terminamos;
+            loader.dismiss();
+          }
+        );
+
+      });
+
+    }
+  }
+  presentActionSheet(item) {
+    let actionSheet = this.actionSheetCtrl.create({
+      title: '¿Está seguro de eliminar?',
+      buttons: [
+        {
+          text: 'Eliminar',
+          role: 'destructive',
+          handler: () => {
+            //console.log('Destructive clicked');
+            this.delete(item);
+          }
+        },{
+          text: 'Cancelar',
+          role: 'cancel',
+          handler: () => {
+            //console.log('Cancel clicked');
+
+          }
+        }
+      ]
+    });
+    actionSheet.present();
   }   
+
+  deleteSol(item){
+    if (item){
+
+      let loader = this.loading.create({
+        content: 'eliminando...',
+      });
+
+      loader.present().then(() => {
+        var id = item.Id;
+        this.global.deleteSolicitud(id).subscribe(
+          data => {
+            //actualizar el contenido
+            var ret = data.json();
+            this.modificado = true;
+            //ahora actualizamos la lista
+            this.obtenerComentarios(id);
+          },
+          err => {
+            console.error(err);
+            loader.dismiss();
+          },
+          () => {
+            console.log('delete completed');
+            //terminamos;
+            loader.dismiss();
+          }
+        );
+
+      });
+
+    }
+  }
+  presentActionSheetSol(item) {
+    let actionSheet = this.actionSheetCtrl.create({
+      title: '¿Está seguro de eliminar?',
+      buttons: [
+        {
+          text: 'Eliminar',
+          role: 'destructive',
+          handler: () => {
+            //console.log('Destructive clicked');
+            this.deleteSol(item);
+          }
+        },{
+          text: 'Cancelar',
+          role: 'cancel',
+          handler: () => {
+            //console.log('Cancel clicked');
+
+          }
+        }
+      ]
+    });
+    actionSheet.present();
+  }     
 
 }
