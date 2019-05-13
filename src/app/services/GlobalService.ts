@@ -456,5 +456,16 @@ export class GlobalService{
     let data = this.http.delete(url, options);
     return data;
   }
+  putToken(token){
+    let url = AppSettings.API_ENDPOINT + 'Firebase';
+    let dataGet = {
+      Token: token
+    };
+
+    let data = this.http.put(url, dataGet, {
+      headers: new Headers({'Content-Type': 'application/json'})
+    });
+    return data;
+  }
 
 }

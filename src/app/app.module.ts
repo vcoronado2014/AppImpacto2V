@@ -39,6 +39,7 @@ import { CrearSolicitudPage } from '../pages/crear-solicitud/crear-solicitud';
 //import { CalendarioFullPage } from '../pages/calendario-full/calendario-full';
 import { Camera } from '@ionic-native/camera';
 import { FCM } from '@ionic-native/fcm';
+import { LocalNotifications } from '@ionic-native/local-notifications';
 
 //servicios
 import { AuthService } from '../app/services/AuthService';
@@ -121,6 +122,7 @@ import { Autosize } from '../component/autosize';
     StatusBar,
     SplashScreen,
     FCM,
+    LocalNotifications,
     AuthService,
     GlobalService,
     Camera,
