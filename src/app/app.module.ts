@@ -38,6 +38,7 @@ import { ComentariosSolicitudesPage } from '../pages/comentarios-solicitudes/com
 import { CrearSolicitudPage } from '../pages/crear-solicitud/crear-solicitud';
 //import { CalendarioFullPage } from '../pages/calendario-full/calendario-full';
 import { Camera } from '@ionic-native/camera';
+import { FCM } from '@ionic-native/fcm';
 
 //servicios
 import { AuthService } from '../app/services/AuthService';
@@ -119,6 +120,7 @@ import { Autosize } from '../component/autosize';
   providers: [
     StatusBar,
     SplashScreen,
+    FCM,
     AuthService,
     GlobalService,
     Camera,

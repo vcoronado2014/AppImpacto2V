@@ -119,7 +119,8 @@ export class MisSolicitudesPage {
                   this.global.postArchivos(resp.InstId, resp.Id, 3).subscribe(dataArc=>{
                     resp.ArchivosAdjuntos = dataArc.json();
                     resp.ArchivosAdjuntos.forEach(archivo => {
-                      var urlPrevia = AppSettings.URL_RAIZ + archivo.NombreCarpeta + '/' + archivo.NombreArchivo;
+                      //var urlPrevia = AppSettings.URL_RAIZ + archivo.NombreCarpeta + '/' + archivo.NombreArchivo;
+                      var urlPrevia = AppSettings.URL_RAIZ_NOVEDADES +  '/' + archivo.NombreArchivo;
                       archivo.Url = urlPrevia;
                     });
                   });
@@ -147,7 +148,8 @@ export class MisSolicitudesPage {
                   //lo quitamos para que no sea tan grande el elemento
                   sol.ArchivosAdjuntos = dataArc.json();
                   sol.ArchivosAdjuntos.forEach(archivo => {
-                    var urlPrevia = AppSettings.URL_RAIZ + archivo.NombreCarpeta + '/' + archivo.NombreArchivo;
+                    //var urlPrevia = AppSettings.URL_RAIZ + archivo.NombreCarpeta + '/' + archivo.NombreArchivo;
+                    var urlPrevia = AppSettings.URL_RAIZ_NOVEDADES + '/' + archivo.NombreArchivo;
                     archivo.Url = urlPrevia;
                   });
                   console.log(sol.ArchivosAdjuntos);
