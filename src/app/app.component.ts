@@ -25,14 +25,18 @@ export class MyApp {
         (token: string) => {
           console.log('token dispositivo: ' + token);
           //hay que guardar o actualizar el token del dispositivo
+          //borramos el guardado desde aca
+          /*
           this.global.putToken(token).subscribe(data=> {
             var ret = data.json();
             //aca hacer algo con la data?
+            console.log(token);
           },
           error => {
             console.log(error);
           }
         )
+        */
         }
       ).catch(
         error => {

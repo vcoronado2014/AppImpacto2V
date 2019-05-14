@@ -5,6 +5,12 @@ import { DomSanitizer, BrowserModule } from '@angular/platform-browser';
 
 import 'rxjs/add/operator/map';
 
+//tratamiento de fcm
+import { FCM, NotificationData } from '@ionic-native/fcm';
+import { LocalNotifications } from '@ionic-native/local-notifications';
+//globales
+import { GlobalService } from './GlobalService';
+
 @Injectable()
 export class AuthService{
   username: string;
@@ -12,7 +18,9 @@ export class AuthService{
 
   constructor(
     private http: Http,
-    private sanitized: DomSanitizer
+    private sanitized: DomSanitizer,
+    private global: GlobalService,
+    private fcm: FCM
   ){
     //inicializamos los valores
     this.username = '';
@@ -55,6 +63,25 @@ export class AuthService{
 
             this.username = userInfo.usuario;
             this.loggedIn = true;
+            //tratamiento con el registro de fcm
+            this.fcm.getToken().then(
+              (token: string) => {
+                console.log('token dispositivo: ' + token);
+                //hay que guardar o actualizar el token del dispositivo
+                this.global.putToken(token, retorno.Institucion.Id, retorno.AutentificacionUsuario.Id).subscribe(data=> {
+                  var ret = data.json();
+                  //aca hacer algo con la data?
+                },
+                error => {
+                  console.log(error);
+                }
+              )
+              }
+            ).catch(
+              error => {
+                console.log(error);
+              }
+            );
           }
           return this.loggedIn;
         }
