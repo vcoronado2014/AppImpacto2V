@@ -13,4 +13,5 @@ export class AppSettings{
   public static URL_FOTOS = 'https://www.asambleas.cl/apps/Repositorio/';
   public static URL_RAIZ = 'https://www.asambleas.cl/apps/';
   public static URL_RAIZ_NOVEDADES = 'https://www.asambleas.cl/apps/Novedades';
+  public static CORS = "https://api.allorigins.win/raw?url=";
 }

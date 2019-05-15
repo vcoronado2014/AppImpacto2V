@@ -3,6 +3,7 @@ import { NavController, NavParams, LoadingController, ToastController, ActionShe
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import * as exif from 'exif-js';
 import * as $ from 'jquery';
+import {AppSettings } from '../../app/AppSettings';
 //agregado ahora para las fotos
 //import { PhotoViewer, PhotoViewerOptions } from '@ionic-native/photo-viewer';
 
@@ -32,7 +33,7 @@ export class VisorImagenPage {
                   //private photoViewer: PhotoViewer,
                   public actionSheetCtrl: ActionSheetController) {
 
-    this.rutaImagen = this.navParams.get('item');
+    this.rutaImagen = AppSettings.CORS + this.navParams.get('item');
     this.idImagen = this.navParams.get('idImagen');
     this.mroId = this.navParams.get('MroId');
 

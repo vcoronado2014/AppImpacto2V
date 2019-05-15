@@ -15,11 +15,14 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
 import * as exif from 'exif-js';
 import * as $ from 'jquery';
 
+
 @Component({
   selector: 'page-mis-solicitudes',
   templateUrl: 'mis-solicitudes.html',
 })
 export class MisSolicitudesPage {
+  //variable para cors
+  //cors = "https://api.allorigins.win/raw?url=";
   solicitudes: any;
   permisos = {
     CreaCalendario: 0,
@@ -120,8 +123,14 @@ export class MisSolicitudesPage {
                     resp.ArchivosAdjuntos = dataArc.json();
                     resp.ArchivosAdjuntos.forEach(archivo => {
                       //var urlPrevia = AppSettings.URL_RAIZ + archivo.NombreCarpeta + '/' + archivo.NombreArchivo;
-                      var urlPrevia = AppSettings.URL_RAIZ_NOVEDADES +  '/' + archivo.NombreArchivo;
+                      var urlPrevia = AppSettings.CORS + AppSettings.URL_RAIZ_NOVEDADES +  '/' + archivo.NombreArchivo;
                       archivo.Url = urlPrevia;
+                      /*
+                      this.global.postCors(archivo.Url).subscribe(ret=>{
+                        console.log(ret);
+                      })
+                      */
+
                     });
                   });
                 });
@@ -149,8 +158,13 @@ export class MisSolicitudesPage {
                   sol.ArchivosAdjuntos = dataArc.json();
                   sol.ArchivosAdjuntos.forEach(archivo => {
                     //var urlPrevia = AppSettings.URL_RAIZ + archivo.NombreCarpeta + '/' + archivo.NombreArchivo;
-                    var urlPrevia = AppSettings.URL_RAIZ_NOVEDADES + '/' + archivo.NombreArchivo;
+                    var urlPrevia = AppSettings.CORS + AppSettings.URL_RAIZ_NOVEDADES + '/' + archivo.NombreArchivo;
                     archivo.Url = urlPrevia;
+                    /*
+                    this.global.postCors(archivo.Url).subscribe(ret=>{
+                      console.log(ret);
+                    })
+                    */
                   });
                   console.log(sol.ArchivosAdjuntos);
 

@@ -31,8 +31,6 @@ export class AuthService{
 
   login(userInfo){
     let url = AppSettings.API_ENDPOINT + 'Login';
-    //let url = 'http://api.asambleas.cl/api/login';
-
 
     let iJson = JSON.stringify(userInfo);
 

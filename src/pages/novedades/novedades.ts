@@ -85,6 +85,10 @@ export class NovedadesPage {
 fileP: File;
 image: string = null;
 metaData: any;
+//**** */
+institucionLogueado = sessionStorage.getItem("INSTITUCION_NOMBRE");
+nombreLogueado = sessionStorage.getItem("PERSONA_NOMBRE");
+rolLogueado = sessionStorage.getItem("ROL_NOMBRE");
 
 
   constructor(public navCtrl: NavController,
@@ -146,7 +150,7 @@ metaData: any;
                 muestraImagenes = true;
                 //recorremos los archivos adjuntos
                 for (var r in this.solicitudes[s].ArchivosAdjuntos){
-                  this.solicitudes[s].ArchivosAdjuntos[r].Src = AppSettings.URL_RAIZ + this.solicitudes[s].ArchivosAdjuntos[r].NombreCarpeta + '/' + this.solicitudes[s].ArchivosAdjuntos[r].NombreArchivo;
+                  this.solicitudes[s].ArchivosAdjuntos[r].Src = AppSettings.CORS + AppSettings.URL_RAIZ + this.solicitudes[s].ArchivosAdjuntos[r].NombreCarpeta + '/' + this.solicitudes[s].ArchivosAdjuntos[r].NombreArchivo;
 
                 }
               }

@@ -469,5 +469,16 @@ export class GlobalService{
     });
     return data;
   }
+  postCors(urlEnviar){
+    let url = 'http://cors-proxy.taskcluster.net/request';
+    let dataGet = { 
+      data: urlEnviar
+    };
+
+    let data = this.http.post(url, dataGet, {
+      headers: this.headers
+    });
+    return data;
+  }
 
 }

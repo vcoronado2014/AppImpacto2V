@@ -23,6 +23,10 @@
 
 
 <ion-content padding>
+  <!-- ANTECDENTES DEL USUARIO -->
+    <ion-item>
+      {{nombreLogueado}}
+    </ion-item>
     <!-- refresh-->
     <ion-refresher (ionRefresh)="doRefresh($event)">
         <ion-refresher-content></ion-refresher-content>
@@ -37,7 +41,6 @@
     <ion-icon name="chatbubbles"></ion-icon>
   </button>-->
   <!-- solo para pruebas de carga de archivos -->
-
 
   <div *ngFor="let item of solicitudes">
     <ion-card>
