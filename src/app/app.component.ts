@@ -9,11 +9,18 @@ import { GlobalService } from '../app/services/GlobalService';
 
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
+import { rootRenderNodes } from '@angular/core/src/view';
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
   rootPage:any = LoginPage;
+  ret: any = {
+    wasTapped: false,
+    Datos: {},
+    title: '',
+    body: ''
+  };
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private fcm: FCM, public localNotifications: LocalNotifications, public global: GlobalService) {
     platform.ready().then(() => {
@@ -57,12 +64,19 @@ export class MyApp {
           }
           else{
             //cuando la aplicacion se encuentra en primer plano
-            console.log('Estamos en primer plano ' + JSON.stringify(data));
+            console.log('Estamos en primer plano ' + data);
             //aca crear una notificacion
+            var titulo = "";
+            var texto = "";
+            if (data){
+              titulo = data.titulo;
+              texto = data.body;
+            }
+
             this.localNotifications.schedule({
               id: Math.floor((Math.random() * 100)+1),
-              title: "Titulo de notificación generado en app",
-              text: "Texto generadco desde app",
+              title: titulo,
+              text: texto,
               data: {
                 nombre: "Victor",
                 apellido: "Coronado"

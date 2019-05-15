@@ -34,16 +34,9 @@
           font-size: 0.9rem;">
         Deslize hacia abajo para actualizar
       </ion-label>
-    <!--
-    <ion-item *ngIf="esAdministrador">
-        <ion-label>Seleccione Institución</ion-label>
-        <ion-select [(ngModel)]="nombreFiltrar">
-          <ion-option *ngFor="let filt of filtrosInstitucion" (ionSelect)="cambioFiltros(filt)">{{filt.NombreCompleto}}</ion-option>
-        </ion-select>
-      </ion-item>
-    -->
+
     <!-- lista-->
-    <ion-list *ngIf="esAdministrador">
+    <ion-list>
         <ion-item-sliding *ngFor="let clie of rendicionesArr">
           <ion-item>
             <ion-avatar item-start>
@@ -91,7 +84,7 @@
           </ion-item-options>
         </ion-item-sliding>
       </ion-list>
-
+      <!--
       <ion-card *ngIf="esAdministrador == false">
         <ion-card-content>
           <ion-card-title>
@@ -106,7 +99,7 @@
       
         </ion-card-content>
       </ion-card>
-
+-->
 
 
 </ion-content>
