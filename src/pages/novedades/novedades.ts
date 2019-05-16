@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, LoadingController, ModalController, ToastController, ActionSheetController, ViewController, App } from 'ionic-angular';
+import { NavController, Platform, NavParams, LoadingController, ModalController, ToastController, ActionSheetController, ViewController, App } from 'ionic-angular';
 //import { } from 'ionic-nati'
 
 import { LoginPage } from '../login/login';
@@ -101,6 +101,7 @@ rolLogueado = sessionStorage.getItem("ROL_NOMBRE");
               public nov: NovedadService,
               private viewCtrl: ViewController,
               public toastCtrl: ToastController,
+              public platform: Platform,
               public actionSheetCtrl: ActionSheetController
   ) {
 
@@ -473,6 +474,41 @@ rolLogueado = sessionStorage.getItem("ROL_NOMBRE");
   }
   cancel(){
     this.viewCtrl.dismiss();
+  }
+
+  presentActionSheetMore() {
+    let actionSheet = this.actionSheetCtrl.create({
+      title: '¿Que desea Hacer?',
+      buttons: [
+        {
+          text: 'Salir',
+          role: 'destructive',
+          handler: () => {
+            //console.log('Destructive clicked');
+            //this.delete(item);
+            this.platform.exitApp();
+          }
+        },
+        {
+          text: 'Cerrar Sessión',
+          role: 'destructive',
+          handler: () => {
+            //console.log('Destructive clicked');
+            //this.delete(item);
+            this.logout();
+          }
+        },
+        {
+          text: 'Cancelar',
+          role: 'cancel',
+          handler: () => {
+            //console.log('Cancel clicked');
+
+          }
+        }
+      ]
+    });
+    actionSheet.present();
   }
 
 }

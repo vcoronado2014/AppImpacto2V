@@ -125,6 +125,10 @@ export class CrearSolicitudPage {
   
       this.global.createComentario(comentario).subscribe(
         dataArchivo1 => {
+          //seteo datos push
+          var tituloPush = 'Creación de solicitud';
+          var textoPush = this.frmTexto;
+          //****************************************** */
   
           var datos = dataArchivo1.json();
           //loader.dismiss();
@@ -153,6 +157,14 @@ export class CrearSolicitudPage {
               }
             );
           }
+          //acá debe enviarse el push de la notificacion
+          this.global.sendPush(instId, usuId, '1', tituloPush, textoPush).subscribe(
+            dataPush => {
+              console.log(dataPush);
+            }
+          );
+          /************************************************** */
+
           //ahora el dismiss
           this.viewCtrl.dismiss(datos);
         },
@@ -202,7 +214,10 @@ export class CrearSolicitudPage {
 
       this.global.putComentario(comentario).subscribe(
         dataArchivo1 => {
-
+          //seteo datos push
+          var tituloPush = 'Nuevo Comentario';
+          var textoPush = this.frmTexto;
+          //****************************************** */
           var datos = dataArchivo1.json();
           //loader.dismiss();
           let sms = this.presentToast('Comentario Guardado con éxito.');
@@ -229,6 +244,13 @@ export class CrearSolicitudPage {
               }
             );
           }
+          //acá debe enviarse el push de la notificacion
+          this.global.sendPush(instId, usuId, '1', tituloPush, textoPush).subscribe(
+            dataPush => {
+              console.log(dataPush);
+            }
+          );
+          /************************************************** */
           //ahora el dismiss
           this.viewCtrl.dismiss(datos);
         },

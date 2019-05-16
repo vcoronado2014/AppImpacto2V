@@ -19,6 +19,7 @@ import { MisSolicitudesPage } from '../mis-solicitudes/mis-solicitudes';
     templateUrl: 'cliente.html',
   })
   export class ClientePage {
+    nuevoMensaje = 1;
     permisos = JSON.parse(sessionStorage.getItem("PERMISOS"));
     tab1Root = NovedadesPage;
     tab2Root = UsuariosPage;

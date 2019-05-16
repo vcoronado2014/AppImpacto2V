@@ -58,6 +58,9 @@ export class AuthService{
             sessionStorage.setItem('ROL_NOMBRE_INSTITUCION', retorno.RolInstitucion.Nombre);
             sessionStorage.setItem('ROL_ID_INSTITUCION', retorno.RolInstitucion.IdOriginal);
             sessionStorage.setItem('PERMISOS', JSON.stringify(retorno.PermisoRol));
+            //vamos a guardar datos del ultimo login en local storage
+            localStorage.setItem("USER_INFO", JSON.stringify(userInfo));
+
 
             this.username = userInfo.usuario;
             this.loggedIn = true;

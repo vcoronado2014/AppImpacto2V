@@ -203,7 +203,10 @@ export class ComentariosSolicitudesPage {
 
       this.global.putComentario(comentario).subscribe(
         dataArchivo1 => {
-
+          //seteo datos push
+          var tituloPush = 'Nuevo Comentario';
+          var textoPush = this.frmTexto;
+          //****************************************** */
           var datos = dataArchivo1.json();
           //loader.dismiss();
           let sms = this.presentToast('Comentario Guardado con éxito.');
@@ -233,6 +236,13 @@ export class ComentariosSolicitudesPage {
           */
 
           //this.viewCtrl.dismiss(datos);
+          //acá debe enviarse el push de la notificacion
+          this.global.sendPush(instId, usuId, '1', tituloPush, textoPush).subscribe(
+            dataPush => {
+              console.log(dataPush);
+            }
+          );
+          /************************************************** */
           this.modificado = true;
           this.frmTexto = '';
         },
@@ -258,17 +268,6 @@ export class ComentariosSolicitudesPage {
     });
     toast.present();
   }
-  /*
-
-  put ResSolMuro
-  InstId: "3"
-MroId: 9
-PrioridadId: 0
-RolId: "9"
-Texto: "ok, entonces quedo a la espera"
-UsuId: "54"
-  */
-
   ionViewDidLoad() {
     console.log('ionViewDidLoad ComentariosSolicitudesPage');
   }

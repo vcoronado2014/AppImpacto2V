@@ -24,6 +24,7 @@ export class MyApp {
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private fcm: FCM, public localNotifications: LocalNotifications, public global: GlobalService) {
     platform.ready().then(() => {
+
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       statusBar.styleDefault();
@@ -31,19 +32,6 @@ export class MyApp {
       this.fcm.getToken().then(
         (token: string) => {
           console.log('token dispositivo: ' + token);
-          //hay que guardar o actualizar el token del dispositivo
-          //borramos el guardado desde aca
-          /*
-          this.global.putToken(token).subscribe(data=> {
-            var ret = data.json();
-            //aca hacer algo con la data?
-            console.log(token);
-          },
-          error => {
-            console.log(error);
-          }
-        )
-        */
         }
       ).catch(
         error => {
@@ -59,12 +47,25 @@ export class MyApp {
 
       this.fcm.onNotification().subscribe(
         data => {
+          sessionStorage.setItem('TIENE_NOVEVADES', '0');
+          sessionStorage.setItem('TIENE_USUARIOS', '0');
+          sessionStorage.setItem('TIENE_RENDICIONES', '0');
+          sessionStorage.setItem('TIENE_DOCUMENTOS', '0');
+          sessionStorage.setItem('TIENE_EVENTOS', '0');
+          sessionStorage.setItem('TIENE_VOTACIONES', '0');
+          sessionStorage.setItem('TIENE_SOLICITUDES', '0');
           if(data.wasTapped){
-            console.log('Estamos en segundo plano ' + JSON.stringify(data));
+            console.log('Estamos en segundo plano ' + data);
+            //SETEAR LAS VARIABLES DE NOTIFICACIONES
+            
+            //cuando esta en segundo plano el mensaje se recibe desde la api,
+            //este 
           }
           else{
             //cuando la aplicacion se encuentra en primer plano
             console.log('Estamos en primer plano ' + data);
+            //SETEAR LAS VARIABLES DE NOTIFICACIONES
+
             //aca crear una notificacion
             var titulo = "";
             var texto = "";
@@ -92,6 +93,13 @@ export class MyApp {
 
       this.localNotifications.on("click").subscribe(resultado=>{
         console.log(JSON.stringify(resultado));
+        //aca habría que autentificar y enviar directamente a la pantalla de inicio
+        var userInfo = JSON.parse(localStorage.getItem("USER_INFO"));
+        if(userInfo && userInfo.usuario != '' && userInfo.password != ''){
+          //generar la autentificacion y enviarlo directo a la pagina de inicio
+          //ahi deberían estar ls notificaciones
+
+        }
       });
 
     });

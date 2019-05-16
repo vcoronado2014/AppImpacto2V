@@ -480,5 +480,36 @@ export class GlobalService{
     });
     return data;
   }
+  sendPushToken(token, instId, usuId, esSolicitud, titulo, texto){
+    let url = AppSettings.API_ENDPOINT + 'Push';
+    let dataGet = { 
+      Token: token,
+      InstId: instId.toString(),
+      UsuId: usuId.toString(),
+      EsSolicitud: esSolicitud.toString(),
+      Titulo: titulo,
+      Texto: texto
+    };
+
+    let data = this.http.post(url, dataGet, {
+      headers: this.headers
+    });
+    return data;
+  }
+  sendPush(instId, usuId, esSolicitud, titulo, texto){
+    let url = AppSettings.API_ENDPOINT + 'Push';
+    let dataGet = { 
+      InstId: instId.toString(),
+      UsuId: usuId.toString(),
+      EsSolicitud: esSolicitud.toString(),
+      Titulo: titulo,
+      Texto: texto
+    };
+
+    let data = this.http.post(url, dataGet, {
+      headers: this.headers
+    });
+    return data;
+  }
 
 }
