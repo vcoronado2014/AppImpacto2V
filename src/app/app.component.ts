@@ -58,6 +58,9 @@ export class MyApp {
           var texto = data.body;
           var datosJson = JSON.parse(data.Datos);
           this.setearVariables(titulo);
+          console.log('title ' + data.title);
+          console.log('body ' + data.body);
+          console.log('datos ' + JSON.parse(data.Datos));
 
           if(data.wasTapped){
             console.log('Estamos en segundo plano ' + data);
@@ -106,7 +109,7 @@ export class MyApp {
   setearVariables(titulo) {
     switch (titulo) {
       case 'Rendiciones':
-      
+
       break;
     }
 
