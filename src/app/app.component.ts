@@ -54,6 +54,11 @@ export class MyApp {
           sessionStorage.setItem('TIENE_EVENTOS', '0');
           sessionStorage.setItem('TIENE_VOTACIONES', '0');
           sessionStorage.setItem('TIENE_SOLICITUDES', '0');
+          var titulo = data.title;
+          var texto = data.body;
+          var datosJson = JSON.parse(data.Datos);
+          this.setearVariables(titulo);
+
           if(data.wasTapped){
             console.log('Estamos en segundo plano ' + data);
             //SETEAR LAS VARIABLES DE NOTIFICACIONES
@@ -65,14 +70,6 @@ export class MyApp {
             //cuando la aplicacion se encuentra en primer plano
             console.log('Estamos en primer plano ' + data);
             //SETEAR LAS VARIABLES DE NOTIFICACIONES
-
-            //aca crear una notificacion
-            var titulo = "";
-            var texto = "";
-            if (data){
-              titulo = data.titulo;
-              texto = data.body;
-            }
 
             this.localNotifications.schedule({
               id: Math.floor((Math.random() * 100)+1),
@@ -102,7 +99,16 @@ export class MyApp {
         }
       });
 
+
     });
   }
-}
+  //vamos a evaluar los titulos
+  setearVariables(titulo) {
+    switch (titulo) {
+      case 'Rendiciones':
+      
+      break;
+    }
 
+  }
+}
