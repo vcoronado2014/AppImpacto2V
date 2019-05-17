@@ -1,17 +1,21 @@
 <ion-content padding>
 
     <ion-tabs id="tabCliente">
-        <ion-tab [root]="tab1Root" tabTitle="Novedades" tabIcon="chatbubbles" id="tabNovedades">
+        <ion-tab [root]="tab1Root" tabTitle="Novedades" tabIcon="chatbubbles" id="tabNovedades"  tabBadge="{{tabBadgeNovedades}}" tabBadgeStyle="{{tabStyleNovedades}}">
         </ion-tab>
+        <!--
+        <ion-tab *ngIf="tieneNovedades" [root]="tab1Root1" tabTitle="Novedades" tabIcon="chatbubbles" id="tabNovedades" tabBadge="N" tabBadgeStyle="danger">
+        </ion-tab>
+        -->
         <ion-tab [root]="tab2Root" tabTitle="Usuarios" tabIcon="people" id="tabUsuarios">
         </ion-tab>
-        <ion-tab [root]="tab3Root" tabTitle="Rendiciones" tabIcon="logo-usd" id="tabRendiciones">
+        <ion-tab [root]="tab3Root" tabTitle="Rendiciones" tabIcon="logo-usd" id="tabRendiciones" tabBadge="{{tabBadgeRendiciones}}" tabBadgeStyle="{{tabStyleRendiciones}}">
         </ion-tab>
-        <ion-tab [root]="tab4Root" tabTitle="Documentos" tabIcon="document" id="tabDocumentos">
+        <ion-tab [root]="tab4Root" tabTitle="Documentos" tabIcon="document" id="tabDocumentos"  tabBadge="{{tabBadgeDocumentos}}" tabBadgeStyle="{{tabStyleDocumentos}}">
         </ion-tab>
-        <ion-tab [root]="tab5Root" tabTitle="Calendario" tabIcon="calendar" id="tabCalendario">
+        <ion-tab [root]="tab5Root" tabTitle="Calendario" tabIcon="calendar" id="tabCalendario"  tabBadge="{{tabBadgeEventos}}" tabBadgeStyle="{{tabStyleEventos}}">
         </ion-tab>        
-        <ion-tab [root]="tab6Root" tabTitle="Votar" tabIcon="megaphone" id="tabProyectos">
+        <ion-tab [root]="tab6Root" tabTitle="Votar" tabIcon="megaphone" id="tabProyectos"  tabBadge="{{tabBadgeVotaciones}}" tabBadgeStyle="{{tabStyleVotaciones}}">
         </ion-tab>
         <ion-tab [root]="tab7Root" tabTitle="Solicitudes" tabIcon="chatbubbles" id="tabSolicitudes">
         </ion-tab>

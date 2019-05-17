@@ -85,6 +85,7 @@ export class DocumentosPage {
     public modalCtrl: ModalController,
     public actionSheetCtrl: ActionSheetController,
     public acceso: AuthService) {
+      sessionStorage.setItem('TIENE_DOCUMENTOS', '0');
   }
   ionViewWillEnter() {
     this.permisos = JSON.parse(sessionStorage.getItem("PERMISOS"));

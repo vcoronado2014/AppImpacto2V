@@ -250,6 +250,7 @@ export class CalendarioPage {
     //para probar
     //this.cargarEventos();
     //************************************************** */
+    sessionStorage.setItem('TIENE_EVENTOS', '0');
   }
   //nuevos metodos para probar
   cargarEventos() {

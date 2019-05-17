@@ -96,7 +96,7 @@ permisos = {
     public acceso: AuthService,
     public actionSheetCtrl: ActionSheetController
   ) {
-
+    sessionStorage.setItem('TIENE_RENDICIONES', '0');
 
   }
   ionViewWillEnter() {

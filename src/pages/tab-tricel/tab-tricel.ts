@@ -20,6 +20,7 @@ export class TabTricelPage {
   tab1Root = ProyectosPage;
   //tab2Root = TircelPage;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    sessionStorage.setItem('TIENE_VOTACIONES', '0');
   }
 
   ionViewDidLoad() {

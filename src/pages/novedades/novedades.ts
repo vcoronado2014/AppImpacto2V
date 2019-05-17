@@ -104,7 +104,8 @@ rolLogueado = sessionStorage.getItem("ROL_NOMBRE");
               public platform: Platform,
               public actionSheetCtrl: ActionSheetController
   ) {
-
+    //cuando entremos la primera vez seteamos la variable
+    sessionStorage.setItem('TIENE_NOVEDADES', '0');
 
   }
   cargar(){

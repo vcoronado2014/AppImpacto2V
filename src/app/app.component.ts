@@ -21,6 +21,7 @@ export class MyApp {
     title: '',
     body: ''
   };
+  segundoPlano = false;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private fcm: FCM, public localNotifications: LocalNotifications, public global: GlobalService) {
     platform.ready().then(() => {
@@ -64,10 +65,7 @@ export class MyApp {
 
           if(data.wasTapped){
             console.log('Estamos en segundo plano ' + data);
-            //SETEAR LAS VARIABLES DE NOTIFICACIONES
-            
-            //cuando esta en segundo plano el mensaje se recibe desde la api,
-            //este 
+            this.segundoPlano = true;
           }
           else{
             //cuando la aplicacion se encuentra en primer plano
@@ -91,15 +89,18 @@ export class MyApp {
         }
       );
 
-      this.localNotifications.on("click").subscribe(resultado=>{
+      this.localNotifications.on("click").subscribe(resultado => {
         console.log(JSON.stringify(resultado));
-        //aca habría que autentificar y enviar directamente a la pantalla de inicio
-        var userInfo = JSON.parse(localStorage.getItem("USER_INFO"));
-        if(userInfo && userInfo.usuario != '' && userInfo.password != ''){
-          //generar la autentificacion y enviarlo directo a la pagina de inicio
-          //ahi deberían estar ls notificaciones
+        if (this.segundoPlano) {
+          //aca habría que autentificar y enviar directamente a la pantalla de inicio
+          var userInfo = JSON.parse(localStorage.getItem("USER_INFO"));
+          if (userInfo && userInfo.usuario != '' && userInfo.password != '') {
+            //generar la autentificacion y enviarlo directo a la pagina de inicio
+            //ahi deberían estar ls notificaciones
 
+          }
         }
+
       });
 
 
@@ -108,9 +109,24 @@ export class MyApp {
   //vamos a evaluar los titulos
   setearVariables(titulo) {
     switch (titulo) {
-      case 'Rendiciones':
-
-      break;
+      case 'Calendario':
+        sessionStorage.setItem('TIENE_EVENTOS', '1');
+        break;
+      case 'Documento':
+        sessionStorage.setItem('TIENE_DOCUMENTOS', '1');
+        break;
+      case 'Rendición':
+        sessionStorage.setItem('TIENE_RENDICIONES', '1');
+        break;
+      case 'Muro':
+        sessionStorage.setItem('TIENE_NOVEDADES', '1');
+        break;
+      case 'Proyecto':
+        sessionStorage.setItem('TIENE_VOTACIONES', '1');
+        break;
+      case 'Tricel':
+        sessionStorage.setItem('TIENE_VOTACIONES', '1');
+        break;
     }
 
   }
