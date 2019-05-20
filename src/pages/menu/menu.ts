@@ -10,6 +10,7 @@ import { CalendarioPage } from '../calendario/calendario';
 import { MisSolicitudesPage } from '../mis-solicitudes/mis-solicitudes';
 import { AuthService } from '../../app/services/AuthService';
 import { LoginPage } from '../login/login';
+import { Title } from '@angular/platform-browser';
 
 export interface PageInterface {
   title: string;
@@ -17,6 +18,7 @@ export interface PageInterface {
   tabComponent?: any;
   index?: number;
   icon: string;
+  muestra: boolean;
 }
  
 
@@ -25,6 +27,58 @@ export interface PageInterface {
   templateUrl: 'menu.html',
 })
 export class MenuPage {
+  /*
+  permisos = {
+    CreaCalendario: 0,
+    CreaDocumento: 0,
+    CreaInstitucion: 0,
+    CreaMailing: 0,
+    CreaMroSolicitud: 0,
+    CreaMuro: 0,
+    CreaProyecto: 0,
+    CreaRendicion: 0,
+    CreaRol: 0,
+    CreaSolicitud: 0,
+    CreaTricel: 0,
+    CreaUsuario: 0,
+    EliminaCalendario: 0,
+    EliminaDocumento: 0,
+    EliminaInstitucion: 0,
+    EliminaMroSolicitud: 0,
+    EliminaMuro: 0,
+    EliminaProyecto: 0,
+    EliminaRendicion: 0,
+    EliminaRol: 0,
+    EliminaTricel: 0,
+    EliminaUsuario: 0,
+    ModificaCalendario: 0,
+    ModificaInstitucion: 0,
+    ModificaMroSolicitud: 0,
+    ModificaMuro: 0,
+    ModificaProyecto: 0,
+    ModificaRendicion: 0,
+    ModificaRol: 0,
+    ModificaTricel: 0,
+    ModificaUsuario: 0,
+    PuedeVotarProyecto: 0,
+    PuedeVotarTricel: 0,
+    VerCalendario: 0,
+    VerDocumento: 0,
+    VerInstitucion: 0,
+    VerMailing: 0,
+    VerMroSolicitud: 0,
+    VerMuro: 0,
+    VerProyecto: 0,
+    VerRendicion: 0,
+    VerReporteAsistencia: 0,
+    VerReportes: 0,
+    VerRol: 0,
+    VerTricel: 0,
+    VerUsuario: 0
+  };
+    */
+  permisos = JSON.parse(sessionStorage.getItem("PERMISOS"));
+
   rootPage = ClientePage;
   institucionLogueado = sessionStorage.getItem("INSTITUCION_NOMBRE");
   nombreLogueado = sessionStorage.getItem("PERSONA_NOMBRE");
@@ -33,14 +87,15 @@ export class MenuPage {
   @ViewChild(Nav) nav: Nav;
  
   pages: PageInterface[] = [
-    { title: 'Novedades', pageName: 'NovedadesPage', tabComponent: 'tabNovedades', index: 0, icon: 'chatbubbles' },
-    { title: 'Usuarios', pageName: 'UsuariosPage', tabComponent: 'tabUsuarios', index: 1, icon: 'people' },
-    { title: 'Rendiciones', pageName: 'RendicionPage', tabComponent: 'tabRendiciones', index: 2, icon: 'logo-usd' },
-    { title: 'Documentos', pageName: 'DocumentosPage', tabComponent: 'tabDocumentos', index: 3, icon: 'document' },
-    { title: 'Calendario', pageName: 'CalendarioPage', tabComponent: 'tabCalendario', index: 4, icon: 'calendar' },
-    { title: 'Votar', pageName: 'TabTricelPage', tabComponent: 'tabProyectos', index: 5, icon: 'megaphone' },
-    { title: 'Solicitudes', pageName: 'MisSolicitudesPage', tabComponent: 'tabSolicitudes', index: 6, icon: 'chatbubbles' }
+    { title: 'Novedades', pageName: 'NovedadesPage', tabComponent: 'tabNovedades', index: 0, icon: 'chatbubbles', muestra: this.evaluaItem('Novedades') },
+    { title: 'Usuarios', pageName: 'UsuariosPage', tabComponent: 'tabUsuarios', index: 1, icon: 'people', muestra: this.evaluaItem('Usuarios') },
+    { title: 'Rendiciones', pageName: 'RendicionPage', tabComponent: 'tabRendiciones', index: 2, icon: 'logo-usd', muestra: this.evaluaItem('Rendiciones') },
+    { title: 'Documentos', pageName: 'DocumentosPage', tabComponent: 'tabDocumentos', index: 3, icon: 'document', muestra: this.evaluaItem('Documentos') },
+    { title: 'Calendario', pageName: 'CalendarioPage', tabComponent: 'tabCalendario', index: 4, icon: 'calendar', muestra: this.evaluaItem('Calendario') },
+    { title: 'Votar', pageName: 'TabTricelPage', tabComponent: 'tabProyectos', index: 5, icon: 'megaphone', muestra: this.evaluaItem('Votar') },
+    { title: 'Solicitudes', pageName: 'MisSolicitudesPage', tabComponent: 'tabSolicitudes', index: 6, icon: 'chatbubbles', muestra: this.evaluaItem('Solicitudes') }
   ];
+
 
   constructor(public navCtrl: NavController, 
     public navParams: NavParams,
@@ -49,6 +104,7 @@ export class MenuPage {
     public menuCtrl: MenuController,
     private app: App
     ) {
+      //this.permisos = JSON.parse(sessionStorage.getItem("PERMISOS"));
   }
   openPage(page: PageInterface) {
     let params = {};
@@ -68,6 +124,45 @@ export class MenuPage {
     }
     this.closeMenu();
   }
+  evaluaItem(item){
+    var retorno = false;
+    if (item == 'Novedades'){
+      if (this.permisos.VerMuro == 1){
+        retorno = true;
+      }
+    }
+    if (item == 'Usuarios'){
+      if (this.permisos.VerUsuario == 1){
+        retorno = true;
+      }
+    }
+    if (item == 'Rendiciones'){
+      if (this.permisos.VerRendicion == 1){
+        retorno = true;
+      }
+    }
+    if (item == 'Documentos'){
+      if (this.permisos.VerDocumento == 1){
+        retorno = true;
+      }
+    }
+    if (item == 'Calendario'){
+      if (this.permisos.VerCalendario == 1){
+        retorno = true;
+      }
+    }
+    if (item == 'Votar'){
+      if (this.permisos.VerProyecto == 1){
+        retorno = true;
+      }
+    }
+    if (item == 'Solictudes'){
+      if (this.permisos.VerMroSolicitud == 1){
+        retorno = true;
+      }
+    }
+    return retorno;
+  }
   isActive(page: PageInterface) {
     // Again the Tabs Navigation
     let childNav = this.nav.getActiveChildNav();
@@ -82,6 +177,26 @@ export class MenuPage {
     // Fallback needed when there is no active childnav (tabs not active)
     if (this.nav.getActive() && this.nav.getActive().name === page.pageName) {
       return 'primary';
+    }
+    return;
+  }
+  isActiveColor(page: PageInterface) {
+    // Again the Tabs Navigation
+    let childNav = this.nav.getActiveChildNav();
+ /*
+    if (childNav) {
+      if (childNav.getSelected() && childNav.getSelected().root === page.tabComponent) {
+        return 'blue';
+      }
+      return;
+    }
+ */
+    // Fallback needed when there is no active childnav (tabs not active)
+    if (childNav) {
+      if (childNav.getSelected() && childNav.getSelected().root.name === page.pageName) {
+        return '#488aff';
+      }
+      return;
     }
     return;
   }

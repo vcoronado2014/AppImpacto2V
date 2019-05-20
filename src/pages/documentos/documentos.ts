@@ -97,6 +97,47 @@ export class DocumentosPage {
     
     console.log('ionViewDidLoad DocumentosPage');
   }
+  retornaImgExtension(extension){
+    var pre = "./assets/imgs/";
+    var retorno = "";
+    switch(extension){
+      case '.jpg':
+      case '.jpeg':
+      case '.JPG':
+      case '.JPEG':
+        retorno = 'JPG_1.png';
+        break;
+      case '.gif':
+      case '.GIF':
+        retorno = 'GIF_1.png';
+        break; 
+      case '.PNG':
+      case '.png':
+        retorno = 'PNG_1.png';
+        break;
+      case '.DOC':
+      case '.DOCX':
+      case '.doc':
+      case '.docx':      
+        retorno = 'DOC_1.png';
+        break;  
+      case '.PPT':
+      case '.PPTX':
+      case '.ppt':
+      case '.pptx':      
+        retorno = 'PPT_1.png';
+        break; 
+      case '.PDF':
+      case '.pdf':     
+        retorno = 'PDF_1.png';
+        break;  
+      default:
+        retorno= 'FILE_1.png';
+        break;                                     
+    }
+
+    return pre + retorno;
+  }
   cargar() {
     this.documentosArr=[];
     //this.filtrosInstitucion = [];
@@ -115,6 +156,8 @@ export class DocumentosPage {
             //ahora procesamos las rutas para mostrar los archivos
             datosProcesar.forEach(element => {
               element.UrlMostrar = urlPrevia + element.NombreCompleto;
+              element.Icono = this.retornaImgExtension(element.OtroTres);
+              console.log(element.Icono);
               this.documentosArr.push(element);
             });
 

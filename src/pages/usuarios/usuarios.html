@@ -28,7 +28,7 @@
   
   </ion-header>
 -->
-<ion-header class="mui--bg-color-red-500 fg-light">
+<ion-header class="mui--bg-color-black-alpha-87 fg-light">
     <ion-navbar>
       <button ion-button menuToggle icon-only>
         <ion-icon name='menu'></ion-icon>
@@ -44,10 +44,12 @@
   <ion-refresher (ionRefresh)="doRefresh($event)">
       <ion-refresher-content></ion-refresher-content>
     </ion-refresher>
+    <!--
     <ion-label no-padding no-margin text-center style="font-style: italic;
-    font-size: 0.9rem;">
-        Deslize hacia abajo para actualizar
+          font-size: 0.9rem;">
+      Deslize hacia abajo para actualizar
     </ion-label>
+    -->
     <ion-item *ngIf="esAdministrador">
         <ion-label>Seleccione Institución</ion-label>
         <ion-select [(ngModel)]="nombreFiltrar">

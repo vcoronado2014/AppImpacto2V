@@ -1,5 +1,5 @@
 <ion-menu [content]="content">
-    <ion-header class="mui--bg-color-red-500 fg-light">
+    <ion-header class="mui--bg-color-black-alpha-87 fg-light">
       <ion-toolbar>
         <ion-title>Menu</ion-title>
       </ion-toolbar>
@@ -21,22 +21,25 @@
             {{ p.title }}
           </button>
         -->
-          <ion-item no-lines class="fg-secundary" *ngFor="let p of pages" (click)="openPage(p)">
-              <ion-label style="margin-top:0;margin-bottom: 0;">
-                <ion-grid>
-                  <ion-row>
-                    <ion-col col-2>
-                      <ion-icon [name]="p.icon" [color]="isActive(p)"></ion-icon>
-                    </ion-col>
-                    <ion-col col-10>
-                        {{ p.title }}
-                    </ion-col>
-                  </ion-row>
-                </ion-grid>
-              </ion-label>
+        <ion-list *ngFor="let p of pages">
+          <ion-item no-lines class="fg-secundary" (click)="openPage(p)" *ngIf="p.muestra" [ngStyle]="{'color': isActiveColor(p)}" >
+            <ion-label style="margin-top:0;margin-bottom: 0;">
+              <ion-grid>
+                <ion-row>
+                  <ion-col col-2>
+                    <ion-icon [name]="p.icon" [color]="isActive(p)"></ion-icon>
+                  </ion-col>
+                  <ion-col col-10>
+                    {{ p.title }}
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-label>
           </ion-item>
+        </ion-list>
+
           <!-- utiles -->
-          <ion-item no-lines style="border-bottom: 1px solid #dedede;" class="fg-secundary" (click)="cerrarSesion()">
+          <ion-item no-lines style="border-bottom: 1px solid #dedede;border-top: 1px solid #dedede;" class="fg-secundary" (click)="cerrarSesion()">
               <ion-label style="margin-top:0;margin-bottom: 0;">
                 <ion-grid>
                   <ion-row>

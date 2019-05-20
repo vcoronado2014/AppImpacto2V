@@ -4,9 +4,14 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-<ion-header class="mui--bg-color-teal-600 fg-light">
+<ion-header class="mui--bg-color-black-alpha-87 fg-light">
 
   <ion-navbar>
+      <ion-buttons left>
+          <button ion-button icon-only (click)="closeModal()">
+           <ion-icon name="arrow-back"></ion-icon>
+         </button>
+         </ion-buttons>
     <ion-title>Crear Documento</ion-title>
   </ion-navbar>
 
@@ -25,8 +30,8 @@
         </ion-item>
 
         
-          <ion-label *ngIf="urlDescarga != '#'" text-center style="font-style: italic;">{{nombreDocumento}}</ion-label>
-          <button ion-button full clear (click)="openUrl()" color="secondary" *ngIf="urlDescarga != '#'">
+          <ion-label *ngIf="urlDescarga != '#' && esNuevo == false" text-center style="font-style: italic;">{{nombreDocumento}}</ion-label>
+          <button ion-button full clear (click)="openUrl()" color="secondary" *ngIf="urlDescarga != '#'  && esNuevo == false">
             <ion-icon name="cloud-download"></ion-icon>&nbsp;Descargar
           </button>
         
@@ -48,10 +53,10 @@
   <ion-grid>
       <ion-row>
         <ion-col text-right>
-            <button ion-button clear (click)="closeModal()">Cerrar</button>
+            <!--<button ion-button clear (click)="closeModal()">Cerrar</button>-->
         </ion-col>
         <ion-col text-right>
-            <button ion-button  (click)="enviarDocumento()">Guardar</button>
+            <button ion-button  (click)="enviarDocumento()" class="mui--bg-color-amber-700 fg-black">Guardar</button>
         </ion-col>
       </ion-row>
     </ion-grid>

@@ -155,7 +155,7 @@
     </ion-content>
   </ion-menu>
 -->
-<ion-header class="mui--bg-color-red-500 fg-light">
+<ion-header class="mui--bg-color-black-alpha-87 fg-light">
     <ion-navbar>
       <button ion-button menuToggle icon-only>
         <ion-icon name='menu'></ion-icon>
@@ -170,10 +170,12 @@
   <ion-refresher (ionRefresh)="doRefresh($event)">
       <ion-refresher-content></ion-refresher-content>
       </ion-refresher>
-      <ion-label no-padding no-margin text-center style="font-style: italic;
+    <!--
+    <ion-label no-padding no-margin text-center style="font-style: italic;
           font-size: 0.9rem;">
-        Deslize hacia abajo para actualizar
-      </ion-label>
+      Deslize hacia abajo para actualizar
+    </ion-label>
+    -->
 
     <!-- lista-->
     <ion-list>
@@ -229,7 +231,7 @@
 
 </ion-content>
 <ion-fab bottom right *ngIf="permisos.CreaRendicion == 1" style ="bottom: 10%;">
-    <button ion-fab  (click)="presentModal(null)" class="mui--bg-color-red-300 fg-light">
+    <button ion-fab  (click)="presentModal(null)" class="mui--bg-color-amber-700 fg-black">
       <ion-icon name="add"></ion-icon>
     </button>
   </ion-fab>

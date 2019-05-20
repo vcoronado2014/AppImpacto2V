@@ -4,7 +4,8 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-<ion-header class="mui--bg-color-red-500 fg-light">
+<!--<ion-header class="mui--bg-color-red-500 fg-light">-->
+    <ion-header class="mui--bg-color-black-alpha-87 fg-light">
     <ion-navbar>
       <button ion-button menuToggle icon-only>
         <ion-icon name='menu'></ion-icon>
@@ -21,21 +22,24 @@
     <ion-refresher (ionRefresh)="doRefresh($event)">
       <ion-refresher-content></ion-refresher-content>
     </ion-refresher>
+    <!--
     <ion-label no-padding no-margin text-center style="font-style: italic;
-                font-size: 0.9rem;">
+          font-size: 0.9rem;">
       Deslize hacia abajo para actualizar
     </ion-label>
+    -->
     <!--contenido de la pagina -->
     <!-- lista-->
     <ion-list>
         <ion-item-sliding *ngFor="let clie of documentosArr">
           <ion-item>
             <ion-avatar item-start>
-              <!--descargar-->
-                <ion-icon name="cloud-download" item-left style="font-size: 3em;" (click)="openUrl(clie.UrlMostrar)"></ion-icon>
-                
+              <!--descargar
+                <ion-icon name="cloud-download" item-left style="font-size: 3em;" (click)="openUrl(clie.UrlMostrar)"></ion-icon>-->
+                <img [src]="clie.Icono" (click)="openUrl(clie.UrlMostrar)">
                 
             </ion-avatar>
+            <!--
             <h2 text-wrap>{{clie.NombreCompleto}}</h2>
             <ion-badge slot="end">{{clie.OtroUno}}</ion-badge>
             <ion-row>
@@ -50,7 +54,14 @@
                   </ion-note>
                 </ion-col>
               </ion-row>
-              <span style="font-size: 0.6em;font-style: italic;">Deslice a la izquierda para ver opciones</span>
+              -->
+              <h2 text-wrap>{{clie.OtroCinco}}</h2>
+              <h4 text-wrap>{{clie.OtroOcho}}</h4>
+              <h5>{{clie.OtroNueve}}</h5>
+              <h6><ion-note>{{clie.NombreUsuario}}</ion-note></h6> 
+              <!--<h5 text-wrap>{{clie.NombreUsuario}}</h5>
+              <ion-badge slot="end">{{clie.OtroUno}}</ion-badge>
+              <span style="font-size: 0.6em;font-style: italic;">Deslice a la izquierda para ver opciones</span>-->
           </ion-item>
           <ion-item-options side="right">
               <button ion-button color="danger" (click)="presentActionSheet(clie)" *ngIf="permisos.EliminaDocumento == '1'">
@@ -63,7 +74,7 @@
 
 </ion-content>
 <ion-fab bottom right *ngIf="permisos.CreaDocumento == 1" style ="bottom: 10%;">
-  <button ion-fab  (click)="presentModal(null)" class="mui--bg-color-red-500 fg-light">
+  <button ion-fab  (click)="presentModal(null)" class="mui--bg-color-amber-700 fg-black">
     <ion-icon name="add"></ion-icon>
   </button>
 </ion-fab>
