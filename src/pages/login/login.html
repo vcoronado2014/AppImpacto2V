@@ -16,20 +16,20 @@
 <ion-content padding class="color-fixed">
 <div >
   <ion-row class="encabezado">
-    <h2 class="titulo">Asambleas</h2>
+    <h2 class="titulo">Bienvenidos a Asambleas</h2>
   </ion-row>
     <ion-row class="bg-transparente">
       <ion-col class="bg-transparente">
-        <ion-list inset class="bg-transparente fg-blanco">
+        <ion-list inset class="bg-transparente fg-principal">
 
-          <ion-item class="bg-transparente fg-blanco">
-            <ion-label  class="bg-transparente fg-blanco" floating>Nombre de Usuario</ion-label>
-            <ion-input type="text" [(ngModel)]="usuario" required class="bg-transparente fg-blanco"></ion-input>
+          <ion-item class="bg-transparente fg-principal">
+            <ion-label  class="bg-transparente fg-principal" floating>Nombre de Usuario</ion-label>
+            <ion-input type="text" [(ngModel)]="usuario" required class="bg-transparente fg-principal"></ion-input>
           </ion-item>
 
-          <ion-item  class="bg-transparente fg-blanco">
-            <ion-label floating  class="bg-transparente fg-blanco">Password</ion-label>
-            <ion-input  class="bg-transparente fg-blanco" type="password" [(ngModel)]="password" required></ion-input>
+          <ion-item  class="bg-transparente fg-principal">
+            <ion-label floating  class="bg-transparente fg-principal">Password</ion-label>
+            <ion-input  class="bg-transparente fg-principal" type="password" [(ngModel)]="password" required></ion-input>
           </ion-item>
 
         </ion-list>
@@ -43,7 +43,7 @@
       </ion-col>
     </ion-row>
 </div>
-<!-- fav -->
+<!-- fav 
   <ion-fab top right>
     <button ion-fab mini class="btn-color"><ion-icon name="add"></ion-icon></button>
     <ion-fab-list>
@@ -53,9 +53,10 @@
       <button ion-fab><ion-icon name="logo-googleplus"></ion-icon></button>
     </ion-fab-list>
   </ion-fab>
+-->
 </ion-content>
 <ion-footer>
-  <ion-toolbar>
-    <ion-title text-wrap>@Copyright 2018 Impacto 2V SPA</ion-title>
+  <ion-toolbar text-center>
+    <ion-title><span class="fg-secundary" style="font-size: 1.4rem;" text-wrap>@Copyright 2018 Impacto 2V SPA</span></ion-title>
   </ion-toolbar>
 </ion-footer>

@@ -1,8 +1,16 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, LoadingController, App } from 'ionic-angular';
+import { NavController, Platform, NavParams, LoadingController, ModalController, ToastController, ActionSheetController, ViewController, App, MenuController, Tabs } from 'ionic-angular';
 //pages
 import { LoginPage } from '../login/login';
+//paginas del menu
+import { TabTricelPage } from '../tab-tricel/tab-tricel';
 import { NovedadesPage } from '../novedades/novedades';
+import { RendicionPage } from '../rendicion/rendicion';
+import { DocumentosPage } from '../documentos/documentos';
+import { CalendarioPage } from '../calendario/calendario';
+import { ClientePage } from '../cliente/cliente';
+import { MisSolicitudesPage } from '../mis-solicitudes/mis-solicitudes';
+//************************* */
 //servicios
 import { AuthService } from '../../app/services/AuthService';
 import { GlobalService } from '../../app/services/GlobalService';
@@ -16,7 +24,7 @@ import { GlobalService } from '../../app/services/GlobalService';
 
 @Component({
   selector: 'page-usuarios',
-  templateUrl: 'usuarios.html',
+  templateUrl: 'usuarios.html'
 })
 export class UsuariosPage {
 usuariosArr = [];
@@ -78,14 +86,20 @@ permisos = {
 }
 
   constructor(
-    private app: App,
     public navCtrl: NavController,
     public navParams: NavParams,
     public loading: LoadingController,
-    public global: GlobalService,
-    public acceso: AuthService
+    private app: App,
+    public modalCtrl: ModalController,
+    public acceso: AuthService,
+    private viewCtrl: ViewController,
+    public toastCtrl: ToastController,
+    public platform: Platform,
+    public menuCtrl: MenuController,
+    public global:GlobalService,
+    public actionSheetCtrl: ActionSheetController
   ) {
-
+    //this.initializeApp();
 
   }
   ionViewWillEnter() {
@@ -209,4 +223,75 @@ permisos = {
       
     });
   }
+  closeMenu(){
+    this.menuCtrl.close();
+  }
+  cerrarSesion(){
+    this.logout();
+  }
+  salir(){
+    this.platform.exitApp();
+  }
+  openUsuarios(){
+    const tabsNav = this.app.getNavByIdOrName('myTabsNav') as Tabs;
+    tabsNav.select(1);
+    this.closeMenu();
+    this.navCtrl.pop();
+    //tabsNav.tab2Root = NovedadesPage;
+  }
+  openRendiciones(){
+    const tabsNav = this.app.getNavByIdOrName('myTabsNav') as Tabs;
+    tabsNav.select(2);
+    this.closeMenu();
+    this.navCtrl.pop();
+  }
+  openDocumentos(){
+    const tabsNav = this.app.getNavByIdOrName('myTabsNav') as Tabs;
+    tabsNav.select(3);
+    this.closeMenu();
+    this.navCtrl.pop();
+  }  
+  openCalendario(){
+    const tabsNav = this.app.getNavByIdOrName('myTabsNav') as Tabs;
+    tabsNav.select(4);
+    this.closeMenu();
+    this.navCtrl.pop();
+  } 
+  openVotaciones(){
+    const tabsNav = this.app.getNavByIdOrName('myTabsNav') as Tabs;
+    tabsNav.select(5);
+    this.closeMenu();
+    this.navCtrl.pop();
+  }
+  openSolicitudes(){
+    const tabsNav = this.app.getNavByIdOrName('myTabsNav') as Tabs;
+    tabsNav.select(6);
+    this.closeMenu();
+    this.navCtrl.pop();
+  }   
+  openNovedades(){
+    const tabsNav = this.app.getNavByIdOrName('myTabsNav') as Tabs;
+    tabsNav.select(0);
+    this.closeMenu();
+    //this.navCtrl.pop();
+    this.navCtrl.setRoot(NovedadesPage);
+  }    
+  toggleMenu() {
+    //this.menuCtrl.open(); //Add this method to your button click function
+    //this.menuCtrl._menus[0].toggle();
+    //this.menuCtrl._menus[0].open();
+    const tabsNav = this.app.getNavByIdOrName('myTabsNav') as Tabs;
+    //this.closeMenu();
+    //tabsNav.closeMenu();
+    //tabsNav.select(0);
+    //tabsNav._tabs[0].isSelected = true;
+
+  }  
+  menutoggle () {
+    /*
+    this.menuCtrl.enable(false, 'pageNovedades');
+    this.menuCtrl.enable(true, 'pageUsuarios');
+    this.menuCtrl.toggle('pageUsuarios');
+    */
+}    
 }

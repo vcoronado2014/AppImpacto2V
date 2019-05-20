@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, LoadingController, Platform } from 'ionic-angular';
+import { NavController, NavParams, LoadingController, Platform, MenuController } from 'ionic-angular';
 
 import { NovedadesPage } from '../novedades/novedades';
 import { TabTricelPage } from '../tab-tricel/tab-tricel';
@@ -47,10 +47,13 @@ import { FCM, NotificationData } from '@ionic-native/fcm';
     tabBadgeSolicitudes = "";
     tabStyleSolicitudes = "";
 
+    myIndex: number;
 
 
-    constructor(public navCtrl: NavController, public navParams: NavParams, private fcm: FCM, platform: Platform) {
+
+    constructor(public navCtrl: NavController, public navParams: NavParams, private fcm: FCM, platform: Platform, public menuCtrl: MenuController) {
       platform.ready().then(() => {
+        this.myIndex = navParams.data.tabIndex || 0;
         this.clearSession();
         this.permisos = JSON.parse(sessionStorage.getItem("PERMISOS"));
         this.tab1Root = NovedadesPage;

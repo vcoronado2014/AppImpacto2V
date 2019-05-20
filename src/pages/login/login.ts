@@ -5,6 +5,7 @@ import { AuthService } from '../../app/services/AuthService';
 import {HomePage} from "../home/home";
 import {InicioPage} from "../inicio/inicio";
 import {ClientePage} from "../cliente/cliente";
+import {MenuPage} from "../menu/menu";
 
 
 //import {MatFormFieldModule} from '@angular/material/form-field';
@@ -77,7 +78,8 @@ export class LoginPage {
         () => {
           if (this.isLogged){
             //this.nav.push(InicioPage)
-            this.nav.push(ClientePage)
+            //this.nav.push(ClientePage)
+            this.nav.setRoot(MenuPage)
               .then(data => console.log(data),
               error => {
                 //console.log(error)

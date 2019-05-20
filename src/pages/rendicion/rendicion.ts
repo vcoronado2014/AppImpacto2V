@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { NavController, NavParams, LoadingController, App, ModalController, ActionSheetController } from 'ionic-angular';
+import { NavController, NavParams, LoadingController, App, ModalController, ActionSheetController, MenuController, Tabs, Platform  } from 'ionic-angular';
 //pages
 import { LoginPage } from '../login/login';
 import { NovedadesPage } from '../novedades/novedades';
@@ -12,6 +12,15 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
 //import { Chart } from '../../node_modules/chart.js';
 import { Chart } from 'chart.js';
 import { AppSettings } from '../../app/AppSettings';
+//paginas del menu
+import { TabTricelPage } from '../tab-tricel/tab-tricel';
+import { UsuariosPage } from '../usuarios/usuarios';
+//import { RendicionPage } from '../rendicion/rendicion';
+import { DocumentosPage } from '../documentos/documentos';
+import { CalendarioPage } from '../calendario/calendario';
+import { ClientePage } from '../cliente/cliente';
+import { MisSolicitudesPage } from '../mis-solicitudes/mis-solicitudes';
+//************************* */
 
 /**
  * Generated class for the SolicitudesPage page.
@@ -36,6 +45,9 @@ filtrosInstitucion = [];
 filtrados = [];
 rendicionesOriginal = [];
 cantidadRendiciones = 0;
+institucionLogueado = sessionStorage.getItem("INSTITUCION_NOMBRE");
+mbreLogueado = sessionStorage.getItem("PERSONA_NOMBRE");
+rolLogueado = sessionStorage.getItem("ROL_NOMBRE");
 
 permisos = {
   CreaCalendario: 0,
@@ -94,6 +106,8 @@ permisos = {
     public global: GlobalService,
     public modalCtrl: ModalController,
     public acceso: AuthService,
+    public menuCtrl: MenuController,
+    public platform: Platform,
     public actionSheetCtrl: ActionSheetController
   ) {
     sessionStorage.setItem('TIENE_RENDICIONES', '0');
@@ -111,75 +125,6 @@ permisos = {
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad SolicitudesPage');
-    /*
-    this.barChart = new Chart(this.barCanvas.nativeElement, {
-
-      type: 'bar',
-      data: {
-          labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-          datasets: [{
-              label: '# of Votes',
-              data: [12, 19, 3, 5, 2, 3],
-              backgroundColor: [
-                  'rgba(255, 99, 132, 0.2)',
-                  'rgba(54, 162, 235, 0.2)',
-                  'rgba(255, 206, 86, 0.2)',
-                  'rgba(75, 192, 192, 0.2)',
-                  'rgba(153, 102, 255, 0.2)',
-                  'rgba(255, 159, 64, 0.2)'
-              ],
-              borderColor: [
-                  'rgba(255,99,132,1)',
-                  'rgba(54, 162, 235, 1)',
-                  'rgba(255, 206, 86, 1)',
-                  'rgba(75, 192, 192, 1)',
-                  'rgba(153, 102, 255, 1)',
-                  'rgba(255, 159, 64, 1)'
-              ],
-              borderWidth: 1
-          }]
-      },
-      options: {
-          scales: {
-              yAxes: [{
-                  ticks: {
-                      beginAtZero:true
-                  }
-              }]
-          }
-      }
-
-  });
-
-  this.doughnutChart = new Chart(this.doughnutCanvas.nativeElement, {
-
-      type: 'doughnut',
-      data: {
-          labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-          datasets: [{
-              label: '# of Votes',
-              data: [12, 19, 3, 5, 2, 3],
-              backgroundColor: [
-                  'rgba(255, 99, 132, 0.2)',
-                  'rgba(54, 162, 235, 0.2)',
-                  'rgba(255, 206, 86, 0.2)',
-                  'rgba(75, 192, 192, 0.2)',
-                  'rgba(153, 102, 255, 0.2)',
-                  'rgba(255, 159, 64, 0.2)'
-              ],
-              hoverBackgroundColor: [
-                  "#FF6384",
-                  "#36A2EB",
-                  "#FFCE56",
-                  "#FF6384",
-                  "#36A2EB",
-                  "#FFCE56"
-              ]
-          }]
-      }
-
-  });
-  */
   }
   logout(){
     this.acceso.logout();
@@ -357,5 +302,59 @@ permisos = {
     });
     actionSheet.present();
   }
+  closeMenu(){
+    this.menuCtrl.close();
+  }
+  cerrarSesion(){
+    this.logout();
+  }
+  salir(){
+    this.platform.exitApp();
+  }
+  openUsuarios(){
+    const tabsNav = this.app.getNavByIdOrName('myTabsNav') as Tabs;
+    tabsNav.select(1);
+    this.closeMenu();
+    //this.navCtrl.setRoot(UsuariosPage);
+    //this.navCtrl.pop();
+    //tabsNav.tab2Root = UsuariosPage;
+  }
+  openDocumentos(){
+    const tabsNav = this.app.getNavByIdOrName('myTabsNav') as Tabs;
+    tabsNav.select(3);
+    this.closeMenu();
+    this.navCtrl.pop();
+  }  
+  openCalendario(){
+    const tabsNav = this.app.getNavByIdOrName('myTabsNav') as Tabs;
+    tabsNav.select(4);
+    this.closeMenu();
+    this.navCtrl.pop();
+  } 
+  openVotaciones(){
+    const tabsNav = this.app.getNavByIdOrName('myTabsNav') as Tabs;
+    tabsNav.select(5);
+    this.closeMenu();
+    this.navCtrl.pop();
+  }
+  openSolicitudes(){
+    const tabsNav = this.app.getNavByIdOrName('myTabsNav') as Tabs;
+    tabsNav.select(6);
+    this.closeMenu();
+    this.navCtrl.pop();
+  } 
+  openNovedades(){
+    const tabsNav = this.app.getNavByIdOrName('myTabsNav') as Tabs;
+    tabsNav.select(0);
+    this.closeMenu();
+    this.navCtrl.pop();
+  }  
+  menutoggle () {
+    /*
+    this.menuCtrl.enable(false, 'pageNovedades');
+    this.menuCtrl.enable(true, 'pageRendicion');
+    this.menuCtrl.toggle('pageRendicion');
+    */
+}   
 
 }

@@ -1,7 +1,16 @@
 
+<ion-header class="mui--bg-color-red-500 fg-light">
+        <ion-navbar>
+          <button ion-button menuToggle icon-only>
+            <ion-icon name='menu'></ion-icon>
+          </button>
+          <ion-title style="color: white;">
+            Votaciones
+          </ion-title>
+        </ion-navbar>
+      </ion-header>
 
-
-<ion-content padding>
+<ion-content padding #content>
     <ion-tabs id="tabTricel" tabsPlacement="top">
         <ion-tab [root]="tab1Root" tabTitle="Proyectos" tabIcon="filing" id="tabProyectos">
         </ion-tab>

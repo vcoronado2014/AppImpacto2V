@@ -152,7 +152,10 @@
   }
   
   .color-fixed {
-      background-color: #F66C62;
+      background-color: white;
+  }
+  .divider{
+      color: #BDBDBD;
   }
   .bg-transparente{
       background: transparent;
@@ -163,6 +166,15 @@
   .fg-blanco{
       color: white;
   }
+  .fg-principal{
+      color: black;
+      opacity: 0.8;
+  }
+  .fg-secundary{
+    color: black;
+    opacity: 0.6;
+    font-size: 1.4rem;
+}
   input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
       background-color: transparent;
       background-image: none;
@@ -172,7 +184,7 @@
     background-color: #B71C1C;
   }
   .toolbar-background-md {
-      border-color: transparent;
+      border-color: #BDBDBD;
       background: transparent;
     }
     .bar-button-default-md, .bar-button-clear-md-default, .bar-button-md-default {
@@ -195,8 +207,6 @@
     }
     .toolbar-title-md {
       padding: 0 12px;
-      font-size: 2rem;
-      font-weight: 500;
       color: white;
     }
     .fg-light{

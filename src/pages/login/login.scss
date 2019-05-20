@@ -40,10 +40,12 @@ input.example-right-align {
       padding: 0;
   }
   .item-input .label-md, .item-select .label-md, .item-datetime .label-md {
-    color: white;
+    color: black;
+    opacity: 0.8;
 }
   .item-input-has-focus .label-md[stacked], .input-has-focus .label-md[floating] {
-    color: white;
+    color: black;
+    opacity: 0.8;
 }
 .btn-color{
   background-color: #B71C1C;

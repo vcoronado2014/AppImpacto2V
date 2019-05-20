@@ -36,6 +36,7 @@ import { VotarProyectoPage } from '../pages/votar-proyecto/votar-proyecto';
 import { MisSolicitudesPage } from '../pages/mis-solicitudes/mis-solicitudes';
 import { ComentariosSolicitudesPage } from '../pages/comentarios-solicitudes/comentarios-solicitudes';
 import { CrearSolicitudPage } from '../pages/crear-solicitud/crear-solicitud';
+import { MenuPage } from '../pages/menu/menu';
 //import { CalendarioFullPage } from '../pages/calendario-full/calendario-full';
 import { Camera } from '@ionic-native/camera';
 import { FCM } from '@ionic-native/fcm';
@@ -79,6 +80,7 @@ import { Autosize } from '../component/autosize';
     MisSolicitudesPage,
     ComentariosSolicitudesPage,
     CrearSolicitudPage,
+    MenuPage,
     MomentPipe,
     Autosize,
     TextAvatarDirective
@@ -116,7 +118,8 @@ import { Autosize } from '../component/autosize';
     ComentariosSolicitudesPage,
     CrearSolicitudPage,
     TircelPage,
-    InicioPage
+    InicioPage,
+    MenuPage
   ],
   providers: [
     StatusBar,

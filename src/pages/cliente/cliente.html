@@ -1,12 +1,9 @@
+
 <ion-content padding>
 
-    <ion-tabs id="tabCliente">
+    <ion-tabs id="tabCliente" name="myTabsNav" [selectedIndex]="myIndex">
         <ion-tab [root]="tab1Root" tabTitle="Novedades" tabIcon="chatbubbles" id="tabNovedades"  tabBadge="{{tabBadgeNovedades}}" tabBadgeStyle="{{tabStyleNovedades}}">
         </ion-tab>
-        <!--
-        <ion-tab *ngIf="tieneNovedades" [root]="tab1Root1" tabTitle="Novedades" tabIcon="chatbubbles" id="tabNovedades" tabBadge="N" tabBadgeStyle="danger">
-        </ion-tab>
-        -->
         <ion-tab [root]="tab2Root" tabTitle="Usuarios" tabIcon="people" id="tabUsuarios">
         </ion-tab>
         <ion-tab [root]="tab3Root" tabTitle="Rendiciones" tabIcon="logo-usd" id="tabRendiciones" tabBadge="{{tabBadgeRendiciones}}" tabBadgeStyle="{{tabStyleRendiciones}}">

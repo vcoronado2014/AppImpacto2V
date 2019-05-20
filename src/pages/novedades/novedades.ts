@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, Platform, NavParams, LoadingController, ModalController, ToastController, ActionSheetController, ViewController, App } from 'ionic-angular';
+import { NavController, Platform, NavParams, LoadingController, ModalController, ToastController, ActionSheetController, ViewController, App, MenuController, Tabs } from 'ionic-angular';
 //import { } from 'ionic-nati'
 
 import { LoginPage } from '../login/login';
@@ -7,7 +7,15 @@ import { DetailNovedadPage } from '../detail-novedad/detail-novedad';
 import { VisorImagenPage } from '../visor-imagen/visor-imagen';
 import { CrearNovedadPage } from '../crear-novedad/crear-novedad';
 import { EditarNovedadPage } from '../editar-novedad/editar-novedad';
-
+//paginas del menu
+import { TabTricelPage } from '../tab-tricel/tab-tricel';
+import { UsuariosPage } from '../usuarios/usuarios';
+import { RendicionPage } from '../rendicion/rendicion';
+import { DocumentosPage } from '../documentos/documentos';
+import { CalendarioPage } from '../calendario/calendario';
+import { ClientePage } from '../cliente/cliente';
+import { MisSolicitudesPage } from '../mis-solicitudes/mis-solicitudes';
+//************************* */
 import { AuthService } from '../../app/services/AuthService';
 import { InicioService } from '../../app/services/InicioService';
 import { NovedadService } from '../../app/services/novedadService';
@@ -30,7 +38,6 @@ import * as $ from 'jquery';
 })
 
 export class NovedadesPage {
-
   solicitudes: any;
   permisos = {
     CreaCalendario: 0,
@@ -102,10 +109,12 @@ rolLogueado = sessionStorage.getItem("ROL_NOMBRE");
               private viewCtrl: ViewController,
               public toastCtrl: ToastController,
               public platform: Platform,
+              public menuCtrl: MenuController,
               public actionSheetCtrl: ActionSheetController
   ) {
     //cuando entremos la primera vez seteamos la variable
     sessionStorage.setItem('TIENE_NOVEDADES', '0');
+
 
   }
   cargar(){
@@ -258,6 +267,7 @@ rolLogueado = sessionStorage.getItem("ROL_NOMBRE");
     }, 2000);
   }
   ionViewWillEnter() {
+    //this.closeMenu();
     this.permisos = JSON.parse(sessionStorage.getItem("PERMISOS"));
     this.cargar();
   }
@@ -511,5 +521,60 @@ rolLogueado = sessionStorage.getItem("ROL_NOMBRE");
     });
     actionSheet.present();
   }
+  closeMenu(){
+    this.menuCtrl.close();
+  }
+  cerrarSesion(){
+    this.logout();
+  }
+  salir(){
+    this.platform.exitApp();
+  }
+  openUsuarios(){
+    const tabsNav = this.app.getNavByIdOrName('myTabsNav') as Tabs;
+    tabsNav.select(1);
+    this.closeMenu();
+    //this.navCtrl.setRoot(UsuariosPage);
+    //this.navCtrl.pop();
+    //tabsNav.tab2Root = UsuariosPage;
+  }
+  openRendiciones(){
+    const tabsNav = this.app.getNavByIdOrName('myTabsNav') as Tabs;
+    //tabsNav.select(2);
+    //this.closeMenu();
+    //this.navCtrl.pop();
+   // tabsNav.tab2Root = RendicionPage;
+  }
+  openDocumentos(){
+    const tabsNav = this.app.getNavByIdOrName('myTabsNav') as Tabs;
+    tabsNav.select(3);
+    this.closeMenu();
+    this.navCtrl.pop();
+  }  
+  openCalendario(){
+    const tabsNav = this.app.getNavByIdOrName('myTabsNav') as Tabs;
+    tabsNav.select(4);
+    this.closeMenu();
+    this.navCtrl.pop();
+  } 
+  openVotaciones(){
+    const tabsNav = this.app.getNavByIdOrName('myTabsNav') as Tabs;
+    tabsNav.select(5);
+    this.closeMenu();
+    this.navCtrl.pop();
+  }
+  openSolicitudes(){
+    const tabsNav = this.app.getNavByIdOrName('myTabsNav') as Tabs;
+    tabsNav.select(6);
+    this.closeMenu();
+    this.navCtrl.pop();
+  }   
+  menutoggle () {
+    /*
+    this.menuCtrl.enable(false, 'pageRendicion');
+    this.menuCtrl.enable(true, 'pageNovedades');
+    this.menuCtrl.toggle('pageNovedades');
+    */
+}        
 
 }

@@ -1,31 +1,171 @@
 <!--
-  Generated template for the SolicitudesPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header class="mui--bg-color-red-300 fg-light">
-
+<ion-header class="mui--bg-color-red-500 fg-light">
     <ion-navbar>
-          
-        <ion-title>
+      <button ion-button menuToggle icon-only>
+        <ion-icon name='menu'></ion-icon>
+      </button>
+      <ion-title style="color: white;">
+        Rendiciones
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+  <ion-menu [content]="content" id="pageRendicion" type="overlay" (tap)="menutoggle()">
+    <ion-header class="mui--bg-color-red-500 fg-light">
+      <ion-toolbar>
+        <ion-title>Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-item no-lines style="border-bottom: 1px solid #dedede;">
+          <ion-avatar item-start>
+            <ion-icon class="fg-principal" name="contact" style="font-size: 2em;"></ion-icon>
+          </ion-avatar>
+          <h2 class="fg-principal" text-wrap>{{nombreLogueado}}</h2>
+          <h3 class="fg-secundary">{{rolLogueado}}</h3>
+          <p class="fg-secundary">{{institucionLogueado}}</p>
+        </ion-item>
+        <ion-item no-lines class="fg-secundary" (click)="openNovedades()">
+            <ion-label style="margin-top:0;margin-bottom: 0;">
+              <ion-grid>
+                <ion-row>
+                  <ion-col col-2>
+                    <ion-icon name="chatbubbles"></ion-icon>
+                  </ion-col>
+                  <ion-col col-10>
+                    Novedades
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-label>
+        </ion-item>
+        <ion-item no-lines class="fg-secundary" (click)="openUsuarios()">
+            <ion-label style="margin-top:0;margin-bottom: 0;">
+              <ion-grid>
+                <ion-row>
+                  <ion-col col-2>
+                    <ion-icon name="people"></ion-icon>
+                  </ion-col>
+                  <ion-col col-10>
+                    Usuarios
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-label>
+        </ion-item>
+        <ion-item no-lines class="fg-secundary" (click)="openRendiciones()">
+            <ion-label style="margin-top:0;margin-bottom: 0;">
+              <ion-grid>
+                <ion-row>
+                  <ion-col col-2>
+                    <ion-icon name="logo-usd"></ion-icon>
+                  </ion-col>
+                  <ion-col col-10>
+                    Rendiciones
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-label>
+        </ion-item>
+        <ion-item no-lines class="fg-secundary" (click)="openDocumentos()">
+            <ion-label style="margin-top:0;margin-bottom: 0;">
+              <ion-grid>
+                <ion-row>
+                  <ion-col col-2>
+                    <ion-icon name="document"></ion-icon>
+                  </ion-col>
+                  <ion-col col-10>
+                    Documentos
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-label>
+        </ion-item>   
+        <ion-item no-lines class="fg-secundary" (click)="openCalendario()">
+            <ion-label style="margin-top:0;margin-bottom: 0;">
+              <ion-grid>
+                <ion-row>
+                  <ion-col col-2>
+                    <ion-icon name="calendar"></ion-icon>
+                  </ion-col>
+                  <ion-col col-10>
+                    Calendario
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-label>
+        </ion-item>  
+        <ion-item no-lines class="fg-secundary" (click)="openVotaciones()">
+            <ion-label style="margin-top:0;margin-bottom: 0;">
+              <ion-grid>
+                <ion-row>
+                  <ion-col col-2>
+                    <ion-icon name="megaphone"></ion-icon>
+                  </ion-col>
+                  <ion-col col-10>
+                    Votaciones
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-label>
+        </ion-item> 
+        <ion-item no-lines style="border-bottom: 1px solid #dedede;" class="fg-secundary"  (click)="openSolicitudes()">
+            <ion-label style="margin-top:0;margin-bottom: 0;">
+              <ion-grid>
+                <ion-row>
+                  <ion-col col-2>
+                    <ion-icon name="chatbubbles"></ion-icon>
+                  </ion-col>
+                  <ion-col col-10>
+                    Solicitudes
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-label>
+        </ion-item>                                    
+        <ion-item no-lines style="border-bottom: 1px solid #dedede;" class="fg-secundary" (click)="cerrarSesion()">
+          <ion-label style="margin-top:0;margin-bottom: 0;">
             <ion-grid>
               <ion-row>
-                  <ion-col col-10>
-                      Rendiciones
-                    </ion-col>
-                    <ion-col col-2 text-right (click)="logout()">
-                      <ion-icon name="close"></ion-icon>
-                    </ion-col>
+                <ion-col col-2>
+                  <ion-icon name="close-circle"></ion-icon>
+                </ion-col>
+                <ion-col col-10>
+                  Cerrar sesión
+                </ion-col>
               </ion-row>
             </ion-grid>
-        </ion-title>
+          </ion-label>
+        </ion-item>
+        <ion-item no-lines style="border-bottom: 1px solid #dedede;"  class="fg-secundary" (click)="salir()">
+          <ion-label style="margin-top:0;margin-bottom: 0;">
+            <ion-grid>
+              <ion-row>
+                <ion-col col-2>
+                  <ion-icon name="exit"></ion-icon>
+                </ion-col>
+                <ion-col col-10>
+                  Salir
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+-->
+<ion-header class="mui--bg-color-red-500 fg-light">
+    <ion-navbar>
+      <button ion-button menuToggle icon-only>
+        <ion-icon name='menu'></ion-icon>
+      </button>
+      <ion-title style="color: white;">
+        Rendiciones
+      </ion-title>
     </ion-navbar>
-  
   </ion-header>
-
-
-<ion-content padding>
+<ion-content padding #content>
   <!-- refresh-->
   <ion-refresher (ionRefresh)="doRefresh($event)">
       <ion-refresher-content></ion-refresher-content>
@@ -84,22 +224,7 @@
           </ion-item-options>
         </ion-item-sliding>
       </ion-list>
-      <!--
-      <ion-card *ngIf="esAdministrador == false">
-        <ion-card-content>
-          <ion-card-title>
-            Usuarios del Sistema
-          </ion-card-title>
-          <ion-item>
-            <ion-avatar item-start>
-              <ion-icon name="people" style="font-size: 3em;"></ion-icon>
-            </ion-avatar>
-            <p text-wrap>Actualmente existen <strong>{{cantidadUsuarios}}</strong> usuarios para tu asamblea.</p>
-          </ion-item>
-      
-        </ion-card-content>
-      </ion-card>
--->
+
 
 
 </ion-content>
