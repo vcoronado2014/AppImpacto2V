@@ -158,15 +158,15 @@
 -->
 
 <ion-header class="mui--bg-color-black-alpha-87 fg-light">
-  <ion-navbar>
-    <ion-buttons start>
-      <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    </ion-buttons>
-    <ion-title>Novedades</ion-title>
-  </ion-navbar>
-</ion-header>
+    <ion-navbar>
+      <button ion-button menuToggle icon-only>
+        <ion-icon name='menu'></ion-icon>
+      </button>
+      <ion-title style="color: white;">
+        Novedades
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
 <ion-content padding>
     <!-- refresh-->
     <ion-refresher (ionRefresh)="doRefresh($event)">

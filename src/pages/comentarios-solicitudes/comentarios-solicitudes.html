@@ -1,16 +1,12 @@
-<ion-header class="mui--bg-color-teal-600 fg-light">
+<ion-header class="mui--bg-color-black-alpha-87 fg-light">
 
     <ion-navbar>
-        <ion-grid>
-            <ion-row>
-                <ion-col col-10>
-                    Comentarios
-                  </ion-col>
-                  <ion-col col-2 text-right (click)="closeModal()">
-                    <ion-icon name="close"></ion-icon>
-                  </ion-col>
-            </ion-row>
-          </ion-grid>
+        <ion-buttons left>
+            <button ion-button icon-only (click)="closeModal()">
+             <ion-icon name="arrow-back"></ion-icon>
+           </button>
+           </ion-buttons>
+      <ion-title>Comentarios</ion-title>
     </ion-navbar>
   
   </ion-header>

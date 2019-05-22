@@ -115,6 +115,7 @@ constructor(public navCtrl: NavController,
         this.esNuevo = true;
         this.idRendicion = 0;
         this.frmFecha = moment().format("DD-MM-YYYY");
+        
       }
   }
 

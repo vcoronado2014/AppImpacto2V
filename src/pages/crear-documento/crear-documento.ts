@@ -118,6 +118,10 @@ permisos = {
 
   enviarDocumento(){
     //validaciones
+    if (this.frmDescripcion == null || this.frmDescripcion == undefined || this.frmDescripcion == ''){
+      let sms = this.presentToast('La descripción del documento es requerida.');
+      return;
+    }
     let loader = this.loading.create({
       content: 'Guardando...',
     });
@@ -131,8 +135,11 @@ permisos = {
       var rolId = sessionStorage.getItem("ROL_ID");
       var usuId = sessionStorage.getItem("USU_ID");
       var descripcion = '';
+
       if (this.frmDescripcion != undefined){
         descripcion = this.frmDescripcion;
+        //la hacemos requerida
+
       }
 
       this.global.sendDocumento(this.fileUno, usuId, instId, descripcion).subscribe(

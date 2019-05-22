@@ -1,10 +1,15 @@
-<ion-header class="mui--bg-color-teal-600 fg-light">
+<ion-header class="mui--bg-color-black-alpha-87 fg-light">
 
-  <ion-navbar>
-    <ion-title>Crear Evento</ion-title>
-  </ion-navbar>
-
-</ion-header>
+    <ion-navbar>
+        <ion-buttons left>
+            <button ion-button icon-only (click)="closeModal()">
+             <ion-icon name="arrow-back"></ion-icon>
+           </button>
+           </ion-buttons>
+      <ion-title>Crear Evento</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
 
 
 <ion-content padding>
@@ -60,10 +65,10 @@
 <ion-grid>
   <ion-row>
     <ion-col text-right>
-        <button ion-button clear (click)="closeModal()">Cerrar</button>
+        <!--<button ion-button clear (click)="closeModal()">Cerrar</button>-->
     </ion-col>
     <ion-col text-right>
-        <button ion-button  (click)="insertarEvento()">Guardar</button>
+        <button ion-button  (click)="insertarEvento()" class="mui--bg-color-amber-700 fg-black">Guardar</button>
     </ion-col>
   </ion-row>
 </ion-grid>

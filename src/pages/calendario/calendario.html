@@ -30,10 +30,11 @@
     <h1 text-center>{{viewTitle}}</h1>
   <ion-row>
       <ion-buttons end>
-          <button ion-button small [disabled]="isToday" (click)="today()">Hoy</button>
+          <button ion-button small [disabled]="isToday" (click)="today()" class="mui--bg-color-amber-700 fg-black">Hoy</button>
+          <!--
           <button ion-button small (click)="changeMode('month')">Mensual</button>
           <button ion-button small (click)="changeMode('week')">Semanal</button>
-          <button ion-button small (click)="changeMode('day')">Diario</button>
+          <button ion-button small (click)="changeMode('day')">Diario</button>-->
           <!-- comentado 
           <button ion-button small (click)="loadEvents()">Cargar</button>-->
       </ion-buttons>
@@ -75,10 +76,11 @@
                 <ion-badge>{{event.startTime | dateFormat: 'DD-MM-YYYY HH:mm'}} - {{event.endTime | dateFormat: 'DD-MM-YYYY HH:mm'}}</ion-badge>
                 <!-- para eliminar un evento
                 <ion-icon name="trash" item-end style="font-size: 1.5em;"></ion-icon>-->
+                <!--
                 <ion-row *ngIf="event.tipo == 1">
                   <span style="font-size: 0.6em;font-style: italic;">Deslice a la izquierda para ver opciones</span>
                 </ion-row>
-                
+              -->
             </ion-item>
             <ion-item-options side="right">
               <button ion-button color="danger" (click)="presentActionSheet(event)" *ngIf="permisos.EliminaCalendario == '1' && event.usuIdCreador == idUsuarioLogueado && event.tipo == 1">
