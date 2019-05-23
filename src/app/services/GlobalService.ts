@@ -181,6 +181,7 @@ export class GlobalService{
   }
   
   postCalendarioArr(instId, tipo){
+    var pre = "./assets/imgs/";
     this.arregloGeneral = [];
     let url = AppSettings.API_ENDPOINT + 'Calendario';
     let dataGet = { InstId: instId.toString(), Tipo: tipo.toString() };
@@ -205,7 +206,9 @@ export class GlobalService{
             if (this.arregloEventos[s].mesTer == 0){
               //mesTerC = parseInt(this.arregloEventos[s].mesTer) + 1; 
             }
-            
+            var contenido = this.arregloEventos[s].content;
+            var detalle = this.arregloEventos[s].details;
+            var ubicacion = this.arregloEventos[s].ubication;
             var fechaIni = new Date(parseInt(this.arregloEventos[s].annoIni), mesIniC, parseInt(this.arregloEventos[s].diaIni), parseInt(this.arregloEventos[s].horaIni), parseInt(this.arregloEventos[s].minutosIni), 0, 0);
             var fechaTer = new Date(parseInt(this.arregloEventos[s].annoTer), mesTerC, parseInt(this.arregloEventos[s].diaTer), parseInt(this.arregloEventos[s].horaTer), parseInt(this.arregloEventos[s].minutosTer), 0, 0);
             //data[s].allDay, data[s].content, data[s].details, data[s].ubication
@@ -216,7 +219,7 @@ export class GlobalService{
             //ahora creamos la entidad con estos valores
             let entidadEvento = {
               id: this.arregloEventos[s].clientId,
-              title: title,
+              title: contenido,
               startTime: fechaIni,
               endTime: fechaTer,
               allDay: this.arregloEventos[s].allDay,
@@ -224,7 +227,10 @@ export class GlobalService{
               titulo: this.arregloEventos[s].content,
               detalle: this.arregloEventos[s].details,
               ubicacion: this.arregloEventos[s].ubication,
-              tipo: 1
+              tipo: 1,
+              esInicio: false,
+              esTermino: false,
+              Icono: pre + 'calendario_normal.png'
             };
             //ahora lo insertamos en nuestro arreglo
             this.arregloGeneral.push(entidadEvento);
@@ -259,11 +265,35 @@ export class GlobalService{
             
             var fechaIni = new Date(parseInt(this.arregloEventosProy[s].annoIni), mesIniC, parseInt(this.arregloEventosProy[s].diaIni), parseInt(this.arregloEventosProy[s].horaIni), parseInt(this.arregloEventosProy[s].minutosIni), 0, 0);
             var fechaTer = new Date(parseInt(this.arregloEventosProy[s].annoTer), mesTerC, parseInt(this.arregloEventosProy[s].diaTer), parseInt(this.arregloEventosProy[s].horaTer), parseInt(this.arregloEventosProy[s].minutosTer), 0, 0);
+            var fechaIniTermino = new Date(parseInt(this.arregloEventosProy[s].annoIni), mesIniC, parseInt(this.arregloEventosProy[s].diaIni), parseInt(this.arregloEventosProy[s].horaIni) + 1, parseInt(this.arregloEventosProy[s].minutosIni), 0, 0);
+            var fechaTerTermino = new Date(parseInt(this.arregloEventosProy[s].annoTer), mesTerC, parseInt(this.arregloEventosProy[s].diaTer), parseInt(this.arregloEventosProy[s].horaTer) + 1, parseInt(this.arregloEventosProy[s].minutosTer), 0, 0);
             //data[s].allDay, data[s].content, data[s].details, data[s].ubication
+            var contenido = this.arregloEventosProy[s].content;
+            var detalle = this.arregloEventosProy[s].details;
+            var ubicacion = this.arregloEventosProy[s].ubication;
             var title = this.arregloEventosProy[s].content + '-' + this.arregloEventosProy[s].details + ', ' + this.arregloEventosProy[s].ubication;
             var fechaIniF = moment(fechaIni).format('YYYY-MM-DD') + 'T' + moment(fechaIni).format('HH:mm:00');
             var fechaTerF = moment(fechaTer).format('YYYY-MM-DD') + 'T' + moment(fechaTer).format('HH:mm:00');
+            //nuevo manejo de evtnos para crear inicios y fin
 
+            //nueva implementacion
+            let entidadEvento = {
+              id: this.arregloEventosProy[s].clientId,
+              title: contenido,
+              startTime: fechaIni,
+              endTime: fechaIniTermino,
+              allDay: false,
+              usuIdCreador: this.arregloEventosProy[s].usuIdCreador,
+              titulo: this.arregloEventosProy[s].content,
+              detalle: this.arregloEventosProy[s].details,
+              ubicacion: this.arregloEventosProy[s].ubication,
+              tipo: 2,
+              esInicio: true,
+              esTermino: false,
+              Icono: pre + 'calendario_proyecto_inicio.png'
+            };
+
+            /*
             //ahora creamos la entidad con estos valores
             let entidadEvento = {
               id: this.arregloEventosProy[s].clientId,
@@ -277,8 +307,26 @@ export class GlobalService{
               ubicacion: this.arregloEventosProy[s].ubication,
               tipo: 2
             };
+            */
             //ahora lo insertamos en nuestro arreglo
             this.arregloGeneral.push(entidadEvento);
+            //segundo puch
+            let entidadEventoTer = {
+              id: this.arregloEventosProy[s].clientId + 100,
+              title: contenido,
+              startTime: fechaTer,
+              endTime: fechaTerTermino,
+              allDay: false,
+              usuIdCreador: this.arregloEventosProy[s].usuIdCreador,
+              titulo: this.arregloEventosProy[s].content,
+              detalle: this.arregloEventosProy[s].details,
+              ubicacion: this.arregloEventosProy[s].ubication,
+              tipo: 2,
+              esInicio: false,
+              esTermino: true,
+              Icono: pre + 'calendario_proyecto_fin.png'
+            };
+            this.arregloGeneral.push(entidadEventoTer);
 
           }
         }
@@ -288,6 +336,7 @@ export class GlobalService{
       () => console.log('get eventos proyectos')
     );
     //return arreglo general
+    console.log(this.arregloGeneral);
     return this.arregloGeneral;
   }  
   postCalendarioClient(instId, tipo){

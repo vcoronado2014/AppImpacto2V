@@ -172,12 +172,6 @@
     <ion-refresher (ionRefresh)="doRefresh($event)">
         <ion-refresher-content></ion-refresher-content>
       </ion-refresher>
-    <!--
-    <ion-label no-padding no-margin text-center style="font-style: italic;
-          font-size: 0.9rem;">
-      Deslize hacia abajo para actualizar
-    </ion-label>
-    -->
   <!-- solo para pruebas de carga de archivos -->
 
   <div *ngFor="let item of solicitudes">
@@ -223,7 +217,7 @@
         </p>
         <!-- comentarios -->
         <ion-list *ngFor="let comen of item.RespuestaMuro">
-          <ion-item>
+          <ion-item *ngIf="comen.Mostrar">
             <ion-icon name="chatbubbles" item-start style="font-size: 1.8rem;" class="fg-teal-800"></ion-icon>
             <h2><strong>{{comen.NombreUsuario}}</strong></h2>
             <h3 style="font-size: 1.2rem;" class="fg-teal-800"><ion-icon name="clock"></ion-icon> {{comen.FechaString}}</h3>

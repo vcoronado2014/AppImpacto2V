@@ -68,8 +68,11 @@
           <ion-item-sliding  *ngFor="let event of selectedDate.events">
             <ion-item (click)="onEventSelected(event)">
               <ion-avatar item-start>
+                  <img [src]="event.Icono">
+                  <!--
                 <ion-icon  *ngIf="event.tipo == 1" name="calendar" item-start style="font-size: 2.5em;"></ion-icon>
                 <ion-icon *ngIf="event.tipo != 1"  name="calendar" color="secondary" item-start style="font-size: 2.5em;"></ion-icon>
+                  -->
               </ion-avatar>
                 <!--<h1 text-wrap>{{event.startTime | dateFormat: 'dddd DD'}}</h1>-->
                 <h2 text-wrap>{{event.title}}</h2>

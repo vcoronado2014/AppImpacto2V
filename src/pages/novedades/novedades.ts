@@ -234,11 +234,21 @@ rolLogueado = sessionStorage.getItem("ROL_NOMBRE");
               this.solicitudes[s].MuestraImagenCuatro = muestraImagenCuatro;
               //*********************************************************
               if (this.solicitudes[s].RespuestaMuro){
+                var contador = 0;
                 for (var t in this.solicitudes[s].RespuestaMuro){
+                  //var contador = 0;
                   var fechaStrC = this.solicitudes[s].RespuestaMuro[t].FechaString.split(' ');
                   var mostrarC = fechaStrC[0] + ' ' + fechaStrC[1] + ' ' + fechaStrC[2];
                   this.solicitudes[s].RespuestaMuro[t].FechaString = mostrarC;
                   this.solicitudes[s].RespuestaMuro[t].UrlImagen = 'trash';
+                  if (contador >= 2){
+                    this.solicitudes[s].RespuestaMuro[t].Mostrar = false;
+                  }
+                  else {
+                    this.solicitudes[s].RespuestaMuro[t].Mostrar = true;
+                  }
+                  contador++;
+                  //console.log(contador);
                 }
               }
 
