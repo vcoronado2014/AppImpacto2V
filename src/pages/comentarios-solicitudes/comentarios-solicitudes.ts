@@ -70,7 +70,7 @@ export class ComentariosSolicitudesPage {
   openUrl(url){
     //var url = this.urlDescarga;
     let browser = new InAppBrowser();
-    browser.create(url, '_blank');
+    browser.create(url, '_blank', 'location=yes');
   }
   getPicture(){
     let options: CameraOptions = {

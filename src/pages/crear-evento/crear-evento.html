@@ -6,7 +6,7 @@
              <ion-icon name="arrow-back"></ion-icon>
            </button>
            </ion-buttons>
-      <ion-title>Crear Evento</ion-title>
+      <ion-title>{{titulo}}</ion-title>
     </ion-navbar>
   
   </ion-header>
@@ -16,7 +16,7 @@
   <ion-list>
     <ion-item>
         <ion-label floating>Titulo (*)</ion-label>
-        <ion-input type="text" [(ngModel)]="frmTitulo"></ion-input>
+        <ion-input type="text" [(ngModel)]="frmTitulo" [disabled]="estaEditando == false"></ion-input>
     </ion-item>
 
     <h6 style="color: #999;padding-left: 2%;">Fecha Inicio (*)</h6>
@@ -26,11 +26,11 @@
         monthNames="Enero, Febrero, Marzo, Abril, Mayo, Junio, Julio, Agosto, Septiembre, Octubre, Noviembre, Diciembre"
         monthShortNames="Ene, Feb, Mar, Abr, May, Jun, Jul, Ago, Sep, Oct, Nov, Dic"
         dayNames="domingo, lunes, martes, miércoles, jueves, viernes, sábado"
-        dayShortNames="dom, lun, mar, mié, jue, vie, sáb" [(ngModel)]="frmInicio"></ion-datetime>
+        dayShortNames="dom, lun, mar, mié, jue, vie, sáb" [(ngModel)]="frmInicio" [disabled]="estaEditando == false"></ion-datetime>
     </ion-item>
     <ion-item>
       <ion-label>Hora</ion-label>
-      <ion-datetime displayFormat="HH:mm" pickerFormat="HH mm" [(ngModel)]="frmHoraInicio"></ion-datetime>
+      <ion-datetime displayFormat="HH:mm" pickerFormat="HH mm" [(ngModel)]="frmHoraInicio" [disabled]="estaEditando == false"></ion-datetime>
     
     </ion-item>
 
@@ -41,28 +41,32 @@
         monthNames="Enero, Febrero, Marzo, Abril, Mayo, Junio, Julio, Agosto, Septiembre, Octubre, Noviembre, Diciembre"
         monthShortNames="Ene, Feb, Mar, Abr, May, Jun, Jul, Ago, Sep, Oct, Nov, Dic"
         dayNames="domingo, lunes, martes, miércoles, jueves, viernes, sábado"
-        dayShortNames="dom, lun, mar, mié, jue, vie, sáb" [(ngModel)]="frmTermino"></ion-datetime>
+        dayShortNames="dom, lun, mar, mié, jue, vie, sáb" [(ngModel)]="frmTermino" [disabled]="estaEditando == false"></ion-datetime>
     </ion-item>
     <ion-item>
         <ion-label>Hora</ion-label>
-      <ion-datetime displayFormat="HH:mm" pickerFormat="HH mm" [(ngModel)]="frmHoraTermino"></ion-datetime>
+      <ion-datetime displayFormat="HH:mm" pickerFormat="HH mm" [(ngModel)]="frmHoraTermino" [disabled]="estaEditando == false"></ion-datetime>
     </ion-item>
     
     
     <ion-item>
       <ion-label floating>Ubicación</ion-label>
-      <ion-input type="text" [(ngModel)]="frmUbicacion"></ion-input>
+      <ion-input type="text" [(ngModel)]="frmUbicacion" [disabled]="estaEditando == false"></ion-input>
 
     </ion-item>    
 
-    <ion-item>
+    <ion-item *ngIf="estaEditando">
       <ion-label floating>Detalle</ion-label>
-      <ion-input type="text" [(ngModel)]="frmDetalle" required></ion-input>
+      <ion-input type="text" [(ngModel)]="frmDetalle" required [disabled]="estaEditando == false"></ion-input>
     </ion-item>
+    <ion-item *ngIf="estaEditando == false">
+        
+        <p text-wrap>{{frmDetalle}}</p>
+      </ion-item>
   
   </ion-list>
 
-<ion-grid>
+<ion-grid *ngIf="this.estaEditando">
   <ion-row>
     <ion-col text-right>
         <!--<button ion-button clear (click)="closeModal()">Cerrar</button>-->

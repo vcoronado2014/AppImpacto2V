@@ -144,7 +144,7 @@ constructor(public navCtrl: NavController,
   openUrl(){
     var url = this.urlDescarga;
     let browser = new InAppBrowser();
-    browser.create(url, '_blank');
+    browser.create(url, '_blank', 'location=yes');
   }
 
   enviarRendicion(){

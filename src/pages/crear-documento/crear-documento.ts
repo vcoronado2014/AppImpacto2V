@@ -182,7 +182,7 @@ permisos = {
   openUrl(){
     var url = this.urlDescarga;
     let browser = new InAppBrowser();
-    browser.create(url, '_blank');
+    browser.create(url, '_blank', 'location=yes');
   }
   //aca poner el enviar documento
 

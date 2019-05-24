@@ -325,7 +325,7 @@ export class CalendarioPage {
     this.app.getRootNav().setRoot(LoginPage);
 
   }
-  presentModal(item) {
+  presentModal(item, editado) {
     if (item == null){
       //esta creando uno nuevo, seteamos el evento seleccionado
       if (this.timeSeleccionado){
@@ -338,7 +338,7 @@ export class CalendarioPage {
 
     }
 
-    let modal = this.modalCtrl.create(CrearEventoPage, { evento: item });
+    let modal = this.modalCtrl.create(CrearEventoPage, { evento: item, editado: editado });
     modal.onDidDismiss(data => {
       // Data is your data from the modal
       if (data != undefined){

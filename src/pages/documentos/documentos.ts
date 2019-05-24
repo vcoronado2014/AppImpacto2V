@@ -185,7 +185,7 @@ export class DocumentosPage {
   }
   openUrl(url){
     let browser = new InAppBrowser();
-    browser.create(url, '_blank');
+    browser.create(url, '_blank', 'location=yes');
   }
   doRefresh(refresher) {
     console.log('Begin async operation', refresher);

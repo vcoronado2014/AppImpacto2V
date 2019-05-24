@@ -78,6 +78,8 @@ export class CrearEventoPage {
   frmHoraInicio = moment().add(2,'h').format("HH:mm");
   frmHoraTermino = moment().add(3,'h').format("HH:mm");
 
+  estaEditando = false;
+  titulo = 'Crear Evento';
 
   constructor(
     public navCtrl: NavController,
@@ -100,6 +102,7 @@ export class CrearEventoPage {
     */
          //capturamos el elemento
          this.evento = this.navParams.get('evento');
+         this.estaEditando = this.navParams.get('editado');
          if (this.evento){
            if (this.evento.id > 0)
            {
@@ -117,6 +120,11 @@ export class CrearEventoPage {
               this.frmTermino = termino;
               this.frmHoraInicio = hInicio;
               this.frmHoraTermino = hTermino;
+              this.titulo = 'Editar Evento';
+              if (this.estaEditando == false){
+                //bloquear y esconder el boton guardar
+                this.titulo = 'Evento';
+              }
 
            }
            else{
@@ -131,12 +139,14 @@ export class CrearEventoPage {
             this.frmHoraTermino = hTermino;
              this.esNuevo = true;
              this.idEvento = 0;
+             this.titulo = 'Crear Evento';
            }
      
          }
          else {
            this.esNuevo = true;
            this.idEvento = 0;
+           this.titulo = 'Crear Evento';
          }
 
   }

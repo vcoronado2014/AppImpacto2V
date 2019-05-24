@@ -94,7 +94,7 @@ export class MenuPage {
     { title: 'Documentos', pageName: 'DocumentosPage', tabComponent: 'tabDocumentos', index: 1, icon: 'document', muestra: this.evaluaItem('Documentos') },
     { title: 'Calendario', pageName: 'CalendarioPage', tabComponent: 'tabCalendario', index: 2, icon: 'calendar', muestra: this.evaluaItem('Calendario') },
     { title: 'Votar', pageName: 'ProyectosPage', tabComponent: 'tabProyectos', index: null, icon: 'megaphone', muestra: this.evaluaItem('Votar') },
-    { title: 'Solicitudes', pageName: 'MisSolicitudesPage', tabComponent: 'tabSolicitudes', index: 3, icon: 'chatbubbles', muestra: this.evaluaItem('Solicitudes') }
+    { title: 'Mis Solicitudes', pageName: 'MisSolicitudesPage', tabComponent: 'tabSolicitudes', index: 3, icon: 'chatbubbles', muestra: this.evaluaItem('Solicitudes') }
     //{ title: 'Solicitudes', pageName: 'MisSolicitudesPage', tabComponent: 'null', index: -1, icon: 'chatbubbles', muestra: this.evaluaItem('Solicitudes') }
   ];
 

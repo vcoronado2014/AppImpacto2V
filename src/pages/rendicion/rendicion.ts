@@ -245,7 +245,7 @@ permisos = {
   }
   openUrl(url){
     let browser = new InAppBrowser();
-    browser.create(url, '_blank');
+    browser.create(url, '_blank', 'location=yes');
   }
 
   delete(item){

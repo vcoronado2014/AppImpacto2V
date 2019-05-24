@@ -241,12 +241,13 @@ rolLogueado = sessionStorage.getItem("ROL_NOMBRE");
                   var mostrarC = fechaStrC[0] + ' ' + fechaStrC[1] + ' ' + fechaStrC[2];
                   this.solicitudes[s].RespuestaMuro[t].FechaString = mostrarC;
                   this.solicitudes[s].RespuestaMuro[t].UrlImagen = 'trash';
-                  if (contador >= 2){
+                  if (contador >= 1){
                     this.solicitudes[s].RespuestaMuro[t].Mostrar = false;
                   }
                   else {
                     this.solicitudes[s].RespuestaMuro[t].Mostrar = true;
                   }
+                  
                   contador++;
                   //console.log(contador);
                 }

@@ -64,7 +64,7 @@ export class VisorImagenPage {
   
   viewImage(url){
     let browser = new InAppBrowser();
-    browser.create(url, '_blank');
+    browser.create(url, '_blank', 'location=yes');
     /*
     const option: PhotoViewerOptions = {
       share: true

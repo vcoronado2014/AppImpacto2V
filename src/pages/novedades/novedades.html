@@ -174,17 +174,97 @@
       </ion-refresher>
   <!-- solo para pruebas de carga de archivos -->
 
-  <div *ngFor="let item of solicitudes">
+  <ion-list no-lines *ngFor="let item of solicitudes">
     <ion-card>
-      <ion-card-content>
-        <!-- lo comentamos por mientra
-          <img [src]="image" *ngIf="image" />
-          <ion-item>
-            <label>Carga de Archivos</label>
-            <input type="file" accept="image/*" (change)="changeListener($event, item)" style="opacity: 0" #fileInp>
 
+        <ion-card-header>
+            <ion-item>
+                <h2 text-wrap>{{item.NombreUsuario}} ({{item.NombreRol}})</h2>
+                <p style="font-size: 1rem;">{{item.FechaString}}</p>
+            </ion-item>
+
+        </ion-card-header>
+        <ion-card-content>
+          <!-- texto completo -->
+          <ion-item>
+            <p text-wrap text-justify>{{item.Texto}}</p>
           </ion-item>
-        -->
+          <ion-item no-lines *ngIf="item.MuestraAdjuntos">
+              <div [class]="item.ClaseUno" *ngIf="item.MuestraImagenUno">
+                  <img [src]="item.ImgUno" (click)="presentModalImagen(item.ImgUno, item.IdUno, item.Id)" (load)="loaded($event)" id="img1" />
+                </div>
+                <div [class]="item.ClaseDos" *ngIf="item.MuestraImagenDos">
+                  <img [src]="item.ImgDos" (click)="presentModalImagen(item.ImgDos, item.IdDos, item.Id)"  (load)="loaded($event)" id="img2" />
+                </div>
+                <div [class]="item.ClaseTres" *ngIf="item.MuestraImagenTres">
+                  <img [src]="item.ImgTres" (click)="presentModalImagen(item.ImgTres, item.IdTres, item.Id)"  (load)="loaded($event)" id="img3" />
+                </div>
+                <div [class]="item.ClaseCuatro" *ngIf="item.MuestraImagenCuatro">
+                  <img [src]="item.ImgCuatro" (click)="presentModalImagen(item.ImgCuatro, item.IdCuatro, item.Id)" (load)="loaded($event)" id="img4" />
+                </div>
+          </ion-item>
+          <ion-item>
+              <ion-grid>
+                  <ion-row>
+                    <ion-col *ngIf="item.VisibleEditar" (click)="presentModalEditarNovedad(item)">
+                        <button ion-button icon-start small clear>
+                          <ion-icon name="create"></ion-icon>
+                          Editar
+                        </button>
+                    </ion-col>
+                    <ion-col *ngIf="item.VisibleEliminar" (click)="presentActionSheetMuro(item)">
+                        <button ion-button icon-start small clear>
+                          <ion-icon name="{{item.UrlImagen}}"></ion-icon>
+                          Eliminar
+                        </button>
+                    </ion-col>
+                    
+                    <ion-col (click)="presentModal(item)" style="cursor: pointer;">
+                        <button ion-button icon-start small clear>
+                          <ion-icon name="chatbubbles"></ion-icon>
+                          Comentar
+                        </button>
+                    </ion-col>
+                    <ion-col *ngIf="item.RespuestaMuro.length > 0" style="padding-top: 12px;" (click)="presentModal(item)" style="cursor: pointer;">
+                        <p text-right *ngIf="item.RespuestaMuro.length == 1">{{item.RespuestaMuro.length}} comentario</p>
+                        <p text-right *ngIf="item.RespuestaMuro.length > 1">{{item.RespuestaMuro.length}} comentarios</p>
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+          </ion-item>
+
+        </ion-card-content>
+
+      <ion-card-content>
+          <ion-list *ngFor="let comen of item.RespuestaMuro">
+              <ion-item class="respuestaOtro item item-block item-md" *ngIf="comen.Mostrar">
+                  <h3 style="color: #385898; padding:10px;" text-wrap>{{comen.NombreUsuario}} - ({{comen.NombreRol}})</h3>
+                  <p text-wrap text-justify style="padding:10px;">
+                    {{comen.Texto}}
+                  </p>
+              </ion-item>
+              <p class="tiempo"><ion-icon name="calendar"></ion-icon>&nbsp;{{comen.FechaString}}</p>
+
+            </ion-list>
+          <!-- hay que ver la eliminacion de forma directa o agregarla a la pantalla modal
+
+        <ion-list *ngFor="let comen of item.RespuestaMuro">
+          <ion-item *ngIf="comen.Mostrar">
+            <ion-icon name="chatbubbles" item-start style="font-size: 1.8rem;" class="fg-teal-800"></ion-icon>
+            <h2><strong>{{comen.NombreUsuario}}</strong></h2>
+            <h3 style="font-size: 1.2rem;" class="fg-teal-800"><ion-icon name="clock"></ion-icon> {{comen.FechaString}}</h3>
+            <p text-wrap style="text-align: justify;">{{comen.Texto}}</p>
+            <ion-icon class="fg-teal-800" name="trash" *ngIf="comen.VisibleEliminar" item-end (click)="presentActionSheet(comen)"></ion-icon>
+          </ion-item>
+        </ion-list>
+-->
+
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+  <!--
+        <ion-card>
+      <ion-card-content>
         <ion-grid *ngIf="item.MuestraAdjuntos">
           <ion-row>
             <div [class]="item.ClaseUno" *ngIf="item.MuestraImagenUno">
@@ -215,7 +295,6 @@
             {{item.Texto}}
           </strong>
         </p>
-        <!-- comentarios -->
         <ion-list *ngFor="let comen of item.RespuestaMuro">
           <ion-item *ngIf="comen.Mostrar">
             <ion-icon name="chatbubbles" item-start style="font-size: 1.8rem;" class="fg-teal-800"></ion-icon>
@@ -227,7 +306,7 @@
         </ion-list>
       </ion-card-content>
     </ion-card>
-  </div>
+  -->
 
 </ion-content>
 <ion-fab bottom right *ngIf="permisos.CreaMuro == 1" style ="bottom: 10%;">
