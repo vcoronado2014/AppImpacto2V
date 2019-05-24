@@ -21,8 +21,18 @@
   
   </ion-header>
 -->
+<ion-header class="mui--bg-color-black-alpha-87 fg-light">
+  <ion-navbar>
+    <button ion-button menuToggle icon-only>
+      <ion-icon name='menu'></ion-icon>
+    </button>
+    <ion-title style="color: white;">
+      Proyectos
+    </ion-title>
+  </ion-navbar>
+</ion-header>
 
-<ion-content padding>
+<ion-content padding #content>
     <!-- refresh-->
     <ion-refresher (ionRefresh)="doRefresh($event)">
       <ion-refresher-content></ion-refresher-content>
@@ -76,7 +86,7 @@
   </ion-list>
 
 </ion-content>
-<ion-fab bottom right *ngIf="permisos.CreaProyecto == 1" style="bottom: 5%;">
+<ion-fab bottom right *ngIf="permisos.CreaProyecto == 1">
   <button ion-fab (click)="presentModal(null)" class="mui--bg-color-amber-700 fg-black">
     <ion-icon name="add"></ion-icon>
   </button>

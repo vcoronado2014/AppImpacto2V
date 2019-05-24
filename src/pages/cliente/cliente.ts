@@ -63,7 +63,7 @@ import { FCM, NotificationData } from '@ionic-native/fcm';
         this.tab4Root = DocumentosPage;
         this.tab5Root = CalendarioPage;
         //tab5Root = CalendarioFullPage;
-        this.tab6Root = TabTricelPage;
+        this.tab6Root = ProyectosPage;
         this.tab7Root = MisSolicitudesPage;
 
         //manejo de las notificaciones cuando esta abierta la pagina principal

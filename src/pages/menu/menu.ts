@@ -11,6 +11,7 @@ import { MisSolicitudesPage } from '../mis-solicitudes/mis-solicitudes';
 import { AuthService } from '../../app/services/AuthService';
 import { LoginPage } from '../login/login';
 import { Title } from '@angular/platform-browser';
+import { ProyectosPage } from '../proyectos/proyectos';
 
 export interface PageInterface {
   title: string;
@@ -88,12 +89,12 @@ export class MenuPage {
  
   pages: PageInterface[] = [
     { title: 'Novedades', pageName: 'NovedadesPage', tabComponent: 'tabNovedades', index: 0, icon: 'chatbubbles', muestra: this.evaluaItem('Novedades') },
-    //{ title: 'Usuarios', pageName: 'UsuariosPage', tabComponent: 'tabUsuarios', index: 1, icon: 'people', muestra: this.evaluaItem('Usuarios') },
-    //{ title: 'Rendiciones', pageName: 'RendicionPage', tabComponent: 'tabRendiciones', index: 2, icon: 'logo-usd', muestra: this.evaluaItem('Rendiciones') },
+    { title: 'Usuarios', pageName: 'UsuariosPage', tabComponent: 'tabUsuarios', index: null, icon: 'people', muestra: this.evaluaItem('Usuarios') },
+    { title: 'Rendiciones', pageName: 'RendicionPage', tabComponent: 'tabRendiciones', index: null, icon: 'logo-usd', muestra: this.evaluaItem('Rendiciones') },
     { title: 'Documentos', pageName: 'DocumentosPage', tabComponent: 'tabDocumentos', index: 1, icon: 'document', muestra: this.evaluaItem('Documentos') },
     { title: 'Calendario', pageName: 'CalendarioPage', tabComponent: 'tabCalendario', index: 2, icon: 'calendar', muestra: this.evaluaItem('Calendario') },
-    //{ title: 'Votar', pageName: 'TabTricelPage', tabComponent: 'tabProyectos', index: 5, icon: 'megaphone', muestra: this.evaluaItem('Votar') },
-    { title: 'Solicitudes', pageName: 'MisSolicitudesPage', tabComponent: 'tabSolicitudes', index: 6, icon: 'chatbubbles', muestra: this.evaluaItem('Solicitudes') }
+    { title: 'Votar', pageName: 'ProyectosPage', tabComponent: 'tabProyectos', index: null, icon: 'megaphone', muestra: this.evaluaItem('Votar') },
+    { title: 'Solicitudes', pageName: 'MisSolicitudesPage', tabComponent: 'tabSolicitudes', index: 3, icon: 'chatbubbles', muestra: this.evaluaItem('Solicitudes') }
     //{ title: 'Solicitudes', pageName: 'MisSolicitudesPage', tabComponent: 'null', index: -1, icon: 'chatbubbles', muestra: this.evaluaItem('Solicitudes') }
   ];
 
@@ -121,7 +122,24 @@ export class MenuPage {
     } else {
       // Tabs are not active, so reset the root page 
       // In this case: moving to or from SpecialPage
-      this.nav.setRoot(page.pageName, params);
+      if (page.pageName == 'UsuariosPage'){
+        this.nav.setRoot(UsuariosPage);
+      }
+      else if (page.pageName == 'RendicionPage'){
+        this.nav.setRoot(RendicionPage);
+      }
+      else if (page.pageName == 'ProyectosPage'){
+        this.nav.setRoot(ProyectosPage);
+      }
+
+      else{
+        this.closeMenu();
+        //this.nav.setRoot(ClientePage, params);
+        this.nav.push(ClientePage, params);
+        this.nav.getActiveChildNav().select(page.index);
+
+      }
+      
     }
     this.closeMenu();
   }
@@ -160,7 +178,7 @@ export class MenuPage {
         retorno = true;
       }
     }
-    if (item == 'Solictudes'){
+    if (item == 'Solicitudes'){
       if (this.permisos.VerMroSolicitud == 1){
         retorno = true;
       }
