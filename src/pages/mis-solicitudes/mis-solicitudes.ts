@@ -10,10 +10,12 @@ import { CrearSolicitudPage } from '../crear-solicitud/crear-solicitud';
 import { AuthService } from '../../app/services/AuthService';
 import { GlobalService } from '../../app/services/GlobalService';
 import {AppSettings } from '../../app/AppSettings';
+import { UtilesService } from '../../app/services/UtilesService';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 
 import * as exif from 'exif-js';
 import * as $ from 'jquery';
+declare var window: any;
 
 
 @Component({
@@ -77,6 +79,7 @@ export class MisSolicitudesPage {
     public navCtrl: NavController,
     public navParams: NavParams,
     public loading: LoadingController,
+    public util: UtilesService,
     private app: App,
     public acceso: AuthService,
     public global: GlobalService,
@@ -86,6 +89,9 @@ export class MisSolicitudesPage {
     public actionSheetCtrl: ActionSheetController
   ) {
 
+  }
+  descargar(url, extension){
+    this.util.downloadAndOpen(url, extension);
   }
   cargar(){
     let loader = this.loading.create({
@@ -123,6 +129,10 @@ export class MisSolicitudesPage {
                     resp.ArchivosAdjuntos = dataArc.json();
                     resp.ArchivosAdjuntos.forEach(archivo => {
                       //var urlPrevia = AppSettings.URL_RAIZ + archivo.NombreCarpeta + '/' + archivo.NombreArchivo;
+                      var arc = archivo.NombreArchivo.split('.');
+                      if (arc.length == 2){
+                        archivo.Extension = '.' + arc[1];
+                      }
                       var urlPrevia = AppSettings.CORS + AppSettings.URL_RAIZ_NOVEDADES +  '/' + archivo.NombreArchivo;
                       archivo.Url = urlPrevia;
                       /*
@@ -158,6 +168,10 @@ export class MisSolicitudesPage {
                   sol.ArchivosAdjuntos = dataArc.json();
                   sol.ArchivosAdjuntos.forEach(archivo => {
                     //var urlPrevia = AppSettings.URL_RAIZ + archivo.NombreCarpeta + '/' + archivo.NombreArchivo;
+                    var arc = archivo.NombreArchivo.split('.');
+                    if (arc.length == 2){
+                      archivo.Extension = '.' + arc[1];
+                    }
                     var urlPrevia = AppSettings.CORS + AppSettings.URL_RAIZ_NOVEDADES + '/' + archivo.NombreArchivo;
                     archivo.Url = urlPrevia;
                     /*
@@ -225,8 +239,10 @@ export class MisSolicitudesPage {
   }
   openUrl(url){
     //var url = this.urlDescarga;
-    let browser = new InAppBrowser();
-    browser.create(url, '_blank', 'location=yes');
+    //let browser = new InAppBrowser();
+    //browser.create(url, '_system', 'location=yes');
+    let options ='location=no,toolbar=yes,hidden=no,fullscreen=yes';
+    window.open(url, '_system', options);
   }
 
   presentModalNuevo(item) {

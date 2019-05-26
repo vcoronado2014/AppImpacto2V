@@ -161,6 +161,11 @@ rolLogueado = sessionStorage.getItem("ROL_NOMBRE");
                 muestraImagenes = true;
                 //recorremos los archivos adjuntos
                 for (var r in this.solicitudes[s].ArchivosAdjuntos){
+                  var arc = this.solicitudes[s].ArchivosAdjuntos[r].NombreArchivo.split('.');
+                  if (arc.length == 2){
+                    this.solicitudes[s].ArchivosAdjuntos[r].Extension = '.' + arc[1];
+                  }
+
                   this.solicitudes[s].ArchivosAdjuntos[r].Src = AppSettings.CORS + AppSettings.URL_RAIZ + this.solicitudes[s].ArchivosAdjuntos[r].NombreCarpeta + '/' + this.solicitudes[s].ArchivosAdjuntos[r].NombreArchivo;
 
                 }
@@ -172,6 +177,7 @@ rolLogueado = sessionStorage.getItem("ROL_NOMBRE");
                 this.solicitudes[s].ClaseUno = 'img-100 imagenes-muro';
                 this.solicitudes[s].ColUno = 'col-12';
                 this.solicitudes[s].IdUno = this.solicitudes[s].ArchivosAdjuntos[0].Id;
+                this.solicitudes[s].ExtensionUno = this.solicitudes[s].ArchivosAdjuntos[0].Extension;
               }
               if (cantidadAdjuntos == 2){
                 muestraImagenUno = true;
@@ -184,6 +190,8 @@ rolLogueado = sessionStorage.getItem("ROL_NOMBRE");
                 this.solicitudes[s].ColDos = 'col-6';
                 this.solicitudes[s].IdUno = this.solicitudes[s].ArchivosAdjuntos[0].Id;
                 this.solicitudes[s].IdDos = this.solicitudes[s].ArchivosAdjuntos[1].Id;
+                this.solicitudes[s].ExtensionUno = this.solicitudes[s].ArchivosAdjuntos[0].Extension;
+                this.solicitudes[s].ExtensionDos = this.solicitudes[s].ArchivosAdjuntos[1].Extension;
 
               }
               if (cantidadAdjuntos == 3){
@@ -202,6 +210,9 @@ rolLogueado = sessionStorage.getItem("ROL_NOMBRE");
                 this.solicitudes[s].IdUno = this.solicitudes[s].ArchivosAdjuntos[0].Id;
                 this.solicitudes[s].IdDos = this.solicitudes[s].ArchivosAdjuntos[1].Id;
                 this.solicitudes[s].IdTres = this.solicitudes[s].ArchivosAdjuntos[2].Id;
+                this.solicitudes[s].ExtensionUno = this.solicitudes[s].ArchivosAdjuntos[0].Extension;
+                this.solicitudes[s].ExtensionDos = this.solicitudes[s].ArchivosAdjuntos[1].Extension;
+                this.solicitudes[s].ExtensionTres = this.solicitudes[s].ArchivosAdjuntos[2].Extension;
 
               }
               if (cantidadAdjuntos == 4){
@@ -225,6 +236,10 @@ rolLogueado = sessionStorage.getItem("ROL_NOMBRE");
                 this.solicitudes[s].IdDos = this.solicitudes[s].ArchivosAdjuntos[1].Id;
                 this.solicitudes[s].IdTres = this.solicitudes[s].ArchivosAdjuntos[2].Id;
                 this.solicitudes[s].IdCuatro = this.solicitudes[s].ArchivosAdjuntos[3].Id;
+                this.solicitudes[s].ExtensionUno = this.solicitudes[s].ArchivosAdjuntos[0].Extension;
+                this.solicitudes[s].ExtensionDos = this.solicitudes[s].ArchivosAdjuntos[1].Extension;
+                this.solicitudes[s].ExtensionTres = this.solicitudes[s].ArchivosAdjuntos[2].Extension;
+                this.solicitudes[s].ExtensioCuatro = this.solicitudes[s].ArchivosAdjuntos[3].Extension;
               }
               this.solicitudes[s].CantidadAdjuntos = cantidadAdjuntos;
               this.solicitudes[s].MuestraAdjuntos = muestraImagenes;
@@ -246,6 +261,12 @@ rolLogueado = sessionStorage.getItem("ROL_NOMBRE");
                   }
                   else {
                     this.solicitudes[s].RespuestaMuro[t].Mostrar = true;
+                  }
+                  if (usuId == this.solicitudes[s].RespuestaMuro[t].UsuId){
+                    this.solicitudes[s].RespuestaMuro[t].clase = 'respuesta item item-block item-md';
+                  }
+                  else {
+                    this.solicitudes[s].RespuestaMuro[t].clase = 'respuestaOtro item item-block item-md';
                   }
                   
                   contador++;
@@ -298,9 +319,9 @@ rolLogueado = sessionStorage.getItem("ROL_NOMBRE");
     let modal = this.modalCtrl.create(DetailNovedadPage, { novedad: item });
     modal.present();
   }
-  presentModalImagen(item, idImagen, id) {
+  presentModalImagen(item, idImagen, id, extension) {
 
-    let modal = this.modalCtrl.create(VisorImagenPage, { item: item, idImagen: idImagen, MroId: id  });
+    let modal = this.modalCtrl.create(VisorImagenPage, { item: item, idImagen: idImagen, MroId: id, Extension: extension });
     modal.present();
   }
   async loaded(e) {

@@ -6,9 +6,11 @@ import { FCM, NotificationData } from '@ionic-native/fcm';
 import { LocalNotifications } from '@ionic-native/local-notifications';
 //globales
 import { GlobalService } from '../app/services/GlobalService';
+import { AuthService } from '../app/services/AuthService';
 
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
+import {MenuPage} from "../pages/menu/menu";
 import { rootRenderNodes } from '@angular/core/src/view';
 @Component({
   templateUrl: 'app.html'
@@ -22,8 +24,16 @@ export class MyApp {
     body: ''
   };
   segundoPlano = false;
+  isLogged: boolean;
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private fcm: FCM, public localNotifications: LocalNotifications, public global: GlobalService) {
+  constructor(platform: Platform, 
+    statusBar: StatusBar, 
+    splashScreen: SplashScreen, 
+    private fcm: FCM, 
+    public localNotifications: LocalNotifications, 
+    public global: GlobalService,
+    private auth: AuthService
+    ) {
     platform.ready().then(() => {
 
       // Okay, so the platform is ready and our plugins are available.
@@ -97,6 +107,28 @@ export class MyApp {
           if (userInfo && userInfo.usuario != '' && userInfo.password != '') {
             //generar la autentificacion y enviarlo directo a la pagina de inicio
             //ahi deberían estar ls notificaciones
+            let f = { usuario: userInfo.usuario, password: userInfo.password };
+            this.auth.login(f)
+              .subscribe(
+                rs => this.isLogged = rs,
+                er => {
+                  console.log(er)
+        
+                },
+                () => {
+                  if (this.isLogged){
+                    //this.nav.push(InicioPage)
+                    //this.nav.push(ClientePage)
+                    this.rootPage = MenuPage;
+                   
+                  } else {
+                    //incorrecto
+                    console.log('Acceso denegado');
+                  
+                  }
+        
+                }
+              )
 
           }
         }

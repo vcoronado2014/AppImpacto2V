@@ -1,9 +1,18 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, LoadingController, ToastController, ActionSheetController, ViewController  } from 'ionic-angular';
+import { NavController, NavParams, LoadingController, ToastController, ActionSheetController, ViewController, AlertController, Platform  } from 'ionic-angular';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
+import { DomSanitizer } from '@angular/platform-browser';
 import * as exif from 'exif-js';
 import * as $ from 'jquery';
 import {AppSettings } from '../../app/AppSettings';
+import { FileChooser } from '@ionic-native/file-chooser';
+import { FileOpener } from '@ionic-native/file-opener';
+import { FilePath } from '@ionic-native/file-path';
+import { File } from '@ionic-native/file';
+import { FileTransfer } from '@ionic-native/file-transfer';
+import { DocumentViewer, DocumentViewerOptions } from '@ionic-native/document-viewer';
+
+import { UtilesService } from '../../app/services/UtilesService';
 //agregado ahora para las fotos
 //import { PhotoViewer, PhotoViewerOptions } from '@ionic-native/photo-viewer';
 
@@ -25,17 +34,30 @@ export class VisorImagenPage {
   mroId: any;
   rutaImagen: any;
   permisos: any;
+  extension: any;
   constructor(    public navCtrl: NavController,
                   public navParams: NavParams,
                   public loading: LoadingController,
                   public toastCtrl: ToastController,
                   private viewCtrl: ViewController,
+                  public sanitizer: DomSanitizer,
+                  public alertctrl: AlertController,
+                  public fileShooser: FileChooser,
+                  public fileOpener: FileOpener,
+                  public filePath: FilePath,
+                  public file:File,
+                  public ft: FileTransfer,
+                  public document: DocumentViewer,
+                  public platform: Platform,
                   //private photoViewer: PhotoViewer,
+                  public util: UtilesService,
                   public actionSheetCtrl: ActionSheetController) {
 
     this.rutaImagen = AppSettings.CORS + this.navParams.get('item');
     this.idImagen = this.navParams.get('idImagen');
     this.mroId = this.navParams.get('MroId');
+    this.extension = this.navParams.get('Extension');
+    //this.downloadAndOpenPdf(this.navParams.get('item'), '.jpg');
 
   }
   closeModal(param) {
@@ -64,7 +86,7 @@ export class VisorImagenPage {
   
   viewImage(url){
     let browser = new InAppBrowser();
-    browser.create(url, '_blank', 'location=yes');
+    browser.create(url, '_system', 'location=yes');
     /*
     const option: PhotoViewerOptions = {
       share: true
@@ -73,7 +95,59 @@ export class VisorImagenPage {
     this.photoViewer.show(this.rutaImagen, "titulo");
     */
   }
-  
+  descargar(url, extension){
+    this.util.downloadAndOpen(url, extension);
+  }
+
+  downloadAndOpenPdf(downloadUrl, extension) {
+    //image/jpeg
+    //image/png
+    //let downloadUrl = 'https://devdactic.com/html/5-simple-hacks-LBT.pdf';
+    var mime = '';
+    if (extension == '.pdf'){
+      mime = 'application/pdf';
+    }
+    else if (extension == '.png'){
+      mime = 'image/png';
+    }
+    else if (extension == '.jpeg'){
+      mime = 'image/jpeg';
+    }
+    else if (extension == '.jpg'){
+      mime = 'image/jpeg';
+    }
+    let path = this.file.dataDirectory;
+    const transfer = this.ft.create();
+   
+    transfer.download(downloadUrl, path + 'myfile' + extension).then(entry => {
+      let url = entry.toURL();
+   
+      if (this.platform.is('ios')) {
+        this.document.viewDocument(url, mime, {});
+      } else {
+        this.fileOpener.open(url, mime)
+          .then(() => 
+          {
+            let sms = this.presentToast('archivo abierto');
+            console.log('File is opened');
+          }
+          )
+          .catch(e => {
+            let sms = this.presentToast('error ' + e);
+            console.log('Error opening file', e);
+          } );
+      }
+    });
+  }
+
+  presentToast(mensaje) {
+    let toast = this.toastCtrl.create({
+      message: mensaje,
+      duration: 3000,
+      position: 'top'
+    });
+    toast.present();
+  }
   
   ionViewDidLoad() {
     this.permisos = JSON.parse(sessionStorage.getItem("PERMISOS"));

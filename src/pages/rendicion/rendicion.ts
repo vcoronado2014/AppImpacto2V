@@ -7,6 +7,7 @@ import { CrearRendicionPage } from '../crear-rendicion/crear-rendicion';
 //servicios
 import { AuthService } from '../../app/services/AuthService';
 import { GlobalService } from '../../app/services/GlobalService';
+import { UtilesService } from '../../app/services/UtilesService';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 //prueba
 //import { Chart } from '../../node_modules/chart.js';
@@ -21,6 +22,8 @@ import { CalendarioPage } from '../calendario/calendario';
 import { ClientePage } from '../cliente/cliente';
 import { MisSolicitudesPage } from '../mis-solicitudes/mis-solicitudes';
 //************************* */
+
+declare var window: any;
 
 /**
  * Generated class for the SolicitudesPage page.
@@ -108,10 +111,14 @@ permisos = {
     public acceso: AuthService,
     public menuCtrl: MenuController,
     public platform: Platform,
+    public util: UtilesService,
     public actionSheetCtrl: ActionSheetController
   ) {
     sessionStorage.setItem('TIENE_RENDICIONES', '0');
 
+  }
+  descargar(url, extension){
+    this.util.downloadAndOpen(url, extension);
   }
   ionViewWillEnter() {
     var rolId = sessionStorage.getItem("ROL_ID");
@@ -210,6 +217,12 @@ permisos = {
           procesar.forEach(rendicion => {
             //hay que transformar la fecha ya que viene en un formato inválido
             //m-dd-yyyy
+            if (rendicion.UrlDocumento != '#'){
+              var arc = rendicion.UrlDocumento.split('.');
+              if (arc.length == 2){
+                rendicion.Extension = '.' + arc[1];
+              }
+            }
             rendicion.NombreUsuario = this.transformarFecha(rendicion.NombreUsuario);
             rendicion.Rol = AppSettings.URL_FOTOS + rendicion.UrlDocumento;
             this.rendicionesArr.push(rendicion);
@@ -244,8 +257,10 @@ permisos = {
     modal.present();
   }
   openUrl(url){
-    let browser = new InAppBrowser();
-    browser.create(url, '_blank', 'location=yes');
+    //let browser = new InAppBrowser();
+    //browser.create(url, '_system', 'location=yes');
+    let options ='location=no,toolbar=yes,hidden=no,fullscreen=yes';
+    window.open(url, '_system', options);
   }
 
   delete(item){

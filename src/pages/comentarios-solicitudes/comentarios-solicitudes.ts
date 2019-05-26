@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, LoadingController, ModalController, ToastController, ActionSheetController, ViewController } from 'ionic-angular';
 import { GlobalService } from '../../app/services/GlobalService';
+import { UtilesService } from '../../app/services/UtilesService';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import * as moment from 'moment';
 import { Camera, CameraOptions } from '@ionic-native/camera';
@@ -9,6 +10,8 @@ import * as $ from 'jquery';
 
 import { CrearSolicitudPage } from '../crear-solicitud/crear-solicitud';
 import {AppSettings } from '../../app/AppSettings';
+
+declare var window: any;
 
 
 
@@ -27,6 +30,8 @@ export class ComentariosSolicitudesPage {
   image: string = null;
   metaData: any;
 
+  browser: InAppBrowser;
+
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
@@ -35,6 +40,7 @@ export class ComentariosSolicitudesPage {
     public toastCtrl: ToastController,
     private viewCtrl: ViewController,
     private global: GlobalService,
+    public util: UtilesService,
     public actionSheetCtrl: ActionSheetController,
     private camera: Camera
   ) {
@@ -69,8 +75,18 @@ export class ComentariosSolicitudesPage {
   }
   openUrl(url){
     //var url = this.urlDescarga;
+    /*
     let browser = new InAppBrowser();
-    browser.create(url, '_blank', 'location=yes');
+    browser.create(url, '_system', 'location=yes');
+    */
+    let options ='location=no,toolbar=yes,hidden=no,fullscreen=yes';
+    window.open(url, '_system', options);
+    //this.browser= new InAppBrowser(url,'_system',options);
+    //this.browser.show();
+
+  }
+  descargar(url, extension){
+    this.util.downloadAndOpen(url, extension);
   }
   getPicture(){
     let options: CameraOptions = {
@@ -119,6 +135,10 @@ export class ComentariosSolicitudesPage {
                 this.global.postArchivos(resp.InstId, resp.Id, 3).subscribe(dataArc=>{
                   resp.ArchivosAdjuntos = dataArc.json();
                   resp.ArchivosAdjuntos.forEach(archivo => {
+                  var arc = archivo.NombreArchivo.split('.');
+                  if (arc.length == 2){
+                    archivo.Extension = '.' + arc[1];
+                  }
                     var urlPrevia =AppSettings.CORS + AppSettings.URL_RAIZ + archivo.NombreCarpeta + '/' + archivo.NombreArchivo;
                     archivo.Url = urlPrevia;
                   });
@@ -147,6 +167,10 @@ export class ComentariosSolicitudesPage {
                 //lo quitamos para que no sea tan grande el elemento
                 sol.ArchivosAdjuntos = dataArc.json();
                 sol.ArchivosAdjuntos.forEach(archivo => {
+                  var arc = archivo.NombreArchivo.split('.');
+                  if (arc.length == 2){
+                    archivo.Extension = '.' + arc[1];
+                  }
                   var urlPrevia =AppSettings.CORS + AppSettings.URL_RAIZ + archivo.NombreCarpeta + '/' + archivo.NombreArchivo;
                   archivo.Url = urlPrevia;
                 });

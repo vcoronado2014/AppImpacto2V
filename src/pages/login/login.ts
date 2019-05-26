@@ -12,6 +12,7 @@ import {MenuPage} from "../menu/menu";
 //import {MatInputModule} from '@angular/material/input';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
+import { UsuariosPage } from '../usuarios/usuarios';
 //import {MatIconModule} from '@angular/material/icon';
 
 
@@ -32,13 +33,40 @@ export class LoginPage {
   usuario: string;
   password: string;
   isLogged: boolean;
+  checkRecordar: boolean = false;
 
-  constructor (
+  constructor(
     private nav: NavController,
     private auth: AuthService,
     public toastCtrl: ToastController
-    ) {
+  ) {
 
+    var userInfo = JSON.parse(localStorage.getItem("USER_INFO"));
+    if (userInfo && userInfo.usuario != '' && userInfo.password != '') {
+      if (localStorage.getItem("AUTOLOGIN") && localStorage.getItem("AUTOLOGIN") != 'undefined'){
+        var auto = JSON.parse(localStorage.getItem("AUTOLOGIN"));
+        this.checkRecordar = auto;
+        
+        if (auto){
+          //this.autologin(userInfo.usuario, userInfo.password);
+          this.usuario = userInfo.usuario;
+          this.password = userInfo.password;
+        }
+        else{
+          this.usuario = '';
+          this.password = '';
+        }
+      }
+    }
+
+
+  }
+  guardarPreferencia(check){
+    localStorage.setItem('AUTOLOGIN', check);
+    if (check == false){
+      this.usuario = '';
+      this.password = '';
+    }
   }
   
   
@@ -95,6 +123,36 @@ export class LoginPage {
         }
       )
 
+  }
+  autologin(usuario, password){
+    let f = { usuario: usuario, password: password };
+    this.auth.login(f)
+      .subscribe(
+        rs => this.isLogged = rs,
+        er => {
+          //console.log(error)
+          let mi = this.presentToast('Usuario no exite', 'bottom', 4000);
+
+        },
+        () => {
+          if (this.isLogged){
+            //this.nav.push(InicioPage)
+            //this.nav.push(ClientePage)
+            this.nav.setRoot(MenuPage)
+              .then(data => console.log(data),
+              error => {
+                //console.log(error)
+                let mi = this.presentToast(error, 'bottom', 4000);
+              }
+              );
+          } else {
+            //incorrecto
+            console.log('Acceso denegado');
+            let mi = this.presentToast('Usuario no exite', 'bottom', 4000);
+          }
+
+        }
+      )
   }
 
   ionViewDidLoad() {

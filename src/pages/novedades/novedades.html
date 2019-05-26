@@ -189,43 +189,47 @@
           <ion-item>
             <p text-wrap text-justify>{{item.Texto}}</p>
           </ion-item>
-          <ion-item no-lines *ngIf="item.MuestraAdjuntos">
-              <div [class]="item.ClaseUno" *ngIf="item.MuestraImagenUno">
-                  <img [src]="item.ImgUno" (click)="presentModalImagen(item.ImgUno, item.IdUno, item.Id)" (load)="loaded($event)" id="img1" />
-                </div>
-                <div [class]="item.ClaseDos" *ngIf="item.MuestraImagenDos">
-                  <img [src]="item.ImgDos" (click)="presentModalImagen(item.ImgDos, item.IdDos, item.Id)"  (load)="loaded($event)" id="img2" />
-                </div>
-                <div [class]="item.ClaseTres" *ngIf="item.MuestraImagenTres">
-                  <img [src]="item.ImgTres" (click)="presentModalImagen(item.ImgTres, item.IdTres, item.Id)"  (load)="loaded($event)" id="img3" />
-                </div>
-                <div [class]="item.ClaseCuatro" *ngIf="item.MuestraImagenCuatro">
-                  <img [src]="item.ImgCuatro" (click)="presentModalImagen(item.ImgCuatro, item.IdCuatro, item.Id)" (load)="loaded($event)" id="img4" />
-                </div>
-          </ion-item>
+          <div *ngIf="item.MuestraAdjuntos" style="display: -webkit-box;">
+            <div [class]="item.ClaseUno" *ngIf="item.MuestraImagenUno">
+              <img [src]="item.ImgUno" (click)="presentModalImagen(item.ImgUno, item.IdUno, item.Id, item.ExtensionUno)" (load)="loaded($event)"
+                id="img1" />
+            </div>
+            <div [class]="item.ClaseDos" *ngIf="item.MuestraImagenDos">
+              <img [src]="item.ImgDos" (click)="presentModalImagen(item.ImgDos, item.IdDos, item.Id, item.ExtensionDos)" (load)="loaded($event)"
+                id="img2" />
+            </div>
+            <div [class]="item.ClaseTres" *ngIf="item.MuestraImagenTres">
+              <img [src]="item.ImgTres" (click)="presentModalImagen(item.ImgTres, item.IdTres, item.Id, item.ExtensionTres)" (load)="loaded($event)"
+                id="img3" />
+            </div>
+            <div [class]="item.ClaseCuatro" *ngIf="item.MuestraImagenCuatro">
+              <img [src]="item.ImgCuatro" (click)="presentModalImagen(item.ImgCuatro, item.IdCuatro, item.Id, item.ExtensionCuatro)"
+                (load)="loaded($event)" id="img4" />
+            </div>
+          </div>
           <ion-item>
               <ion-grid>
                   <ion-row>
-                    <ion-col *ngIf="item.VisibleEditar" (click)="presentModalEditarNovedad(item)">
+                    <ion-col col-4 *ngIf="item.VisibleEditar" (click)="presentModalEditarNovedad(item)">
                         <button ion-button icon-start small clear>
                           <ion-icon name="create"></ion-icon>
                           Editar
                         </button>
                     </ion-col>
-                    <ion-col *ngIf="item.VisibleEliminar" (click)="presentActionSheetMuro(item)">
+                    <ion-col col-4 *ngIf="item.VisibleEliminar" (click)="presentActionSheetMuro(item)">
                         <button ion-button icon-start small clear>
                           <ion-icon name="{{item.UrlImagen}}"></ion-icon>
                           Eliminar
                         </button>
                     </ion-col>
                     
-                    <ion-col (click)="presentModal(item)" style="cursor: pointer;">
+                    <ion-col col-4 (click)="presentModal(item)" style="cursor: pointer;">
                         <button ion-button icon-start small clear>
                           <ion-icon name="chatbubbles"></ion-icon>
                           Comentar
                         </button>
                     </ion-col>
-                    <ion-col *ngIf="item.RespuestaMuro.length > 0" style="padding-top: 12px;" (click)="presentModal(item)" style="cursor: pointer;">
+                    <ion-col *ngIf="item.RespuestaMuro.length > 0" style="padding-top: 13px;cursor: pointer;" (click)="presentModal(item)">
                         <p text-right *ngIf="item.RespuestaMuro.length == 1">{{item.RespuestaMuro.length}} comentario</p>
                         <p text-right *ngIf="item.RespuestaMuro.length > 1">{{item.RespuestaMuro.length}} comentarios</p>
                     </ion-col>
@@ -237,13 +241,13 @@
 
       <ion-card-content>
           <ion-list *ngFor="let comen of item.RespuestaMuro">
-              <ion-item class="respuestaOtro item item-block item-md" *ngIf="comen.Mostrar">
+              <ion-item [class]="comen.clase" *ngIf="comen.Mostrar">
                   <h3 style="color: #385898; padding:10px;" text-wrap>{{comen.NombreUsuario}} - ({{comen.NombreRol}})</h3>
                   <p text-wrap text-justify style="padding:10px;">
                     {{comen.Texto}}
                   </p>
               </ion-item>
-              <p class="tiempo"><ion-icon name="calendar"></ion-icon>&nbsp;{{comen.FechaString}}</p>
+              <p class="tiempo" *ngIf="comen.Mostrar"><ion-icon name="calendar"></ion-icon>&nbsp;{{comen.FechaString}}</p>
 
             </ion-list>
           <!-- hay que ver la eliminacion de forma directa o agregarla a la pantalla modal

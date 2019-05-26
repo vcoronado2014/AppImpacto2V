@@ -3,6 +3,7 @@ import { NavController, NavParams, LoadingController, ModalController, ToastCont
 import { GlobalService } from '../../app/services/GlobalService';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import * as moment from 'moment';
+declare var window: any;
 
 /**
  * Generated class for the CrearRendicionPage page.
@@ -143,8 +144,10 @@ constructor(public navCtrl: NavController,
   }
   openUrl(){
     var url = this.urlDescarga;
-    let browser = new InAppBrowser();
-    browser.create(url, '_blank', 'location=yes');
+    //let browser = new InAppBrowser();
+    //browser.create(url, '_system', 'location=yes');
+    let options ='location=no,toolbar=yes,hidden=no,fullscreen=yes';
+    window.open(url, '_system', options);
   }
 
   enviarRendicion(){

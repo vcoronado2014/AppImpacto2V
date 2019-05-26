@@ -47,7 +47,8 @@
      <!-- <ion-item class="respuesta">-->
     <h3 style="color: #385898;">{{item.NombreUsuario}} - ({{item.NombreRol}})</h3>
     <ion-item no-lines *ngFor="let arc of item.ArchivosAdjuntos">
-        <img [src]="arc.Url" (click)="openUrl(arc.Url)" (load)="loaded($event)" id="img1" />
+        <!--<img [src]="arc.Url" (click)="openUrl(arc.Url)" (load)="loaded($event)" id="img1" />-->
+        <img [src]="arc.Url" (click)="descargar(arc.Url, arc.Extension)" (load)="loaded($event)" id="img1" />
     </ion-item>
     <p text-wrap text-justify>
       {{item.Texto}}

@@ -13,10 +13,13 @@
 
 
 <ion-content padding>
-  <!--<button ion-button full class="bg-red-200 fg-white" (click)="closeModal()">Cerrar</button>-->
-  <img [src]="rutaImagen" style="width: 100%;" (click)="viewImage(rutaImagen)" (load)="loaded($event)" id="img2" />
+  <!--<button ion-button full class="bg-red-200 fg-white" (click)="closeModal()">Cerrar</button>
+  <img [src]="rutaImagen" style="width: 100%;" (click)="viewImage(rutaImagen)" (load)="loaded($event)" id="img2" />-->
+  <img [src]="rutaImagen" style="width: 100%;" (click)="descargar(rutaImagen, extension)" (load)="loaded($event)" id="img2" />
+  <!--<iframe width="100%" height="100%" [src]="rutaImagen" frameborder="0" allowfullscreen (click)="downloadAndOpenPdf(rutaImagen,'.jpg')"></iframe>-->
   <ion-fab bottom right>
-    <button ion-fab class="bg-teal-800" (click)="presentActionSheet()"><ion-icon name="trash"></ion-icon></button>
+    <!--<button ion-fab class="bg-teal-800" (click)="presentActionSheet()"><ion-icon name="trash"></ion-icon></button>-->
+    <button ion-fab class="bg-teal-800" (click)="downloadAndOpenPdf(rutaImagen,'.jpg')"><ion-icon name="trash"></ion-icon></button>
   </ion-fab>
 
 </ion-content>

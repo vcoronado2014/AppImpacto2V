@@ -4,6 +4,7 @@ import { GlobalService } from '../../app/services/GlobalService';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import * as moment from 'moment';
 
+declare var window: any;
 
 @Component({
   selector: 'page-crear-documento',
@@ -181,8 +182,11 @@ permisos = {
   }
   openUrl(){
     var url = this.urlDescarga;
-    let browser = new InAppBrowser();
-    browser.create(url, '_blank', 'location=yes');
+    //let browser = new InAppBrowser();
+    //browser.create(url, '_system', 'location=yes');
+    //navigator.app.location(url, { openExternal:true });
+    let options ='location=no,toolbar=yes,hidden=no,fullscreen=yes';
+    window.open(url, '_system', options);
   }
   //aca poner el enviar documento
 

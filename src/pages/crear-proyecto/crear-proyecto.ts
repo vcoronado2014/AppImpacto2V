@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, LoadingController, ModalController, ToastController, ActionSheetController, ViewController } from 'ionic-angular';
 import { GlobalService } from '../../app/services/GlobalService';
+import { UtilesService } from '../../app/services/UtilesService';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import * as moment from 'moment';
 import {AppSettings } from '../../app/AppSettings';
+declare var window: any;
 
 @Component({
   selector: 'page-crear-proyecto',
@@ -90,6 +92,7 @@ permisos = {
     public modalCtrl: ModalController,
     public toastCtrl: ToastController,
     private viewCtrl: ViewController,
+    public util: UtilesService,
     private global: GlobalService,
     public actionSheetCtrl: ActionSheetController) {
       moment.locale('es');
@@ -127,6 +130,10 @@ permisos = {
                   var urlPrevia = AppSettings.URL_RAIZ + 'RepositorioProyecto/';
                   //this.archivosProyecto = datos.proposals;
                   datos.proposals.forEach(file => {
+                    var arc = file.NombreArchivo.split('.');
+                    if (arc.length == 2){
+                      file.Extension = '.' + arc[1];
+                    }
                     file.UrlDescarga = urlPrevia + file.NombreCompleto;
                     this.archivosProyecto.push(file);
                   });
@@ -212,7 +219,9 @@ permisos = {
     return retorno;
 
   }
-
+  descargar(url, extension){
+    this.util.downloadAndOpen(url, extension);
+  }
   enviarProyecto(){
     //validar fechas antes
 
@@ -438,8 +447,10 @@ permisos = {
   }
 
   openUrl(url){
-    let browser = new InAppBrowser();
-    browser.create(url, '_blank', 'location=yes');
+    //let browser = new InAppBrowser();
+    //browser.create(url, '_system', 'location=yes');
+    let options ='location=no,toolbar=yes,hidden=no,fullscreen=yes';
+    window.open(url, '_system', options);
   }
 
   presentToast(mensaje) {

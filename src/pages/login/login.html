@@ -32,6 +32,11 @@
             <ion-input  class="bg-transparente fg-principal" type="password" [(ngModel)]="password" required></ion-input>
           </ion-item>
 
+          <ion-item>
+            <ion-label>Recordarme</ion-label>
+            <ion-checkbox color="dark" [(ngModel)]="checkRecordar" (ionChange)="guardarPreferencia(checkRecordar)"></ion-checkbox>
+          </ion-item>
+
         </ion-list>
       </ion-col>
     </ion-row>

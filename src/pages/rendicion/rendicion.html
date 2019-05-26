@@ -207,7 +207,8 @@
               </ion-col>
               <!-- archivo a descargar -->
               <ion-col center text-center *ngIf="clie.UrlDocumento != '#'">
-                <button ion-button icon-only (click)="openUrl(clie.Rol)" small color="secondary">
+                <!--<button ion-button icon-only (click)="openUrl(clie.Rol)" small color="secondary">-->
+                <button ion-button icon-only (click)="descargar(clie.Rol, clie.Extension)" small color="secondary">
                   <ion-icon name="cloud-download"></ion-icon>
                 </button>
               </ion-col>

@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
-import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import { IonicApp, IonicErrorHandler, IonicModule, NavController } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { HttpModule } from '@angular/http';
@@ -41,10 +41,18 @@ import { MenuPage } from '../pages/menu/menu';
 import { Camera } from '@ionic-native/camera';
 import { FCM } from '@ionic-native/fcm';
 import { LocalNotifications } from '@ionic-native/local-notifications';
+import { FileChooser } from '@ionic-native/file-chooser';
+import { FileOpener } from '@ionic-native/file-opener';
+import { FilePath } from '@ionic-native/file-path';
+import { File } from '@ionic-native/file';
+import { FileTransfer } from '@ionic-native/file-transfer';
+import { DocumentViewer } from '@ionic-native/document-viewer';
+
 
 //servicios
 import { AuthService } from '../app/services/AuthService';
 import { GlobalService } from '../app/services/GlobalService';
+import { UtilesService } from '../app/services/UtilesService';
 //import { CalendarComponent } from 'ap-angular2-fullcalendar/src/calendar/calendar';
 import { NgCalendarModule } from 'ionic2-calendar';
 //pipes
@@ -128,8 +136,15 @@ import { Autosize } from '../component/autosize';
     LocalNotifications,
     AuthService,
     GlobalService,
+    UtilesService,
     Camera,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
+    FileChooser,
+    FileOpener,
+    FilePath,
+    File,
+    FileTransfer,
+    DocumentViewer,
     //CalendarOriginal,
     {provide: LOCALE_ID, useValue: 'es-CL' },
   ]

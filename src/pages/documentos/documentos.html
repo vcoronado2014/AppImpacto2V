@@ -48,7 +48,8 @@
               <span style="font-size: 0.6em;font-style: italic;">Deslice a la izquierda para ver opciones</span>-->
           </ion-item>
           <ion-item-options side="right">
-              <button ion-button color="primary" (click)="openUrl(clie.UrlMostrar)" *ngIf="permisos.VerDocumento == '1'">
+              <!--<button ion-button color="primary" (click)="openUrl(clie.UrlMostrar)" *ngIf="permisos.VerDocumento == '1'">-->
+              <button ion-button color="primary" (click)="descargar(clie.UrlMostrar, clie.OtroTres)" *ngIf="permisos.VerDocumento == '1'">
                   <ion-icon name="cloud-download"></ion-icon>
                   Descargar
               </button>

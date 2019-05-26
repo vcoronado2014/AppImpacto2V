@@ -43,32 +43,41 @@
             <ion-icon name="document"></ion-icon> Archivo 1:
           </ion-col>
           <ion-col col-12 *ngIf="novedad.MuestraImagenUno == false">
-            <input type="file" accept="image/*" (change)="changeListener($event)"  #fileInput>
+            <input type="file" accept="image/*" (change)="changeListener($event)" #fileInput>
           </ion-col>
         </ion-row>
         <ion-row>
-          <ion-col col-12>
+          <div [class]="novedad.ClaseDos" *ngIf="novedad.MuestraImagenDos">
+            <img [src]="novedad.ImgDos" (load)="loaded($event)" id="img2" />
+          </div>
+          <ion-col col-12 *ngIf="novedad.MuestraImagenDos == false">
             <ion-icon name="document"></ion-icon> Archivo 2:
           </ion-col>
-          <ion-col col-12>
-
+          <ion-col col-12 *ngIf="novedad.MuestraImagenDos == false">
+        
             <input type="file" accept="image/*" (change)="changeListenerDos($event)" #fileInput2>
-
+        
           </ion-col>
         </ion-row>
         <ion-row>
-          <ion-col col-12>
+          <div [class]="novedad.ClaseTres" *ngIf="novedad.MuestraImagenTres">
+            <img [src]="novedad.ImgTres" (load)="loaded($event)" id="img3" />
+          </div>
+          <ion-col col-12 *ngIf="novedad.MuestraImagenTres == false">
             <ion-icon name="document"></ion-icon> Archivo 3:
           </ion-col>
-          <ion-col col-12>
+          <ion-col col-12 *ngIf="novedad.MuestraImagenTres == false">
             <input type="file"  accept="image/*"  (change)="changeListenerTres($event)"  #fileInput3>
           </ion-col>
         </ion-row>
         <ion-row>
-          <ion-col col-12>
+          <div [class]="novedad.ClaseCuatro" *ngIf="novedad.MuestraImagenCuatro">
+            <img [src]="novedad.ImgCuatro" (load)="loaded($event)" id="img4" />
+          </div>
+          <ion-col col-12 *ngIf="novedad.MuestraImagenCuatro == false">
             <ion-icon name="document"></ion-icon> Archivo 4:
           </ion-col>
-          <ion-col col-12>
+          <ion-col col-12 *ngIf="novedad.MuestraImagenCuatro == false">
             <input type="file" accept="image/*" (change)="changeListenerCuatro($event)"  #fileInput4>
           </ion-col>
         </ion-row>

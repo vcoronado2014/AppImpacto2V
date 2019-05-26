@@ -7,12 +7,13 @@ import { CrearDocumentoPage } from '../crear-documento/crear-documento';
 //servicios
 import { AuthService } from '../../app/services/AuthService';
 import { GlobalService } from '../../app/services/GlobalService';
+import { UtilesService } from '../../app/services/UtilesService';
 //prueba
 //import { Chart } from '../../node_modules/chart.js';
 import { Chart } from 'chart.js';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import {AppSettings } from '../../app/AppSettings';
-
+declare var window: any;
 
 /**
  * Generated class for the DocumentosPage page.
@@ -83,6 +84,7 @@ export class DocumentosPage {
     public loading: LoadingController,
     public global: GlobalService,
     public modalCtrl: ModalController,
+    public util: UtilesService,
     public actionSheetCtrl: ActionSheetController,
     public acceso: AuthService) {
       sessionStorage.setItem('TIENE_DOCUMENTOS', '0');
@@ -184,8 +186,13 @@ export class DocumentosPage {
 
   }
   openUrl(url){
-    let browser = new InAppBrowser();
-    browser.create(url, '_blank', 'location=yes');
+    //let browser = new InAppBrowser();
+    //browser.create(url, '_system', 'location=yes');
+    let options ='location=no,toolbar=yes,hidden=no,fullscreen=yes';
+    window.open(url, '_system', options);
+  }
+  descargar(url, extension){
+    this.util.downloadAndOpen(url, extension);
   }
   doRefresh(refresher) {
     console.log('Begin async operation', refresher);

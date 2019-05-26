@@ -66,6 +66,7 @@
     </ion-card-content>
   </ion-card>
 
+  <!--
   <ion-card>
     <ion-card-header>
       Novedad
@@ -79,14 +80,28 @@
   <ion-grid>
     <ion-row>
       <ion-col text-right>
-          <!--<button ion-button clear (click)="closeModal()">Cerrar</button>-->
+          
       </ion-col>
       <ion-col text-right>
           <button ion-button  (click)="enviarComentario()" class="mui--bg-color-amber-700 fg-black">Guardar</button>
       </ion-col>
     </ion-row>
   </ion-grid>
-  
+  -->
   
 
 </ion-content>
+<ion-footer>
+    <ion-toolbar>
+      <ion-grid>
+        <ion-row>
+          <ion-col col-10>
+              <ion-textarea placeholder="Escribe un comentario" class="casilla" [(ngModel)]="textoEnviar"  autosize></ion-textarea>
+          </ion-col>
+          <ion-col col-2 (click)="enviarComentario()">
+              <ion-icon name="send" class="botonEnviar"></ion-icon>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-toolbar>
+  </ion-footer>

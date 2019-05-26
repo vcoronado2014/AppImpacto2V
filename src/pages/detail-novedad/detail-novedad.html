@@ -46,14 +46,15 @@
             {{item.Texto}}
           </strong>
         </p>
+        <!--
         <ion-item>
               <ion-label stacked>Ingrese Comentario</ion-label>
               <ion-input type="text" [(ngModel)]="textoEnviar" required></ion-input>
         </ion-item>
         <button style="float: right; font-size: 0.8rem;" ion-button class="bg-red-300 fg-white" (click)="enviar(item)">Enviar</button>
+        -->
 
-
-        <!-- comentarios -->
+        <!-- comentarios 
         <ion-list *ngFor="let comen of item.RespuestaMuro">
           <ion-item>
             <ion-icon name="chatbubbles" item-start style="font-size: 1.8rem;" class="fg-teal-800"></ion-icon>
@@ -63,20 +64,48 @@
             <ion-icon class="fg-teal-800" name="trash" *ngIf="comen.VisibleEliminar" item-end (click)="presentActionSheet(comen)"></ion-icon>
           </ion-item>
         </ion-list>
+-->
+
+
       </ion-card-content>
     </ion-card>
+    <ion-list *ngFor="let comen of item.RespuestaMuro" no-lines>
+        <ion-item [class]="comen.clase">
+           <!-- <ion-item class="respuesta">-->
+          <h3 style="color: #385898;">{{comen.NombreUsuario}} - ({{comen.NombreRol}})</h3>
+          <p text-wrap text-justify>
+            {{comen.Texto}}
+          </p>
+        </ion-item>
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+                <p class="tiempo"><ion-icon name="calendar"></ion-icon>&nbsp;{{comen.FechaString}}</p>
+            </ion-col>
+            <ion-col *ngIf="comen.VisibleEliminar">
+              <button ion-button icon-start small clear color="danger" style="float: right;" (click)="presentActionSheet(comen)">
+                  <ion-icon name="trash"></ion-icon>
+                  Eliminar
+              </button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      
+      </ion-list>
   </div>
 
-<!--
-  <ion-grid>
-    <ion-row>
-      <ion-col col-6>
-        <button ion-button style="width: 100%;" class="bg-red-200 fg-white" (click)="closeModal()">Cancelar</button>
-      </ion-col>
-      <ion-col col-6>
-        <button ion-button style="width: 100%;" class="bg-red-400 fg-white" (click)="closeModal('actualizar')">Aceptar</button>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
--->
 </ion-content>
+<ion-footer>
+    <ion-toolbar>
+      <ion-grid>
+        <ion-row>
+          <ion-col col-10>
+              <ion-textarea placeholder="Escribe un comentario" class="casilla" [(ngModel)]="textoEnviar"  autosize></ion-textarea>
+          </ion-col>
+          <ion-col col-2 (click)="enviar(item)">
+              <ion-icon name="send" class="botonEnviar"></ion-icon>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-toolbar>
+  </ion-footer>

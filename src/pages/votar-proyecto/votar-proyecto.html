@@ -41,7 +41,8 @@
               </ion-list-header>
               <ion-item *ngFor="let arc of archivosProyecto">
                 {{arc.NombreCompleto}}
-                <ion-icon name="cloud-download" (click)="openUrl(arc.UrlDescarga)" item-end></ion-icon>
+                <!--<ion-icon name="cloud-download" (click)="openUrl(arc.UrlDescarga)" item-end></ion-icon>-->
+                <ion-icon name="cloud-download" (click)="descargar(arc.UrlDescarga, arc.Extension)" item-end></ion-icon>
               </ion-item>
             </ion-list>
         </ion-card-content>

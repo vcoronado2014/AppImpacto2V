@@ -4,10 +4,11 @@ import { GlobalService } from '../../app/services/GlobalService';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import * as moment from 'moment';
 import {AppSettings } from '../../app/AppSettings';
+import { UtilesService } from '../../app/services/UtilesService';
 //pruebas de chart
 import { Chart } from 'chart.js';
 import { ProyectosPage } from '../proyectos/proyectos';
-
+declare var window: any;
 @Component({
   selector: 'page-votar-proyecto',
   templateUrl: 'votar-proyecto.html',
@@ -86,6 +87,7 @@ export class VotarProyectoPage {
     public toastCtrl: ToastController,
     private viewCtrl: ViewController,
     private global: GlobalService,
+    public util: UtilesService,
     public actionSheetCtrl: ActionSheetController
   ) {
 
@@ -138,6 +140,10 @@ export class VotarProyectoPage {
                 var urlPrevia = AppSettings.URL_RAIZ + 'RepositorioProyecto/';
                 //this.archivosProyecto = datos.proposals;
                 datos.proposals.forEach(file => {
+                  var arc = file.NombreCompleto.split('.');
+                  if (arc.length == 2){
+                    file.Extension = '.' + arc[1];
+                  }
                   file.UrlDescarga = urlPrevia + file.NombreCompleto;
                   this.archivosProyecto.push(file);
                 });
@@ -250,7 +256,9 @@ export class VotarProyectoPage {
     });
     actionSheet.present();
   }
-
+  descargar(url, extension){
+    this.util.downloadAndOpen(url, extension);
+  }
   votarProyecto(valor){
     //validaciones
     let loader = this.loading.create({
@@ -366,8 +374,10 @@ export class VotarProyectoPage {
   }
 
   openUrl(url){
-    let browser = new InAppBrowser();
-    browser.create(url, '_blank', 'location=yes');
+    //let browser = new InAppBrowser();
+    //browser.create(url, '_system', 'location=yes');
+    let options ='location=no,toolbar=yes,hidden=no,fullscreen=yes';
+    window.open(url, '_system', options);
   }
 
   closeModal(param) {

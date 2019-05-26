@@ -45,7 +45,8 @@
               <p text-wrap text-justify>{{item.Texto}}</p>
             </ion-item>
             <ion-item no-lines *ngFor="let arc of item.ArchivosAdjuntos">
-                <img [src]="arc.Url" (click)="openUrl(arc.Url)" (load)="loaded($event)" id="img1" />
+                <!--<img [src]="arc.Url" (click)="openUrl(arc.Url)" (load)="loaded($event)" id="img1" />-->
+                <img [src]="arc.Url" (click)="descargar(arc.Url, arc.Extension)" (load)="loaded($event)" id="img1" />
             </ion-item>
             <!--cantidad comentarios 
             <ion-item *ngIf="item.RespuestaMuro.length > 0" (click)="presentModal(item)" style="cursor: pointer;">
@@ -61,7 +62,7 @@
                               Comentar
                             </button>
                       </ion-col>
-                      <ion-col *ngIf="item.RespuestaMuro.length > 0" style="padding-top: 12px;" (click)="presentModal(item)" style="cursor: pointer;">
+                      <ion-col *ngIf="item.RespuestaMuro.length > 0" style="padding-top: 13px;cursor: pointer;" (click)="presentModal(item)">
                           <p text-right *ngIf="item.RespuestaMuro.length == 1">{{item.RespuestaMuro.length}} comentario</p>
                           <p text-right *ngIf="item.RespuestaMuro.length > 1">{{item.RespuestaMuro.length}} comentarios</p>
                       </ion-col>
@@ -78,7 +79,8 @@
               <ion-item [class]="item.UltimoComentario.clase">
                   <h3 style="color: #385898; padding:10px;" text-wrap>{{item.UltimoComentario.NombreUsuario}} - ({{item.UltimoComentario.NombreRol}})</h3>
                   <ion-item no-lines *ngFor="let arc of item.UltimoComentario.ArchivosAdjuntos">
-                      <img [src]="arc.Url" (click)="openUrl(arc.Url)" (load)="loaded($event)" id="img100" />
+                      <!--<img [src]="arc.Url" (click)="openUrl(arc.Url)" (load)="loaded($event)" id="img100" />-->
+                      <img [src]="arc.Url" (click)="descargar(arc.Url, arc.Extension)" (load)="loaded($event)" id="img100" />
                   </ion-item>
                   <p text-wrap text-justify style="padding:10px;">
                     {{item.UltimoComentario.Texto}}
