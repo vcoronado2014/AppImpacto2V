@@ -174,7 +174,9 @@ export class DetailNovedadPage {
                 UrlImagen: 'trash',
                 UsuId: usuId,
                 FechaString: 'hace nos segundos',
-                VisibleEliminar: false
+                VisibleEliminar: false,
+                //usamos la misma clase ya que el que crea es el mismo logueado
+                clase: 'respuesta item item-block item-md'
               };
               //ahora agregamos este elemento
               this.solicitudes[0].RespuestaMuro.push(respuesta);
