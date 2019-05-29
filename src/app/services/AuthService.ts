@@ -44,6 +44,18 @@ export class AuthService{
           } else {
 
             let retorno = JSON.parse(res);
+            if (retorno.MiPerfil){
+              sessionStorage.setItem('PERFIL_USUARIO', JSON.stringify(retorno.MiPerfil));
+            }
+            else{
+              var entidad = {
+                Foto: '../assets/imgs/no-imagen.jpg',
+                Iniciales: '',
+                Apodo: '',
+                AusId: retorno.AutentificacionUsuario.Id
+              };
+              sessionStorage.setItem('PERFIL_USUARIO', JSON.stringify(entidad));
+            }
 
             sessionStorage.setItem('USU_ID', retorno.AutentificacionUsuario.Id);
             sessionStorage.setItem('ROL_ID', retorno.Rol.Id);
@@ -60,10 +72,12 @@ export class AuthService{
             sessionStorage.setItem('PERMISOS', JSON.stringify(retorno.PermisoRol));
             //vamos a guardar datos del ultimo login en local storage
             localStorage.setItem("USER_INFO", JSON.stringify(userInfo));
+            /*
             if (!localStorage.getItem('MI_FOTO')){
               //guardamos la imagen por defecto
               localStorage.setItem("MI_FOTO", "../assets/imgs/no-imagen.jpg");
             }
+            */
 
 
             this.username = userInfo.usuario;

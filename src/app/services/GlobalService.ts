@@ -583,5 +583,14 @@ export class GlobalService{
     return data;
 
   }
+  postPerfil(ausId){
+    let url = AppSettings.API_ENDPOINT + 'Rendicion';
+    let dataGet = { AusId: ausId};
+
+    let data = this.http.post(url, dataGet, {
+      headers: this.headers
+    });
+    return data;
+  }
 
 }

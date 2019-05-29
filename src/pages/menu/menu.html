@@ -9,9 +9,9 @@
       <ion-list>
           <ion-item no-lines style="border-bottom: 1px solid #dedede;">
             <!-- vamos a comentar esto para agregar una foto -->
-            <ion-avatar item-start *ngIf="miFoto == '../assets/imgs/no-imagen.jpg'">
+            <ion-avatar item-start *ngIf="miPerfil.Foto == '../assets/imgs/no-imagen.jpg'">
               <!--<ion-icon class="fg-principal" name="contact" style="font-size: 2em;"></ion-icon>-->
-              <img [src]="miFoto" alt="mi foto"/>
+              <img [src]="miPerfil.Foto" alt="mi foto"/>
             </ion-avatar>
             <h2 class="fg-principal" text-wrap>{{nombreLogueado}}</h2>
             <h3 class="fg-secundary">{{rolLogueado}}</h3>

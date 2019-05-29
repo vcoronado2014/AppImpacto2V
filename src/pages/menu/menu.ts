@@ -86,7 +86,7 @@ export class MenuPage {
   nombreLogueado = sessionStorage.getItem("PERSONA_NOMBRE");
   rolLogueado = sessionStorage.getItem("ROL_NOMBRE");
   //foto
-  miFoto = localStorage.getItem("MI_FOTO");
+  miPerfil = JSON.parse(sessionStorage.getItem("PERFIL_USUARIO"));
 
   @ViewChild(Nav) nav: Nav;
  
