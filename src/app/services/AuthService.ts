@@ -44,7 +44,7 @@ export class AuthService{
           } else {
 
             let retorno = JSON.parse(res);
-            if (retorno.MiPerfil){
+            if (retorno.MiPerfil.AusId > 0){
               sessionStorage.setItem('PERFIL_USUARIO', JSON.stringify(retorno.MiPerfil));
             }
             else{
