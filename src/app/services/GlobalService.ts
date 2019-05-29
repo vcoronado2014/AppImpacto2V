@@ -560,5 +560,28 @@ export class GlobalService{
     });
     return data;
   }
+  postRecuperarClave(nombreUsuario){
+    let url = AppSettings.API_ENDPOINT + 'RecuperarClave';
+    let dataGet = { NombreUsuario: nombreUsuario };
+
+    let data = this.http.post(url, dataGet, {
+      headers: this.headers
+    });
+    return data;
+  } 
+  sendPerfil(File, perfil){
+    let model = new FormData();
+    model.append("UploadedImage", File);
+    model.append("perfil", JSON.stringify(perfil));
+
+
+    let url = AppSettings.API_ENDPOINT + 'Perfil';
+
+    let data = this.http.post(url, model, {
+      headers: new Headers({})
+    });
+    return data;
+
+  }
 
 }

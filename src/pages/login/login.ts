@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
-import {NavController, Toast} from 'ionic-angular';
+import {NavController, Toast, ModalController} from 'ionic-angular';
 import { ToastController } from 'ionic-angular';
 import { AuthService } from '../../app/services/AuthService';
 import {HomePage} from "../home/home";
 import {InicioPage} from "../inicio/inicio";
 import {ClientePage} from "../cliente/cliente";
 import {MenuPage} from "../menu/menu";
+import {RecuperarClavePage} from "../recuperar-clave/recuperar-clave";
 
 
 //import {MatFormFieldModule} from '@angular/material/form-field';
@@ -38,7 +39,8 @@ export class LoginPage {
   constructor(
     private nav: NavController,
     private auth: AuthService,
-    public toastCtrl: ToastController
+    public toastCtrl: ToastController,
+    public modalCtrl: ModalController
   ) {
 
     var userInfo = JSON.parse(localStorage.getItem("USER_INFO"));
@@ -157,6 +159,10 @@ export class LoginPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
+  }
+  abrirRecuperar(){
+    let modal = this.modalCtrl.create(RecuperarClavePage, { item: null });
+    modal.present();
   }
 
 }

@@ -1,0 +1,34 @@
+<ion-header class="mui--bg-color-black-alpha-87 fg-light">
+    <ion-navbar>
+      <ion-title style="color: white;">
+        Recuperar Clave
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+
+
+<ion-content padding>
+    <ion-card>
+      <ion-card-header>
+        Recuperar Clave
+      </ion-card-header>
+      <ion-card-content>
+        <p text-wrap text-justify>Para poder recuperar su clave, es necesario que ingrese su nombre de usuario en la casilla de más abajo, luego presione
+          el botón "RECUPERAR", le llegará un correo electrónico con su clave.</p>
+        <ion-item style="padding-top:5%;">
+          <ion-label stacked>Nombre de Usuario</ion-label>
+          <ion-input type="text" [(ngModel)]="nombreUsuario"></ion-input>
+        </ion-item>
+        <ion-grid  style="padding-top:5%;">
+          <ion-row>
+            <ion-col text-right>
+              <button ion-button clear (click)="closeModal()">Volver</button>
+            </ion-col>
+            <ion-col text-right>
+              <button ion-button (click)="recuperar()" class="mui--bg-color-amber-700 fg-black">Recuperar</button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+</ion-content>

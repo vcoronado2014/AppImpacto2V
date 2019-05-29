@@ -60,6 +60,10 @@ export class AuthService{
             sessionStorage.setItem('PERMISOS', JSON.stringify(retorno.PermisoRol));
             //vamos a guardar datos del ultimo login en local storage
             localStorage.setItem("USER_INFO", JSON.stringify(userInfo));
+            if (!localStorage.getItem('MI_FOTO')){
+              //guardamos la imagen por defecto
+              localStorage.setItem("MI_FOTO", "../assets/imgs/no-imagen.jpg");
+            }
 
 
             this.username = userInfo.usuario;

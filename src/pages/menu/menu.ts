@@ -8,6 +8,7 @@ import { UsuariosPage } from '../usuarios/usuarios';
 import { DocumentosPage } from '../documentos/documentos';
 import { CalendarioPage } from '../calendario/calendario';
 import { MisSolicitudesPage } from '../mis-solicitudes/mis-solicitudes';
+import { PerfilPage } from '../perfil/perfil';
 import { AuthService } from '../../app/services/AuthService';
 import { LoginPage } from '../login/login';
 import { Title } from '@angular/platform-browser';
@@ -84,10 +85,13 @@ export class MenuPage {
   institucionLogueado = sessionStorage.getItem("INSTITUCION_NOMBRE");
   nombreLogueado = sessionStorage.getItem("PERSONA_NOMBRE");
   rolLogueado = sessionStorage.getItem("ROL_NOMBRE");
+  //foto
+  miFoto = localStorage.getItem("MI_FOTO");
 
   @ViewChild(Nav) nav: Nav;
  
   pages: PageInterface[] = [
+    { title: 'Mi Perfil', pageName: 'PerfilPage', tabComponent: 'tabPerfil', index: null, icon: 'people', muestra: true },
     { title: 'Novedades', pageName: 'NovedadesPage', tabComponent: 'tabNovedades', index: 0, icon: 'chatbubbles', muestra: this.evaluaItem('Novedades') },
     { title: 'Usuarios', pageName: 'UsuariosPage', tabComponent: 'tabUsuarios', index: null, icon: 'people', muestra: this.evaluaItem('Usuarios') },
     { title: 'Rendiciones', pageName: 'RendicionPage', tabComponent: 'tabRendiciones', index: null, icon: 'logo-usd', muestra: this.evaluaItem('Rendiciones') },
@@ -130,6 +134,9 @@ export class MenuPage {
       }
       else if (page.pageName == 'ProyectosPage'){
         this.nav.setRoot(ProyectosPage);
+      }
+      else if (page.pageName == 'PerfilPage'){
+        this.nav.setRoot(PerfilPage);
       }
 
       else{
