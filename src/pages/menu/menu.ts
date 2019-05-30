@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { NavController, NavParams, Nav, Platform, App, MenuController } from 'ionic-angular';
+import { NavController, NavParams, Nav, Platform, App, MenuController, ModalController } from 'ionic-angular';
 import { ClientePage } from '../cliente/cliente';
 import { NovedadesPage } from '../novedades/novedades';
 import { RendicionPage } from '../rendicion/rendicion';
@@ -86,12 +86,12 @@ export class MenuPage {
   nombreLogueado = sessionStorage.getItem("PERSONA_NOMBRE");
   rolLogueado = sessionStorage.getItem("ROL_NOMBRE");
   //foto
-  miPerfil = JSON.parse(sessionStorage.getItem("PERFIL_USUARIO"));
+  fotoUsuario = sessionStorage.getItem("FOTO_USUARIO");
 
   @ViewChild(Nav) nav: Nav;
  
   pages: PageInterface[] = [
-    { title: 'Mi Perfil', pageName: 'PerfilPage', tabComponent: 'tabPerfil', index: null, icon: 'people', muestra: true },
+    //{ title: 'Mi Perfil', pageName: 'PerfilPage', tabComponent: 'tabPerfil', index: null, icon: 'people', muestra: true },
     { title: 'Novedades', pageName: 'NovedadesPage', tabComponent: 'tabNovedades', index: 0, icon: 'chatbubbles', muestra: this.evaluaItem('Novedades') },
     { title: 'Usuarios', pageName: 'UsuariosPage', tabComponent: 'tabUsuarios', index: null, icon: 'people', muestra: this.evaluaItem('Usuarios') },
     { title: 'Rendiciones', pageName: 'RendicionPage', tabComponent: 'tabRendiciones', index: null, icon: 'logo-usd', muestra: this.evaluaItem('Rendiciones') },
@@ -108,9 +108,13 @@ export class MenuPage {
     public acceso: AuthService,
     public platform: Platform,
     public menuCtrl: MenuController,
+    public modalCtrl: ModalController,
     private app: App
     ) {
       //this.permisos = JSON.parse(sessionStorage.getItem("PERMISOS"));
+  }
+  changeImage(event){
+    console.log('change image: ' + event);
   }
   openPage(page: PageInterface) {
     let params = {};
@@ -148,6 +152,12 @@ export class MenuPage {
       }
       
     }
+    this.closeMenu();
+  }
+  openPerfil(){
+    //let modal = this.modalCtrl.create(PerfilPage);
+    //modal.present();
+    this.nav.setRoot(PerfilPage);
     this.closeMenu();
   }
   openUsuarios(){

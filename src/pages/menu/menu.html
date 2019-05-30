@@ -8,14 +8,33 @@
     <ion-content>
       <ion-list>
           <ion-item no-lines style="border-bottom: 1px solid #dedede;">
-            <!-- vamos a comentar esto para agregar una foto -->
-            <ion-avatar item-start *ngIf="miPerfil.Foto == '../assets/imgs/no-imagen.png'">
-              <!--<ion-icon class="fg-principal" name="contact" style="font-size: 2em;"></ion-icon>-->
-              <img [src]="miPerfil.Foto" alt="mi foto"/>
+            <ion-avatar item-start>
+                <img [src]="fotoUsuario" id="imgPerfilUsuario" />
             </ion-avatar>
+              <!--<img [src]="fotoUsuario" id="imgPerfilUsuario" />-->
             <h2 class="fg-principal" text-wrap>{{nombreLogueado}}</h2>
             <h3 class="fg-secundary">{{rolLogueado}}</h3>
             <p class="fg-secundary">{{institucionLogueado}}</p>
+
+              <ion-grid>
+                <ion-row>
+                  <ion-col text-right>
+                    <button ion-button clear icon-start (click)="openPerfil()">
+                     
+                      <ion-icon name="key"></ion-icon>
+                      Mi Clave
+                    </button>
+                  </ion-col>
+                  <ion-col text-right>
+                    <button ion-button clear icon-start (click)="openPerfil()">
+                      
+                      <ion-icon name="contacts"></ion-icon>
+                      Mi Perfil
+                    </button>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+
           </ion-item>
           <!--
         <button ion-item menuClose *ngFor="let p of pages" (click)="openPage(p)">

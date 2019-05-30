@@ -1,12 +1,10 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, LoadingController, ModalController, ToastController, ActionSheetController, ViewController  } from 'ionic-angular';
 import { GlobalService } from '../../app/services/GlobalService';
-/**
- * Generated class for the PerfilPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import {AppSettings } from '../../app/AppSettings';
+import { MenuPage } from '../menu/menu';
+
+import * as $ from 'jquery';
 
 @Component({
   selector: 'page-perfil',
@@ -20,12 +18,7 @@ frmIniciales;
 fileUno: File;
 fileUnoName: any;
 image: string = null;
-perfil = {
-  Foto: '',
-  Iniciales: '',
-  Apodo: '',
-  AusId: 0
-};
+fotoImagen;
 
   constructor(
     public navCtrl: NavController,
@@ -37,14 +30,42 @@ perfil = {
     private viewCtrl: ViewController
     ) {
       this.frmNombre = sessionStorage.getItem('PERSONA_NOMBRE');
-      this.perfil = JSON.parse(sessionStorage.getItem('PERFIL_USUARIO'));
-      if (this.perfil){
-        this.image = this.perfil.Foto;
-        this.frmApodo = this.perfil.Apodo;
-        this.frmIniciales = this.perfil.Iniciales;
+      this.fotoImagen = sessionStorage.getItem('FOTO_USUARIO');
+      this.image = this.fotoImagen;
+      //cargar los datos del perfil
+      this.cargar();
 
+
+  }
+  closeModal(param) {
+    //this.viewCtrl.dismiss();
+    this.navCtrl.setRoot(MenuPage);
+  }
+  cargar(){
+    var ausId = sessionStorage.getItem("USU_ID");
+    let loader = this.loading.create({
+      content: 'Cargando...',
+    });
+
+    loader.present().then(() => {
+      this.global.postPerfil(ausId).subscribe(dataPer => {
+        var dat = dataPer.json();
+        this.setear(dat);
+      },
+      err => {
+        console.error(err);
+        loader.dismiss();
+      },
+      () => {
+        console.log('perfil cargado');
+        loader.dismiss();
       }
-
+    );
+    });
+  }
+  setear(miPerfil){
+    this.frmApodo = miPerfil.Apodo;
+    this.frmIniciales = miPerfil.Iniciales;
   }
   enviarPerfil(){
     //validaciones
@@ -77,7 +98,14 @@ perfil = {
       
 
       if (!this.fileUno){
-        this.fileUnoName = '';
+        //si no hay un archivo esto esta bien, pero si no hay archivo y ya hay una imagen asociada esta mal
+        if (this.fotoImagen){
+          this.fileUnoName = this.fotoImagen;
+        }
+        else {
+          this.fileUnoName = '';
+        }
+        
       }
       perfilGuardar.Foto = this.fileUnoName;
 
@@ -88,15 +116,19 @@ perfil = {
           var datos = dataArchivo1.json();
           this.global.postPerfil(perfilGuardar.AusId).subscribe(dataPer => {
             var dat = dataPer.json();
-            sessionStorage.setItem('PERFIL_USUARIO', dat);
+            this.setear(dat);
+            if (this.fileUnoName == ''){
+              sessionStorage.setItem('FOTO_USUARIO', '../assets/imgs/no-imagen.png');
+              $("#imgPerfilUsuario").attr("src", '../assets/imgs/no-imagen.png');
+            }
+            else {
+              var setFoto = AppSettings.URL_FOTOS + dat.Foto;
+              sessionStorage.setItem('FOTO_USUARIO', setFoto);
+              $("#imgPerfilUsuario").attr("src", setFoto);
+            }
             let sms = this.presentToast('Perfil guardado con éxito.');
           });
-          //loader.dismiss();
-
-          //setear los datos de session storage
-
-
-          //this.viewCtrl.dismiss(datos);
+          
         },
         err => {
           console.error(err);

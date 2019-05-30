@@ -44,17 +44,12 @@ export class AuthService{
           } else {
 
             let retorno = JSON.parse(res);
-            if (retorno.MiPerfil.AusId > 0){
-              sessionStorage.setItem('PERFIL_USUARIO', JSON.stringify(retorno.MiPerfil));
+            if (retorno.MiPerfil.AusId > 0 && retorno.MiPerfil.Foto != '#'){
+              var setFoto = AppSettings.URL_FOTOS + retorno.MiPerfil.Foto;
+              sessionStorage.setItem('FOTO_USUARIO', setFoto);
             }
             else{
-              var entidad = {
-                Foto: '../assets/imgs/no-imagen.png',
-                Iniciales: '',
-                Apodo: '',
-                AusId: retorno.AutentificacionUsuario.Id
-              };
-              sessionStorage.setItem('PERFIL_USUARIO', JSON.stringify(entidad));
+              sessionStorage.setItem('FOTO_USUARIO', '../assets/imgs/no-imagen.png');
             }
 
             sessionStorage.setItem('USU_ID', retorno.AutentificacionUsuario.Id);
