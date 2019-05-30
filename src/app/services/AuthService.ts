@@ -49,7 +49,7 @@ export class AuthService{
             }
             else{
               var entidad = {
-                Foto: '../assets/imgs/no-imagen.jpg',
+                Foto: '../assets/imgs/no-imagen.png',
                 Iniciales: '',
                 Apodo: '',
                 AusId: retorno.AutentificacionUsuario.Id

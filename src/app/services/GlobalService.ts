@@ -584,7 +584,7 @@ export class GlobalService{
 
   }
   postPerfil(ausId){
-    let url = AppSettings.API_ENDPOINT + 'Rendicion';
+    let url = AppSettings.API_ENDPOINT + 'PerfilUsuario';
     let dataGet = { AusId: ausId};
 
     let data = this.http.post(url, dataGet, {

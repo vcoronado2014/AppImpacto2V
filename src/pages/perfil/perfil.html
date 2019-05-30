@@ -11,6 +11,45 @@
 
 
 <ion-content padding>
-  aca se cambiara el perfil del usuario
+    <ion-card>
+      <img [src]="image" />
+      <label class="custom-file-upload">
+          <input type="file" accept="image/*" (change)="changeListener($event)" #fileInput>
+          <ion-icon name="cloud-upload"></ion-icon>&nbsp;Selecciona un Archivo
+        </label>
+      <ion-card-content>
+        <ion-card-title>
+          Mi Perfil
+        </ion-card-title>
+        <ion-list no-lines>
+          <!-- aca debe ir la foto-->
+    
+          <ion-item>
+            <ion-label floating>Nombre</ion-label>
+            <ion-input type="text" [(ngModel)]="frmNombre" disabled="true"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>Apodo</ion-label>
+            <ion-input type="text" [(ngModel)]="frmApodo"></ion-input>
+          </ion-item>
+          <ion-item>
+              <ion-label floating>Iniciales</ion-label>
+              <ion-input type="text" [(ngModel)]="frmIniciales"></ion-input>
+            </ion-item>
+        </ion-list>
+        <!-- botones -->
+        <ion-grid>
+            <ion-row>
+              <ion-col text-right>
+                  <!--<button ion-button clear (click)="closeModal()">Cerrar</button>-->
+              </ion-col>
+              <ion-col text-right>
+                  <button ion-button  (click)="enviarPerfil()" class="mui--bg-color-amber-700 fg-black">Guardar</button>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+      </ion-card-content>
+    </ion-card>
+
 
 </ion-content>
